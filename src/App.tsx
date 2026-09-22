@@ -64,8 +64,12 @@ export default function App() {
           // Hard cap: Never search or display schools beyond 25km from the exact address
           .filter((s) => s.straightLineDistance <= 25000);
 
-        // 2. Sort: inside radius first (nearest-first), then outside radius (nearest-first)
+        // 2. Keep St. Cecilia's first, then show the remaining schools by proximity.
         processed.sort((a, b) => {
+          const aIsStCecilias = a.id === 'sch-001' || /st\.\s*cecilia/i.test(a.name);
+          const bIsStCecilias = b.id === 'sch-001' || /st\.\s*cecilia/i.test(b.name);
+          if (aIsStCecilias && !bIsStCecilias) return -1;
+          if (!aIsStCecilias && bIsStCecilias) return 1;
           if (a.withinRadius && !b.withinRadius) return -1;
           if (!a.withinRadius && b.withinRadius) return 1;
           return a.straightLineDistance - b.straightLineDistance;
@@ -570,8 +574,8 @@ export default function App() {
                 <thead>
                   <tr>
                     <th style={{ width: '8%', textAlign: 'center' }}>#</th>
-                    <th style={{ width: '68%' }}>School Name & Address</th>
-                    <th style={{ width: '24%', textAlign: 'right' }}>Distance</th>
+                    <th style={{ width: '58%' }}>School Name & Address</th>
+                    <th style={{ width: '34%', textAlign: 'right' }}>Straight-line / Driving</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -585,8 +589,18 @@ export default function App() {
                         )}
                         <div style={{ fontSize: '8pt', color: '#64748b', marginTop: '2px' }}>{s.address}</div>
                       </td>
-                      <td style={{ textAlign: 'right', fontWeight: 'bold', fontSize: '10.5pt', color: '#0f172a' }}>
-                        {formatDistance(s.straightLineDistance)}
+                      <td style={{ textAlign: 'right', fontSize: '9pt' }}>
+                        <div style={{ fontWeight: 'bold', color: '#0f172a' }}>
+                          Straight: {formatDistance(s.straightLineDistance)}
+                        </div>
+                        <div style={{ fontWeight: 'bold', color: '#2563eb' }}>
+                          Driving: {s.drivingDistanceText || 'Pending'}
+                        </div>
+                        {s.drivingDurationText && (
+                          <div style={{ color: '#64748b', fontSize: '8pt' }}>
+                            Time: ~{s.drivingDurationText}
+                          </div>
+                        )}
                       </td>
                     </tr>
                   ))}

@@ -105,7 +105,7 @@ export function generateAdmissionReportPdf({
   // Table Header
   const colIndexX = margin;
   const colIndexW = 12;
-  const colDistW = 32;
+  const colDistW = 48;
   const colNameX = colIndexX + colIndexW;
   const colNameW = contentWidth - colIndexW - colDistW;
 
@@ -119,7 +119,7 @@ export function generateAdmissionReportPdf({
   doc.setTextColor(51, 65, 85);
   doc.text('#', colIndexX + 4, y + 5.5);
   doc.text('School Name & Address', colNameX + 2, y + 5.5);
-  doc.text('Distance', pageWidth - margin - 4, y + 5.5, { align: 'right' });
+  doc.text('Straight-line / Driving', pageWidth - margin - 4, y + 5.5, { align: 'right' });
 
   y += 8;
 
@@ -135,13 +135,15 @@ export function generateAdmissionReportPdf({
       // Calculate row height based on text lines
       const name = school.name || 'Unnamed School';
       const address = school.address || '';
-      const distStr = formatDistance(school.straightLineDistance);
+      const straightLineStr = `Straight: ${formatDistance(school.straightLineDistance)}`;
+      const drivingStr = `Driving: ${school.drivingDistanceText || 'Pending'}`;
+      const durationStr = school.drivingDurationText ? `Time: ~${school.drivingDurationText}` : '';
 
       const nameLines = doc.splitTextToSize(name, colNameW - 4);
       const addressLines = address ? doc.splitTextToSize(address, colNameW - 4) : [];
 
-      const textHeight = nameLines.length * 4.2 + addressLines.length * 3.6 + 4;
-      const rowHeight = Math.max(textHeight, 10);
+      const textHeight = nameLines.length * 4.2 + addressLines.length * 3.6 + 15;
+      const rowHeight = Math.max(textHeight, 16);
 
       // Check if row fits on current page
       if (y + rowHeight > pageHeight - 20) {
@@ -160,7 +162,7 @@ export function generateAdmissionReportPdf({
         doc.setTextColor(51, 65, 85);
         doc.text('#', colIndexX + 4, y + 5.5);
         doc.text('School Name & Address (cont.)', colNameX + 2, y + 5.5);
-        doc.text('Distance', pageWidth - margin - 4, y + 5.5, { align: 'right' });
+        doc.text('Straight-line / Driving', pageWidth - margin - 4, y + 5.5, { align: 'right' });
         y += 8;
       }
 
@@ -197,11 +199,19 @@ export function generateAdmissionReportPdf({
         doc.text(addressLines, colNameX + 2, textY);
       }
 
-      // Distance
+      // Straight-line and driving measurements
       doc.setFont('helvetica', 'bold');
-      doc.setFontSize(9.5);
+      doc.setFontSize(7.5);
       doc.setTextColor(15, 23, 42);
-      doc.text(distStr, pageWidth - margin - 4, y + 6, { align: 'right' });
+      const distanceX = pageWidth - margin - 4;
+      doc.text(straightLineStr, distanceX, y + 5, { align: 'right' });
+      doc.setTextColor(37, 99, 235);
+      doc.text(drivingStr, distanceX, y + 9, { align: 'right' });
+      if (durationStr) {
+        doc.setFont('helvetica', 'normal');
+        doc.setTextColor(100, 116, 139);
+        doc.text(durationStr, distanceX, y + 13, { align: 'right' });
+      }
 
       y += rowHeight;
     });

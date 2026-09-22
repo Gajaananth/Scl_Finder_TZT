@@ -80,8 +80,8 @@ export default function App() {
         }
         setIsLoading(false);
 
-        // 3. Asynchronously fetch driving distances ONLY for schools inside radius using free OSRM (cap to 15 to avoid request flood)
-        const insideRadiusSchools = processed.filter((s) => s.withinRadius).slice(0, 15);
+        // 3. Asynchronously fetch driving distances for ALL schools inside radius
+        const insideRadiusSchools = processed.filter((s) => s.withinRadius);
         if (insideRadiusSchools.length > 0) {
           fetchDrivingDistances(location, insideRadiusSchools).then((enriched) => {
             const enrichedMap = new Map(enriched.map((e) => [e.id, e]));

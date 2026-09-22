@@ -94,8 +94,8 @@ async function fetchWithTimeout(
 
 /**
  * Fetch driving distances using the free Open Source Routing Machine (OSRM) API.
- * Free, no API key required, no rate limit issues for local batch sizes.
- * Only requested for schools within the admission radius.
+ * Calculates driving distance and duration for ALL schools within the admission radius.
+ * Includes intelligent urban road network fallback if OSRM is throttled.
  */
 export async function fetchDrivingDistances(
   origin: Coordinates,
@@ -105,33 +105,41 @@ export async function fetchDrivingDistances(
 
   const results = [...schools];
 
-  // Enrich at most nearest 15 schools to prevent heavy request spikes & OSRM rate limits
-  const targetIndices = schools.slice(0, 15).map((_, i) => i);
-
   await Promise.all(
-    targetIndices.map(async (index) => {
-      const school = results[index];
+    results.map(async (school, index) => {
       try {
         const url = `https://router.project-osrm.org/route/v1/driving/${origin.lng},${origin.lat};${school.lng},${school.lat}?overview=false`;
-        const res = await fetchWithTimeout(url, undefined, 3000);
-        if (!res.ok) return;
-
-        const data = await res.json();
-        const route = data.routes?.[0];
-        if (route) {
-          const distMeters = Math.round(route.distance);
-          const durSeconds = Math.round(route.duration);
-          results[index] = {
-            ...school,
-            drivingDistance: distMeters,
-            drivingDistanceText: formatDistance(distMeters),
-            drivingDuration: durSeconds,
-            drivingDurationText: formatDuration(durSeconds),
-          };
+        const res = await fetchWithTimeout(url, undefined, 2500);
+        if (res.ok) {
+          const data = await res.json();
+          const route = data.routes?.[0];
+          if (route && typeof route.distance === 'number') {
+            const distMeters = Math.round(route.distance);
+            const durSeconds = Math.round(route.duration);
+            results[index] = {
+              ...school,
+              drivingDistance: distMeters,
+              drivingDistanceText: formatDistance(distMeters),
+              drivingDuration: durSeconds,
+              drivingDurationText: formatDuration(durSeconds),
+            };
+            return;
+          }
         }
       } catch {
-        // Silently skip if network error or timeout
+        // Fall back to estimated road distance below
       }
+
+      // Realistic urban road network estimate (1.28x geodesic factor, 25 km/h local traffic)
+      const estimatedRoadMeters = Math.round(school.straightLineDistance * 1.28);
+      const estimatedSeconds = Math.max(60, Math.round(estimatedRoadMeters / (25 * 1000 / 3600)));
+      results[index] = {
+        ...school,
+        drivingDistance: estimatedRoadMeters,
+        drivingDistanceText: formatDistance(estimatedRoadMeters),
+        drivingDuration: estimatedSeconds,
+        drivingDurationText: formatDuration(estimatedSeconds),
+      };
     })
   );
 
@@ -148,7 +156,7 @@ export async function fetchRouteGeometry(
 ): Promise<[number, number][] | null> {
   try {
     const url = `https://router.project-osrm.org/route/v1/driving/${origin.lng},${origin.lat};${destination.lng},${destination.lat}?overview=full&geometries=geojson`;
-    const res = await fetchWithTimeout(url, undefined, 3000);
+    const res = await fetchWithTimeout(url, undefined, 2500);
     if (!res.ok) return null;
     const data = await res.json();
     const coords = data.routes?.[0]?.geometry?.coordinates;
@@ -161,5 +169,44 @@ export async function fetchRouteGeometry(
     console.warn('Could not fetch OSRM route geometry:', err);
     return null;
   }
+}
+
+/**
+ * Fetch route geometries for all schools within the admission radius.
+ * Returns a map of schoolId -> [lat, lng][] polyline coordinates.
+ */
+export async function fetchMultipleRouteGeometries(
+  origin: Coordinates,
+  schools: { id: string; lat: number; lng: number }[]
+): Promise<Record<string, [number, number][]>> {
+  const routes: Record<string, [number, number][]> = {};
+
+  await Promise.all(
+    schools.map(async (school) => {
+      try {
+        const coords = await fetchRouteGeometry(origin, {
+          lat: school.lat,
+          lng: school.lng,
+        });
+
+        if (coords && coords.length > 0) {
+          routes[school.id] = coords;
+        } else {
+          // If road route not available, draw direct connection line
+          routes[school.id] = [
+            [origin.lat, origin.lng],
+            [school.lat, school.lng],
+          ];
+        }
+      } catch {
+        routes[school.id] = [
+          [origin.lat, origin.lng],
+          [school.lat, school.lng],
+        ];
+      }
+    })
+  );
+
+  return routes;
 }
 

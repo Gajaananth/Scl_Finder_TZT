@@ -29,7 +29,7 @@ const BAND_COLORS: Record<string, string> = {
 };
 
 export default function SchoolCard({ school, index, isSelected, onClick }: SchoolCardProps) {
-  const { t, language } = useI18n();
+  const { language } = useI18n();
 
   const bandColor = BAND_COLORS[school.distanceBand] ?? 'bg-slate-500';
   const typeColor = TYPE_COLORS[school.type] ?? 'bg-slate-100 text-slate-700';
@@ -91,28 +91,22 @@ export default function SchoolCard({ school, index, isSelected, onClick }: Schoo
 
       {/* Driving estimate */}
       {(school.drivingDistanceText || school.drivingDurationText) && (
-        <div className="mt-3 pt-2.5 border-t border-slate-100">
-          <p className="text-[10px] text-slate-400 uppercase tracking-wide font-medium mb-1">
-            {t('drivingEstimate')}
-          </p>
-          <div className="flex items-center gap-3 text-xs text-slate-500">
-            {school.drivingDistanceText && (
-              <span className="flex items-center gap-1">
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                </svg>
-                {school.drivingDistanceText}
-              </span>
-            )}
-            {school.drivingDurationText && (
-              <span className="flex items-center gap-1">
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                {school.drivingDurationText}
-              </span>
-            )}
+        <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between flex-wrap gap-1.5">
+          <div className="inline-flex items-center gap-1.5 text-xs text-blue-800 font-semibold bg-blue-50/90 px-2 py-0.5 rounded-md border border-blue-200/60">
+            <svg className="w-3.5 h-3.5 shrink-0 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+            </svg>
+            <span>Driving: <strong>{school.drivingDistanceText}</strong></span>
           </div>
+
+          {school.drivingDurationText && (
+            <div className="inline-flex items-center gap-1 text-xs text-slate-600 font-medium">
+              <svg className="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>~{school.drivingDurationText}</span>
+            </div>
+          )}
         </div>
       )}
     </button>

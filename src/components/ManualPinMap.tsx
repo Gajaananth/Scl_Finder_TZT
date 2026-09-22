@@ -47,6 +47,31 @@ function MapEventsHandler({ onPinChange }: { onPinChange: (coords: Coordinates) 
   return null;
 }
 
+function MapResizeObserver() {
+  const map = useMap();
+
+  useEffect(() => {
+    const container = map.getContainer();
+    if (!container || typeof ResizeObserver === 'undefined') {
+      map.invalidateSize();
+      return;
+    }
+
+    const resizeObserver = new ResizeObserver(() => {
+      map.invalidateSize();
+    });
+
+    resizeObserver.observe(container);
+    map.invalidateSize();
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, [map]);
+
+  return null;
+}
+
 function MapController({ center }: { center: Coordinates }) {
   const map = useMap();
   useEffect(() => {
@@ -193,6 +218,7 @@ export default function ManualPinMap({
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
+          <MapResizeObserver />
           <MapEventsHandler onPinChange={(coords) => setPinLocation(coords)} />
           <MapController center={mapCenter} />
           <Marker

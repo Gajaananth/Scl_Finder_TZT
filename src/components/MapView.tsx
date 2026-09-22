@@ -78,6 +78,31 @@ function createSchoolIcon(isInside: boolean, isSelected: boolean) {
 /**
  * Helper to auto-fit map viewport to Home + Circle boundary + Schools
  */
+function MapResizeObserver() {
+  const map = useMap();
+
+  useEffect(() => {
+    const container = map.getContainer();
+    if (!container || typeof ResizeObserver === 'undefined') {
+      map.invalidateSize();
+      return;
+    }
+
+    const resizeObserver = new ResizeObserver(() => {
+      map.invalidateSize();
+    });
+
+    resizeObserver.observe(container);
+    map.invalidateSize();
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, [map]);
+
+  return null;
+}
+
 function MapBoundsUpdater({
   center,
   radius,
@@ -188,6 +213,8 @@ export default function MapView({
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           maxZoom={19}
         />
+
+        <MapResizeObserver />
 
         {/* Viewport manager */}
         <MapBoundsUpdater

@@ -170,6 +170,9 @@ export async function fetchOsmSchoolsNear(
     (
       node["amenity"="school"](around:${searchRadius},${location.lat},${location.lng});
       way["amenity"="school"](around:${searchRadius},${location.lat},${location.lng});
+      node["building"="school"](around:${searchRadius},${location.lat},${location.lng});
+      way["building"="school"](around:${searchRadius},${location.lat},${location.lng});
+      way["building:use"="school"](around:${searchRadius},${location.lat},${location.lng});
     );
     out center tags;
   `;

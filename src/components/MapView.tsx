@@ -196,7 +196,10 @@ export default function MapView({
   return (
     <div className="w-full space-y-2">
       {ceciliaSchool && (
-        <div className="rounded-xl border-2 border-amber-400 bg-maroon-900 px-4 py-3 text-white shadow-md sm:px-5 sm:py-3.5">
+        <div
+          className="rounded-xl border-2 border-[#f4c542] px-4 py-3 text-white shadow-md sm:px-5 sm:py-3.5"
+          style={{ backgroundColor: '#7f1d1d' }}
+        >
           <div className="flex flex-wrap items-center justify-between gap-x-5 gap-y-2">
             <div className="min-w-0">
               <p className="text-[11px] font-bold uppercase tracking-wider text-amber-200">St. Cecilia's Girls' College</p>

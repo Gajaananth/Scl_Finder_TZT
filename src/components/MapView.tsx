@@ -199,7 +199,7 @@ export default function MapView({
   }, [homeLocation, schools, radiusMeters]);
 
   return (
-    <div className="relative w-full h-full min-h-[400px] rounded-2xl overflow-hidden border border-slate-200/80 shadow-inner">
+    <div className="relative w-full h-[400px] rounded-2xl overflow-hidden border border-slate-200/80 shadow-inner">
       <MapContainer
         center={[homeLocation.lat, homeLocation.lng]}
         zoom={14}

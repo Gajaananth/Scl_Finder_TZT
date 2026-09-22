@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+:root {
+  --brand-primary: #1E3A8A;       /* PLACEHOLDER — replace with St. Cecilia's actual school color once known */
+  --brand-primary-dark: #152C6B;  /* a ~15% darker shade of the above, for hover states */
+  --brand-primary-light: #EEF2FF; /* a ~90% lightened tint, for subtle backgrounds/pills */
+}
+
+@theme {
+  --color-brand: var(--brand-primary);
+  --color-brand-dark: var(--brand-primary-dark);
+  --color-brand-light: var(--brand-primary-light);
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: #1e293b;
+    background-color: #f8fafc;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ========================================================
+   PRINT STYLESHEET (@media print)
+   Dedicated clean layout for physical admission file attachments
+   ======================================================== */
+@media print {
+  @page {
+    margin: 1.5cm;
+    size: A4 portrait;
+    @bottom-center {
+      content: "St. Cecilia's Girls' College | Page " counter(page);
+      font-size: 8pt;
+      color: #64748b;
+    }
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 10pt;
+  }
+
+  /* Hide app navigation, map, filters, interactive UI, and buttons */
+  header,
+  footer,
+  .no-print,
+  .map-panel,
+  .school-list-panel,
+  button {
+    display: none !important;
+  }
+
+  /* Display print-only elements */
+  .print-only {
+    display: block !important;
+  }
+
+  .print-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 9.5pt;
+  }
+
+  .print-table th,
+  .print-table td {
+    border: 1px solid #94a3b8;
+    padding: 6px 8px;
+    text-align: left;
+    color: #000000 !important;
+  }
+
+  .print-table th {
+    background-color: #f1f5f9 !important;
+    font-weight: 700;
+  }
+
+  .print-footer {
+    display: block !important;
+    margin-top: 2rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #cbd5e1;
+    text-align: center;
+    font-size: 8pt;
+    color: #475569;
+  }
+}
+
+@media screen {
+  .print-only {
+    display: none !important;
+  }
+}

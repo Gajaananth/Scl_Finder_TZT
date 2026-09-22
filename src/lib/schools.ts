@@ -168,11 +168,11 @@ export async function fetchOsmSchoolsNear(
   const query = `
     [out:json][timeout:5];
     (
-      node["amenity"="school"](around:${searchRadius},${location.lat},${location.lng});
-      way["amenity"="school"](around:${searchRadius},${location.lat},${location.lng});
-      node["building"="school"](around:${searchRadius},${location.lat},${location.lng});
-      way["building"="school"](around:${searchRadius},${location.lat},${location.lng});
-      way["building:use"="school"](around:${searchRadius},${location.lat},${location.lng});
+      nwr["amenity"="school"](around:${searchRadius},${location.lat},${location.lng});
+      nwr["building"="school"](around:${searchRadius},${location.lat},${location.lng});
+      nwr["building:use"="school"](around:${searchRadius},${location.lat},${location.lng});
+      nwr["education"="school"](around:${searchRadius},${location.lat},${location.lng});
+      nwr["school"="yes"](around:${searchRadius},${location.lat},${location.lng});
     );
     out center tags;
   `;

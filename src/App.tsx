@@ -61,8 +61,9 @@ export default function App() {
               distanceBand: getDistanceBand(dist, language),
             };
           })
-          // Hard cap: Never search or display schools beyond 25km from the exact address
-          .filter((s) => s.straightLineDistance <= 25000);
+          // Keep the official St. Cecilia's reference visible even when it is
+          // beyond the 25km search cap applied to other schools.
+          .filter((s) => s.straightLineDistance <= 25000 || s.id === 'sch-001');
 
         // 2. Keep St. Cecilia's first, then show the remaining schools by proximity.
         processed.sort((a, b) => {

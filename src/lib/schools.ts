@@ -246,7 +246,7 @@ export async function fetchSchools(
     if (isEligibleGovernmentSchool({}, s.name)) {
       if (nearLocation) {
         const dist = computeStraightLineDistance(nearLocation, { lat: s.lat, lng: s.lng });
-        if (dist > 25000) continue;
+        if (dist > 25000 && s.id !== 'sch-001') continue;
       }
       schoolsMap.set(s.id, s);
     }
@@ -261,7 +261,7 @@ export async function fetchSchools(
         if (!schoolsMap.has(s.id) && isEligibleGovernmentSchool({}, s.name)) {
           if (nearLocation) {
             const dist = computeStraightLineDistance(nearLocation, { lat: s.lat, lng: s.lng });
-            if (dist > 25000) continue;
+            if (dist > 25000 && s.id !== 'sch-001') continue;
           }
           schoolsMap.set(s.id, s);
         }

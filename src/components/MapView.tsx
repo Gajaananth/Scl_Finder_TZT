@@ -91,6 +91,7 @@ function MapBoundsUpdater({
 
   useEffect(() => {
     if (!map) return;
+    map.invalidateSize();
 
     if (selectedSchool) {
       map.flyTo([selectedSchool.lat, selectedSchool.lng], 15, { duration: 0.8 });

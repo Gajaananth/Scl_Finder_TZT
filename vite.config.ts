@@ -139,26 +139,12 @@ function mockApiPlugin(): Plugin {
           return;
         }
 
-        // 4. Schools endpoint (/api/schools) - gated
+        // 4. Schools endpoint (/api/schools) - public
         if (url === '/api/schools') {
           res.setHeader('Content-Type', 'application/json');
-          const cookies = cookieParse(req.headers.cookie || '');
-          const token = cookies[SESSION_COOKIE_NAME];
-          if (!token) {
-            res.statusCode = 401;
-            res.end(JSON.stringify({ error: 'Unauthorized' }));
-            return;
-          }
-          try {
-            await jwtVerify(token, SECRET_KEY);
-            res.statusCode = 200;
-            res.end(JSON.stringify(DEFAULT_SCHOOLS));
-            return;
-          } catch {
-            res.statusCode = 401;
-            res.end(JSON.stringify({ error: 'Unauthorized' }));
-            return;
-          }
+          res.statusCode = 200;
+          res.end(JSON.stringify(DEFAULT_SCHOOLS));
+          return;
         }
 
         next();

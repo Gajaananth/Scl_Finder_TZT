@@ -380,11 +380,11 @@ export default function App() {
              ======================================================== */
           <div className="flex-1 flex flex-col">
             {/* Quick Adjustment, Filters, Print & CSV Header */}
-            <div className="bg-white border-b border-slate-200 px-4 py-3 no-print">
-              <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3">
+            <div className="bg-white border-b border-slate-200 px-4 py-2.5 no-print shadow-2xs">
+              <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2.5">
                 {/* Current Radius & Quick Bands */}
-                <div className="flex items-center gap-2 overflow-x-auto pb-1 lg:pb-0">
-                  <span className="text-xs font-bold text-slate-500 uppercase tracking-wider shrink-0">
+                <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
+                  <span className="text-xs font-bold text-slate-500 uppercase tracking-wider shrink-0 mr-0.5">
                     {t('radiusLabel')}:
                   </span>
                   {[500, 1000, 2000, 3000, 5000].map((val) => (
@@ -392,7 +392,7 @@ export default function App() {
                       key={val}
                       type="button"
                       onClick={() => handleRadiusChange(val)}
-                      className={`px-3 py-1 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors cursor-pointer ${
+                      className={`px-2.5 py-1 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors cursor-pointer ${
                         radiusMeters === val
                           ? 'bg-brand text-white shadow-xs'
                           : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
@@ -424,7 +424,7 @@ export default function App() {
                 </div>
 
                 {/* Filters, Print and CSV Actions */}
-                <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
                   {/* Medium Filter */}
                   <div className="flex items-center gap-1.5 shrink-0">
                     <label htmlFor="medium-select" className="text-xs text-slate-500 font-medium">
@@ -466,7 +466,7 @@ export default function App() {
                   <button
                     type="button"
                     onClick={handleDownloadPDF}
-                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-bold rounded-lg bg-brand text-white hover:bg-brand-dark shadow-sm cursor-pointer transition-all"
+                    className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-bold rounded-lg bg-brand text-white hover:bg-brand-dark shadow-xs cursor-pointer transition-all shrink-0"
                     title="Download verified nearest schools report as PDF"
                   >
                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -479,13 +479,13 @@ export default function App() {
                   <button
                     type="button"
                     onClick={handleDownloadCSV}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 shadow-xs cursor-pointer transition-colors"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold rounded-lg border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 shadow-2xs cursor-pointer transition-colors shrink-0"
                     title="Download school data as CSV"
                   >
                     <svg className="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                     </svg>
-                    <span>Download CSV</span>
+                    <span>CSV</span>
                   </button>
                 </div>
               </div>
@@ -493,15 +493,15 @@ export default function App() {
 
             {/* Error Message if any */}
             {error && (
-              <div className="bg-red-50 border-b border-red-200 px-4 py-2.5 text-xs text-red-700 text-center font-medium">
+              <div className="bg-red-50 border-b border-red-200 px-4 py-2 text-xs text-red-700 text-center font-medium">
                 {error}
               </div>
             )}
 
             {/* Split Screen Container: Map on left/top, SchoolList on right/bottom */}
-            <div className="flex-1 flex flex-col lg:flex-row min-h-[calc(100vh-140px)] no-print">
+            <div className="flex-1 flex flex-col lg:flex-row h-auto lg:h-[calc(100vh-125px)] min-h-0 no-print">
               {/* Map Panel */}
-              <div className="w-full lg:w-3/5 h-[400px] lg:h-auto p-3 lg:p-4">
+              <div className="w-full lg:w-3/5 h-[450px] lg:h-full p-2.5 sm:p-3 lg:p-4 flex flex-col min-h-0">
                 <MapView
                   homeLocation={homeLocation}
                   schools={filteredSchools}
@@ -519,7 +519,7 @@ export default function App() {
               </div>
 
               {/* List Panel */}
-              <div className="w-full lg:w-2/5 border-t lg:border-t-0 lg:border-l border-slate-200 bg-white flex flex-col">
+              <div className="w-full lg:w-2/5 h-[500px] lg:h-full border-t lg:border-t-0 lg:border-l border-slate-200 bg-white flex flex-col min-h-0">
                 <SchoolList
                   schools={filteredSchools}
                   radiusMeters={radiusMeters}

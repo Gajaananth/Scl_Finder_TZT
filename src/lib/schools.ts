@@ -1,4 +1,4 @@
-﻿import type { School, Coordinates, SchoolType, Medium } from '../types/school';
+import type { School, Coordinates, SchoolType, Medium } from '../types/school';
 import { DEFAULT_SCHOOLS } from '../data/schools';
 import { computeStraightLineDistance } from './distance';
 
@@ -151,16 +151,18 @@ export async function fetchOsmSchoolsNear(
   const searchRadius = Math.min(Math.max(radiusMeters, 200), 25000);
 
   const query = `
-    [out:json][timeout:25];
+    [out:json][timeout:5];
     (
       node["amenity"="school"](around:${searchRadius},${location.lat},${location.lng});
       way["amenity"="school"](around:${searchRadius},${location.lat},${location.lng});
-      relation["amenity"="school"](around:${searchRadius},${location.lat},${location.lng});
     );
     out center tags;
   `;
 
-  for (const endpoint of OVERPASS_ENDPOINTS) {
+  // Use top 2 endpoints with short 2.5s timeout, no forbidden User-Agent header in browser
+  const fastEndpoints = OVERPASS_ENDPOINTS.slice(0, 2);
+
+  for (const endpoint of fastEndpoints) {
     try {
       const response = await fetchWithTimeout(
         endpoint,
@@ -168,17 +170,13 @@ export async function fetchOsmSchoolsNear(
           method: 'POST',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
-            'User-Agent': 'Grade1SchoolFinder/1.0 (srilanka-school-admission)',
           },
           body: 'data=' + encodeURIComponent(query),
         },
-        12000
+        2500
       );
 
-      if (!response.ok) {
-        console.warn(`Overpass ${endpoint} returned HTTP ${response.status}`);
-        continue;
-      }
+      if (!response.ok) continue;
 
       const data = await response.json();
       const elements: OverpassElement[] = data.elements || [];
@@ -210,14 +208,12 @@ export async function fetchOsmSchoolsNear(
         });
       }
 
-      console.log(`OSM: Found ${osmSchools.length} schools via ${endpoint}`);
       return osmSchools;
-    } catch (err) {
-      console.warn(`Overpass endpoint ${endpoint} failed, trying next:`, err);
+    } catch {
+      // Continue to next endpoint quickly
     }
   }
 
-  console.warn('All Overpass endpoints failed');
   return [];
 }
 
@@ -227,19 +223,20 @@ export async function fetchSchools(
 ): Promise<School[]> {
   const schoolsMap = new Map<string, School>();
 
-  if (nearLocation) {
-    try {
-      const liveOsmSchools = await fetchOsmSchoolsNear(nearLocation, radiusMeters);
-      for (const s of liveOsmSchools) {
-        schoolsMap.set(s.id, s);
+  // 1. Instantly seed with verified Batticaloa schools (guaranteed instant response)
+  for (const s of DEFAULT_SCHOOLS) {
+    if (isEligibleGovernmentSchool({}, s.name)) {
+      if (nearLocation) {
+        const dist = computeStraightLineDistance(nearLocation, { lat: s.lat, lng: s.lng });
+        if (dist > 25000) continue;
       }
-    } catch (err) {
-      console.warn('Live OSM school query failed:', err);
+      schoolsMap.set(s.id, s);
     }
   }
 
+  // 2. Query /api/schools to merge any dynamic schools from API
   try {
-    const res = await fetchWithTimeout(API_URL, undefined, 2000);
+    const res = await fetchWithTimeout(API_URL, undefined, 1500);
     if (res.ok) {
       const staticSchools: School[] = await res.json();
       for (const s of staticSchools) {
@@ -252,15 +249,21 @@ export async function fetchSchools(
         }
       }
     }
-  } catch {
-    for (const s of DEFAULT_SCHOOLS) {
-      if (!schoolsMap.has(s.id) && isEligibleGovernmentSchool({}, s.name)) {
-        if (nearLocation) {
-          const dist = computeStraightLineDistance(nearLocation, { lat: s.lat, lng: s.lng });
-          if (dist > 25000) continue;
+  } catch (err) {
+    console.warn('API schools fetch error:', err);
+  }
+
+  // 3. Quick non-blocking OSM check
+  if (nearLocation) {
+    try {
+      const liveOsmSchools = await fetchOsmSchoolsNear(nearLocation, radiusMeters);
+      for (const s of liveOsmSchools) {
+        if (!schoolsMap.has(s.id)) {
+          schoolsMap.set(s.id, s);
         }
-        schoolsMap.set(s.id, s);
       }
+    } catch (err) {
+      console.warn('OSM enrichment skipped:', err);
     }
   }
 

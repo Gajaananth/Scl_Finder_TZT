@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { MapContainer, TileLayer, Circle, Marker, Popup, Polyline, Tooltip, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -145,8 +145,6 @@ export default function MapView({
   onHomeLocationChange,
 }: MapViewProps) {
   const { t } = useI18n();
-  const markerRefs = useRef<Record<string, L.Marker>>({});
-
   const [routesMap, setRoutesMap] = useState<Record<string, [number, number][]>>({});
   const [isLoadingRoutes, setIsLoadingRoutes] = useState<boolean>(false);
 
@@ -160,13 +158,6 @@ export default function MapView({
     const outside = schools.filter((s) => !s.withinRadius).slice(0, 15);
     return [...inside, ...outside];
   }, [schools]);
-
-  // Open popup programmatically when selected from side list
-  useEffect(() => {
-    if (selectedSchoolId && markerRefs.current[selectedSchoolId]) {
-      markerRefs.current[selectedSchoolId].openPopup();
-    }
-  }, [selectedSchoolId]);
 
   // Fetch driving route geometry for ALL schools within the admission radius
   useEffect(() => {
@@ -331,9 +322,6 @@ export default function MapView({
               position={[school.lat, school.lng]}
               icon={icon}
               zIndexOffset={isSelected ? 900 : isInside ? 500 : 100}
-              ref={(ref) => {
-                if (ref) markerRefs.current[school.id] = ref;
-              }}
               eventHandlers={{
                 click: () => onSelectSchool(school.id),
                 popupclose: () => {

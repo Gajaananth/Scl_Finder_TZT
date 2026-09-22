@@ -508,7 +508,7 @@ export default function App() {
               <div className="w-full h-[430px] p-2.5 sm:p-3 lg:p-4 flex flex-col shrink-0">
                 <MapView
                   homeLocation={homeLocation}
-                  schools={filteredSchools}
+                  schools={schools}
                   radiusMeters={radiusMeters}
                   selectedSchoolId={selectedSchoolId}
                   onSelectSchool={setSelectedSchoolId}

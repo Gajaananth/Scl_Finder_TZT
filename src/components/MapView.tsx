@@ -152,6 +152,10 @@ export default function MapView({
     () => schools.find((s) => s.id === selectedSchoolId) ?? null,
     [schools, selectedSchoolId]
   );
+  const ceciliaSchool = useMemo(
+    () => schools.find((s) => s.id === 'sch-001' || /st\.\s*cecilia/i.test(s.name)) ?? null,
+    [schools]
+  );
 
   const displayedSchools = useMemo(() => {
     const inside = schools.filter((s) => s.withinRadius);
@@ -190,7 +194,30 @@ export default function MapView({
   }, [homeLocation, schools, radiusMeters]);
 
   return (
-    <div className="relative w-full h-[400px] rounded-2xl overflow-hidden border border-slate-200/80 shadow-inner">
+    <div className="w-full space-y-2">
+      {ceciliaSchool && (
+        <div className="rounded-xl border-2 border-amber-400 bg-maroon-900 px-4 py-3 text-white shadow-md sm:px-5 sm:py-3.5">
+          <div className="flex flex-wrap items-center justify-between gap-x-5 gap-y-2">
+            <div className="min-w-0">
+              <p className="text-[11px] font-bold uppercase tracking-wider text-amber-200">St. Cecilia's Girls' College</p>
+              <p className="text-xs text-white/80">Official distance from the applicant residence</p>
+            </div>
+            <div className="flex items-baseline gap-4 sm:gap-6">
+              <div>
+                <span className="block text-[10px] font-semibold uppercase tracking-wide text-amber-200">Straight-line</span>
+                <strong className="block text-2xl font-black leading-none sm:text-3xl">{formatDistance(ceciliaSchool.straightLineDistance)}</strong>
+              </div>
+              <div>
+                <span className="block text-[10px] font-semibold uppercase tracking-wide text-amber-200">Driving route</span>
+                <strong className="block text-2xl font-black leading-none text-amber-300 sm:text-3xl">{ceciliaSchool.drivingDistanceText || 'Loading...'}</strong>
+                {ceciliaSchool.drivingDurationText && <span className="block text-[10px] text-white/80">~{ceciliaSchool.drivingDurationText}</span>}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <div className="relative w-full h-[400px] rounded-2xl overflow-hidden border border-slate-200/80 shadow-inner">
       <MapContainer
         center={[homeLocation.lat, homeLocation.lng]}
         zoom={14}
@@ -493,6 +520,7 @@ export default function MapView({
             <span>Drag 🏠 pin to fine-tune home location</span>
           </div>
         )}
+      </div>
       </div>
     </div>
   );

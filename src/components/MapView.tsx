@@ -106,11 +106,9 @@ function MapResizeObserver() {
 function MapBoundsUpdater({
   center,
   radius,
-  selectedSchool,
 }: {
   center: Coordinates;
   radius: number;
-  selectedSchool: SchoolWithDistance | null;
 }) {
   const map = useMap();
 
@@ -126,12 +124,8 @@ function MapBoundsUpdater({
     const corner2 = L.latLng(center.lat + latOffset, center.lng + lngOffset);
     const bounds = L.latLngBounds(corner1, corner2);
 
-    if (selectedSchool) {
-      bounds.extend([selectedSchool.lat, selectedSchool.lng]);
-    }
-
     map.fitBounds(bounds, { padding: [30, 30], maxZoom: 15 });
-  }, [map, center, radius, selectedSchool]);
+  }, [map, center, radius]);
 
   return null;
 }
@@ -240,7 +234,6 @@ export default function MapView({
         <MapBoundsUpdater
           center={homeLocation}
           radius={radiusMeters}
-          selectedSchool={selectedSchool}
         />
 
         {/* Proximity Circle Overlay (Visual Admission Boundary) */}

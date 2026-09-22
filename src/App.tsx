@@ -502,10 +502,10 @@ export default function App() {
               </div>
             )}
 
-            {/* Split Screen Container: Map on left/top, SchoolList on right/bottom */}
-            <div className="flex-1 flex flex-col lg:flex-row h-auto lg:h-[calc(100vh-125px)] min-h-0 no-print">
-              {/* Map Panel */}
-              <div className="w-full lg:w-3/5 h-[450px] lg:h-full p-2.5 sm:p-3 lg:p-4 flex flex-col min-h-0">
+            {/* Map-first results layout: keep cards below the full-width map. */}
+            <div className="flex-1 flex flex-col h-auto min-h-0 no-print">
+              {/* Full-width Map Panel */}
+              <div className="w-full h-[430px] p-2.5 sm:p-3 lg:p-4 flex flex-col shrink-0">
                 <MapView
                   homeLocation={homeLocation}
                   schools={filteredSchools}
@@ -522,8 +522,8 @@ export default function App() {
                 />
               </div>
 
-              {/* List Panel */}
-              <div className="w-full lg:w-2/5 h-[500px] lg:h-full border-t lg:border-t-0 lg:border-l border-slate-200 bg-white flex flex-col min-h-0">
+              {/* School cards below the map so they do not obstruct the map view. */}
+              <div className="w-full h-[520px] border-t border-slate-200 bg-white flex flex-col min-h-0">
                 <SchoolList
                   schools={filteredSchools}
                   radiusMeters={radiusMeters}

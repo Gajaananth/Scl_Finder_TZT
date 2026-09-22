@@ -118,11 +118,6 @@ function MapBoundsUpdater({
     if (!map) return;
     map.invalidateSize();
 
-    if (selectedSchool) {
-      map.flyTo([selectedSchool.lat, selectedSchool.lng], 15, { duration: 0.8 });
-      return;
-    }
-
     // Compute bounding box around circle radius
     const latOffset = (radius / 111320) * 1.15;
     const lngOffset = (radius / (111320 * Math.cos((center.lat * Math.PI) / 180))) * 1.15;
@@ -131,7 +126,11 @@ function MapBoundsUpdater({
     const corner2 = L.latLng(center.lat + latOffset, center.lng + lngOffset);
     const bounds = L.latLngBounds(corner1, corner2);
 
-    map.fitBounds(bounds, { padding: [30, 30] });
+    if (selectedSchool) {
+      bounds.extend([selectedSchool.lat, selectedSchool.lng]);
+    }
+
+    map.fitBounds(bounds, { padding: [30, 30], maxZoom: 15 });
   }, [map, center, radius, selectedSchool]);
 
   return null;

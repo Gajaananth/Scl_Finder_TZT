@@ -1,6 +1,7 @@
 import { jsPDF } from 'jspdf';
 import type { SchoolWithDistance } from '../types/school';
 import { formatDistance } from './distance';
+import logoUrl from '../assets/logo.png';
 
 interface GeneratePdfOptions {
   applicantAddress: string;
@@ -13,12 +14,12 @@ interface GeneratePdfOptions {
  * Generates a clean, official, locally viewable PDF report
  * containing ONLY the applicant address and the verified nearest schools.
  */
-export function generateAdmissionReportPdf({
+export async function generateAdmissionReportPdf({
   applicantAddress,
   radiusMeters,
   schools,
   generatedDate,
-}: GeneratePdfOptions): void {
+}: GeneratePdfOptions): Promise<void> {
   const doc = new jsPDF({
     orientation: 'portrait',
     unit: 'mm',
@@ -40,20 +41,27 @@ export function generateAdmissionReportPdf({
       year: 'numeric',
     });
 
-  // Top header banner background
-  doc.setFillColor(21, 44, 107); // Brand Primary Navy (#152C6B)
+  // School crest and maroon/gold brand header
+  doc.setFillColor(127, 29, 29);
   doc.rect(margin, y, contentWidth, 24, 'F');
+  doc.setFillColor(244, 197, 66);
+  doc.rect(margin, y + 22, contentWidth, 2, 'F');
+
+  const logo = await loadLogoImage();
+  if (logo) {
+    doc.addImage(logo, 'PNG', margin + 4, y + 3, 18, 18);
+  }
 
   // School Title in Banner
   doc.setTextColor(255, 255, 255);
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(14);
-  doc.text("ST. CECILIA'S GIRLS' COLLEGE", margin + 6, y + 9);
+  doc.text("ST. CECILIA'S GIRLS' COLLEGE", margin + 26, y + 9);
 
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(9.5);
   doc.setTextColor(220, 230, 250);
-  doc.text('Grade 1 Admission - Nearest Schools Verification Report', margin + 6, y + 16);
+  doc.text('Grade 1 Admission - Nearest Schools Verification Report', margin + 26, y + 16);
 
   // Date on the right of banner
   doc.setFontSize(8.5);
@@ -62,10 +70,10 @@ export function generateAdmissionReportPdf({
   y += 29;
 
   // Applicant Address Box
-  doc.setFillColor(248, 250, 252); // slate-50
-  doc.setDrawColor(203, 213, 225); // slate-300
+  doc.setFillColor(255, 251, 235);
+  doc.setDrawColor(245, 158, 11);
   doc.setLineWidth(0.3);
-  doc.roundedRect(margin, y, contentWidth, 22, 2, 2, 'FD');
+  doc.roundedRect(margin, y, contentWidth, 30, 2, 2, 'FD');
 
   // Address label & value
   doc.setFont('helvetica', 'bold');
@@ -77,22 +85,21 @@ export function generateAdmissionReportPdf({
   doc.setFontSize(9);
   doc.setTextColor(51, 65, 85); // slate-700
   const cleanAddress = applicantAddress.trim() || 'Selected Location';
-  // Split address if too long
-  const addressLines = doc.splitTextToSize(cleanAddress, contentWidth - 60);
-  doc.text(addressLines, margin + 54, y + 6);
+  const addressLines = doc.splitTextToSize(cleanAddress, contentWidth - 8).slice(0, 2);
+  doc.text(addressLines, margin + 4, y + 11);
 
   // Radius & Total info
   doc.setFont('helvetica', 'bold');
-  doc.text('Verification Radius:', margin + 4, y + 15);
+  doc.text('Verification Radius:', margin + 4, y + 25);
   doc.setFont('helvetica', 'normal');
-  doc.text(formatDistance(radiusMeters), margin + 38, y + 15);
+  doc.text(formatDistance(radiusMeters), margin + 38, y + 25);
 
   doc.setFont('helvetica', 'bold');
-  doc.text('Total Schools Identified:', margin + 70, y + 15);
+  doc.text('Total Schools Identified:', margin + 70, y + 25);
   doc.setFont('helvetica', 'normal');
-  doc.text(String(schools.length), margin + 114, y + 15);
+  doc.text(String(schools.length), margin + 114, y + 25);
 
-  y += 28;
+  y += 36;
 
   // Section Header: Nearest Schools
   doc.setFont('helvetica', 'bold');
@@ -223,6 +230,15 @@ export function generateAdmissionReportPdf({
   // Download directly to local machine
   const filename = `St_Cecilias_Nearest_Schools_${dateStr.replace(/\s+/g, '_')}.pdf`;
   doc.save(filename);
+}
+
+function loadLogoImage(): Promise<HTMLImageElement | null> {
+  return new Promise((resolve) => {
+    const image = new Image();
+    image.onload = () => resolve(image);
+    image.onerror = () => resolve(null);
+    image.src = logoUrl;
+  });
 }
 
 function renderFooter(

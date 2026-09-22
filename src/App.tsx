@@ -76,18 +76,32 @@ export default function App() {
         });
 
         setSchools(processed);
-        // Default to the single nearest school on initial load
-        if (processed.length > 0) {
-          setSelectedSchoolId(processed[0].id);
+        // Start the map at the applicant and nearest in-radius school.
+        // St. Cecilia's remains first in the output, but must not pull the map
+        // away from the searched location when it is outside the radius.
+        const nearestInRadius = processed.find((school) => school.withinRadius);
+        if (nearestInRadius) {
+          setSelectedSchoolId(nearestInRadius.id);
+        } else if (processed.length > 0) {
+          setSelectedSchoolId(null);
         } else {
           setSelectedSchoolId(null);
         }
         setIsLoading(false);
 
         // 3. Asynchronously fetch driving distances for ALL schools inside radius
-        const insideRadiusSchools = processed.filter((s) => s.withinRadius);
-        if (insideRadiusSchools.length > 0) {
-          fetchDrivingDistances(location, insideRadiusSchools).then((enriched) => {
+        const ceciliaSchool = processed.find(
+          (school) => school.id === 'sch-001' || /st\.\s*cecilia/i.test(school.name)
+        );
+        const routingSchools = Array.from(
+          new Map(
+            [ceciliaSchool, ...processed.filter((school) => school.withinRadius)]
+              .filter((school): school is SchoolWithDistance => Boolean(school))
+              .map((school) => [school.id, school])
+          ).values()
+        );
+        if (routingSchools.length > 0) {
+          fetchDrivingDistances(location, routingSchools).then((enriched) => {
             const enrichedMap = new Map(enriched.map((e) => [e.id, e]));
             setSchools((current) =>
               current.map((item) => enrichedMap.get(item.id) ?? item)

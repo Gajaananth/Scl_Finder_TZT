@@ -72,12 +72,22 @@ const EXCLUSION_PATTERNS: RegExp[] = [
   /learning\s*cent(re|er)/i,
   /education(al)?\s*cent(re|er)/i,
   /education(al)?\s*hub/i,
+  /\bacademy\b/i,
+  /\binstitute\b/i,
+  /\bprivate\b/i,
+  /\binternational\b/i,
+  /\btraining\s*(centre|center|school|institute)\b/i,
+  /\btechnical\s*(college|institute|school)\b/i,
   /\buniversity\b/i,
   /\bcampus\b/i,
-  /\bpolytechnic\b/i,
   /teacher\s*training\s*college/i,
-  /college\s*of\s*education/i,
   /\bvidyapith/i,
+];
+
+const BOYS_ONLY_PATTERNS: RegExp[] = [
+  /\bboys?\b/i,
+  /\bmen'?s?\b/i,
+  /\bmale\b/i,
 ];
 
 export function isEligibleGovernmentSchool(
@@ -97,7 +107,12 @@ export function isEligibleGovernmentSchool(
     if (pattern.test(combined)) return false;
   }
 
-  if (tags['operator:type'] === 'private') return false;
+  if (BOYS_ONLY_PATTERNS.some((pattern) => pattern.test(combined))) return false;
+
+  if (['private', 'commercial'].includes((tags['operator:type'] || '').toLowerCase())) return false;
+  if (['private', 'commercial'].includes((tags.operator || '').toLowerCase())) return false;
+  if (['private', 'commercial'].includes((tags.ownership || '').toLowerCase())) return false;
+  if (['male', 'boys'].includes((tags.gender || '').toLowerCase())) return false;
   if (tags['school:type'] === 'international') return false;
   if (tags['school:type'] === 'private') return false;
   if (tags['isced:level'] === '0') return false;

@@ -18,6 +18,12 @@ export interface School {
   type: SchoolType;
   zone: string;
   contactPhone?: string;
+  educationDivision?: string;
+  yearSpan?: string;
+  hasGrade1?: boolean;
+  gender?: 'Girls' | 'Mixed' | string;
+  source?: string;
+  isLiveOsm?: boolean;
 }
 
 export interface SchoolWithDistance extends School {

@@ -47,7 +47,7 @@ export default function SchoolCard({ school, index, isSelected, onClick }: Schoo
           : 'border-slate-100 bg-white hover:bg-slate-50/50'}
       `}
       style={{ animationDelay: `${index * 60}ms` }}
-      aria-label={`${school.name} — ${formatDistance(school.straightLineDistance)}`}
+      aria-label={`${school.name}: ${formatDistance(school.straightLineDistance)}`}
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex-1 min-w-0">
@@ -75,6 +75,16 @@ export default function SchoolCard({ school, index, isSelected, onClick }: Schoo
                 {m}
               </span>
             ))}
+            {school.yearSpan && (
+              <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-slate-100 text-slate-700">
+                {school.yearSpan}
+              </span>
+            )}
+            {school.isLiveOsm && (
+              <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-orange-100 text-orange-800">
+                Community-sourced, unverified gender and grade
+              </span>
+            )}
           </div>
         </div>
 

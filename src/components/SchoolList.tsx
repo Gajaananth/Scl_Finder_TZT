@@ -59,7 +59,7 @@ export default function SchoolList({
     <div className="flex flex-col h-full">
       {/* Header */}
       <div className="sticky top-0 bg-white/80 backdrop-blur-md z-10 px-4 py-3 border-b border-slate-100">
-        <div className="flex items-center justify-between gap-3">
+          <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <h2 className="text-lg font-bold text-slate-800">
               {t('resultsTitle')}
@@ -78,7 +78,7 @@ export default function SchoolList({
             )}
           </div>
 
-          <div className="flex items-center gap-1.5 shrink-0">
+          <div className="flex flex-wrap items-center gap-1.5 shrink-0 max-w-full">
             {onDownloadPDF && (
               <button
                 type="button"

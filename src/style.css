@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --brand-primary: #1E3A8A;       /* PLACEHOLDER — replace with St. Cecilia's actual school color once known */
+  --brand-primary: #1E3A8A;       /* PLACEHOLDER: replace with St. Cecilia's actual school color once known */
   --brand-primary-dark: #152C6B;  /* a ~15% darker shade of the above, for hover states */
   --brand-primary-light: #EEF2FF; /* a ~90% lightened tint, for subtle backgrounds/pills */
 }
@@ -19,6 +19,23 @@
     background-color: #f8fafc;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  body {
+    min-width: 0;
+    overflow-x: hidden;
+  }
+
+  button,
+  input,
+  select {
+    max-width: 100%;
+  }
+
+  #root {
+    min-height: 100svh;
+    overflow-x: hidden;
   }
 }
 
@@ -140,5 +157,41 @@
 @media screen {
   .print-only {
     display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  header h1 {
+    max-width: min(58vw, 230px);
+  }
+
+  .map-panel {
+    height: 50vh;
+    min-height: 340px;
+  }
+
+  .school-list-panel {
+    height: auto;
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 399px) {
+  header .text-xs {
+    font-size: 0.6875rem;
+  }
+
+  header button,
+  header [role='button'] {
+    min-width: 0;
+  }
+
+  .map-panel {
+    height: 48vh;
+    min-height: 300px;
+  }
+
+  .school-list-panel {
+    min-height: 480px;
   }
 }

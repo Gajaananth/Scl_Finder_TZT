@@ -16,6 +16,12 @@ interface NominatimResult {
   display_name: string;
   lat: string;
   lon: string;
+  address?: {
+    suburb?: string;
+    village?: string;
+    neighbourhood?: string;
+    town?: string;
+  };
 }
 
 async function fetchWithTimeout(
@@ -185,7 +191,7 @@ export default function AddressSearch({ onSearch, isLoading }: AddressSearchProp
           setError(null);
           if (simplified) {
             setSimplificationNote(
-              'Showing results for a simplified version of your search — refine below if needed'
+              'Showing results for a simplified version of your search. Refine below if needed.'
             );
           } else {
             setSimplificationNote(null);
@@ -230,6 +236,13 @@ export default function AddressSearch({ onSearch, isLoading }: AddressSearchProp
     setError(null);
     setSimplificationNote(null);
   };
+
+  const getSuggestionLabel = (item: NominatimResult): string =>
+    item.address?.suburb ||
+    item.address?.village ||
+    item.address?.neighbourhood ||
+    item.address?.town ||
+    item.display_name;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -338,7 +351,16 @@ export default function AddressSearch({ onSearch, isLoading }: AddressSearchProp
                     className="w-full text-left px-4 py-3 hover:bg-brand-light text-sm text-slate-700 flex items-start gap-2.5 transition-colors cursor-pointer"
                   >
                     <span className="text-brand mt-0.5 shrink-0">📍</span>
-                    <span className="line-clamp-2">{item.display_name}</span>
+                    <span className="min-w-0">
+                      <span className="block font-semibold text-slate-800 truncate">
+                        {getSuggestionLabel(item)}
+                      </span>
+                      {getSuggestionLabel(item) !== item.display_name && (
+                        <span className="block text-xs text-slate-500 line-clamp-2 mt-0.5">
+                          {item.display_name}
+                        </span>
+                      )}
+                    </span>
                   </button>
                 </li>
               ))}

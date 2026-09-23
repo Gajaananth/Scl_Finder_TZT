@@ -76,7 +76,7 @@ export default function LoginScreen() {
                 St. Cecilia&rsquo;s Girls&rsquo; College
               </h1>
               <p className="text-sm text-slate-500 mt-1">
-                Grade 1 Admission — School Finder
+                Grade 1 Admission: School Finder
               </p>
             </div>
 
@@ -116,7 +116,7 @@ export default function LoginScreen() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="staff@stcecilias.lk"
+                  placeholder="Enter your email address"
                   required
                   autoComplete="email"
                   className="w-full px-4 py-3 text-sm border-2 border-slate-200 rounded-xl bg-white text-slate-800

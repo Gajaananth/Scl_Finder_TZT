@@ -1,284 +1,1386 @@
 [
   {
-    "name": "Kallady Ramakrishna Mission Vidyalayam",
-    "address": "Lady Manning Drive, Kallady, Batticaloa, Sri Lanka",
-    "query": "Kallady Ramakrishna Mission Vidyalayam, Lady Manning Drive, Kallady, Batticaloa, Sri Lanka",
-    "reason": "no match found"
+    "name": "ERAVUR TAMIL MAHA VIDYALAYAM",
+    "address": "CHENKALADY",
+    "query": "ERAVUR TAMIL MAHA VIDYALAYAM, CHENKALADY",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "Aanaipanthy Sri Sithy Vinayagar Vidyalayam",
-    "address": "Aanaipanthy, Batticaloa, Sri Lanka",
-    "query": "Aanaipanthy Sri Sithy Vinayagar Vidyalayam, Aanaipanthy, Batticaloa, Sri Lanka",
-    "reason": "no match found"
+    "name": "ERAVUR VIPULANANDA VIDYALAYAM ERAVUR 5",
+    "address": "CHENKALADY",
+    "query": "ERAVUR VIPULANANDA VIDYALAYAM ERAVUR 5, CHENKALADY",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "St. Mary's Convent School",
-    "address": "Convent Road, Puliyanthivu, Batticaloa, Sri Lanka",
-    "query": "St. Mary's Convent School, Convent Road, Puliyanthivu, Batticaloa, Sri Lanka",
-    "reason": "no match found"
+    "name": "IYANKERNY TAMIL VIDYALAYAM",
+    "address": "IYANKERNY CHENKALADY",
+    "query": "IYANKERNY TAMIL VIDYALAYAM, IYANKERNY CHENKALADY",
+    "reason": "request failed"
   },
   {
-    "name": "Kallady Veloor Sri Sakthi Vidyalayam",
-    "address": "Veloor, Kallady, Batticaloa, Sri Lanka",
-    "query": "Kallady Veloor Sri Sakthi Vidyalayam, Veloor, Kallady, Batticaloa, Sri Lanka",
-    "reason": "no match found"
+    "name": "KUDIYIRUPPU KANISTA VIDYALAYAM",
+    "address": "ARUMUKATHAN KUDIYIRUPPU THANNAMUNAI",
+    "query": "KUDIYIRUPPU KANISTA VIDYALAYAM, ARUMUKATHAN KUDIYIRUPPU THANNAMUNAI",
+    "reason": "school match is 10.2km from its stated zone — likely wrong match",
+    "returnedCoordinate": {
+      "lat": 7.7700691,
+      "lng": 81.6185689
+    },
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "Kattankudy Central College (National School)",
-    "address": "New Road, Kattankudy, Sri Lanka",
-    "query": "Kattankudy Central College (National School), New Road, Kattankudy, Sri Lanka",
-    "reason": "no match found"
+    "name": "MYLAMBAVELY SRI VIGNESWARA VIDYALAYA MYLAMBAVELY",
+    "address": "THANNAMUNAI",
+    "query": "MYLAMBAVELY SRI VIGNESWARA VIDYALAYA MYLAMBAVELY, THANNAMUNAI",
+    "reason": "request failed"
   },
   {
-    "name": "Meera Balika Maha Vidyalaya",
-    "address": "Beach Road, Kattankudy, Sri Lanka",
-    "query": "Meera Balika Maha Vidyalaya, Beach Road, Kattankudy, Sri Lanka",
-    "reason": "no match found"
+    "name": "MYLAMPAVELY VIPULANANDA VIDYALAYAM",
+    "address": "THANNAMUNAI",
+    "query": "MYLAMPAVELY VIPULANANDA VIDYALAYAM, THANNAMUNAI",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "Al-Hira Maha Vidyalaya",
-    "address": "Division 6, Kattankudy, Sri Lanka",
-    "query": "Al-Hira Maha Vidyalaya, Division 6, Kattankudy, Sri Lanka",
-    "reason": "no match found"
+    "name": "SAVUKKADY BARATHY VIDYALAYAM",
+    "address": "SAVUKKADY THANNAMUNAI",
+    "query": "SAVUKKADY BARATHY VIDYALAYAM, SAVUKKADY THANNAMUNAI",
+    "reason": "request failed"
   },
   {
-    "name": "Arayampathy Ramakrishna Mission Maha Vidyalayam",
-    "address": "Main Road, Arayampathy, Sri Lanka",
-    "query": "Arayampathy Ramakrishna Mission Maha Vidyalayam, Main Road, Arayampathy, Sri Lanka",
-    "reason": "no match found"
+    "name": "ST. JOSEPH'S COLLEGE",
+    "address": "THANNAMUNAI. BATTICALOA",
+    "query": "ST. JOSEPH'S COLLEGE, THANNAMUNAI. BATTICALOA",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "Eravur Al-Ashraq National School",
-    "address": "Main Street, Eravur, Sri Lanka",
-    "query": "Eravur Al-Ashraq National School, Main Street, Eravur, Sri Lanka",
-    "reason": "no match found"
+    "name": "THALAWAI VIGNAESWARA VIDYALAYAM",
+    "address": "THALAWAT CHENKALADY",
+    "query": "THALAWAI VIGNAESWARA VIDYALAYAM, THALAWAT CHENKALADY",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "Chenkalady Central College",
-    "address": "Badulla Road, Chenkalady, Sri Lanka",
-    "query": "Chenkalady Central College, Badulla Road, Chenkalady, Sri Lanka",
-    "reason": "no match found"
+    "name": "AMIRTHAKALY SRI SITHY VINAYAGAR VIDYALAYAM",
+    "address": "AMIRTHAKALY BATTICALOA",
+    "query": "AMIRTHAKALY SRI SITHY VINAYAGAR VIDYALAYAM, AMIRTHAKALY BATTICALOA",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "Kommathurai Sri Murugan Vidyalayam",
-    "address": "Kommathurai, Chenkalady, Sri Lanka",
-    "query": "Kommathurai Sri Murugan Vidyalayam, Kommathurai, Chenkalady, Sri Lanka",
-    "reason": "no match found"
+    "name": "ANAIPANTHY HINDU LADIES COLLEGE",
+    "address": "HOSPITAL ROAD BATTICALOA",
+    "query": "ANAIPANTHY HINDU LADIES COLLEGE, HOSPITAL ROAD BATTICALOA",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "Kokkadichcholai Sri Ramakrishna Vidyalayam",
-    "address": "Main Road, Kokkadichcholai, Sri Lanka",
-    "query": "Kokkadichcholai Sri Ramakrishna Vidyalayam, Main Road, Kokkadichcholai, Sri Lanka",
-    "reason": "no match found"
+    "name": "ARASADY PILLAYAR KOVIL ROAD WARD 06 KANISHTA VIDYALAYAM",
+    "address": "ARASADY PILLAYAR KOVIL ROAD BATTICALOA",
+    "query": "ARASADY PILLAYAR KOVIL ROAD WARD 06 KANISHTA VIDYALAYAM, ARASADY PILLAYAR KOVIL ROAD BATTICALOA",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "Batticaloa Hindu College National School",
-    "address": "Thamaraikeni, Batticaloa District, Sri Lanka",
-    "query": "Batticaloa Hindu College National School, Thamaraikeni, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "ARUNOTHAYA VIDYALAYAM",
+    "address": "RASAIRO LANE BATTICALOA",
+    "query": "ARUNOTHAYA VIDYALAYAM, RASAIRO LANE BATTICALOA",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "Oddamavady Central College",
-    "address": "Oddamavady, Batticaloa District, Sri Lanka",
-    "query": "Oddamavady Central College, Oddamavady, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "BATTICALOA VIVEKANADA LADIES' COLLEGE KALLADY UPPODAI",
+    "address": "BATTICALOA",
+    "query": "BATTICALOA VIVEKANADA LADIES' COLLEGE KALLADY UPPODAI, BATTICALOA",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "An-Nassar Vidyalaya",
-    "address": "Main Street, Kattankudy, Batticaloa District, Sri Lanka",
-    "query": "An-Nassar Vidyalaya, Main Street, Kattankudy, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "HINDU COLLEGE",
+    "address": "RAILWAY STATION ROAD BATTICALOA",
+    "query": "HINDU COLLEGE, RAILWAY STATION ROAD BATTICALOA",
+    "reason": "request failed"
   },
   {
-    "name": "Anver Vidyalaya",
-    "address": "New Kattankudy, Batticaloa District, Sri Lanka",
-    "query": "Anver Vidyalaya, New Kattankudy, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "JOSEPH VAZ VIDYALAYAM THANDAVANVELY",
+    "address": "BATTICALOA.",
+    "query": "JOSEPH VAZ VIDYALAYAM THANDAVANVELY, BATTICALOA.",
+    "reason": "request failed"
   },
   {
-    "name": "Eravur Tamil Maha Vidyalayam",
-    "address": "Chenkalady / Eravur, Batticaloa District, Sri Lanka",
-    "query": "Eravur Tamil Maha Vidyalayam, Chenkalady / Eravur, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "KALLADY MUGATHUWARAM VIPULANANDA VIDYALAYAM",
+    "address": "KALLADY BATTICALOA",
+    "query": "KALLADY MUGATHUWARAM VIPULANANDA VIDYALAYAM, KALLADY BATTICALOA",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "St. Theresa's Convent",
-    "address": "Batticaloa Town, Batticaloa District, Sri Lanka",
-    "query": "St. Theresa's Convent, Batticaloa Town, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "KALLADY VELOOR SRI SHAKTHI VIDYALAYAM KALLADY VELOOR",
+    "address": "BATTICALOA",
+    "query": "KALLADY VELOOR SRI SHAKTHI VIDYALAYAM KALLADY VELOOR, BATTICALOA",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "Puliyadimunai Government Tamil Mixed School",
-    "address": "Sathurukkondan, Batticaloa District, Sri Lanka",
-    "query": "Puliyadimunai Government Tamil Mixed School, Sathurukkondan, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "KALLADY VINAYAGAR VIDYALAYAM",
+    "address": "OLD KALMUNAI ROAD KALLADY BATTICALOA",
+    "query": "KALLADY VINAYAGAR VIDYALAYAM, OLD KALMUNAI ROAD KALLADY BATTICALOA",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "Puthumuhathuwaram St. Ignatious Vidyalayam",
-    "address": "Dutchbar, Batticaloa District, Sri Lanka",
-    "query": "Puthumuhathuwaram St. Ignatious Vidyalayam, Dutchbar, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "KARUVEPPANKERNEY VIPULANANDA COLLEGE KARUVEPPANKERNEY",
+    "address": "BATTICALOA",
+    "query": "KARUVEPPANKERNEY VIPULANANDA COLLEGE KARUVEPPANKERNEY, BATTICALOA",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "Punitha Annammal Tamil Vidyalayam",
-    "address": "Veechukkalmunai, Batticaloa District, Sri Lanka",
-    "query": "Punitha Annammal Tamil Vidyalayam, Veechukkalmunai, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "KODDAIMUNAI KANISHTA VIDYALAYAM RAILWAY STATION ROAD",
+    "address": "BATTICALOA",
+    "query": "KODDAIMUNAI KANISHTA VIDYALAYAM RAILWAY STATION ROAD, BATTICALOA",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "Semmanodai Al-Humra Vidyalaya",
-    "address": "Semmanodai, Batticaloa District, Sri Lanka",
-    "query": "Semmanodai Al-Humra Vidyalaya, Semmanodai, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "KOKKUVIL VIGNESWARA VIDYALAYAM KOKKUVIL",
+    "address": "BATTICALOA",
+    "query": "KOKKUVIL VIGNESWARA VIDYALAYAM KOKKUVIL, BATTICALOA",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "Paper Town Al-Garibah Muslim Vidyalayam",
-    "address": "Paper Town, Batticaloa District, Sri Lanka",
-    "query": "Paper Town Al-Garibah Muslim Vidyalayam, Paper Town, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "MANCHANTHODUWAI BARATHI VIDYALAYAM",
+    "address": "MANCHANTHODUWAI BATTICALOA",
+    "query": "MANCHANTHODUWAI BARATHI VIDYALAYAM, MANCHANTHODUWAI BATTICALOA",
+    "reason": "request failed"
   },
   {
-    "name": "Kattankudy Anver Vidyalayam",
-    "address": "New Kattankudy, Batticaloa District, Sri Lanka",
-    "query": "Kattankudy Anver Vidyalayam, New Kattankudy, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "MANCHANTHODUWAI SARATHA VIDYALAYAM MANCHANTHODUWAI",
+    "address": "BATTICALOA",
+    "query": "MANCHANTHODUWAI SARATHA VIDYALAYAM MANCHANTHODUWAI, BATTICALOA",
+    "reason": "request failed"
   },
   {
-    "name": "New Kattankudy Al-Minnah Vidyalayam",
-    "address": "New Kattankudy, Batticaloa District, Sri Lanka",
-    "query": "New Kattankudy Al-Minnah Vidyalayam, New Kattankudy, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "NAVALADY KANISHTA VIDYALAYAM",
+    "address": "NAVALADY BATTICALOA",
+    "query": "NAVALADY KANISHTA VIDYALAYAM, NAVALADY BATTICALOA",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "Arunothaya Vidyalayam",
-    "address": "Rasairo Lane, Batticaloa, Batticaloa District, Sri Lanka",
-    "query": "Arunothaya Vidyalayam, Rasairo Lane, Batticaloa, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "NAVALADY NAMAGAL VIDYALAYAM",
+    "address": "THIRAIMADU BATTICALOA",
+    "query": "NAVALADY NAMAGAL VIDYALAYAM, THIRAIMADU BATTICALOA",
+    "reason": "request failed"
   },
   {
-    "name": "Thandavanvely St. Joseph's Vidyalayam",
-    "address": "Thandavanvely, Batticaloa District, Sri Lanka",
-    "query": "Thandavanvely St. Joseph's Vidyalayam, Thandavanvely, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "NAVATKERNY SRI KANNAHI VIDYALAYAM NAVATKERNY",
+    "address": "BATTICALOA",
+    "query": "NAVATKERNY SRI KANNAHI VIDYALAYAM NAVATKERNY, BATTICALOA",
+    "reason": "request failed"
   },
   {
-    "name": "Sinna Urani Saraswathy Vidyalayam",
-    "address": "Sinna Urani, Batticaloa District, Sri Lanka",
-    "query": "Sinna Urani Saraswathy Vidyalayam, Sinna Urani, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "NAVATKUDHA THARMARATNAM VIDYALAYAM",
+    "address": "OLD KALMUNAI ROAD NAVATKUDAH BATTICALOA",
+    "query": "NAVATKUDHA THARMARATNAM VIDYALAYAM, OLD KALMUNAI ROAD NAVATKUDAH BATTICALOA",
+    "reason": "request failed"
   },
   {
-    "name": "Urugam Government Muslim School",
-    "address": "Urugam, Batticaloa District, Sri Lanka",
-    "query": "Urugam Government Muslim School, Urugam, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "PALAMEENMADU VIGNESWARA VIDYALAYAM PALAMEENMADU",
+    "address": "BATTICALOA",
+    "query": "PALAMEENMADU VIGNESWARA VIDYALAYAM PALAMEENMADU, BATTICALOA",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "Kalasoori Vinayakamoorthy Vidyalayam",
-    "address": "Pankudawely, Batticaloa District, Sri Lanka",
-    "query": "Kalasoori Vinayakamoorthy Vidyalayam, Pankudawely, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "PILLAYARADY NALLIAH VIDYALAYAM PILLAYARADY",
+    "address": "BATTICALOA.",
+    "query": "PILLAYARADY NALLIAH VIDYALAYAM PILLAYARADY, BATTICALOA.",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "Vakarai Maha Vidyalayam",
-    "address": "Vakarai, Batticaloa District, Sri Lanka",
-    "query": "Vakarai Maha Vidyalayam, Vakarai, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "PULIYADIMUNAI GOVERNMENT TAMIL MIXED SCHOOL SATHURUKKONDAN",
+    "address": "BATTICALOA",
+    "query": "PULIYADIMUNAI GOVERNMENT TAMIL MIXED SCHOOL SATHURUKKONDAN, BATTICALOA",
+    "reason": "request failed"
   },
   {
-    "name": "Kathiraveli Vigneshwara Vidyalayam",
-    "address": "Kathiraveli, Batticaloa District, Sri Lanka",
-    "query": "Kathiraveli Vigneshwara Vidyalayam, Kathiraveli, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "PUNITHA ANNAMMAL TAMIL VIDYALAYAM VEECHUKALMUNAI",
+    "address": "BATTICALOA",
+    "query": "PUNITHA ANNAMMAL TAMIL VIDYALAYAM VEECHUKALMUNAI, BATTICALOA",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "Vammivaddavan Vidyalayam",
-    "address": "Vammivaddavan, Batticaloa District, Sri Lanka",
-    "query": "Vammivaddavan Vidyalayam, Vammivaddavan, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "PUTHUMUHATHUWARAM ST. IGNATIOUS VIDYALAYAM DUTCHBAR",
+    "address": "KALLADY, BATTICALOA",
+    "query": "PUTHUMUHATHUWARAM ST. IGNATIOUS VIDYALAYAM DUTCHBAR, KALLADY, BATTICALOA",
+    "reason": "request failed"
   },
   {
-    "name": "Kinnaiyadi Saraswathy Vidyalayam",
-    "address": "Kinnaiyadi, Batticaloa District, Sri Lanka",
-    "query": "Kinnaiyadi Saraswathy Vidyalayam, Kinnaiyadi, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "PUTHUR VIGNESWARA VIDYALAYAM",
+    "address": "PUTHUNAKAR BATTICALOA",
+    "query": "PUTHUR VIGNESWARA VIDYALAYAM, PUTHUNAKAR BATTICALOA",
+    "reason": "request failed"
   },
   {
-    "name": "Sathuliya Vidyalayam",
-    "address": "Sathuliya, Batticaloa District, Sri Lanka",
-    "query": "Sathuliya Vidyalayam, Sathuliya, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "SRI MAMANGESWARAR VIDYALAYAM MAMANGAM",
+    "address": "BATTICALOA",
+    "query": "SRI MAMANGESWARAR VIDYALAYAM MAMANGAM, BATTICALOA",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "Mankerni Roman Catholic Tamil Mixed School",
-    "address": "Mankerni, Batticaloa District, Sri Lanka",
-    "query": "Mankerni Roman Catholic Tamil Mixed School, Mankerni, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "ST. SEBESTIAN TAMIL VIDYALAYAM SEBESTIAN STREET",
+    "address": "KODDAMUNAI, BATTICALOA",
+    "query": "ST. SEBESTIAN TAMIL VIDYALAYAM SEBESTIAN STREET, KODDAMUNAI, BATTICALOA",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "Panichankerni Tamil Vidyalayam",
-    "address": "Panichankerni, Batticaloa District, Sri Lanka",
-    "query": "Panichankerni Tamil Vidyalayam, Panichankerni, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "ST. THERESA'S GIRL'S VIDYALAYAM SINNA UPPODAI",
+    "address": "BATTICALOA",
+    "query": "ST. THERESA'S GIRL'S VIDYALAYAM SINNA UPPODAI, BATTICALOA",
+    "reason": "request failed"
   },
   {
-    "name": "Brainthuraichenai Azhar Vidyalaya",
-    "address": "Brainthuraichenai, Batticaloa District, Sri Lanka",
-    "query": "Brainthuraichenai Azhar Vidyalaya, Brainthuraichenai, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "THIRAIMADU TAMIL VIDYALAYAM THIRAIMADU",
+    "address": "BATTICALOA",
+    "query": "THIRAIMADU TAMIL VIDYALAYAM THIRAIMADU, BATTICALOA",
+    "reason": "request failed"
   },
   {
-    "name": "Jayanthiyaya Ahamed Hiras Vidyalayam",
-    "address": "Jayanthiyaya, Batticaloa District, Sri Lanka",
-    "query": "Jayanthiyaya Ahamed Hiras Vidyalayam, Jayanthiyaya, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "URANI SARASWATHY VIDYALAYAM PERIYA URANY",
+    "address": "BATTICALOA",
+    "query": "URANI SARASWATHY VIDYALAYAM PERIYA URANY, BATTICALOA",
+    "reason": "request failed"
   },
   {
-    "name": "Kakithanagar Millath Vidyalaya",
-    "address": "Kakithanagar, Batticaloa District, Sri Lanka",
-    "query": "Kakithanagar Millath Vidyalaya, Kakithanagar, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "VALAIYIRAVU METHODIST MISSION TAMIL MIXED SCHOOL",
+    "address": "BATTICALOA",
+    "query": "VALAIYIRAVU METHODIST MISSION TAMIL MIXED SCHOOL, BATTICALOA",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "Kovilporathivu Vivekananda Maha Vidyalayam",
-    "address": "Kovilporathivu, Batticaloa District, Sri Lanka",
-    "query": "Kovilporathivu Vivekananda Maha Vidyalayam, Kovilporathivu, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "ARAIPATTAI SUBRAMANIYAM VIDYALAYAM",
+    "address": "ARAYAMPATHY-01",
+    "query": "ARAIPATTAI SUBRAMANIYAM VIDYALAYAM, ARAYAMPATHY-01",
+    "reason": "request failed"
   },
   {
-    "name": "Pattipalai Maha Vidyalayam",
-    "address": "Pattipalai, Batticaloa District, Sri Lanka",
-    "query": "Pattipalai Maha Vidyalayam, Pattipalai, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "ARAIYAMPATHY R.K.M.M.V ARAIYAMPATHY",
+    "address": "ARAIYAMPATHY R.K.M.M.V ARAIYAMPATHY",
+    "query": "ARAIYAMPATHY R.K.M.M.V ARAIYAMPATHY, ARAIYAMPATHY R.K.M.M.V ARAIYAMPATHY",
+    "reason": "request failed"
   },
   {
-    "name": "Kakachivattai Tamil Vidyalayam",
-    "address": "Kakachivattai, Batticaloa District, Sri Lanka",
-    "query": "Kakachivattai Tamil Vidyalayam, Kakachivattai, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "ARAYAMPATHI SIVAMANI VIDYALAYAM",
+    "address": "OLD KALMUNAI ROAD ARAYAMPATHI 03",
+    "query": "ARAYAMPATHI SIVAMANI VIDYALAYAM, OLD KALMUNAI ROAD ARAYAMPATHI 03",
+    "reason": "request failed"
   },
   {
-    "name": "Thambiluvil Madhya Maha Vidyalayam",
-    "address": "Thambiluvil, Batticaloa District, Sri Lanka",
-    "query": "Thambiluvil Madhya Maha Vidyalayam, Thambiluvil, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "ARAYAMPATHY NOTARY MOOTHATHAMBY VIDYALAYAM",
+    "address": "ARAYAMPATHY",
+    "query": "ARAYAMPATHY NOTARY MOOTHATHAMBY VIDYALAYAM, ARAYAMPATHY",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "Cheddipalayam Maha Vidyalayam",
-    "address": "Cheddipalayam, Batticaloa District, Sri Lanka",
-    "query": "Cheddipalayam Maha Vidyalayam, Cheddipalayam, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "KIRANKULAM SARASWATHY VIDYALAYAM",
+    "address": "MAIN ROAD KIRANKUAM",
+    "query": "KIRANKULAM SARASWATHY VIDYALAYAM, MAIN ROAD KIRANKUAM",
+    "reason": "request failed"
   },
   {
-    "name": "Eruvil Kannaki Maha Vidyalayam",
-    "address": "Eruvil, Batticaloa District, Sri Lanka",
-    "query": "Eruvil Kannaki Maha Vidyalayam, Eruvil, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "KIRANKULAM VISHNU VIDYALAYAM",
+    "address": "KIRANKULAM",
+    "query": "KIRANKULAM VISHNU VIDYALAYAM, KIRANKULAM",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
   },
   {
-    "name": "Thetativu Maha Vidyalayam",
-    "address": "Thetativu, Batticaloa District, Sri Lanka",
-    "query": "Thetativu Maha Vidyalayam, Thetativu, Batticaloa District, Sri Lanka",
-    "reason": "no match found"
+    "name": "KOVILKULAM VINAYAGAR VIDYALAYAM MAIN STREET KOVILKULAM",
+    "address": "ARAYAMPATHY",
+    "query": "KOVILKULAM VINAYAGAR VIDYALAYAM MAIN STREET KOVILKULAM, ARAYAMPATHY",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "MAVILANGATHURAI VIGNESWARA VIDYALAYAM",
+    "address": "MAVILANGATHURAI ARAYAMPATHY",
+    "query": "MAVILANGATHURAI VIGNESWARA VIDYALAYAM, MAVILANGATHURAI ARAYAMPATHY",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "NAVARETNARAJAH VIDYALAYAM",
+    "address": "ARAYAMPATHY EAST ARAYAMPATHY",
+    "query": "NAVARETNARAJAH VIDYALAYAM, ARAYAMPATHY EAST ARAYAMPATHY",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "PUTHUKUDIYIRUPPU KANNAKI MAHA VIDYALAYAM",
+    "address": "ARAYAMPATHY",
+    "query": "PUTHUKUDIYIRUPPU KANNAKI MAHA VIDYALAYAM, ARAYAMPATHY",
+    "reason": "request failed"
+  },
+  {
+    "name": "SELVANAGAR SIVAA VIDYALAYAM",
+    "address": "ARAYAMPATHY",
+    "query": "SELVANAGAR SIVAA VIDYALAYAM, ARAYAMPATHY",
+    "reason": "request failed"
+  },
+  {
+    "name": "THALANKUDAH R.C.T.M.SCHOOL THALANKUDAH-03",
+    "address": "ARAYAMPATHY.",
+    "query": "THALANKUDAH R.C.T.M.SCHOOL THALANKUDAH-03, ARAYAMPATHY.",
+    "reason": "request failed"
+  },
+  {
+    "name": "THALANKUDHA SRIVINAYAKAR VIDYALAYAM",
+    "address": "THALANKUDHA ARAYAMPATHY",
+    "query": "THALANKUDHA SRIVINAYAKAR VIDYALAYAM, THALANKUDHA ARAYAMPATHY",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "THARMAPURAM THARMARETNAM VIDYALAYAM",
+    "address": "KIRANKULAM-8 KIRANKULAM",
+    "query": "THARMAPURAM THARMARETNAM VIDYALAYAM, KIRANKULAM-8 KIRANKULAM",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "AL-MUNEERA BALIKA MAHA VIDYALAYA MAIN STREET",
+    "address": "ERAVUR",
+    "query": "AL-MUNEERA BALIKA MAHA VIDYALAYA MAIN STREET, ERAVUR",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "ARAFA VIDYALAYAM",
+    "address": "ERAVUR",
+    "query": "ARAFA VIDYALAYAM, ERAVUR",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "BASHEER SEGUDAWOOD VIDYALAYAM MEERAKERNY",
+    "address": "ERAVUR",
+    "query": "BASHEER SEGUDAWOOD VIDYALAYAM MEERAKERNY, ERAVUR",
+    "reason": "request failed"
+  },
+  {
+    "name": "DR.AHAMED FAREED VIDYALAYA R.C.ROAD",
+    "address": "ERAVUR-06",
+    "query": "DR.AHAMED FAREED VIDYALAYA R.C.ROAD, ERAVUR-06",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "DR.BADIUDIN MAHMOOD VIDYALAYA THAIKKA ROAD",
+    "address": "ERAVUR 01",
+    "query": "DR.BADIUDIN MAHMOOD VIDYALAYA THAIKKA ROAD, ERAVUR 01",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "ERAVUR AL-ASHRAF VIDYALAYA HISBULLAH NAGAR",
+    "address": "MICHNAGAR, ERAVUR",
+    "query": "ERAVUR AL-ASHRAF VIDYALAYA HISBULLAH NAGAR, MICHNAGAR, ERAVUR",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "ERAVUR AL-AZHAR GIRLS HIGH SCHOOL KATTUPALLI ROAD",
+    "address": "ERAVUR",
+    "query": "ERAVUR AL-AZHAR GIRLS HIGH SCHOOL KATTUPALLI ROAD, ERAVUR",
+    "reason": "request failed"
+  },
+  {
+    "name": "ERAVUR AL-JUFFRIYA VIDYALYA PUNNAKKUDAH ROAD",
+    "address": "ERAVUR 03",
+    "query": "ERAVUR AL-JUFFRIYA VIDYALYA PUNNAKKUDAH ROAD, ERAVUR 03",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "ERAVUR AMEER ALI VIDYALAYA HITHYATH NAGAR",
+    "address": "ERAVUR",
+    "query": "ERAVUR AMEER ALI VIDYALAYA HITHYATH NAGAR, ERAVUR",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "IYANKERNY ABDUL CADER VIDYALAYA IYANKERNY",
+    "address": "ERAVUR",
+    "query": "IYANKERNY ABDUL CADER VIDYALAYA IYANKERNY, ERAVUR",
+    "reason": "request failed"
+  },
+  {
+    "name": "IYENERNY HISBULLAH VIDYALAYAM",
+    "address": "ERAVUR",
+    "query": "IYENERNY HISBULLAH VIDYALAYAM, ERAVUR",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "MICHNAGAR ILMA VIDYALAYAM",
+    "address": "ERAVUR",
+    "query": "MICHNAGAR ILMA VIDYALAYAM, ERAVUR",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "RUGAM AL-AMAN VIDYALAYA MUHAJIRIN VILLAGE",
+    "address": "MEERAKERNI, ERAVUR",
+    "query": "RUGAM AL-AMAN VIDYALAYA MUHAJIRIN VILLAGE, MEERAKERNI, ERAVUR",
+    "reason": "request failed"
+  },
+  {
+    "name": "RUGAM SUBAIR HAJIYAR VIDYALAYA PUTHUR",
+    "address": "RUGAM",
+    "query": "RUGAM SUBAIR HAJIYAR VIDYALAYA PUTHUR, RUGAM",
+    "reason": "request failed"
+  },
+  {
+    "name": "THAMARAIKERNY ZAHIR MOULANA VIDYALAYAM",
+    "address": "ERAVUR",
+    "query": "THAMARAIKERNY ZAHIR MOULANA VIDYALAYAM, ERAVUR",
+    "reason": "request failed"
+  },
+  {
+    "name": "AL-HASANATH VIDYALAYAM",
+    "address": "KATTANKUDY",
+    "query": "AL-HASANATH VIDYALAYAM, KATTANKUDY",
+    "reason": "request failed"
+  },
+  {
+    "name": "AL-IQBAL VIDYALAYA RIZVI TOWN",
+    "address": "NEW KATTANKUDY",
+    "query": "AL-IQBAL VIDYALAYA RIZVI TOWN, NEW KATTANKUDY",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "ASH-SHUHADHA VIDYALAYA F.C ROAD",
+    "address": "KATTANKUDY 02",
+    "query": "ASH-SHUHADHA VIDYALAYA F.C ROAD, KATTANKUDY 02",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "DHARUSSALAM VIDYALAM KATTANKUDY",
+    "address": "DHARUSSALAM VIDYALAM KATTANKUDY",
+    "query": "DHARUSSALAM VIDYALAM KATTANKUDY, DHARUSSALAM VIDYALAM KATTANKUDY",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "FIRTHOUS VIDYALAYAM",
+    "address": "KATTANKUDY",
+    "query": "FIRTHOUS VIDYALAYAM, KATTANKUDY",
+    "reason": "request failed"
+  },
+  {
+    "name": "HAIRATH VIDYALAYA",
+    "address": "KATTANKUDY DEEN ROAD, KATTANKUDY",
+    "query": "HAIRATH VIDYALAYA, KATTANKUDY DEEN ROAD, KATTANKUDY",
+    "reason": "request failed"
+  },
+  {
+    "name": "HUSAINIYA VIDYALAM MANCHNTHODUWAI BATTICALOA",
+    "address": "HUSAINIYA VIDYALAM MANCHNTHODUWAI BATTICALOA",
+    "query": "HUSAINIYA VIDYALAM MANCHNTHODUWAI BATTICALOA, HUSAINIYA VIDYALAM MANCHNTHODUWAI BATTICALOA",
+    "reason": "request failed"
+  },
+  {
+    "name": "JAMIULLAFIREEN VIDYALAYAM",
+    "address": "KATTANKUDY",
+    "query": "JAMIULLAFIREEN VIDYALAYAM, KATTANKUDY",
+    "reason": "request failed"
+  },
+  {
+    "name": "KANKEYANODAI AL-AQSHA MAHA VIDYALAYA KANKEYANODAI-13",
+    "address": "ARAYAMPATHY",
+    "query": "KANKEYANODAI AL-AQSHA MAHA VIDYALAYA KANKEYANODAI-13, ARAYAMPATHY",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "KANKEYANODAI HISBULLAH VIDYALAYAM KANKEYANODAI",
+    "address": "ARAYAMPATHY",
+    "query": "KANKEYANODAI HISBULLAH VIDYALAYAM KANKEYANODAI, ARAYAMPATHY",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "KANKEYANODAI IQRAH VIDYALAYAM KANKEYANODAI - 12",
+    "address": "ARAYAMPATHY",
+    "query": "KANKEYANODAI IQRAH VIDYALAYAM KANKEYANODAI - 12, ARAYAMPATHY",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "KARBALA AL MANAR VIDYALAYA KARBALA NAHAR",
+    "address": "ARAYAMPATHY",
+    "query": "KARBALA AL MANAR VIDYALAYA KARBALA NAHAR, ARAYAMPATHY",
+    "reason": "request failed"
+  },
+  {
+    "name": "KATTANKUDY ANVER VIDYALAYA HOSTEL ROAD",
+    "address": "NEW KATTHANKUDY",
+    "query": "KATTANKUDY ANVER VIDYALAYA HOSTEL ROAD, NEW KATTHANKUDY",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "KATTANKUDY BATHRIYA VIDYALAYA",
+    "address": "KATTANKUDY",
+    "query": "KATTANKUDY BATHRIYA VIDYALAYA, KATTANKUDY",
+    "reason": "request failed"
+  },
+  {
+    "name": "KATTANKUDY FATHIMA BALIKA VIDYALAYA BEACH ROAD",
+    "address": "KATTANKUDY",
+    "query": "KATTANKUDY FATHIMA BALIKA VIDYALAYA BEACH ROAD, KATTANKUDY",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "KATTANKUDY HILURIYA VIDYALAYA OLD ROAD",
+    "address": "KATTANKUDY 02",
+    "query": "KATTANKUDY HILURIYA VIDYALAYA OLD ROAD, KATTANKUDY 02",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "KATTANKUDY MILLATH MAHALIR M.V.",
+    "address": "KATTANKUDY-03",
+    "query": "KATTANKUDY MILLATH MAHALIR M.V., KATTANKUDY-03",
+    "reason": "request failed"
+  },
+  {
+    "name": "MANCHANTHUDUVAI AMEER ALI VIDYALAYAM NEW HILURIYA ROAD",
+    "address": "MANCHANTHODUWAI, BATTICALOA",
+    "query": "MANCHANTHUDUVAI AMEER ALI VIDYALAYAM NEW HILURIYA ROAD, MANCHANTHODUWAI, BATTICALOA",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "METHTHAIPPALLI VIDYALAYA METHTHAIPPALLI ROAD",
+    "address": "KATTANKUDY 03",
+    "query": "METHTHAIPPALLI VIDYALAYA METHTHAIPPALLI ROAD, KATTANKUDY 03",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "MOHIDEEN VIDYALAYA MANCHANTHODUWAI SOUTH",
+    "address": "BATTICALOA",
+    "query": "MOHIDEEN VIDYALAYA MANCHANTHODUWAI SOUTH, BATTICALOA",
+    "reason": "request failed"
+  },
+  {
+    "name": "NOORANIYA VIDYALAYA KARBALA ROAD",
+    "address": "NEW KATTANKUDY 06",
+    "query": "NOORANIYA VIDYALAYA KARBALA ROAD, NEW KATTANKUDY 06",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "OLLIKKULAM AL-HAMRA VIDYALAYA OLLIKKULAM",
+    "address": "ARAYAMPATHY, 30150",
+    "query": "OLLIKKULAM AL-HAMRA VIDYALAYA OLLIKKULAM, ARAYAMPATHY, 30150",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "PALAMUNAI ALIGHAR MAHA VIDYALAYA",
+    "address": "ARAYAMPATHY",
+    "query": "PALAMUNAI ALIGHAR MAHA VIDYALAYA, ARAYAMPATHY",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "PALAMUNAI ASHRAFF VIDYALAYAM",
+    "address": "PALAMUNAI - ARAYAMPATHY",
+    "query": "PALAMUNAI ASHRAFF VIDYALAYAM, PALAMUNAI - ARAYAMPATHY",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "POONOCHCHIMUNAI IQRAH VIDYALAYA POONOCHCHIMUNAI",
+    "address": "BATTICALOA",
+    "query": "POONOCHCHIMUNAI IQRAH VIDYALAYA POONOCHCHIMUNAI, BATTICALOA",
+    "reason": "request failed"
+  },
+  {
+    "name": "SIR RAZIK FAREED VIDYALAYAM SIHARAM JUMMAH MOSQUE ROAD",
+    "address": "SIHARAM, ARAYAMPATHY.",
+    "query": "SIR RAZIK FAREED VIDYALAYAM SIHARAM JUMMAH MOSQUE ROAD, SIHARAM, ARAYAMPATHY.",
+    "reason": "request failed"
+  },
+  {
+    "name": "ZAVIYA MAHALIR M.V. ZAVIYA ROAD",
+    "address": "KATTANKUDY 01",
+    "query": "ZAVIYA MAHALIR M.V. ZAVIYA ROAD, KATTANKUDY 01",
+    "reason": "request failed"
+  },
+  {
+    "name": "BADURIYANAGAR AL-MINA VIDYALAYA BADURIYANAGAR",
+    "address": "MEERAVODAI",
+    "query": "BADURIYANAGAR AL-MINA VIDYALAYA BADURIYANAGAR, MEERAVODAI",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "BRAINTHURAICHENAI AZHAR VIDYALAYA BRAINTHURAICHENAI",
+    "address": "VALAICHENAI",
+    "query": "BRAINTHURAICHENAI AZHAR VIDYALAYA BRAINTHURAICHENAI, VALAICHENAI",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "JAYANTHIYAYA AHAMED HIRAS VIDYALAYAM",
+    "address": "PUNANAI",
+    "query": "JAYANTHIYAYA AHAMED HIRAS VIDYALAYAM, PUNANAI",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "KAKITHANAGAR MILLATH VIDYALAYA KAKITHANAGAR",
+    "address": "VAHANERI",
+    "query": "KAKITHANAGAR MILLATH VIDYALAYA KAKITHANAGAR, VAHANERI",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "KAWATHAMUNAI AL-AMEENVIDYALAYAM VAHANERY",
+    "address": "KAWATHAMUNAI AL-AMEENVIDYALAYAM VAHANERY",
+    "query": "KAWATHAMUNAI AL-AMEENVIDYALAYAM VAHANERY, KAWATHAMUNAI AL-AMEENVIDYALAYAM VAHANERY",
+    "reason": "request failed"
+  },
+  {
+    "name": "KERNY NAGAR MADEENA VIDYALAYAM",
+    "address": "VAHANERY",
+    "query": "KERNY NAGAR MADEENA VIDYALAYAM, VAHANERY",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "MANCHOLAI AL HIRA VIDYALAYA",
+    "address": "MANCHOLAI MEERAVODAI",
+    "query": "MANCHOLAI AL HIRA VIDYALAYA, MANCHOLAI MEERAVODAI",
+    "reason": "request failed"
+  },
+  {
+    "name": "MAVADICHENAL AL-IQBAL VIDIYALAYA",
+    "address": "M VALAICHENAI",
+    "query": "MAVADICHENAL AL-IQBAL VIDIYALAYA, M VALAICHENAI",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "MEERAVODAI AMEER ALI VIDYALAYAM",
+    "address": "MEERAVODAI",
+    "query": "MEERAVODAI AMEER ALI VIDYALAYAM, MEERAVODAI",
+    "reason": "request failed"
+  },
+  {
+    "name": "MEERAVODAI UTHUMAN VIDYALAYAM SCHOOL ROAD",
+    "address": "MEERAVODAI, ODDAMAVADI",
+    "query": "MEERAVODAI UTHUMAN VIDYALAYAM SCHOOL ROAD, MEERAVODAI, ODDAMAVADI",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "ODDAMAVADI DHARUL ULOOM VIDYALAYA JUMMAH MOSQUE ROAD",
+    "address": "ODDAMAVADI-02",
+    "query": "ODDAMAVADI DHARUL ULOOM VIDYALAYA JUMMAH MOSQUE ROAD, ODDAMAVADI-02",
+    "reason": "request failed"
+  },
+  {
+    "name": "ODDAMAVADI HIJRA VIDYALAYAM",
+    "address": "ODDAMAVADI - 03.",
+    "query": "ODDAMAVADI HIJRA VIDYALAYAM, ODDAMAVADI - 03.",
+    "reason": "request failed"
+  },
+  {
+    "name": "ODDAMAVADI SHAREEF ALI VIDYALAYAM",
+    "address": "ODDAMAVADI - 02",
+    "query": "ODDAMAVADI SHAREEF ALI VIDYALAYAM, ODDAMAVADI - 02",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "ODDAMAVADI ZAHIRA VIDYALAYA HUTHA MASJITH ROAD",
+    "address": "ODDAMAVADI 01",
+    "query": "ODDAMAVADI ZAHIRA VIDYALAYA HUTHA MASJITH ROAD, ODDAMAVADI 01",
+    "reason": "request failed"
+  },
+  {
+    "name": "PALAKKATTUWETTAI HISBULLAH VIDYALAYA",
+    "address": "VAHANERY",
+    "query": "PALAKKATTUWETTAI HISBULLAH VIDYALAYA, VAHANERY",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "RETHITHENNA IQRAH VIDYALAYAM",
+    "address": "PUNANI",
+    "query": "RETHITHENNA IQRAH VIDYALAYAM, PUNANI",
+    "reason": "request failed"
+  },
+  {
+    "name": "SEMMANODAI AL-HAMRA VIDYALAYAM SEMMANODAI",
+    "address": "MEERAVODAI",
+    "query": "SEMMANODAI AL-HAMRA VIDYALAYAM SEMMANODAI, MEERAVODAI",
+    "reason": "request failed"
+  },
+  {
+    "name": "THIYAWATTAWAN ARAFA VIDYALAYAM",
+    "address": "VAHANERY",
+    "query": "THIYAWATTAWAN ARAFA VIDYALAYAM, VAHANERY",
+    "reason": "request failed"
+  },
+  {
+    "name": "VALAICHENAI AYISHA MAHALIR MAHA VIDYALAYA",
+    "address": "VALAICHENAI",
+    "query": "VALAICHENAI AYISHA MAHALIR MAHA VIDYALAYA, VALAICHENAI",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "VALAICHENAI HAIRATH VIDYALAYAM HAIRATH 4TH CROSS",
+    "address": "VALAICHENAI-05",
+    "query": "VALAICHENAI HAIRATH VIDYALAYAM HAIRATH 4TH CROSS, VALAICHENAI-05",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "VALAICHENAI Y AHAMED VIDYALAYA JUMMA MOUSQUE ROAD",
+    "address": "VALAICHENAI",
+    "query": "VALAICHENAI Y AHAMED VIDYALAYA JUMMA MOUSQUE ROAD, VALAICHENAI",
+    "reason": "request failed"
+  },
+  {
+    "name": "ILLUPPADICHENAI AMBAL VIDYALAYAM",
+    "address": "PANKUDAVELY",
+    "query": "ILLUPPADICHENAI AMBAL VIDYALAYAM, PANKUDAVELY",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "KALASOORI VINAYAKAMOORTHY VIDYALAYAM PALARSENAI",
+    "address": "PANKUDAWELY",
+    "query": "KALASOORI VINAYAKAMOORTHY VIDYALAYAM PALARSENAI, PANKUDAWELY",
+    "reason": "request failed"
+  },
+  {
+    "name": "KARADIYANARU HINDU VIDYALAYAM",
+    "address": "KARADIYANARU",
+    "query": "KARADIYANARU HINDU VIDYALAYAM, KARADIYANARU",
+    "reason": "school match is 17.4km from its stated zone — likely wrong match",
+    "returnedCoordinate": {
+      "lat": 7.6969535,
+      "lng": 81.5436391
+    },
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "KITHUL SRIKIRUSHNAVIDYALAYAM KITHUL WEWA",
+    "address": "KARADIYANARU",
+    "query": "KITHUL SRIKIRUSHNAVIDYALAYAM KITHUL WEWA, KARADIYANARU",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "KODUWAMADU SHAKTHI VIDYALAYAM KALIKOVIL RD",
+    "address": "KODUVAMADU, PANKUDAVELY",
+    "query": "KODUWAMADU SHAKTHI VIDYALAYAM KALIKOVIL RD, KODUVAMADU, PANKUDAVELY",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "KOPPAVELY GTMS BADULA ROAD",
+    "address": "PERIYAPULLUMALAI",
+    "query": "KOPPAVELY GTMS BADULA ROAD, PERIYAPULLUMALAI",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "MARAPALAM G.T.M.S MARAPALAM",
+    "address": "KARADIYANARU",
+    "query": "MARAPALAM G.T.M.S MARAPALAM, KARADIYANARU",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "MAVALAIYARU KAILEN VIDYALAYAM",
+    "address": "MAVALAIYARU",
+    "query": "MAVALAIYARU KAILEN VIDYALAYAM, MAVALAIYARU",
+    "reason": "request failed"
+  },
+  {
+    "name": "PANKUDAVELY RCTM SCHOOL PANKUDAVELY",
+    "address": "SENKALADY",
+    "query": "PANKUDAVELY RCTM SCHOOL PANKUDAVELY, SENKALADY",
+    "reason": "request failed"
+  },
+  {
+    "name": "PERIYAPULLUMALAI RCTMS PERIYAPULLUMALAI",
+    "address": "PERIYAPULLUMALAI RCTMS PERIYAPULLUMALAI",
+    "query": "PERIYAPULLUMALAI RCTMS PERIYAPULLUMALAI, PERIYAPULLUMALAI RCTMS PERIYAPULLUMALAI",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "RUGAM SARASWATHY VIDYALAYAM",
+    "address": "KARADIYANARU",
+    "query": "RUGAM SARASWATHY VIDYALAYAM, KARADIYANARU",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "SWAMI AJARATMANANDAJI VIDYALAYAM",
+    "address": "PANKUDAVELY",
+    "query": "SWAMI AJARATMANANDAJI VIDYALAYAM, PANKUDAVELY",
+    "reason": "request failed"
+  },
+  {
+    "name": "SWAMI ATHMAGANANANTHA V. KARADIYANKULAM",
+    "address": "KARADIYANARU",
+    "query": "SWAMI ATHMAGANANANTHA V. KARADIYANKULAM, KARADIYANARU",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "VEPPAVEDDUWAN G.T.M.S PANKUDAVELY",
+    "address": "VEPPAVEDDUWAN G.T.M.S PANKUDAVELY",
+    "query": "VEPPAVEDDUWAN G.T.M.S PANKUDAVELY, VEPPAVEDDUWAN G.T.M.S PANKUDAVELY",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "WELIKAKANDY VIPULANANDA VIDYALAYAM",
+    "address": "WELIKAKANDY PERIYAPULLUMALAI",
+    "query": "WELIKAKANDY VIPULANANDA VIDYALAYAM, WELIKAKANDY PERIYAPULLUMALAI",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7244732,
+      "lng": 81.6987174
+    }
+  },
+  {
+    "name": "AMPILANTHURAI JUNIOR SCHOOL",
+    "address": "AMPILANTHURAI",
+    "query": "AMPILANTHURAI JUNIOR SCHOOL, AMPILANTHURAI",
+    "reason": "request failed"
+  },
+  {
+    "name": "ARASADITHIVU VIGNESWARA MAHA VIDYALAYAM ARASADITHIVU",
+    "address": "KOKKADDICHOLAI",
+    "query": "ARASADITHIVU VIGNESWARA MAHA VIDYALAYAM ARASADITHIVU, KOKKADDICHOLAI",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7095575,
+      "lng": 81.6922529
+    }
+  },
+  {
+    "name": "KACHCHAKODY SWAMI MALAI GTMS KACHCHAKODY SWAMIMALAI",
+    "address": "KOKKADDICHOLAI",
+    "query": "KACHCHAKODY SWAMI MALAI GTMS KACHCHAKODY SWAMIMALAI, KOKKADDICHOLAI",
+    "reason": "request failed"
+  },
+  {
+    "name": "KADUKKAMUNAI VANI VIDYALAYAM",
+    "address": "KADUKKAMUNAI KOKKADDICHOLAI",
+    "query": "KADUKKAMUNAI VANI VIDYALAYAM, KADUKKAMUNAI KOKKADDICHOLAI",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7095575,
+      "lng": 81.6922529
+    }
+  },
+  {
+    "name": "KATCHENAI G.T.M.S KATCHENAI",
+    "address": "KOKKADDICHOLAI",
+    "query": "KATCHENAI G.T.M.S KATCHENAI, KOKKADDICHOLAI",
+    "reason": "request failed"
+  },
+  {
+    "name": "KOKKADDICHCHOLAI R.K.M VIDYALAYAM",
+    "address": "KOKKADICHCHOLAI",
+    "query": "KOKKADDICHCHOLAI R.K.M VIDYALAYAM, KOKKADICHCHOLAI",
+    "reason": "request failed"
+  },
+  {
+    "name": "KOLLANULAI VIVEKANANDA VIDYALAYAM KOLLANULAI",
+    "address": "KOKKADDICHOLAI",
+    "query": "KOLLANULAI VIVEKANANDA VIDYALAYAM KOLLANULAI, KOKKADDICHOLAI",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7095575,
+      "lng": 81.6922529
+    }
+  },
+  {
+    "name": "KULUVINAMADU VINAYAGAR VIDYALAYAM",
+    "address": "KOKKADDICHOLAI",
+    "query": "KULUVINAMADU VINAYAGAR VIDYALAYAM, KOKKADDICHOLAI",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7095575,
+      "lng": 81.6922529
+    }
+  },
+  {
+    "name": "MAHILADIDITHIVU SARASWATHY MAHAVIDYALAYAM MAHILADITHIVU KOKKADDICHOLAI",
+    "address": "MAHILADIDITHIVU SARASWATHY MAHAVIDYALAYAM MAHILADITHIVU KOKKADDICHOLAI",
+    "query": "MAHILADIDITHIVU SARASWATHY MAHAVIDYALAYAM MAHILADITHIVU KOKKADDICHOLAI, MAHILADIDITHIVU SARASWATHY MAHAVIDYALAYAM MAHILADITHIVU KOKKADDICHOLAI",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7095575,
+      "lng": 81.6922529
+    }
+  },
+  {
+    "name": "MAVADIMUNMARI G.T.M.SCHOOL MAVADIMUNMARI",
+    "address": "KOKKADDICHOLAI",
+    "query": "MAVADIMUNMARI G.T.M.SCHOOL MAVADIMUNMARI, KOKKADDICHOLAI",
+    "reason": "request failed"
+  },
+  {
+    "name": "MUNAIKADU SARATHA VIDYALAYAM",
+    "address": "MUNAIKADU NORTH",
+    "query": "MUNAIKADU SARATHA VIDYALAYAM, MUNAIKADU NORTH",
+    "reason": "request failed"
+  },
+  {
+    "name": "MUNAIKKADU VIVEKANANDA VIDYALAYAM",
+    "address": "MUNAIKKADU KOKKADDICHCHOLAI",
+    "query": "MUNAIKKADU VIVEKANANDA VIDYALAYAM, MUNAIKKADU KOKKADDICHCHOLAI",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7095575,
+      "lng": 81.6922529
+    }
+  },
+  {
+    "name": "MUTHALAIKUDAH JUNIOR SCHOOL MUTHALAIKUDAH",
+    "address": "KOKKADDICHOLAI",
+    "query": "MUTHALAIKUDAH JUNIOR SCHOOL MUTHALAIKUDAH, KOKKADDICHOLAI",
+    "reason": "request failed"
+  },
+  {
+    "name": "NATPATHUVADDAI VIPULANANTHA VIDYALAYAM NATPATHUVADDAI",
+    "address": "THANTHAMALAI, KOKKADDICHOLAI.",
+    "query": "NATPATHUVADDAI VIPULANANTHA VIDYALAYAM NATPATHUVADDAI, THANTHAMALAI, KOKKADDICHOLAI.",
+    "reason": "request failed"
+  },
+  {
+    "name": "PADAIYANDAVELY G.T.M.SCHOOL",
+    "address": "KOKKADDICHOLAI",
+    "query": "PADAIYANDAVELY G.T.M.SCHOOL, KOKKADDICHOLAI",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7095575,
+      "lng": 81.6922529
+    }
+  },
+  {
+    "name": "PADDIPALAI GTMS KOKADDICHOLAI",
+    "address": "PADDIPALAI GTMS KOKADDICHOLAI",
+    "query": "PADDIPALAI GTMS KOKADDICHOLAI, PADDIPALAI GTMS KOKADDICHOLAI",
+    "reason": "request failed"
+  },
+  {
+    "name": "PANDARIYAVELY NAMAGAL VIDYALAYAM",
+    "address": "KOKKADDICHOLAI",
+    "query": "PANDARIYAVELY NAMAGAL VIDYALAYAM, KOKKADDICHOLAI",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7095575,
+      "lng": 81.6922529
+    }
+  },
+  {
+    "name": "VALKKADDU G.T.M.S VALKKADDU",
+    "address": "KOKKADDICHOLAI",
+    "query": "VALKKADDU G.T.M.S VALKKADDU, KOKKADDICHOLAI",
+    "reason": "request failed"
+  },
+  {
+    "name": "VIDUTHIKKAL GTM SCHOOL VIDUTHIKKAL",
+    "address": "KOKKADDICHOLAI",
+    "query": "VIDUTHIKKAL GTM SCHOOL VIDUTHIKKAL, KOKKADDICHOLAI",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7095575,
+      "lng": 81.6922529
+    }
+  },
+  {
+    "name": "AYITHIYAMALAI GTMS AYITHIYAMALAI",
+    "address": "AYITHIYAMALAI GTMS AYITHIYAMALAI",
+    "query": "AYITHIYAMALAI GTMS AYITHIYAMALAI, AYITHIYAMALAI GTMS AYITHIYAMALAI",
+    "reason": "school match is 14.5km from its stated zone — likely wrong match",
+    "returnedCoordinate": {
+      "lat": 7.6778525,
+      "lng": 81.5648865
+    },
+    "zoneCoordinate": {
+      "lat": 7.7095575,
+      "lng": 81.6922529
+    }
+  },
+  {
+    "name": "EACHANTHIVU RKMT VIDYALAYAM",
+    "address": "EACHANTHIVU",
+    "query": "EACHANTHIVU RKMT VIDYALAYAM, EACHANTHIVU",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7095575,
+      "lng": 81.6922529
+    }
+  },
+  {
+    "name": "IRUDDUCHOLAIMADU VISHNU VIDYALAYAM",
+    "address": "KANNANKUDAH",
+    "query": "IRUDDUCHOLAIMADU VISHNU VIDYALAYAM, KANNANKUDAH",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7095575,
+      "lng": 81.6922529
+    }
+  },
+  {
+    "name": "IRUNOORUVIL GTMS IRUNOORUVIL UNNICHCHAI",
+    "address": "IRUNOORUVIL GTMS IRUNOORUVIL UNNICHCHAI",
+    "query": "IRUNOORUVIL GTMS IRUNOORUVIL UNNICHCHAI, IRUNOORUVIL GTMS IRUNOORUVIL UNNICHCHAI",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7095575,
+      "lng": 81.6922529
+    }
+  },
+  {
+    "name": "KANCHIRANKUDAH KAMADCHI VIDYALAYAM",
+    "address": "KANCHIRANKUDAH",
+    "query": "KANCHIRANKUDAH KAMADCHI VIDYALAYAM, KANCHIRANKUDAH",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7095575,
+      "lng": 81.6922529
+    }
+  },
+  {
+    "name": "KANNANKUDAH KANNAKI VIDYALAYAM",
+    "address": "KANNANKUDAH",
+    "query": "KANNANKUDAH KANNAKI VIDYALAYAM, KANNANKUDAH",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7095575,
+      "lng": 81.6922529
+    }
+  },
+  {
+    "name": "KARAVEDDIYARU VIJITHA VIDYALAYAM",
+    "address": "KARAVEDDIYARU UNNICHCHAI",
+    "query": "KARAVEDDIYARU VIJITHA VIDYALAYAM, KARAVEDDIYARU UNNICHCHAI",
+    "reason": "request failed"
+  },
+  {
+    "name": "KARAVEDDY SOUTH GTMS KARAVEDDY",
+    "address": "NAVATKADU",
+    "query": "KARAVEDDY SOUTH GTMS KARAVEDDY, NAVATKADU",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7095575,
+      "lng": 81.6922529
+    }
+  },
+  {
+    "name": "KARAYAKKANTHIVU GANESHAR VIDYALAYAM",
+    "address": "KARAYAKKANTHIVU",
+    "query": "KARAYAKKANTHIVU GANESHAR VIDYALAYAM, KARAYAKKANTHIVU",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7095575,
+      "lng": 81.6922529
+    }
+  },
+  {
+    "name": "KAYANMADU G.T.M.S KAYANMADU",
+    "address": "KANNANKUDAH",
+    "query": "KAYANMADU G.T.M.S KAYANMADU, KANNANKUDAH",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7095575,
+      "lng": 81.6922529
+    }
+  },
+  {
+    "name": "KOTHTHIYAPULAI KALAIVANI VIDYALAYAM KOTHTHIYAPULAI",
+    "address": "KANNANKUDAH",
+    "query": "KOTHTHIYAPULAI KALAIVANI VIDYALAYAM KOTHTHIYAPULAI, KANNANKUDAH",
+    "reason": "request failed"
+  },
+  {
+    "name": "KURINCHAMUNAI GTMS KANNANKUDAH",
+    "address": "KURINCHAMUNAI GTMS KANNANKUDAH",
+    "query": "KURINCHAMUNAI GTMS KANNANKUDAH, KURINCHAMUNAI GTMS KANNANKUDAH",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7095575,
+      "lng": 81.6922529
+    }
+  },
+  {
+    "name": "MAHILAVADDAWAN KANTHAPODY VIDYALAYAM",
+    "address": "MAHILAVADDAWAN",
+    "query": "MAHILAVADDAWAN KANTHAPODY VIDYALAYAM, MAHILAVADDAWAN",
+    "reason": "no match found",
+    "zoneCoordinate": {
+      "lat": 7.7095575,
+      "lng": 81.6922529
+    }
   }
 ]

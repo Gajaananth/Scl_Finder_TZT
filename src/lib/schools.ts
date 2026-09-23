@@ -3,14 +3,6 @@ import { computeStraightLineDistance } from './distance';
 
 const API_URL = '/api/schools';
 
-// Overpass API public endpoints (ranked by uptime with instant failover)
-const OVERPASS_ENDPOINTS = [
-  'https://overpass.kumi.systems/api/interpreter',
-  'https://overpass-api.de/api/interpreter',
-  'https://overpass.private.coffee/api/interpreter',
-  'https://maps.mail.ru/osm/tools/overpass/api/interpreter',
-];
-
 async function fetchWithTimeout(
   input: RequestInfo | URL,
   init?: RequestInit,
@@ -87,6 +79,9 @@ const EXCLUSION_PATTERNS: RegExp[] = [
   /\bcampus\b/i,
   /teacher\s*training\s*college/i,
   /\bvidyapith/i,
+  /st\.?\s*michael'?s\s*college/i,
+  /methodist\s*central\s*college/i,
+  /mahajana\s*college/i,
 ];
 
 const BOYS_ONLY_PATTERNS: RegExp[] = [
@@ -164,42 +159,47 @@ function inferMediums(tags: Record<string, string>): Medium[] {
   return mediums;
 }
 
+function normalizeSchoolName(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[&'’.,()\-/]/g, ' ')
+    .replace(/\b(vidyalayam|vidyalaya|college|school|m\.v\.)\b/g, ' ')
+    .replace(/\b(office|administration|admin|main|old|new|asraf|assembly|multi purpose|multipurpose|hall|building|block|campus|ground|toilet|canteen)\b/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function hasSignificantNameOverlap(first: School, second: School): boolean {
+  const firstName = normalizeSchoolName(first.name);
+  const secondName = normalizeSchoolName(second.name);
+  if (firstName.includes(secondName) || secondName.includes(firstName)) return true;
+  const firstWords = new Set(firstName.split(' ').filter(Boolean));
+  const secondWords = new Set(secondName.split(' ').filter(Boolean));
+  const sharedWords = [...firstWords].filter((word) => secondWords.has(word)).length;
+  return sharedWords / Math.max(firstWords.size, secondWords.size) > 0.6;
+}
+
+function isSameSchool(first: School, second: School): boolean {
+  return computeStraightLineDistance(first, second) <= 150 && hasSignificantNameOverlap(first, second);
+}
+
 export async function fetchOsmSchoolsNear(
   location: Coordinates,
   radiusMeters: number
 ): Promise<{ schools: School[]; ok: boolean }> {
   const searchRadius = Math.min(Math.max(radiusMeters, 200), 25000);
 
-  const query = `
-    [out:json][timeout:5];
-    (
-      nwr["amenity"="school"](around:${searchRadius},${location.lat},${location.lng});
-      nwr["building"="school"](around:${searchRadius},${location.lat},${location.lng});
-      nwr["building:use"="school"](around:${searchRadius},${location.lat},${location.lng});
-      nwr["education"="school"](around:${searchRadius},${location.lat},${location.lng});
-      nwr["school"="yes"](around:${searchRadius},${location.lat},${location.lng});
-    );
-    out center tags;
-  `;
-
-  // Use top 2 endpoints with short 2.5s timeout, no forbidden User-Agent header in browser
-  const fastEndpoints = OVERPASS_ENDPOINTS.slice(0, 2);
-
-  for (const endpoint of fastEndpoints) {
-    try {
+  try {
       const response = await fetchWithTimeout(
-        endpoint,
+        '/api/osm-schools',
         {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-          },
-          body: 'data=' + encodeURIComponent(query),
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ lat: location.lat, lng: location.lng, radius: searchRadius }),
         },
-        2500
+        25000
       );
-
-      if (!response.ok) continue;
+      if (!response.ok) return { schools: [], ok: false };
 
       const data = await response.json();
       const elements: OverpassElement[] = data.elements || [];
@@ -219,7 +219,7 @@ export async function fetchOsmSchoolsNear(
         const city = tags['addr:city'] || tags['addr:district'] || tags['addr:suburb'] || '';
         const address = [street, city].filter(Boolean).join(', ') || `${rawName}, Sri Lanka`;
 
-        osmSchools.push({
+        const school: School = {
           id: `osm-${el.type}-${el.id}`,
           name: rawName,
           nameLocal: tags['name:ta'] || (tags.name !== rawName ? tags.name : undefined),
@@ -230,16 +230,21 @@ export async function fetchOsmSchoolsNear(
           type: inferSchoolType(rawName),
           zone: tags['addr:district'] || 'Regional Education Zone',
           contactPhone: tags.phone || tags['contact:phone'],
-        });
+          isLiveOsm: true,
+        };
+
+        const osmDuplicate = osmSchools.find((existing) => isSameSchool(existing, school));
+        if (!osmDuplicate) {
+          osmSchools.push(school);
+        } else {
+          console.warn(`Discarded duplicate live school: ${school.name} matches ${osmDuplicate.name}`);
+        }
       }
 
       return { schools: osmSchools, ok: true };
-    } catch {
-      // Continue to next endpoint quickly
-    }
+  } catch {
+    return { schools: [], ok: false };
   }
-
-  return { schools: [], ok: false };
 }
 
 export async function fetchSchools(
@@ -276,7 +281,13 @@ export async function fetchSchools(
       const liveResult = await fetchOsmSchoolsNear(nearLocation, radiusMeters);
       liveOsmOk = liveResult.ok;
       for (const s of liveResult.schools) {
-        if (!schoolsMap.has(s.id)) {
+        const curatedSchools = Array.from(schoolsMap.values()).filter((school) => !school.isLiveOsm);
+        const nearbyCurated = curatedSchools.find((existing) => computeStraightLineDistance(existing, s) <= 150);
+        const alreadyIncluded = curatedSchools.some((existing) => isSameSchool(existing, s));
+        if (nearbyCurated && !alreadyIncluded) {
+          console.warn(`Nearby schools have different names; keeping both: ${nearbyCurated.name} and ${s.name}`);
+        }
+        if (!schoolsMap.has(s.id) && !alreadyIncluded) {
           schoolsMap.set(s.id, s);
         }
       }

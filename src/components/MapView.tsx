@@ -88,15 +88,20 @@ function MapResizeObserver() {
       return;
     }
 
-    const resizeObserver = new ResizeObserver(() => {
-      map.invalidateSize();
-    });
+    const invalidate = () => {
+      requestAnimationFrame(() => map.invalidateSize());
+    };
+    const resizeObserver = new ResizeObserver(invalidate);
 
     resizeObserver.observe(container);
-    map.invalidateSize();
+    window.addEventListener('resize', invalidate);
+    window.matchMedia('(max-width: 767px)').addEventListener('change', invalidate);
+    invalidate();
 
     return () => {
       resizeObserver.disconnect();
+      window.removeEventListener('resize', invalidate);
+      window.matchMedia('(max-width: 767px)').removeEventListener('change', invalidate);
     };
   }, [map]);
 
@@ -188,7 +193,7 @@ export default function MapView({
   }, [homeLocation, schools, radiusMeters]);
 
   return (
-    <div className="w-full space-y-2">
+    <div className="w-full grid grid-cols-1 gap-2 lg:grid-cols-[minmax(0,1fr)_250px] lg:items-start">
       {ceciliaSchool && (
         <div
           className="rounded-xl border-2 border-[#f4c542] px-4 py-3 text-white shadow-md sm:px-5 sm:py-3.5"
@@ -214,7 +219,7 @@ export default function MapView({
         </div>
       )}
 
-      <div className="relative w-full h-[400px] rounded-2xl overflow-hidden border border-slate-200/80 shadow-inner">
+      <div className="relative w-full h-[400px] min-w-0 rounded-2xl overflow-hidden border border-slate-200/80 shadow-inner">
       <MapContainer
         center={[homeLocation.lat, homeLocation.lng]}
         zoom={14}
@@ -461,8 +466,8 @@ export default function MapView({
         })}
       </MapContainer>
 
-      {/* Floating Legend */}
-      <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-md px-3 py-2.5 rounded-xl shadow-md border border-slate-200 text-xs flex flex-col gap-1.5 z-[1000] pointer-events-auto max-w-[270px]">
+      {/* Map legend lives outside the Leaflet container so it never covers the map. */}
+      <div className="bg-white px-3 py-2.5 rounded-xl shadow-sm border border-slate-200 text-xs flex flex-col gap-1.5 min-w-0">
         <div className="flex items-center gap-2 font-medium text-slate-700">
           <span className="w-3.5 h-3.5 rounded-full bg-red-600 flex items-center justify-center text-[8px] text-white font-bold shrink-0">
             🏠

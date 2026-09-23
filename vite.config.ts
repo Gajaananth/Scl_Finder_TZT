@@ -147,6 +147,58 @@ function mockApiPlugin(): Plugin {
           return;
         }
 
+        // 5. Same-origin live OSM proxy for local development
+        if (url === '/api/osm-schools' && req.method === 'POST') {
+          res.setHeader('Content-Type', 'application/json');
+          const body = await parseJsonBody(req);
+          const { lat, lng, radius } = body || {};
+          if (![lat, lng, radius].every((value: unknown) => typeof value === 'number' && Number.isFinite(value))) {
+            res.statusCode = 400;
+            res.end(JSON.stringify({ error: 'Invalid map search parameters' }));
+            return;
+          }
+          const searchRadius = Math.min(Math.max(radius, 200), 25000);
+          const query = `
+            [out:json][timeout:5];
+            (
+              nwr["amenity"="school"](around:${searchRadius},${lat},${lng});
+              nwr["building"="school"](around:${searchRadius},${lat},${lng});
+              nwr["building:use"="school"](around:${searchRadius},${lat},${lng});
+              nwr["education"="school"](around:${searchRadius},${lat},${lng});
+              nwr["school"="yes"](around:${searchRadius},${lat},${lng});
+            );
+            out center tags;
+          `;
+          for (const endpoint of [
+            'https://overpass.kumi.systems/api/interpreter',
+            'https://overpass-api.de/api/interpreter',
+            'https://overpass.private.coffee/api/interpreter',
+            'https://maps.mail.ru/osm/tools/overpass/api/interpreter',
+          ]) {
+            try {
+              const controller = new AbortController();
+              const timer = setTimeout(() => controller.abort(), 5000);
+              const response = await fetch(`${endpoint}?data=${encodeURIComponent(query)}`, {
+                method: 'GET',
+                headers: {
+                  Accept: 'application/json',
+                  'User-Agent': 'StCeciliaSchoolFinder/1.0',
+                },
+                signal: controller.signal,
+              }).finally(() => clearTimeout(timer));
+              if (response.ok) {
+                const data = await response.json();
+                res.statusCode = 200;
+                res.end(JSON.stringify({ elements: data.elements || [] }));
+                return;
+              }
+            } catch {}
+          }
+          res.statusCode = 502;
+          res.end(JSON.stringify({ error: 'Live map data unavailable' }));
+          return;
+        }
+
         next();
       });
     },

@@ -258,11 +258,11 @@ export default function App() {
     <div className="min-h-screen bg-slate-50 flex flex-col selection:bg-brand-light selection:text-brand-dark">
       {/* Top Navigation */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-xs">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto w-full px-3 sm:px-6 lg:px-8 min-h-16 py-2 flex flex-wrap items-center justify-between gap-2 overflow-hidden">
           {/* Logo & title */}
           <div
             onClick={resetSearch}
-            className="flex items-center gap-3 cursor-pointer group"
+            className="flex min-w-0 max-w-full items-center gap-2 sm:gap-3 cursor-pointer group"
           >
             <img
               src={logoImg}
@@ -271,7 +271,7 @@ export default function App() {
             />
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-base sm:text-lg font-extrabold text-slate-900 tracking-tight leading-none">
+                <h1 className="text-sm sm:text-lg font-extrabold text-slate-900 tracking-tight leading-tight truncate">
                   St. Cecilia&rsquo;s Girls&rsquo; College
                 </h1>
               </div>
@@ -282,7 +282,7 @@ export default function App() {
           </div>
 
           {/* Right controls: Staff Session, Language toggle & Reset */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex w-full sm:w-auto items-center gap-1.5 sm:gap-3 flex-wrap justify-end max-w-full">
             {homeLocation && (
               <button
                 type="button"
@@ -297,7 +297,7 @@ export default function App() {
             <div className="flex items-center gap-2 px-2.5 py-1 bg-slate-50 border border-slate-200 rounded-xl text-xs">
               <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" title="Active session"></span>
               <span className="hidden sm:inline text-slate-400">Staff:</span>
-              <span className="font-semibold text-slate-700 max-w-[90px] sm:max-w-[140px] truncate" title={user.email}>
+              <span className="hidden min-[380px]:inline font-semibold text-slate-700 max-w-[90px] sm:max-w-[140px] truncate" title={user.email}>
                 {user.email}
               </span>
               <button
@@ -415,9 +415,9 @@ export default function App() {
           <div className="flex-1 flex flex-col">
             {/* Quick Adjustment, Filters, Print & CSV Header */}
             <div className="bg-white border-b border-slate-200 px-4 py-2.5 no-print shadow-2xs">
-              <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2.5">
+              <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
                 {/* Current Radius & Quick Bands */}
-                <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
+                <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap min-w-0">
                   <span className="text-xs font-bold text-slate-500 uppercase tracking-wider shrink-0 mr-0.5">
                     {t('radiusLabel')}:
                   </span>
@@ -458,7 +458,7 @@ export default function App() {
                 </div>
 
                 {/* Filters, Print and CSV Actions */}
-                <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+                <div className="flex items-center gap-2 sm:gap-3 flex-wrap min-w-0">
                   {/* Medium Filter */}
                   <div className="flex items-center gap-1.5 shrink-0">
                     <label htmlFor="medium-select" className="text-xs text-slate-500 font-medium">
@@ -534,7 +534,7 @@ export default function App() {
 
             {sourceStatus && !sourceStatus.liveOsmOk && !liveNoticeDismissed && (
               <div className="flex items-center justify-between gap-3 bg-amber-50 border-b border-amber-200 px-4 py-2 text-xs text-amber-900">
-                <span>Showing verified school list only — live map data temporarily unavailable, some newer or unlisted schools may not appear.</span>
+                <span>Verified government schools are shown. Live map schools are temporarily unavailable, so newer or unlisted schools may not appear.</span>
                 <button
                   type="button"
                   onClick={() => setLiveNoticeDismissed(true)}
@@ -547,9 +547,9 @@ export default function App() {
             )}
 
             {/* Map-first results layout: keep cards below the full-width map. */}
-            <div className="flex-1 flex flex-col h-auto min-h-0 no-print">
+            <div className="flex-1 flex flex-col min-h-0 no-print">
               {/* Full-width Map Panel */}
-              <div className="w-full h-[430px] p-2.5 sm:p-3 lg:p-4 flex flex-col shrink-0">
+              <div className="map-panel w-full h-[50vh] min-h-[360px] max-h-[560px] p-2.5 sm:p-3 lg:p-4 flex flex-col shrink-0">
                 <MapView
                   homeLocation={homeLocation}
                   schools={schools}
@@ -567,7 +567,7 @@ export default function App() {
               </div>
 
               {/* School cards below the map so they do not obstruct the map view. */}
-              <div className="w-full h-[520px] border-t border-slate-200 bg-white flex flex-col min-h-0">
+              <div className="school-list-panel w-full h-[520px] border-t border-slate-200 bg-white flex flex-col min-h-0">
                 <SchoolList
                   schools={filteredSchools}
                   radiusMeters={radiusMeters}

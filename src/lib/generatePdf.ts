@@ -61,7 +61,7 @@ export async function generateAdmissionReportPdf({
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(9.5);
   doc.setTextColor(220, 230, 250);
-  doc.text('Grade 1 Admission - Nearest Schools Verification Report', margin + 26, y + 16);
+  doc.text('Grade 1 Admission: Nearest Schools Verification Report', margin + 26, y + 16);
 
   // Date on the right of banner
   doc.setFontSize(8.5);
@@ -255,6 +255,6 @@ function renderFooter(
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(8);
   doc.setTextColor(100, 116, 139);
-  doc.text("St. Cecilia's Girls' College - Grade 1 Admission System", margin, footerY);
+  doc.text("St. Cecilia's Girls' College: Grade 1 Admission System", margin, footerY);
   doc.text('Developed by Tradiq Zium Tech', pageWidth - margin, footerY, { align: 'right' });
 }

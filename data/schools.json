@@ -22,8 +22,8 @@
       "English"
     ],
     "id": "school-002",
-    "lat": 7.6212335,
-    "lng": 81.7077446
+    "lat": 7.6232811,
+    "lng": 81.7072446
   },
   {
     "name": "Vincent Girls' High School",
@@ -35,8 +35,8 @@
       "English"
     ],
     "id": "school-003",
-    "lat": 7.7060564,
-    "lng": 81.6888934
+    "lat": 7.7079348,
+    "lng": 81.7000077
   },
   {
     "name": "Methodist Central College",
@@ -48,8 +48,8 @@
       "English"
     ],
     "id": "school-004",
-    "lat": 7.7094004,
-    "lng": 81.6995779
+    "lat": 7.7077859,
+    "lng": 81.6897267
   },
   {
     "name": "Mahajana College",
@@ -74,8 +74,8 @@
       "English"
     ],
     "id": "school-006",
-    "lat": 7.7177864,
-    "lng": 81.6989499
+    "lat": 7.7265984,
+    "lng": 81.6881628
   },
   {
     "name": "St. Joseph's College",
@@ -288,8 +288,8 @@
     "type": "1AB",
     "medium": [],
     "id": "school-025",
-    "lat": 7.7082467,
-    "lng": 81.6909346
+    "lat": 7.6234605,
+    "lng": 81.7183129
   },
   {
     "name": "Arafa Vidyalayam",
@@ -328,8 +328,8 @@
     "type": "1C",
     "medium": [],
     "id": "school-029",
-    "lat": 7.920017,
-    "lng": 81.2958449
+    "lat": 7.4759017,
+    "lng": 81.748938
   },
   {
     "name": "Eravur Vipulananda Vidyalayam",
@@ -388,8 +388,8 @@
     "type": "1C",
     "medium": [],
     "id": "school-035",
-    "lat": 7.7624146,
-    "lng": 81.6723774
+    "lat": 7.7889553,
+    "lng": 81.6403205
   },
   {
     "name": "Kudiyiruppu Kanista Vidyalayam",
@@ -418,8 +418,8 @@
     "type": "1C",
     "medium": [],
     "id": "school-038",
-    "lat": 7.7124151,
-    "lng": 81.7101393
+    "lat": 7.6988379,
+    "lng": 81.7135606
   },
   {
     "name": "Arayampathy Notary Moothathamby Vidyalayam",
@@ -602,7 +602,7 @@
     "lng": 81.7289676
   },
   {
-    "name": "Jinna Vidyalayam",
+    "name": "Al-Aqsa Vidyalaya",
     "address": "Kattankudy, Batticaloa District, Sri Lanka",
     "zone": "Kattankudy",
     "type": "1C",
@@ -612,7 +612,7 @@
     "lng": 81.7289676
   },
   {
-    "name": "Tariq Vidyalayam",
+    "name": "Jinna Vidyalayam",
     "address": "Kattankudy, Batticaloa District, Sri Lanka",
     "zone": "Kattankudy",
     "type": "1C",
@@ -622,7 +622,7 @@
     "lng": 81.7289676
   },
   {
-    "name": "Iqbal Vidyalayam",
+    "name": "Tariq Vidyalayam",
     "address": "Kattankudy, Batticaloa District, Sri Lanka",
     "zone": "Kattankudy",
     "type": "1C",
@@ -632,7 +632,7 @@
     "lng": 81.7289676
   },
   {
-    "name": "Mazharul Uloom Vidyalayam",
+    "name": "Iqbal Vidyalayam",
     "address": "Kattankudy, Batticaloa District, Sri Lanka",
     "zone": "Kattankudy",
     "type": "1C",
@@ -642,7 +642,7 @@
     "lng": 81.7289676
   },
   {
-    "name": "Al-Jalaal Vidyalayam",
+    "name": "Mazharul Uloom Vidyalayam",
     "address": "Kattankudy, Batticaloa District, Sri Lanka",
     "zone": "Kattankudy",
     "type": "1C",
@@ -652,12 +652,22 @@
     "lng": 81.7289676
   },
   {
+    "name": "Al-Jalaal Vidyalayam",
+    "address": "Kattankudy, Batticaloa District, Sri Lanka",
+    "zone": "Kattankudy",
+    "type": "1C",
+    "medium": [],
+    "id": "school-062",
+    "lat": 7.6804861,
+    "lng": 81.7289676
+  },
+  {
     "name": "Shivananda Vidyalayam National School",
     "address": "Puliyanthivu West, Batticaloa District, Sri Lanka",
     "zone": "Puliyanthivu West",
     "type": "1AB",
     "medium": [],
-    "id": "school-062",
+    "id": "school-063",
     "lat": 7.7120567,
     "lng": 81.6938231
   },
@@ -667,7 +677,7 @@
     "zone": "Puliyanthivu",
     "type": "1C",
     "medium": [],
-    "id": "school-063",
+    "id": "school-064",
     "lat": 7.7077859,
     "lng": 81.6897267
   },
@@ -677,7 +687,7 @@
     "zone": "Mamangam",
     "type": "1C",
     "medium": [],
-    "id": "school-064",
+    "id": "school-065",
     "lat": 7.7500854,
     "lng": 81.6845498
   },
@@ -687,7 +697,7 @@
     "zone": "Navalady",
     "type": "1C",
     "medium": [],
-    "id": "school-065",
+    "id": "school-066",
     "lat": 7.9461955,
     "lng": 81.5222575
   },
@@ -697,7 +707,7 @@
     "zone": "Thiraimadu",
     "type": "1C",
     "medium": [],
-    "id": "school-066",
+    "id": "school-067",
     "lat": 7.7527227,
     "lng": 81.6767202
   },
@@ -707,9 +717,9 @@
     "zone": "Amirthakali",
     "type": "1C",
     "medium": [],
-    "id": "school-067",
-    "lat": 7.7465177,
-    "lng": 81.6917482
+    "id": "school-068",
+    "lat": 7.7425527,
+    "lng": 81.6929311
   },
   {
     "name": "Karadiyanaru Maha Vidyalayam",
@@ -717,7 +727,7 @@
     "zone": "Karadiyanaru",
     "type": "1AB",
     "medium": [],
-    "id": "school-068",
+    "id": "school-069",
     "lat": 7.7024356,
     "lng": 81.537165
   },
@@ -727,7 +737,7 @@
     "zone": "Karadiyanaru",
     "type": "1C",
     "medium": [],
-    "id": "school-069",
+    "id": "school-070",
     "lat": 7.6969535,
     "lng": 81.5436391
   },
@@ -737,7 +747,7 @@
     "zone": "Eravur",
     "type": "1C",
     "medium": [],
-    "id": "school-070",
+    "id": "school-071",
     "lat": 7.7757162,
     "lng": 81.6048021
   },
@@ -747,7 +757,7 @@
     "zone": "Sittandy",
     "type": "1C",
     "medium": [],
-    "id": "school-071",
+    "id": "school-072",
     "lat": 7.8225272,
     "lng": 81.5526983
   },
@@ -757,7 +767,7 @@
     "zone": "Mavadivembu",
     "type": "1C",
     "medium": [],
-    "id": "school-072",
+    "id": "school-073",
     "lat": 7.8079666,
     "lng": 81.5669521
   },
@@ -767,7 +777,7 @@
     "zone": "Vantharumoolai",
     "type": "1AB",
     "medium": [],
-    "id": "school-073",
+    "id": "school-074",
     "lat": 7.7942426,
     "lng": 81.5805337
   },
@@ -777,39 +787,9 @@
     "zone": "Vantharumoolai",
     "type": "1C",
     "medium": [],
-    "id": "school-074",
+    "id": "school-075",
     "lat": 7.7942426,
     "lng": 81.5805337
-  },
-  {
-    "name": "Vakarai Maha Vidyalayam",
-    "address": "Vakarai, Batticaloa District, Sri Lanka",
-    "zone": "Vakarai",
-    "type": "1AB",
-    "medium": [],
-    "id": "school-075",
-    "lat": 8.1333819,
-    "lng": 81.4360019
-  },
-  {
-    "name": "Kathiraveli Vigneshwara Vidyalayam",
-    "address": "Kathiraveli, Batticaloa District, Sri Lanka",
-    "zone": "Kathiraveli",
-    "type": "1C",
-    "medium": [],
-    "id": "school-076",
-    "lat": 8.2254425,
-    "lng": 81.4119494
-  },
-  {
-    "name": "Vammivaddavan Vidyalayam",
-    "address": "Vammivaddavan, Batticaloa District, Sri Lanka",
-    "zone": "Vammivaddavan",
-    "type": "1C",
-    "medium": [],
-    "id": "school-077",
-    "lat": 8.1844413,
-    "lng": 81.4115977
   },
   {
     "name": "Kalkudah Namagal Vidyalayam",
@@ -817,7 +797,7 @@
     "zone": "Kalkudah",
     "type": "1C",
     "medium": [],
-    "id": "school-078",
+    "id": "school-076",
     "lat": 7.9156649,
     "lng": 81.5603565
   },
@@ -827,7 +807,7 @@
     "zone": "Valaichchenai",
     "type": "1AB",
     "medium": [],
-    "id": "school-079",
+    "id": "school-077",
     "lat": 7.9090822,
     "lng": 81.5331218
   },
@@ -837,9 +817,9 @@
     "zone": "Mandur",
     "type": "1AB",
     "medium": [],
-    "id": "school-080",
-    "lat": 7.920017,
-    "lng": 81.2958449
+    "id": "school-078",
+    "lat": 7.4759017,
+    "lng": 81.748938
   },
   {
     "name": "Periyaporativu Bharathy Vidyalayam",
@@ -847,7 +827,7 @@
     "zone": "Periyaporativu",
     "type": "1C",
     "medium": [],
-    "id": "school-081",
+    "id": "school-079",
     "lat": 7.5263644,
     "lng": 81.7654789
   },
@@ -857,7 +837,7 @@
     "zone": "Kokkaddicholai",
     "type": "1C",
     "medium": [],
-    "id": "school-082",
+    "id": "school-080",
     "lat": 7.6045505,
     "lng": 81.7133672
   },
@@ -867,7 +847,7 @@
     "zone": "Palugamam",
     "type": "1AB",
     "medium": [],
-    "id": "school-083",
+    "id": "school-081",
     "lat": 7.5467199,
     "lng": 81.7615336
   },
@@ -877,7 +857,7 @@
     "zone": "Periyakallar",
     "type": "1C",
     "medium": [],
-    "id": "school-084",
+    "id": "school-082",
     "lat": 7.4720128,
     "lng": 81.8078667
   },
@@ -887,7 +867,7 @@
     "zone": "Palamunai",
     "type": "1C",
     "medium": [],
-    "id": "school-085",
+    "id": "school-083",
     "lat": 7.2870135,
     "lng": 81.8480782
   },
@@ -897,7 +877,7 @@
     "zone": "Palamunai",
     "type": "1C",
     "medium": [],
-    "id": "school-086",
+    "id": "school-084",
     "lat": 7.2870135,
     "lng": 81.8480782
   },
@@ -907,7 +887,7 @@
     "zone": "Koddaikallar",
     "type": "1AB",
     "medium": [],
-    "id": "school-087",
+    "id": "school-085",
     "lat": 7.4879447,
     "lng": 81.8070095
   },
@@ -917,7 +897,7 @@
     "zone": "Kaluwanchikudy",
     "type": "1AB",
     "medium": [],
-    "id": "school-088",
+    "id": "school-086",
     "lat": 7.5174967,
     "lng": 81.7871283
   }

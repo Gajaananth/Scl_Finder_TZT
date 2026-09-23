@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect, useMemo } from 'react';
 import { useI18n } from './lib/I18nContext';
-import { fetchSchools } from './lib/schools';
+import { fetchSchools, type SchoolFetchStatus } from './lib/schools';
 import {
   computeStraightLineDistance,
   fetchDrivingDistances,
@@ -28,6 +28,8 @@ export default function App() {
   const [selectedSchoolId, setSelectedSchoolId] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const [sourceStatus, setSourceStatus] = useState<SchoolFetchStatus | null>(null);
+  const [liveNoticeDismissed, setLiveNoticeDismissed] = useState(false);
 
   // Filters
   const [mediumFilter, setMediumFilter] = useState<Medium | 'all'>('all');
@@ -39,12 +41,23 @@ export default function App() {
       const effectiveRadius = Math.min(Math.max(radius, 200), 25000);
       setIsLoading(true);
       setError(null);
+      setLiveNoticeDismissed(false);
       setHomeLocation(location);
       setHomeAddress(addressText || `${location.lat.toFixed(4)}°N, ${location.lng.toFixed(4)}°E`);
       setRadiusMeters(effectiveRadius);
 
       try {
-        const rawSchools = await fetchSchools(location, effectiveRadius);
+        const fetchResult = await fetchSchools(location, effectiveRadius);
+        setSourceStatus(fetchResult);
+        if (!fetchResult.curatedListOk) {
+          setSchools([]);
+          setSelectedSchoolId(null);
+          setHomeLocation(null);
+          setError("We couldn't load the verified school list right now. Please try again in a moment.");
+          setIsLoading(false);
+          return;
+        }
+        const rawSchools = fetchResult.schools;
 
         // 1. Calculate primary straight-line geodesic distance for all schools
         const processed: SchoolWithDistance[] = rawSchools
@@ -152,6 +165,8 @@ export default function App() {
     setSchools([]);
     setSelectedSchoolId(null);
     setError(null);
+    setSourceStatus(null);
+    setLiveNoticeDismissed(false);
   };
 
   // Direct PDF download handler using jsPDF
@@ -514,6 +529,20 @@ export default function App() {
             {error && (
               <div className="bg-red-50 border-b border-red-200 px-4 py-2 text-xs text-red-700 text-center font-medium">
                 {error}
+              </div>
+            )}
+
+            {sourceStatus && !sourceStatus.liveOsmOk && !liveNoticeDismissed && (
+              <div className="flex items-center justify-between gap-3 bg-amber-50 border-b border-amber-200 px-4 py-2 text-xs text-amber-900">
+                <span>Showing verified school list only — live map data temporarily unavailable, some newer or unlisted schools may not appear.</span>
+                <button
+                  type="button"
+                  onClick={() => setLiveNoticeDismissed(true)}
+                  className="shrink-0 font-bold text-amber-700 hover:text-amber-950"
+                  aria-label="Dismiss live data notice"
+                >
+                  Dismiss
+                </button>
               </div>
             )}
 

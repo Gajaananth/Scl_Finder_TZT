@@ -24,6 +24,8 @@ interface GeocodeFailure {
   name: string;
   address: string;
   query: string;
+  reason?: string;
+  returnedCoordinate?: { lat: number; lng: number };
 }
 
 interface NominatimResult {
@@ -40,6 +42,7 @@ const USER_AGENT = 'StCeciliasSchoolFinder/1.0 (school-data-maintainer; gajaanan
 const REQUEST_DELAY_MS = 1100;
 const REQUEST_TIMEOUT_MS = 2000;
 const MAX_ENTRIES_PER_RUN = Number(process.env.GEOCODE_MAX_ENTRIES || '0');
+const DISTRICT_BOUNDS = { minLat: 7.0, maxLat: 8.1, minLng: 81.3, maxLng: 81.9 };
 
 const sleep = (ms: number) => new Promise((resolvePromise) => setTimeout(resolvePromise, ms));
 
@@ -56,6 +59,8 @@ async function geocode(query: string): Promise<NominatimResult | null> {
   url.searchParams.set('q', query);
   url.searchParams.set('format', 'json');
   url.searchParams.set('countrycodes', 'lk');
+  url.searchParams.set('viewbox', '81.3,8.1,81.9,7.0');
+  url.searchParams.set('bounded', '1');
   url.searchParams.set('limit', '1');
   url.searchParams.set('addressdetails', '1');
 
@@ -112,8 +117,24 @@ for (const [index, entry] of source.entries()) {
     const lat = result ? Number(result.lat) : NaN;
     const lng = result ? Number(result.lon) : NaN;
     if (!result || !Number.isFinite(lat) || !Number.isFinite(lng)) {
-      failures.push({ name: entry.name, address: entry.address, query });
+      failures.push({ name: entry.name, address: entry.address, query, reason: 'no match found' });
       console.warn(`No Nominatim match: ${entry.name}`);
+      await writeProgress();
+      continue;
+    }
+
+    const inDistrict =
+      lat >= DISTRICT_BOUNDS.minLat && lat <= DISTRICT_BOUNDS.maxLat &&
+      lng >= DISTRICT_BOUNDS.minLng && lng <= DISTRICT_BOUNDS.maxLng;
+    if (!inDistrict) {
+      failures.push({
+        name: entry.name,
+        address: entry.address,
+        query,
+        reason: 'matched outside Batticaloa district bounds',
+        returnedCoordinate: { lat, lng },
+      });
+      console.warn(`Rejected outside Batticaloa bounds: ${entry.name} -> ${lat}, ${lng}`);
       await writeProgress();
       continue;
     }
@@ -129,7 +150,7 @@ for (const [index, entry] of source.entries()) {
     });
     console.log(`Geocoded ${index + 1}/${source.length}: ${entry.name} -> ${lat}, ${lng}`);
   } catch (error) {
-    failures.push({ name: entry.name, address: entry.address, query });
+    failures.push({ name: entry.name, address: entry.address, query, reason: 'request failed' });
     console.warn(`Geocoding failed for ${entry.name}:`, error);
   }
   await writeProgress();
@@ -138,3 +159,5 @@ for (const [index, entry] of source.entries()) {
 await writeProgress();
 console.log(`Wrote ${schools.length} schools to ${outputPath}`);
 console.log(`Wrote ${failures.length} failures to ${failuresPath}`);
+console.log(`Rejected outside district bounds: ${failures.filter((failure) => failure.reason === 'matched outside Batticaloa district bounds').length}`);
+console.log(`Genuinely not found: ${failures.filter((failure) => failure.reason === 'no match found').length}`);

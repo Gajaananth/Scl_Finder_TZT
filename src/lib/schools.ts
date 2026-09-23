@@ -35,6 +35,12 @@ interface OverpassElement {
   tags?: Record<string, string>;
 }
 
+export interface SchoolFetchStatus {
+  schools: School[];
+  curatedListOk: boolean;
+  liveOsmOk: boolean;
+}
+
 const EXCLUSION_PATTERNS: RegExp[] = [
   /\baraneri\b/i,
   /\baranari\b/i,
@@ -161,7 +167,7 @@ function inferMediums(tags: Record<string, string>): Medium[] {
 export async function fetchOsmSchoolsNear(
   location: Coordinates,
   radiusMeters: number
-): Promise<School[]> {
+): Promise<{ schools: School[]; ok: boolean }> {
   const searchRadius = Math.min(Math.max(radiusMeters, 200), 25000);
 
   const query = `
@@ -205,6 +211,8 @@ export async function fetchOsmSchoolsNear(
         const tags = el.tags || {};
         const rawName = tags['name:en'] || tags.name || tags['name:ta'] || tags['name:si'];
         if (!lat || !lng || !rawName) continue;
+        const distanceFromSearch = computeStraightLineDistance(location, { lat, lng });
+        if (distanceFromSearch > searchRadius * 1.1) continue;
         if (!isEligibleGovernmentSchool(tags, rawName)) continue;
 
         const street = tags['addr:street'] || tags['addr:place'] || '';
@@ -225,25 +233,28 @@ export async function fetchOsmSchoolsNear(
         });
       }
 
-      return osmSchools;
+      return { schools: osmSchools, ok: true };
     } catch {
       // Continue to next endpoint quickly
     }
   }
 
-  return [];
+  return { schools: [], ok: false };
 }
 
 export async function fetchSchools(
   nearLocation?: Coordinates,
   radiusMeters: number = 2000
-): Promise<School[]> {
+): Promise<SchoolFetchStatus> {
   const schoolsMap = new Map<string, School>();
+  let curatedListOk = false;
+  let liveOsmOk = !nearLocation;
 
   // The generated JSON served by /api/schools is the single source of truth.
   try {
     const res = await fetchWithTimeout(API_URL, undefined, 1500);
     if (res.ok) {
+      curatedListOk = true;
       const staticSchools: School[] = await res.json();
       for (const s of staticSchools) {
         if (!schoolsMap.has(s.id) && isEligibleGovernmentSchool({}, s.name)) {
@@ -262,8 +273,9 @@ export async function fetchSchools(
   // OSM is enrichment for schools not yet present in the generated census data.
   if (nearLocation) {
     try {
-      const liveOsmSchools = await fetchOsmSchoolsNear(nearLocation, radiusMeters);
-      for (const s of liveOsmSchools) {
+      const liveResult = await fetchOsmSchoolsNear(nearLocation, radiusMeters);
+      liveOsmOk = liveResult.ok;
+      for (const s of liveResult.schools) {
         if (!schoolsMap.has(s.id)) {
           schoolsMap.set(s.id, s);
         }
@@ -273,5 +285,9 @@ export async function fetchSchools(
     }
   }
 
-  return Array.from(schoolsMap.values());
+  return {
+    schools: Array.from(schoolsMap.values()),
+    curatedListOk,
+    liveOsmOk,
+  };
 }

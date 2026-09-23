@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "geocode": "tsx scripts/geocode-schools.ts"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
@@ -17,6 +18,7 @@
     "@vercel/node": "^13.0.1",
     "@vitejs/plugin-react": "^6.1.1",
     "tailwindcss": "^4.3.3",
+    "tsx": "^4.20.5",
     "typescript": "~6.0.2",
     "vite": "^8.3.0"
   },

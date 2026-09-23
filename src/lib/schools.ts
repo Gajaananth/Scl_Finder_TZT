@@ -1,5 +1,4 @@
 import type { School, Coordinates, SchoolType, Medium } from '../types/school';
-import { DEFAULT_SCHOOLS } from '../data/schools';
 import { computeStraightLineDistance } from './distance';
 
 const API_URL = '/api/schools';
@@ -241,18 +240,7 @@ export async function fetchSchools(
 ): Promise<School[]> {
   const schoolsMap = new Map<string, School>();
 
-  // 1. Instantly seed with verified Batticaloa schools (guaranteed instant response)
-  for (const s of DEFAULT_SCHOOLS) {
-    if (isEligibleGovernmentSchool({}, s.name)) {
-      if (nearLocation) {
-        const dist = computeStraightLineDistance(nearLocation, { lat: s.lat, lng: s.lng });
-        if (dist > 25000 && s.id !== 'sch-001') continue;
-      }
-      schoolsMap.set(s.id, s);
-    }
-  }
-
-  // 2. Query /api/schools to merge any dynamic schools from API
+  // The generated JSON served by /api/schools is the single source of truth.
   try {
     const res = await fetchWithTimeout(API_URL, undefined, 1500);
     if (res.ok) {
@@ -271,7 +259,7 @@ export async function fetchSchools(
     console.warn('API schools fetch error:', err);
   }
 
-  // 3. Quick non-blocking OSM check
+  // OSM is enrichment for schools not yet present in the generated census data.
   if (nearLocation) {
     try {
       const liveOsmSchools = await fetchOsmSchoolsNear(nearLocation, radiusMeters);

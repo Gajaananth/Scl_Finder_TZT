@@ -1,0 +1,924 @@
+[
+  {
+    "name": "St. Cecilia's Girls' College",
+    "address": "St. Anthony's Street, Puliyanthivu, Batticaloa, Sri Lanka",
+    "zone": "Batticaloa",
+    "type": "1AB",
+    "medium": [
+      "Tamil",
+      "English"
+    ],
+    "id": "sch-001",
+    "lat": 7.714102,
+    "lng": 81.6962228
+  },
+  {
+    "name": "St. Michael's College National School",
+    "address": "Central Road, Batticaloa, Sri Lanka",
+    "zone": "Batticaloa",
+    "type": "1AB",
+    "medium": [
+      "Tamil",
+      "English"
+    ],
+    "id": "school-002",
+    "lat": 7.6212335,
+    "lng": 81.7077446
+  },
+  {
+    "name": "Vincent Girls' High School",
+    "address": "Lake Road, Puliyanthivu, Batticaloa, Sri Lanka",
+    "zone": "Batticaloa",
+    "type": "1AB",
+    "medium": [
+      "Tamil",
+      "English"
+    ],
+    "id": "school-003",
+    "lat": 7.7060564,
+    "lng": 81.6888934
+  },
+  {
+    "name": "Methodist Central College",
+    "address": "Puliyanthivu, Batticaloa, Sri Lanka",
+    "zone": "Batticaloa",
+    "type": "1AB",
+    "medium": [
+      "Tamil",
+      "English"
+    ],
+    "id": "school-004",
+    "lat": 7.7094004,
+    "lng": 81.6995779
+  },
+  {
+    "name": "Mahajana College",
+    "address": "New Road, Batticaloa, Sri Lanka",
+    "zone": "Batticaloa",
+    "type": "1AB",
+    "medium": [
+      "Tamil",
+      "English"
+    ],
+    "id": "school-005",
+    "lat": 7.7946607,
+    "lng": 81.5830722
+  },
+  {
+    "name": "Batticaloa Hindu College",
+    "address": "Trincomalee Road, Batticaloa, Sri Lanka",
+    "zone": "Batticaloa",
+    "type": "1AB",
+    "medium": [
+      "Tamil",
+      "English"
+    ],
+    "id": "school-006",
+    "lat": 7.7177864,
+    "lng": 81.6989499
+  },
+  {
+    "name": "St. Joseph's College",
+    "address": "Main Street, Batticaloa, Sri Lanka",
+    "zone": "Batticaloa",
+    "type": "1AB",
+    "medium": [
+      "Tamil",
+      "English"
+    ],
+    "id": "school-007",
+    "lat": 7.7129645,
+    "lng": 81.6987213
+  },
+  {
+    "name": "Shivananda National School",
+    "address": "Kallady, Batticaloa, Sri Lanka",
+    "zone": "Batticaloa",
+    "type": "1AB",
+    "medium": [
+      "Tamil",
+      "English"
+    ],
+    "id": "school-008",
+    "lat": 7.7191523,
+    "lng": 81.7074581
+  },
+  {
+    "name": "Al-Azhar Vidyalaya",
+    "address": "New Road, Batticaloa, Sri Lanka",
+    "zone": "Batticaloa",
+    "type": "1C",
+    "medium": [
+      "Tamil",
+      "English"
+    ],
+    "id": "school-009",
+    "lat": 7.7946607,
+    "lng": 81.5830722
+  },
+  {
+    "name": "Vivekananda Vidyalaya",
+    "address": "Urani, Batticaloa, Sri Lanka",
+    "zone": "Batticaloa",
+    "type": "1C",
+    "medium": [
+      "Tamil"
+    ],
+    "id": "school-010",
+    "lat": 7.7190541,
+    "lng": 81.6731183
+  },
+  {
+    "name": "Urani Saraswathi Vidyalayam",
+    "address": "Urani, Batticaloa, Sri Lanka",
+    "zone": "Batticaloa",
+    "type": "Type2",
+    "medium": [
+      "Tamil"
+    ],
+    "id": "school-011",
+    "lat": 7.7190541,
+    "lng": 81.6731183
+  },
+  {
+    "name": "Amirthakali Sri Siddhi Vinayagar Vidyalayam",
+    "address": "Amirthakali, Batticaloa, Sri Lanka",
+    "zone": "Batticaloa",
+    "type": "Type2",
+    "medium": [
+      "Tamil"
+    ],
+    "id": "school-012",
+    "lat": 7.7425527,
+    "lng": 81.6929311
+  },
+  {
+    "name": "Thiraimadu Sri Krishna Vidyalayam",
+    "address": "Thiraimadu, Batticaloa, Sri Lanka",
+    "zone": "Batticaloa",
+    "type": "Type3",
+    "medium": [
+      "Tamil"
+    ],
+    "id": "school-013",
+    "lat": 7.7527227,
+    "lng": 81.6767202
+  },
+  {
+    "name": "Navatkudah Namagal Vidyalayam",
+    "address": "Navatkudah, Batticaloa, Sri Lanka",
+    "zone": "Batticaloa",
+    "type": "Type2",
+    "medium": [
+      "Tamil"
+    ],
+    "id": "school-014",
+    "lat": 7.6957067,
+    "lng": 81.7240864
+  },
+  {
+    "name": "Eravur Rahmaniya Maha Vidyalaya",
+    "address": "Market Road, Eravur, Sri Lanka",
+    "zone": "Batticaloa",
+    "type": "1C",
+    "medium": [
+      "Tamil"
+    ],
+    "id": "school-015",
+    "lat": 7.7790311,
+    "lng": 81.6054269
+  },
+  {
+    "name": "Paddiruppu National School",
+    "address": "Main Road, Kaluwanchikudy, Sri Lanka",
+    "zone": "Batticaloa",
+    "type": "1AB",
+    "medium": [
+      "Tamil",
+      "English"
+    ],
+    "id": "school-016",
+    "lat": 7.4856872,
+    "lng": 81.7969804
+  },
+  {
+    "name": "Shivananda National College",
+    "address": "Puliyanthivu West, Batticaloa District, Sri Lanka",
+    "zone": "Puliyanthivu West",
+    "type": "1AB",
+    "medium": [],
+    "id": "school-017",
+    "lat": 7.7120567,
+    "lng": 81.6938231
+  },
+  {
+    "name": "Alighar Central College",
+    "address": "Eravur, Batticaloa District, Sri Lanka",
+    "zone": "Eravur",
+    "type": "1AB",
+    "medium": [],
+    "id": "school-018",
+    "lat": 7.7757162,
+    "lng": 81.6048021
+  },
+  {
+    "name": "Macan Markar National School",
+    "address": "Eravur, Batticaloa District, Sri Lanka",
+    "zone": "Eravur",
+    "type": "1AB",
+    "medium": [],
+    "id": "school-019",
+    "lat": 7.7757162,
+    "lng": 81.6048021
+  },
+  {
+    "name": "Valaichchenai Hindu College",
+    "address": "Valaichchenai, Batticaloa District, Sri Lanka",
+    "zone": "Valaichchenai",
+    "type": "1AB",
+    "medium": [],
+    "id": "school-020",
+    "lat": 7.9090822,
+    "lng": 81.5331218
+  },
+  {
+    "name": "Kudiyiruppu Kalaimagal Maha Vidyalayam",
+    "address": "Eravur, Batticaloa District, Sri Lanka",
+    "zone": "Eravur",
+    "type": "1AB",
+    "medium": [],
+    "id": "school-021",
+    "lat": 7.7715529,
+    "lng": 81.6131202
+  },
+  {
+    "name": "Araipattai Subramaniyam Vidyalayam",
+    "address": "Arayampathy, Batticaloa District, Sri Lanka",
+    "zone": "Arayampathy",
+    "type": "1C",
+    "medium": [],
+    "id": "school-022",
+    "lat": 7.6576164,
+    "lng": 81.7392717
+  },
+  {
+    "name": "Araiyampathy R.K.M. Maha Vidyalayam",
+    "address": "Arayampathy, Batticaloa District, Sri Lanka",
+    "zone": "Arayampathy",
+    "type": "1AB",
+    "medium": [],
+    "id": "school-023",
+    "lat": 7.6576164,
+    "lng": 81.7392717
+  },
+  {
+    "name": "Arasadithivu Vigneswara Maha Vidyalayam",
+    "address": "Kokkaddicholai, Batticaloa District, Sri Lanka",
+    "zone": "Kokkaddicholai",
+    "type": "1AB",
+    "medium": [],
+    "id": "school-024",
+    "lat": 7.6045505,
+    "lng": 81.7133672
+  },
+  {
+    "name": "Anaipanthy Hindu Ladies College",
+    "address": "Hospital Road, Batticaloa, Batticaloa District, Sri Lanka",
+    "zone": "Hospital Road, Batticaloa",
+    "type": "1AB",
+    "medium": [],
+    "id": "school-025",
+    "lat": 7.7082467,
+    "lng": 81.6909346
+  },
+  {
+    "name": "Arafa Vidyalayam",
+    "address": "Eravur, Batticaloa District, Sri Lanka",
+    "zone": "Eravur",
+    "type": "1C",
+    "medium": [],
+    "id": "school-026",
+    "lat": 7.7757162,
+    "lng": 81.6048021
+  },
+  {
+    "name": "Amirthakaly Sri Sithy Vinayagar Vidyalayam",
+    "address": "Amirthakali, Batticaloa District, Sri Lanka",
+    "zone": "Amirthakali",
+    "type": "1C",
+    "medium": [],
+    "id": "school-027",
+    "lat": 7.7425527,
+    "lng": 81.6929311
+  },
+  {
+    "name": "Ampilanthurai Kalaimagal Maha Vidyalayam",
+    "address": "Ampilanthurai, Batticaloa District, Sri Lanka",
+    "zone": "Ampilanthurai",
+    "type": "1AB",
+    "medium": [],
+    "id": "school-028",
+    "lat": 7.586232,
+    "lng": 81.7498491
+  },
+  {
+    "name": "Anaikaddiyavely Namahal Vidyalayam",
+    "address": "Mandur, Batticaloa District, Sri Lanka",
+    "zone": "Mandur",
+    "type": "1C",
+    "medium": [],
+    "id": "school-029",
+    "lat": 7.920017,
+    "lng": 81.2958449
+  },
+  {
+    "name": "Eravur Vipulananda Vidyalayam",
+    "address": "Eravur, Batticaloa District, Sri Lanka",
+    "zone": "Eravur",
+    "type": "1C",
+    "medium": [],
+    "id": "school-030",
+    "lat": 7.773973,
+    "lng": 81.6003031
+  },
+  {
+    "name": "Iyankerny Tamil Vidyalayam",
+    "address": "Chenkalady, Batticaloa District, Sri Lanka",
+    "zone": "Chenkalady",
+    "type": "1C",
+    "medium": [],
+    "id": "school-031",
+    "lat": 7.7977646,
+    "lng": 81.5828133
+  },
+  {
+    "name": "Vipulananda Vidyalayam",
+    "address": "Kallady, Batticaloa District, Sri Lanka",
+    "zone": "Kallady",
+    "type": "1C",
+    "medium": [],
+    "id": "school-032",
+    "lat": 7.7191523,
+    "lng": 81.7074581
+  },
+  {
+    "name": "Puthur Vigneswara Vidyalayam",
+    "address": "Puthur, Batticaloa District, Sri Lanka",
+    "zone": "Puthur",
+    "type": "1C",
+    "medium": [],
+    "id": "school-033",
+    "lat": 7.7025698,
+    "lng": 81.6809834
+  },
+  {
+    "name": "Koddamunai Kanishta Vidyalayam",
+    "address": "Koddamunai, Batticaloa, Batticaloa District, Sri Lanka",
+    "zone": "Koddamunai, Batticaloa",
+    "type": "1C",
+    "medium": [],
+    "id": "school-034",
+    "lat": 7.7147864,
+    "lng": 81.6981394
+  },
+  {
+    "name": "Vigneshwara Vidyalayam",
+    "address": "Palameenmadu, Batticaloa District, Sri Lanka",
+    "zone": "Palameenmadu",
+    "type": "1C",
+    "medium": [],
+    "id": "school-035",
+    "lat": 7.7624146,
+    "lng": 81.6723774
+  },
+  {
+    "name": "Kudiyiruppu Kanista Vidyalayam",
+    "address": "Thannamunai, Batticaloa District, Sri Lanka",
+    "zone": "Thannamunai",
+    "type": "1C",
+    "medium": [],
+    "id": "school-036",
+    "lat": 7.7508436,
+    "lng": 81.6414198
+  },
+  {
+    "name": "Arasady Pillayar Kovil Road Ward 06 Kanishta Vidyalayam",
+    "address": "Arasady, Batticaloa District, Sri Lanka",
+    "zone": "Arasady",
+    "type": "1C",
+    "medium": [],
+    "id": "school-037",
+    "lat": 7.7155914,
+    "lng": 81.7010233
+  },
+  {
+    "name": "Arayampathi Sivamani Vidyalayam",
+    "address": "Old Kalmunai Road, Batticaloa District, Sri Lanka",
+    "zone": "Old Kalmunai Road",
+    "type": "1C",
+    "medium": [],
+    "id": "school-038",
+    "lat": 7.7124151,
+    "lng": 81.7101393
+  },
+  {
+    "name": "Arayampathy Notary Moothathamby Vidyalayam",
+    "address": "Arayampathy, Batticaloa District, Sri Lanka",
+    "zone": "Arayampathy",
+    "type": "1C",
+    "medium": [],
+    "id": "school-039",
+    "lat": 7.6576164,
+    "lng": 81.7392717
+  },
+  {
+    "name": "Ampilanthurai Junior School",
+    "address": "Ampilanthurai, Batticaloa District, Sri Lanka",
+    "zone": "Ampilanthurai",
+    "type": "Type3",
+    "medium": [],
+    "id": "school-040",
+    "lat": 7.586232,
+    "lng": 81.7498491
+  },
+  {
+    "name": "Al Juffriya Vidyalaya",
+    "address": "Eravur, Batticaloa District, Sri Lanka",
+    "zone": "Eravur",
+    "type": "1C",
+    "medium": [],
+    "id": "school-041",
+    "lat": 7.7757162,
+    "lng": 81.6048021
+  },
+  {
+    "name": "Al Muneera Balika Maha Vidyalaya",
+    "address": "Eravur, Batticaloa District, Sri Lanka",
+    "zone": "Eravur",
+    "type": "1C",
+    "medium": [],
+    "id": "school-042",
+    "lat": 7.7757162,
+    "lng": 81.6048021
+  },
+  {
+    "name": "Al-Ameen Vidyalaya",
+    "address": "Kattankudy, Batticaloa District, Sri Lanka",
+    "zone": "Kattankudy",
+    "type": "1C",
+    "medium": [],
+    "id": "school-043",
+    "lat": 7.6804861,
+    "lng": 81.7289676
+  },
+  {
+    "name": "Al Azhar Girls High School",
+    "address": "Kattankudy, Batticaloa District, Sri Lanka",
+    "zone": "Kattankudy",
+    "type": "Type2",
+    "medium": [],
+    "id": "school-044",
+    "lat": 7.6804861,
+    "lng": 81.7289676
+  },
+  {
+    "name": "Meeravodai Al-Hidhaya Maha Vidyalayam",
+    "address": "Meeravodai, Batticaloa District, Sri Lanka",
+    "zone": "Meeravodai",
+    "type": "1AB",
+    "medium": [],
+    "id": "school-045",
+    "lat": 7.9079128,
+    "lng": 81.524824
+  },
+  {
+    "name": "Meeravodai Uthuman Vidyalayam",
+    "address": "Meeravodai, Batticaloa District, Sri Lanka",
+    "zone": "Meeravodai",
+    "type": "1C",
+    "medium": [],
+    "id": "school-046",
+    "lat": 7.9079128,
+    "lng": 81.524824
+  },
+  {
+    "name": "Oddamavadi Hijra Vidyalayam",
+    "address": "Oddamavadi, Batticaloa District, Sri Lanka",
+    "zone": "Oddamavadi",
+    "type": "1C",
+    "medium": [],
+    "id": "school-047",
+    "lat": 7.9158314,
+    "lng": 81.5211079
+  },
+  {
+    "name": "Rideethenna Iqrah Vidyalaya",
+    "address": "Rideethenna, Batticaloa District, Sri Lanka",
+    "zone": "Rideethenna",
+    "type": "1C",
+    "medium": [],
+    "id": "school-048",
+    "lat": 7.9656506,
+    "lng": 81.3397551
+  },
+  {
+    "name": "Mancholai Al-Hira Vidyalayam",
+    "address": "Mancholai, Batticaloa District, Sri Lanka",
+    "zone": "Mancholai",
+    "type": "1C",
+    "medium": [],
+    "id": "school-049",
+    "lat": 7.897481,
+    "lng": 81.5255411
+  },
+  {
+    "name": "Al-Hasanath Vidyalaya",
+    "address": "Kattankudy, Batticaloa District, Sri Lanka",
+    "zone": "Kattankudy",
+    "type": "1C",
+    "medium": [],
+    "id": "school-050",
+    "lat": 7.6804861,
+    "lng": 81.7289676
+  },
+  {
+    "name": "Al-Falah Vidyalaya",
+    "address": "Kattankudy, Batticaloa District, Sri Lanka",
+    "zone": "Kattankudy",
+    "type": "1C",
+    "medium": [],
+    "id": "school-051",
+    "lat": 7.6804861,
+    "lng": 81.7289676
+  },
+  {
+    "name": "Al-Manar Vidyalaya",
+    "address": "Kattankudy, Batticaloa District, Sri Lanka",
+    "zone": "Kattankudy",
+    "type": "1C",
+    "medium": [],
+    "id": "school-052",
+    "lat": 7.6804861,
+    "lng": 81.7289676
+  },
+  {
+    "name": "Al-Hira Vidyalaya",
+    "address": "Kattankudy, Batticaloa District, Sri Lanka",
+    "zone": "Kattankudy",
+    "type": "1C",
+    "medium": [],
+    "id": "school-053",
+    "lat": 7.6804861,
+    "lng": 81.7289676
+  },
+  {
+    "name": "Kattankudy Muslim Ladies College",
+    "address": "Kattankudy, Batticaloa District, Sri Lanka",
+    "zone": "Kattankudy",
+    "type": "1AB",
+    "medium": [],
+    "id": "school-054",
+    "lat": 7.6804861,
+    "lng": 81.7289676
+  },
+  {
+    "name": "Rahmania Vidyalaya",
+    "address": "Kattankudy, Batticaloa District, Sri Lanka",
+    "zone": "Kattankudy",
+    "type": "1C",
+    "medium": [],
+    "id": "school-055",
+    "lat": 7.6804861,
+    "lng": 81.7289676
+  },
+  {
+    "name": "Baduriya Vidyalaya",
+    "address": "Kattankudy, Batticaloa District, Sri Lanka",
+    "zone": "Kattankudy",
+    "type": "1C",
+    "medium": [],
+    "id": "school-056",
+    "lat": 7.6804861,
+    "lng": 81.7289676
+  },
+  {
+    "name": "Jinna Vidyalayam",
+    "address": "Kattankudy, Batticaloa District, Sri Lanka",
+    "zone": "Kattankudy",
+    "type": "1C",
+    "medium": [],
+    "id": "school-057",
+    "lat": 7.6804861,
+    "lng": 81.7289676
+  },
+  {
+    "name": "Tariq Vidyalayam",
+    "address": "Kattankudy, Batticaloa District, Sri Lanka",
+    "zone": "Kattankudy",
+    "type": "1C",
+    "medium": [],
+    "id": "school-058",
+    "lat": 7.6804861,
+    "lng": 81.7289676
+  },
+  {
+    "name": "Iqbal Vidyalayam",
+    "address": "Kattankudy, Batticaloa District, Sri Lanka",
+    "zone": "Kattankudy",
+    "type": "1C",
+    "medium": [],
+    "id": "school-059",
+    "lat": 7.6804861,
+    "lng": 81.7289676
+  },
+  {
+    "name": "Mazharul Uloom Vidyalayam",
+    "address": "Kattankudy, Batticaloa District, Sri Lanka",
+    "zone": "Kattankudy",
+    "type": "1C",
+    "medium": [],
+    "id": "school-060",
+    "lat": 7.6804861,
+    "lng": 81.7289676
+  },
+  {
+    "name": "Al-Jalaal Vidyalayam",
+    "address": "Kattankudy, Batticaloa District, Sri Lanka",
+    "zone": "Kattankudy",
+    "type": "1C",
+    "medium": [],
+    "id": "school-061",
+    "lat": 7.6804861,
+    "lng": 81.7289676
+  },
+  {
+    "name": "Shivananda Vidyalayam National School",
+    "address": "Puliyanthivu West, Batticaloa District, Sri Lanka",
+    "zone": "Puliyanthivu West",
+    "type": "1AB",
+    "medium": [],
+    "id": "school-062",
+    "lat": 7.7120567,
+    "lng": 81.6938231
+  },
+  {
+    "name": "Joseph Vaz Vidyalayam",
+    "address": "Puliyanthivu, Batticaloa District, Sri Lanka",
+    "zone": "Puliyanthivu",
+    "type": "1C",
+    "medium": [],
+    "id": "school-063",
+    "lat": 7.7077859,
+    "lng": 81.6897267
+  },
+  {
+    "name": "Mamangam Vidyalayam",
+    "address": "Mamangam, Batticaloa District, Sri Lanka",
+    "zone": "Mamangam",
+    "type": "1C",
+    "medium": [],
+    "id": "school-064",
+    "lat": 7.7500854,
+    "lng": 81.6845498
+  },
+  {
+    "name": "Navalady Tamil Vidyalayam",
+    "address": "Navalady, Batticaloa District, Sri Lanka",
+    "zone": "Navalady",
+    "type": "1C",
+    "medium": [],
+    "id": "school-065",
+    "lat": 7.9461955,
+    "lng": 81.5222575
+  },
+  {
+    "name": "Thiraimadu R.K.M. Vidyalayam",
+    "address": "Thiraimadu, Batticaloa District, Sri Lanka",
+    "zone": "Thiraimadu",
+    "type": "1C",
+    "medium": [],
+    "id": "school-066",
+    "lat": 7.7527227,
+    "lng": 81.6767202
+  },
+  {
+    "name": "Amirthakally Sri Sithy Vinayagar Vidyalayam",
+    "address": "Amirthakali, Batticaloa District, Sri Lanka",
+    "zone": "Amirthakali",
+    "type": "1C",
+    "medium": [],
+    "id": "school-067",
+    "lat": 7.7465177,
+    "lng": 81.6917482
+  },
+  {
+    "name": "Karadiyanaru Maha Vidyalayam",
+    "address": "Karadiyanaru, Batticaloa District, Sri Lanka",
+    "zone": "Karadiyanaru",
+    "type": "1AB",
+    "medium": [],
+    "id": "school-068",
+    "lat": 7.7024356,
+    "lng": 81.537165
+  },
+  {
+    "name": "Karadiyanaru Hindu Vidyalayam",
+    "address": "Karadiyanaru, Batticaloa District, Sri Lanka",
+    "zone": "Karadiyanaru",
+    "type": "1C",
+    "medium": [],
+    "id": "school-069",
+    "lat": 7.6969535,
+    "lng": 81.5436391
+  },
+  {
+    "name": "Thamaraikerny Zahir Mowlana Vidyalaya",
+    "address": "Eravur, Batticaloa District, Sri Lanka",
+    "zone": "Eravur",
+    "type": "1C",
+    "medium": [],
+    "id": "school-070",
+    "lat": 7.7757162,
+    "lng": 81.6048021
+  },
+  {
+    "name": "Sittandy Sri Vigneshwara Vidyalayam",
+    "address": "Sittandy, Batticaloa District, Sri Lanka",
+    "zone": "Sittandy",
+    "type": "1C",
+    "medium": [],
+    "id": "school-071",
+    "lat": 7.8225272,
+    "lng": 81.5526983
+  },
+  {
+    "name": "Mavadivembu Vigneshwara Vidyalayam",
+    "address": "Mavadivembu, Batticaloa District, Sri Lanka",
+    "zone": "Mavadivembu",
+    "type": "1C",
+    "medium": [],
+    "id": "school-072",
+    "lat": 7.8079666,
+    "lng": 81.5669521
+  },
+  {
+    "name": "Vantharumoolai Vishnu Maha Vidyalayam",
+    "address": "Vantharumoolai, Batticaloa District, Sri Lanka",
+    "zone": "Vantharumoolai",
+    "type": "1AB",
+    "medium": [],
+    "id": "school-073",
+    "lat": 7.7942426,
+    "lng": 81.5805337
+  },
+  {
+    "name": "Vantharumoolai R.K.M. Balika Vidyalayam",
+    "address": "Vantharumoolai, Batticaloa District, Sri Lanka",
+    "zone": "Vantharumoolai",
+    "type": "1C",
+    "medium": [],
+    "id": "school-074",
+    "lat": 7.7942426,
+    "lng": 81.5805337
+  },
+  {
+    "name": "Vakarai Maha Vidyalayam",
+    "address": "Vakarai, Batticaloa District, Sri Lanka",
+    "zone": "Vakarai",
+    "type": "1AB",
+    "medium": [],
+    "id": "school-075",
+    "lat": 8.1333819,
+    "lng": 81.4360019
+  },
+  {
+    "name": "Kathiraveli Vigneshwara Vidyalayam",
+    "address": "Kathiraveli, Batticaloa District, Sri Lanka",
+    "zone": "Kathiraveli",
+    "type": "1C",
+    "medium": [],
+    "id": "school-076",
+    "lat": 8.2254425,
+    "lng": 81.4119494
+  },
+  {
+    "name": "Vammivaddavan Vidyalayam",
+    "address": "Vammivaddavan, Batticaloa District, Sri Lanka",
+    "zone": "Vammivaddavan",
+    "type": "1C",
+    "medium": [],
+    "id": "school-077",
+    "lat": 8.1844413,
+    "lng": 81.4115977
+  },
+  {
+    "name": "Kalkudah Namagal Vidyalayam",
+    "address": "Kalkudah, Batticaloa District, Sri Lanka",
+    "zone": "Kalkudah",
+    "type": "1C",
+    "medium": [],
+    "id": "school-078",
+    "lat": 7.9156649,
+    "lng": 81.5603565
+  },
+  {
+    "name": "Valaichenai An-Noor Maha Vidyalayam",
+    "address": "Valaichchenai, Batticaloa District, Sri Lanka",
+    "zone": "Valaichchenai",
+    "type": "1AB",
+    "medium": [],
+    "id": "school-079",
+    "lat": 7.9090822,
+    "lng": 81.5331218
+  },
+  {
+    "name": "Mandur Vigneswara Maha Vidyalayam",
+    "address": "Mandur, Batticaloa District, Sri Lanka",
+    "zone": "Mandur",
+    "type": "1AB",
+    "medium": [],
+    "id": "school-080",
+    "lat": 7.920017,
+    "lng": 81.2958449
+  },
+  {
+    "name": "Periyaporativu Bharathy Vidyalayam",
+    "address": "Periyaporativu, Batticaloa District, Sri Lanka",
+    "zone": "Periyaporativu",
+    "type": "1C",
+    "medium": [],
+    "id": "school-081",
+    "lat": 7.5263644,
+    "lng": 81.7654789
+  },
+  {
+    "name": "Kokkaddicholai Ramakrishna Mission Vidyalayam",
+    "address": "Kokkaddicholai, Batticaloa District, Sri Lanka",
+    "zone": "Kokkaddicholai",
+    "type": "1C",
+    "medium": [],
+    "id": "school-082",
+    "lat": 7.6045505,
+    "lng": 81.7133672
+  },
+  {
+    "name": "Palugamam Kandumani Maha Vidyalayam",
+    "address": "Palugamam, Batticaloa District, Sri Lanka",
+    "zone": "Palugamam",
+    "type": "1AB",
+    "medium": [],
+    "id": "school-083",
+    "lat": 7.5467199,
+    "lng": 81.7615336
+  },
+  {
+    "name": "Periyakallar Vinayagar Vidyalayam",
+    "address": "Periyakallar, Batticaloa District, Sri Lanka",
+    "zone": "Periyakallar",
+    "type": "1C",
+    "medium": [],
+    "id": "school-084",
+    "lat": 7.4720128,
+    "lng": 81.8078667
+  },
+  {
+    "name": "Palamunai Aligar Vidyalayam",
+    "address": "Palamunai, Batticaloa District, Sri Lanka",
+    "zone": "Palamunai",
+    "type": "1C",
+    "medium": [],
+    "id": "school-085",
+    "lat": 7.2870135,
+    "lng": 81.8480782
+  },
+  {
+    "name": "Palamunai Ashraff Vidyalayam",
+    "address": "Palamunai, Batticaloa District, Sri Lanka",
+    "zone": "Palamunai",
+    "type": "1C",
+    "medium": [],
+    "id": "school-086",
+    "lat": 7.2870135,
+    "lng": 81.8480782
+  },
+  {
+    "name": "Koddaikallar Maha Vidyalayam",
+    "address": "Koddaikallar, Batticaloa District, Sri Lanka",
+    "zone": "Koddaikallar",
+    "type": "1AB",
+    "medium": [],
+    "id": "school-087",
+    "lat": 7.4879447,
+    "lng": 81.8070095
+  },
+  {
+    "name": "Kaluwanchikudy Rasamanickam Maha Vidyalayam",
+    "address": "Kaluwanchikudy, Batticaloa District, Sri Lanka",
+    "zone": "Kaluwanchikudy",
+    "type": "1AB",
+    "medium": [],
+    "id": "school-088",
+    "lat": 7.5174967,
+    "lng": 81.7871283
+  }
+]

@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { parse as cookieParse, serialize as cookieSerialize } from 'cookie';
 import { SignJWT, jwtVerify } from 'jose';
 import bcrypt from 'bcryptjs';
-import { DEFAULT_SCHOOLS } from './src/data/schools.ts';
+import schools from './data/schools.json';
 
 const SESSION_COOKIE_NAME = 'session';
 const SECRET_KEY = new TextEncoder().encode(
@@ -143,7 +143,7 @@ function mockApiPlugin(): Plugin {
         if (url === '/api/schools') {
           res.setHeader('Content-Type', 'application/json');
           res.statusCode = 200;
-          res.end(JSON.stringify(DEFAULT_SCHOOLS));
+          res.end(JSON.stringify(schools));
           return;
         }
 

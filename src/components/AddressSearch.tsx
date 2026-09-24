@@ -11,6 +11,14 @@ const RADIUS_PRESETS = [
   { label: '5 km', value: 5000 },
 ];
 
+const LOCALITY_FALLBACKS: Record<string, { lat: number; lng: number; label: string }> = {
+  batticaloa: { lat: 7.717, lng: 81.700, label: 'Batticaloa, Sri Lanka' },
+  kallady: { lat: 7.719, lng: 81.707, label: 'Kallady, Batticaloa, Sri Lanka' },
+  kattankudy: { lat: 7.686, lng: 81.733, label: 'Kattankudy, Batticaloa, Sri Lanka' },
+  eravur: { lat: 7.778, lng: 81.603, label: 'Eravur, Batticaloa, Sri Lanka' },
+  chenkalady: { lat: 7.783, lng: 81.574, label: 'Chenkalady, Batticaloa, Sri Lanka' },
+};
+
 interface NominatimResult {
   place_id: number;
   display_name: string;
@@ -135,12 +143,16 @@ export default function AddressSearch({ onSearch, isLoading }: AddressSearchProp
       );
 
       if (res.ok) {
-        return (await res.json()) as NominatimResult[];
+        const results = (await res.json()) as NominatimResult[];
+        if (results.length > 0) return results;
       }
     } catch (err) {
       console.warn('Nominatim search error:', err);
     }
-    return [];
+    const fallback = LOCALITY_FALLBACKS[query.trim().toLowerCase()];
+    return fallback
+      ? [{ place_id: -Math.abs(fallback.lat * 1000), display_name: fallback.label, lat: String(fallback.lat), lon: String(fallback.lng) }]
+      : [];
   }, []);
 
   // Progressive search: Attempt 1 -> Attempt 2 -> Attempt 3
@@ -246,16 +258,48 @@ export default function AddressSearch({ onSearch, isLoading }: AddressSearchProp
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setError(null);
+    void resolveAndSubmit();
+  };
 
-    if (!selectedLocation) {
+  const resolveAndSubmit = async () => {
+    setError(null);
+    const raw = inputValue.trim();
+    if (!raw) return;
+
+    let location = selectedLocation;
+    if (!location) {
+      setIsSearchingSuggestions(true);
+      try {
+        let results = await queryNominatim(raw);
+        if (results.length === 0) {
+          const simplified = simplifyAttempt2(raw);
+          if (simplified && simplified.toLowerCase() !== raw.toLowerCase()) {
+            results = await queryNominatim(simplified);
+          }
+        }
+        if (results.length === 0) {
+          const simplified = simplifyAttempt3(raw);
+          if (simplified) results = await queryNominatim(simplified);
+        }
+        const match = results[0];
+        if (match) {
+          location = { lat: parseFloat(match.lat), lng: parseFloat(match.lon) };
+          setSelectedLocation(location);
+          setInputValue(match.display_name);
+        }
+      } finally {
+        setIsSearchingSuggestions(false);
+      }
+    }
+
+    if (!location || !Number.isFinite(location.lat) || !Number.isFinite(location.lng)) {
       setError(
-        "We couldn't match that address. Try adding a nearby landmark, road name, or the village/town name, or check the spelling."
+        "We couldn't match that address. Try adding a nearby landmark, road name, or the village/town name, or place a pin on the map."
       );
       return;
     }
 
-    onSearch(selectedLocation, Math.min(radiusMeters, 25000), inputValue.trim() || undefined);
+    onSearch(location, Math.min(radiusMeters, 25000), inputValue.trim() || undefined);
   };
 
   const handlePresetClick = (value: number) => {

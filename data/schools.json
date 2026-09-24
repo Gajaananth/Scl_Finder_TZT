@@ -1,5 +1,23 @@
 [
   {
+    "name": "HINDU COLLEGE",
+    "address": "RAILWAY STATION ROAD BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "id": "school-001",
+    "type": "1AB",
+    "lat": 7.7206191,
+    "lng": 81.6979542,
+    "medium": [
+      "Tamil",
+      "English"
+    ]
+  },
+  {
     "name": "MADDIKALY TAMIL VIDYALAYAM",
     "address": "BATTICALOA",
     "zone": "Batticaloa",
@@ -8,7 +26,7 @@
     "hasGrade1": true,
     "gender": "Mixed",
     "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
-    "id": "school-001",
+    "id": "school-002",
     "type": "Type3",
     "lat": 7.7458272,
     "lng": 81.6851335,
@@ -25,7 +43,7 @@
     "hasGrade1": true,
     "gender": "Mixed",
     "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
-    "id": "school-002",
+    "id": "school-003",
     "type": "Type2",
     "lat": 7.7146702,
     "lng": 81.6718915,

@@ -79,6 +79,15 @@ const EXCLUSION_PATTERNS: RegExp[] = [
   /\bcampus\b/i,
   /teacher\s*training\s*college/i,
   /\bvidyapith/i,
+  /\bclub\b/i,
+  /\bsports?\b/i,
+  /\bplayground\b/i,
+  /\bgym(nasium)?\b/i,
+  /\bfitness\b/i,
+  /\btuition\b/i,
+  /\bcoaching\b/i,
+  /\btutorial\b/i,
+  /\blearning\s*cent(er|re)\b/i,
   /st\.?\s*michael'?s\s*college/i,
   /methodist\s*central\s*college/i,
   /mahajana\s*college/i,
@@ -108,6 +117,10 @@ export function isEligibleGovernmentSchool(
   }
 
   if (BOYS_ONLY_PATTERNS.some((pattern) => pattern.test(combined))) return false;
+
+  const hasSchoolTag = tags.amenity === 'school' || tags.education === 'school' || tags.school === 'yes';
+  const hasSchoolName = /\b(school|college|vidyalaya|vidyalayam|vidyalaya|maha\s+vidyalaya)\b/i.test(rawName);
+  if (Object.keys(tags).length > 0 && !hasSchoolTag && !hasSchoolName) return false;
 
   if (['private', 'commercial'].includes((tags['operator:type'] || '').toLowerCase())) return false;
   if (['private', 'commercial'].includes((tags.operator || '').toLowerCase())) return false;
@@ -157,6 +170,19 @@ function inferMediums(tags: Record<string, string>): Medium[] {
   }
 
   return mediums;
+}
+
+function isExplicitlyGovernmentOsmSchool(tags: Record<string, string>, rawName: string): boolean {
+  const governmentValues = new Set(['government', 'public', 'state', 'municipal']);
+  const ownership = (tags.ownership || '').toLowerCase();
+  const operatorType = (tags['operator:type'] || '').toLowerCase();
+  const operator = (tags.operator || '').toLowerCase();
+  const name = rawName.toLowerCase();
+
+  return governmentValues.has(ownership)
+    || governmentValues.has(operatorType)
+    || /\b(government|public|national)\b/i.test(operator)
+    || /\b(government|national)\b/i.test(name);
 }
 
 function normalizeSchoolName(name: string): string {
@@ -214,6 +240,7 @@ export async function fetchOsmSchoolsNear(
         const distanceFromSearch = computeStraightLineDistance(location, { lat, lng });
         if (distanceFromSearch > searchRadius * 1.1) continue;
         if (!isEligibleGovernmentSchool(tags, rawName)) continue;
+        if (!isExplicitlyGovernmentOsmSchool(tags, rawName)) continue;
 
         const street = tags['addr:street'] || tags['addr:place'] || '';
         const city = tags['addr:city'] || tags['addr:district'] || tags['addr:suburb'] || '';

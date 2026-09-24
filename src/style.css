@@ -166,8 +166,8 @@
   }
 
   .map-panel {
-    height: 50vh;
-    min-height: 340px;
+    height: auto;
+    min-height: 0;
   }
 
   .school-list-panel {
@@ -187,8 +187,8 @@
   }
 
   .map-panel {
-    height: 48vh;
-    min-height: 300px;
+    height: auto;
+    min-height: 0;
   }
 
   .school-list-panel {

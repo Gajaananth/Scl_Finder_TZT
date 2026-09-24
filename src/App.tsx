@@ -549,7 +549,7 @@ export default function App() {
             {/* Map-first results layout: keep cards below the full-width map. */}
             <div className="flex-1 flex flex-col min-h-0 no-print">
               {/* Full-width Map Panel */}
-              <div className="map-panel w-full h-[50vh] min-h-[360px] max-h-[560px] p-2.5 sm:p-3 lg:p-4 flex flex-col shrink-0">
+              <div className="map-panel w-full h-auto p-2.5 sm:p-3 lg:p-4 flex flex-col shrink-0">
                 <MapView
                   homeLocation={homeLocation}
                   schools={schools}

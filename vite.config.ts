@@ -1,10 +1,11 @@
 import { defineConfig, type Plugin } from 'vite';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { parse as cookieParse, serialize as cookieSerialize } from 'cookie';
 import { SignJWT, jwtVerify } from 'jose';
 import bcrypt from 'bcryptjs';
-import schools from './data/schools.json';
 
 const SESSION_COOKIE_NAME = 'session';
 const SECRET_KEY = new TextEncoder().encode(
@@ -143,7 +144,8 @@ function mockApiPlugin(): Plugin {
         if (url === '/api/schools') {
           res.setHeader('Content-Type', 'application/json');
           res.statusCode = 200;
-          res.end(JSON.stringify(schools));
+          const schoolsPath = resolve(process.cwd(), 'data/schools.json');
+          res.end(readFileSync(schoolsPath, 'utf8'));
           return;
         }
 
@@ -207,4 +209,9 @@ function mockApiPlugin(): Plugin {
 
 export default defineConfig({
   plugins: [react(), tailwindcss(), mockApiPlugin()],
+  server: {
+    watch: {
+      ignored: ['**/data/schools.json', '**/scripts/geocode-failures.json'],
+    },
+  },
 });

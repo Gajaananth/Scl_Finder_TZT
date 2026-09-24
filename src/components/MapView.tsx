@@ -219,7 +219,7 @@ export default function MapView({
         </div>
       )}
 
-      <div className="relative w-full h-[400px] min-w-0 rounded-2xl overflow-hidden border border-slate-200/80 shadow-inner">
+      <div className="relative w-full h-[min(50vh,400px)] min-h-[300px] min-w-0 rounded-2xl overflow-hidden border border-slate-200/80 shadow-inner">
       <MapContainer
         center={[homeLocation.lat, homeLocation.lng]}
         zoom={14}

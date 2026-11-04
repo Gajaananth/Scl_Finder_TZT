@@ -1,5 +1,23 @@
 [
   {
+    "id": "sch-001",
+    "name": "St. Cecilia's Girls' College",
+    "address": "St. Anthony's Street, Puliyanthivu, Batticaloa, Sri Lanka",
+    "zone": "Batticaloa",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Girls",
+    "source": "official school reference",
+    "type": "1AB",
+    "lat": 7.714102,
+    "lng": 81.6962228,
+    "medium": [
+      "Tamil",
+      "English"
+    ],
+    "isApproximate": false
+  },
+  {
     "name": "HINDU COLLEGE",
     "address": "RAILWAY STATION ROAD BATTICALOA",
     "zone": "Batticaloa",
@@ -50,5 +68,5694 @@
     "medium": [
       "Tamil"
     ]
+  },
+  {
+    "id": "school-004",
+    "name": "ERAVUR TAMIL MAHA VIDYALAYAM",
+    "address": "CHENKALADY",
+    "zone": "Batticaloa",
+    "educationDivision": "EravurPattu1_Chenkdy",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.7244732,
+    "lng": 81.6987174,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-005",
+    "name": "ERAVUR VIPULANANDA VIDYALAYAM ERAVUR 5",
+    "address": "CHENKALADY",
+    "zone": "Batticaloa",
+    "educationDivision": "EravurPattu1_Chenkdy",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724575530096653,
+    "lng": 81.6990521066646,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-006",
+    "name": "IYANKERNY TAMIL VIDYALAYAM",
+    "address": "IYANKERNY CHENKALADY",
+    "zone": "Batticaloa",
+    "educationDivision": "EravurPattu1_Chenkdy",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.723892873699212,
+    "lng": 81.69910883503243,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-007",
+    "name": "KUDIYIRUPPU KANISTA VIDYALAYAM",
+    "address": "ARUMUKATHAN KUDIYIRUPPU THANNAMUNAI",
+    "zone": "Batticaloa",
+    "educationDivision": "EravurPattu1_Chenkdy",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.72365719674047,
+    "lng": 81.6980566135894,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-008",
+    "name": "MYLAMBAVELY SRI VIGNESWARA VIDYALAYA MYLAMBAVELY",
+    "address": "THANNAMUNAI",
+    "zone": "Batticaloa",
+    "educationDivision": "EravurPattu1_Chenkdy",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724997649230782,
+    "lng": 81.69741934260361,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-009",
+    "name": "MYLAMPAVELY VIPULANANDA VIDYALAYAM",
+    "address": "THANNAMUNAI",
+    "zone": "Batticaloa",
+    "educationDivision": "EravurPattu1_Chenkdy",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.726216540721661,
+    "lng": 81.69886992254982,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-010",
+    "name": "SAVUKKADY BARATHY VIDYALAYAM",
+    "address": "SAVUKKADY THANNAMUNAI",
+    "zone": "Batticaloa",
+    "educationDivision": "EravurPattu1_Chenkdy",
+    "yearSpan": "Grade 1-8",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724909814550718,
+    "lng": 81.70077150996154,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-011",
+    "name": "ST. JOSEPH'S COLLEGE",
+    "address": "THANNAMUNAI. BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "EravurPattu1_Chenkdy",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.7244732,
+    "lng": 81.6987174,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-012",
+    "name": "THALAWAI VIGNAESWARA VIDYALAYAM",
+    "address": "THALAWAT CHENKALADY",
+    "zone": "Batticaloa",
+    "educationDivision": "EravurPattu1_Chenkdy",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724221431069882,
+    "lng": 81.69847426957034,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-013",
+    "name": "AMIRTHAKALY SRI SITHY VINAYAGAR VIDYALAYAM",
+    "address": "AMIRTHAKALY BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724790993349818,
+    "lng": 81.69809369543307,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-014",
+    "name": "ANAIPANTHY HINDU LADIES COLLEGE",
+    "address": "HOSPITAL ROAD BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Girls",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.725507248140663,
+    "lng": 81.69889973058656,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-015",
+    "name": "ARASADY PILLAYAR KOVIL ROAD WARD 06 KANISHTA VIDYALAYAM",
+    "address": "ARASADY PILLAYAR KOVIL ROAD BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724643817080768,
+    "lng": 81.7001069646123,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-016",
+    "name": "ARUNOTHAYA VIDYALAYAM",
+    "address": "RASAIRO LANE BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.722874495449125,
+    "lng": 81.69942918912538,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-017",
+    "name": "BATTICALOA VIVEKANADA LADIES' COLLEGE KALLADY UPPODAI",
+    "address": "BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Girls",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.72309547603912,
+    "lng": 81.69713250988154,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-018",
+    "name": "KALLADY MUGATHUWARAM VIPULANANDA VIDYALAYAM",
+    "address": "KALLADY BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7244732,
+    "lng": 81.6987174,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-019",
+    "name": "KALLADY VELOOR SRI SHAKTHI VIDYALAYAM KALLADY VELOOR",
+    "address": "BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724811274039202,
+    "lng": 81.6988079866658,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-020",
+    "name": "KALLADY VINAYAGAR VIDYALAYAM",
+    "address": "OLD KALMUNAI ROAD KALLADY BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724497629647692,
+    "lng": 81.69941697357892,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-021",
+    "name": "KARUVEPPANKERNEY VIPULANANDA COLLEGE KARUVEPPANKERNEY",
+    "address": "BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.7234804054956205,
+    "lng": 81.69905924656219,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-022",
+    "name": "KODDAIMUNAI KANISHTA VIDYALAYAM RAILWAY STATION ROAD",
+    "address": "BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.723650300646791,
+    "lng": 81.69758477620788,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-023",
+    "name": "KOKKUVIL VIGNESWARA VIDYALAYAM KOKKUVIL",
+    "address": "BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.725526376290516,
+    "lng": 81.69731978785742,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-024",
+    "name": "MANCHANTHODUWAI SARATHA VIDYALAYAM MANCHANTHODUWAI",
+    "address": "BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.72644655450365,
+    "lng": 81.699435642301,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-025",
+    "name": "NAVALADY KANISHTA VIDYALAYAM",
+    "address": "NAVALADY BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-8",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7244732,
+    "lng": 81.6987174,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-026",
+    "name": "NAVALADY NAMAGAL VIDYALAYAM",
+    "address": "THIRAIMADU BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724133596495804,
+    "lng": 81.69880207266347,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-027",
+    "name": "NAVATKERNY SRI KANNAHI VIDYALAYAM NAVATKERNY",
+    "address": "BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724112673347563,
+    "lng": 81.69811738288952,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-028",
+    "name": "NAVATKUDHA THARMARATNAM VIDYALAYAM",
+    "address": "OLD KALMUNAI ROAD NAVATKUDAH BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.725175787136677,
+    "lng": 81.69793709793325,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-029",
+    "name": "PALAMEENMADU VIGNESWARA VIDYALAYAM PALAMEENMADU",
+    "address": "BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.725742030901851,
+    "lng": 81.69930906556644,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-030",
+    "name": "PILLAYARADY NALLIAH VIDYALAYAM PILLAYARADY",
+    "address": "BATTICALOA.",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7242296470733205,
+    "lng": 81.7004503691203,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-031",
+    "name": "PULIYADIMUNAI GOVERNMENT TAMIL MIXED SCHOOL SATHURUKKONDAN",
+    "address": "BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.72239905448475,
+    "lng": 81.69904591237659,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-032",
+    "name": "PUNITHA ANNAMMAL TAMIL VIDYALAYAM VEECHUKALMUNAI",
+    "address": "BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7244732,
+    "lng": 81.6987174,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-033",
+    "name": "PUTHUMUHATHUWARAM ST. IGNATIOUS VIDYALAYAM DUTCHBAR",
+    "address": "KALLADY, BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724729173795567,
+    "lng": 81.69847870057399,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-034",
+    "name": "PUTHUR VIGNESWARA VIDYALAYAM",
+    "address": "PUTHUNAKAR BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.725079417782649,
+    "lng": 81.6990674,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-035",
+    "name": "SRI MAMANGESWARAR VIDYALAYAM MAMANGAM",
+    "address": "BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.72423700139294,
+    "lng": 81.69974048856803,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-036",
+    "name": "ST. SEBESTIAN TAMIL VIDYALAYAM SEBESTIAN STREET",
+    "address": "KODDAMUNAI, BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.723076610329636,
+    "lng": 81.69881505906325,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-037",
+    "name": "ST. THERESA'S GIRL'S VIDYALAYAM SINNA UPPODAI",
+    "address": "BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Girls",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.723846056088296,
+    "lng": 81.69708363425363,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-038",
+    "name": "THIRAIMADU TAMIL VIDYALAYAM THIRAIMADU",
+    "address": "BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.726128022582574,
+    "lng": 81.69742451090183,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-039",
+    "name": "URANI SARASWATHY VIDYALAYAM PERIYA URANY",
+    "address": "BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7244732,
+    "lng": 81.6987174,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-040",
+    "name": "VALAIYIRAVU METHODIST MISSION TAMIL MIXED SCHOOL",
+    "address": "BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.724365044051969,
+    "lng": 81.69905026978071,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-041",
+    "name": "ARAYAMPATHI SIVAMANI VIDYALAYAM",
+    "address": "OLD KALMUNAI ROAD ARAYAMPATHI 03",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.723773306613391,
+    "lng": 81.6987051833155,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-042",
+    "name": "ARAYAMPATHY NOTARY MOOTHATHAMBY VIDYALAYAM",
+    "address": "ARAYAMPATHY",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724183780776392,
+    "lng": 81.69770807521927,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-043",
+    "name": "KIRANKULAM SARASWATHY VIDYALAYAM",
+    "address": "MAIN ROAD KIRANKUAM",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.725647338795124,
+    "lng": 81.69795490535098,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-044",
+    "name": "KIRANKULAM VISHNU VIDYALAYAM",
+    "address": "KIRANKULAM",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.725813777775459,
+    "lng": 81.69984227831696,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-045",
+    "name": "KOVILKULAM VINAYAGAR VIDYALAYAM MAIN STREET KOVILKULAM",
+    "address": "ARAYAMPATHY",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.723652664630173,
+    "lng": 81.70065046019225,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-046",
+    "name": "MAVILANGATHURAI VIGNESWARA VIDYALAYAM",
+    "address": "MAVILANGATHURAI ARAYAMPATHY",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7244732,
+    "lng": 81.6987174,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-047",
+    "name": "NAVARETNARAJAH VIDYALAYAM",
+    "address": "ARAYAMPATHY EAST ARAYAMPATHY",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724406416851618,
+    "lng": 81.6983738304858,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-048",
+    "name": "PUTHUKUDIYIRUPPU KANNAKI MAHA VIDYALAYAM",
+    "address": "ARAYAMPATHY",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai Pattu",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.725091263315002,
+    "lng": 81.69838876990606,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-049",
+    "name": "THALANKUDAH R.C.T.M.SCHOOL THALANKUDAH-03",
+    "address": "ARAYAMPATHY.",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.725215662120246,
+    "lng": 81.69945986212025,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-050",
+    "name": "THALANKUDHA SRIVINAYAKAR VIDYALAYAM",
+    "address": "THALANKUDHA ARAYAMPATHY",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai Pattu",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7238159398121,
+    "lng": 81.69995352663001,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-051",
+    "name": "THARMAPURAM THARMARETNAM VIDYALAYAM",
+    "address": "KIRANKULAM-8 KIRANKULAM",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.722755352428967,
+    "lng": 81.6983834842581,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-052",
+    "name": "AL-MUNEERA BALIKA MAHA VIDYALAYA MAIN STREET",
+    "address": "ERAVUR",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Eravur Town",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Girls",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724253690227139,
+    "lng": 81.69662890401973,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-053",
+    "name": "ARAFA VIDYALAYAM",
+    "address": "ERAVUR",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Eravur Town",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7244732,
+    "lng": 81.6987174,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-054",
+    "name": "BASHEER SEGUDAWOOD VIDYALAYAM MEERAKERNY",
+    "address": "ERAVUR",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Eravur Town",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724698175663391,
+    "lng": 81.6989855155551,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-055",
+    "name": "DR.AHAMED FAREED VIDYALAYA R.C.ROAD",
+    "address": "ERAVUR-06",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Eravur Town",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.72409195267549,
+    "lng": 81.69930446939757,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-056",
+    "name": "DR.BADIUDIN MAHMOOD VIDYALAYA THAIKKA ROAD",
+    "address": "ERAVUR 01",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Eravur Town",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.723463875219265,
+    "lng": 81.6984279807764,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-057",
+    "name": "ERAVUR AL-ASHRAF VIDYALAYA HISBULLAH NAGAR",
+    "address": "MICHNAGAR, ERAVUR",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Eravur Town",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724448766630988,
+    "lng": 81.69731761322679,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-058",
+    "name": "ERAVUR AL-AZHAR GIRLS HIGH SCHOOL KATTUPALLI ROAD",
+    "address": "ERAVUR",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Eravur Town",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Girls",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.726137548903517,
+    "lng": 81.69817662025984,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-059",
+    "name": "ERAVUR AL-JUFFRIYA VIDYALYA PUNNAKKUDAH ROAD",
+    "address": "ERAVUR 03",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Eravur Town",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.7256777105163374,
+    "lng": 81.70043761929301,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-060",
+    "name": "ERAVUR AMEER ALI VIDYALAYA HITHYATH NAGAR",
+    "address": "ERAVUR",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Eravur Town",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7244732,
+    "lng": 81.6987174,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-061",
+    "name": "IYANKERNY ABDUL CADER VIDYALAYA IYANKERNY",
+    "address": "ERAVUR",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Eravur Town",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724146446850726,
+    "lng": 81.69859197121767,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-062",
+    "name": "IYENERNY HISBULLAH VIDYALAYAM",
+    "address": "ERAVUR",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Eravur Town",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724522029531621,
+    "lng": 81.69801910516483,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-063",
+    "name": "MICHNAGAR ILMA VIDYALAYAM",
+    "address": "ERAVUR",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Eravur Town",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.725496288568025,
+    "lng": 81.69848120139295,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-064",
+    "name": "RUGAM SUBAIR HAJIYAR VIDYALAYA PUTHUR",
+    "address": "RUGAM",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Eravur Town",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7251732,
+    "lng": 81.6999298355653,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-065",
+    "name": "THAMARAIKERNY ZAHIR MOULANA VIDYALAYAM",
+    "address": "ERAVUR",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Eravur Town",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.723279702869891,
+    "lng": 81.69999726897784,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-066",
+    "name": "AL-HASANATH VIDYALAYAM",
+    "address": "KATTANKUDY",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.722585732502772,
+    "lng": 81.69779682059175,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-067",
+    "name": "AL-IQBAL VIDYALAYA RIZVI TOWN",
+    "address": "NEW KATTANKUDY",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7244732,
+    "lng": 81.6987174,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-068",
+    "name": "ASH-SHUHADHA VIDYALAYA F.C ROAD",
+    "address": "KATTANKUDY 02",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.72481979382406,
+    "lng": 81.69866868941467,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-069",
+    "name": "DHARUSSALAM VIDYALAM KATTANKUDY",
+    "address": "DHARUSSALAM VIDYALAM KATTANKUDY",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.724769032783219,
+    "lng": 81.69935181545094,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-070",
+    "name": "FIRTHOUS VIDYALAYAM",
+    "address": "KATTANKUDY",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.723692897933249,
+    "lng": 81.69941998713668,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-071",
+    "name": "HAIRATH VIDYALAYA",
+    "address": "KATTANKUDY DEEN ROAD, KATTANKUDY",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.723273165779017,
+    "lng": 81.69799634669513,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-072",
+    "name": "HUSAINIYA VIDYALAM MANCHNTHODUWAI BATTICALOA",
+    "address": "HUSAINIYA VIDYALAM MANCHNTHODUWAI BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.7248965633173,
+    "lng": 81.69701938247903,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-073",
+    "name": "JAMIULLAFIREEN VIDYALAYAM",
+    "address": "KATTANKUDY",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.726570322022985,
+    "lng": 81.6986074944919,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-074",
+    "name": "KANKEYANODAI AL-AQSHA MAHA VIDYALAYA KANKEYANODAI-13",
+    "address": "ARAYAMPATHY",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7244732,
+    "lng": 81.6987174,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-075",
+    "name": "KANKEYANODAI HISBULLAH VIDYALAYAM KANKEYANODAI",
+    "address": "ARAYAMPATHY",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724193677571484,
+    "lng": 81.6989280352581,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-076",
+    "name": "KANKEYANODAI IQRAH VIDYALAYAM KANKEYANODAI - 12",
+    "address": "ARAYAMPATHY",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.723906888103937,
+    "lng": 81.6983059503234,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-077",
+    "name": "KARBALA AL MANAR VIDYALAYA KARBALA NAHAR",
+    "address": "ARAYAMPATHY",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.72481504656218,
+    "lng": 81.69772460549562,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-078",
+    "name": "KATTANKUDY ANVER VIDYALAYA HOSTEL ROAD",
+    "address": "NEW KATTHANKUDY",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.725872347157827,
+    "lng": 81.6987662592954,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-079",
+    "name": "KATTANKUDY BATHRIYA VIDYALAYA",
+    "address": "KATTANKUDY",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Girls",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.72492613332893,
+    "lng": 81.70040777019601,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-080",
+    "name": "KATTANKUDY FATHIMA BALIKA VIDYALAYA BEACH ROAD",
+    "address": "KATTANKUDY",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.722692298998072,
+    "lng": 81.6998302304549,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-081",
+    "name": "KATTANKUDY HILURIYA VIDYALAYA OLD ROAD",
+    "address": "KATTANKUDY 02",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7244732,
+    "lng": 81.6987174,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-082",
+    "name": "MANCHANTHUDUVAI AMEER ALI VIDYALAYAM NEW HILURIYA ROAD",
+    "address": "MANCHANTHODUWAI, BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724615557825077,
+    "lng": 81.69839765908984,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-083",
+    "name": "METHTHAIPPALLI VIDYALAYA METHTHAIPPALLI ROAD",
+    "address": "KATTANKUDY 03",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.725167982306149,
+    "lng": 81.69880270854038,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-084",
+    "name": "MOHIDEEN VIDYALAYA MANCHANTHODUWAI SOUTH",
+    "address": "BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724655530586551,
+    "lng": 81.69975144814067,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-085",
+    "name": "NOORANIYA VIDYALAYA KARBALA ROAD",
+    "address": "NEW KATTANKUDY 06",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.723225790866136,
+    "lng": 81.69935298669964,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-086",
+    "name": "OLLIKKULAM AL-HAMRA VIDYALAYA OLLIKKULAM",
+    "address": "ARAYAMPATHY, 30150",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.723257547851697,
+    "lng": 81.69745855534941,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-087",
+    "name": "PALAMUNAI ALIGHAR MAHA VIDYALAYA",
+    "address": "ARAYAMPATHY",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.725491300202518,
+    "lng": 81.69688069861502,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-088",
+    "name": "PALAMUNAI ASHRAFF VIDYALAYAM",
+    "address": "PALAMUNAI - ARAYAMPATHY",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7244732,
+    "lng": 81.6987174,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-089",
+    "name": "POONOCHCHIMUNAI IQRAH VIDYALAYA POONOCHCHIMUNAI",
+    "address": "BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724503704509962,
+    "lng": 81.69906606814433,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-090",
+    "name": "ZAVIYA MAHALIR M.V. ZAVIYA ROAD",
+    "address": "KATTANKUDY 01",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Girls",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.723824171301803,
+    "lng": 81.6989796246154,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-091",
+    "name": "BADURIYANAGAR AL-MINA VIDYALAYA BADURIYANAGAR",
+    "address": "MEERAVODAI",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Koralai Pattu West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.723812413589398,
+    "lng": 81.69790139674048,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-092",
+    "name": "BRAINTHURAICHENAI AZHAR VIDYALAYA BRAINTHURAICHENAI",
+    "address": "VALAICHENAI",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Koralai Pattu West",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Girls",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.72525607006486,
+    "lng": 81.69755674739842,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-093",
+    "name": "JAYANTHIYAYA AHAMED HIRAS VIDYALAYAM",
+    "address": "PUNANAI",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Koralai Pattu West",
+    "yearSpan": "Grade 1-8",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.726146733322936,
+    "lng": 81.69922905048327,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-094",
+    "name": "KAKITHANAGAR MILLATH VIDYALAYA KAKITHANAGAR",
+    "address": "VAHANERI",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Koralai Pattu West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7244732,
+    "lng": 81.7008174,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-095",
+    "name": "KAWATHAMUNAI AL-AMEENVIDYALAYAM VAHANERY",
+    "address": "KAWATHAMUNAI AL-AMEENVIDYALAYAM VAHANERY",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Koralai Pattu West",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7244732,
+    "lng": 81.6987174,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-096",
+    "name": "KERNY NAGAR MADEENA VIDYALAYAM",
+    "address": "VAHANERY",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Koralai Pattu West",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724277482483785,
+    "lng": 81.69842723684961,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-097",
+    "name": "MANCHOLAI AL HIRA VIDYALAYA",
+    "address": "MANCHOLAI MEERAVODAI",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Koralai Pattu West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724913724273735,
+    "lng": 81.69817339782699,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-098",
+    "name": "MAVADICHENAL AL-IQBAL VIDIYALAYA",
+    "address": "M VALAICHENAI",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Koralai Pattu West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.7254467430472955,
+    "lng": 81.69911073692309,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-099",
+    "name": "MEERAVODAI AMEER ALI VIDYALAYAM",
+    "address": "MEERAVODAI",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Koralai Pattu West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724351181960153,
+    "lng": 81.70011207257734,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-100",
+    "name": "MEERAVODAI UTHUMAN VIDYALAYAM SCHOOL ROAD",
+    "address": "MEERAVODAI, ODDAMAVADI",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Koralai Pattu West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.722761441698716,
+    "lng": 81.69908124545894,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-101",
+    "name": "ODDAMAVADI HIJRA VIDYALAYAM",
+    "address": "ODDAMAVADI - 03.",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Koralai Pattu West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.723455099797483,
+    "lng": 81.69688069861502,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-102",
+    "name": "ODDAMAVADI SHAREEF ALI VIDYALAYAM",
+    "address": "ODDAMAVADI - 02",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Koralai Pattu West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7244732,
+    "lng": 81.6987174,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-103",
+    "name": "ODDAMAVADI ZAHIRA VIDYALAYA HUTHA MASJITH ROAD",
+    "address": "ODDAMAVADI 01",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Koralai Pattu West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724785052283466,
+    "lng": 81.69887629667491,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-104",
+    "name": "PALAKKATTUWETTAI HISBULLAH VIDYALAYA",
+    "address": "VAHANERY",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Koralai Pattu West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724351646275633,
+    "lng": 81.69940676542711,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-105",
+    "name": "RETHITHENNA IQRAH VIDYALAYAM",
+    "address": "PUNANI",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Koralai Pattu West",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.723431026540777,
+    "lng": 81.69884536281059,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-106",
+    "name": "THIYAWATTAWAN ARAFA VIDYALAYAM",
+    "address": "VAHANERY",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Koralai Pattu West",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.723903768699694,
+    "lng": 81.6974384363593,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-107",
+    "name": "VALAICHENAI AYISHA MAHALIR MAHA VIDYALAYA",
+    "address": "VALAICHENAI",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Koralai Pattu West",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Girls",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7257939417653905,
+    "lng": 81.69756929669927,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-108",
+    "name": "VALAICHENAI HAIRATH VIDYALAYAM HAIRATH 4TH CROSS",
+    "address": "VALAICHENAI-05",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Koralai Pattu West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7262541010019286,
+    "lng": 81.6998302304549,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-109",
+    "name": "VALAICHENAI Y AHAMED VIDYALAYA JUMMA MOUSQUE ROAD",
+    "address": "VALAICHENAI",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Koralai Pattu West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7244732,
+    "lng": 81.6987174,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-110",
+    "name": "ILLUPPADICHENAI AMBAL VIDYALAYAM",
+    "address": "PANKUDAVELY",
+    "zone": "Batticaloa",
+    "educationDivision": "West Eravur Pattu - III",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724123413210544,
+    "lng": 81.69872961482385,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-111",
+    "name": "KARADIYANARU HINDU VIDYALAYAM",
+    "address": "KARADIYANARU",
+    "zone": "Batticaloa",
+    "educationDivision": "West Eravur Pattu - III",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.72424530229188,
+    "lng": 81.69805553699709,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-112",
+    "name": "KITHUL SRIKIRUSHNAVIDYALAYAM KITHUL WEWA",
+    "address": "KARADIYANARU",
+    "zone": "Batticaloa",
+    "educationDivision": "West Eravur Pattu - III",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.725322667844094,
+    "lng": 81.6981002254851,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-113",
+    "name": "KODUWAMADU SHAKTHI VIDYALAYAM KALIKOVIL RD",
+    "address": "KODUVAMADU, PANKUDAVELY",
+    "zone": "Batticaloa",
+    "educationDivision": "West Eravur Pattu - III",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.725591289714067,
+    "lng": 81.69955994103242,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-114",
+    "name": "KOPPAVELY GTMS BADULA ROAD",
+    "address": "PERIYAPULLUMALAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Eravur Pattu - III",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.7238746647491805,
+    "lng": 81.70036186208638,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-115",
+    "name": "MARAPALAM G.T.M.S MARAPALAM",
+    "address": "KARADIYANARU",
+    "zone": "Batticaloa",
+    "educationDivision": "West Eravur Pattu - III",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.722376077977016,
+    "lng": 81.6986074944919,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-116",
+    "name": "MAVALAIYARU KAILEN VIDYALAYAM",
+    "address": "MAVALAIYARU",
+    "zone": "Batticaloa",
+    "educationDivision": "West Eravur Pattu - III",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7244732,
+    "lng": 81.6987174,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-117",
+    "name": "PANKUDAVELY RCTM SCHOOL PANKUDAVELY",
+    "address": "SENKALADY",
+    "zone": "Batticaloa",
+    "educationDivision": "West Eravur Pattu - III",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.724773208555246,
+    "lng": 81.69853713667379,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-118",
+    "name": "PERIYAPULLUMALAI RCTMS PERIYAPULLUMALAI",
+    "address": "PERIYAPULLUMALAI RCTMS PERIYAPULLUMALAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Eravur Pattu - III",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.7249934013778345,
+    "lng": 81.69918579142445,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-119",
+    "name": "RUGAM SARASWATHY VIDYALAYAM",
+    "address": "KARADIYANARU",
+    "zone": "Batticaloa",
+    "educationDivision": "West Eravur Pattu - III",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724029450825173,
+    "lng": 81.6996690231764,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-120",
+    "name": "SWAMI AJARATMANANDAJI VIDYALAYAM",
+    "address": "PANKUDAVELY",
+    "zone": "Batticaloa",
+    "educationDivision": "West Eravur Pattu - III",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.723086824703762,
+    "lng": 81.69852255765866,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-121",
+    "name": "SWAMI ATHMAGANANANTHA V. KARADIYANKULAM",
+    "address": "KARADIYANARU",
+    "zone": "Batticaloa",
+    "educationDivision": "West Eravur Pattu - III",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.7241994396861795,
+    "lng": 81.69698894540396,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-122",
+    "name": "VEPPAVEDDUWAN G.T.M.S PANKUDAVELY",
+    "address": "VEPPAVEDDUWAN G.T.M.S PANKUDAVELY",
+    "zone": "Batticaloa",
+    "educationDivision": "West Eravur Pattu - III",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.726360667497229,
+    "lng": 81.69779682059175,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-123",
+    "name": "WELIKAKANDY VIPULANANDA VIDYALAYAM",
+    "address": "WELIKAKANDY PERIYAPULLUMALAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Eravur Pattu - III",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7244732,
+    "lng": 81.6987174,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-124",
+    "name": "ARASADITHIVU VIGNESWARA MAHA VIDYALAYAM ARASADITHIVU",
+    "address": "KOKKADDICHOLAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai South West",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.7093825,
+    "lng": 81.69255600889133,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-125",
+    "name": "KACHCHAKODY SWAMI MALAI GTMS KACHCHAKODY SWAMIMALAI",
+    "address": "KOKKADDICHOLAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai South West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.7088754409546505,
+    "lng": 81.69209543426196,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-126",
+    "name": "KADUKKAMUNAI VANI VIDYALAYAM",
+    "address": "KADUKKAMUNAI KOKKADDICHOLAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai South West",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.709484255702568,
+    "lng": 81.69120545774723,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-127",
+    "name": "KATCHENAI G.T.M.S KATCHENAI",
+    "address": "KOKKADDICHOLAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai South West",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.710864512597096,
+    "lng": 81.69175118487064,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-128",
+    "name": "KOKKADDICHCHOLAI R.K.M VIDYALAYAM",
+    "address": "KOKKADICHCHOLAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai South West",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.71063490758182,
+    "lng": 81.69363191881881,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-129",
+    "name": "KOLLANULAI VIVEKANANDA VIDYALAYAM KOLLANULAI",
+    "address": "KOKKADDICHOLAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai South West",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.708352989483663,
+    "lng": 81.693973119293,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-130",
+    "name": "KULUVINAMADU VINAYAGAR VIDYALAYAM",
+    "address": "KOKKADDICHOLAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai South West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7095575,
+    "lng": 81.6922529,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-131",
+    "name": "MAHILADIDITHIVU SARASWATHY MAHAVIDYALAYAM MAHILADITHIVU KOKKADDICHOLAI",
+    "address": "MAHILADIDITHIVU SARASWATHY MAHAVIDYALAYAM MAHILADITHIVU KOKKADDICHOLAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai South West",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.709563608342253,
+    "lng": 81.6919029533067,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-132",
+    "name": "MAVADIMUNMARI G.T.M.SCHOOL MAVADIMUNMARI",
+    "address": "KOKKADDICHOLAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai South West",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.710230383187157,
+    "lng": 81.69205995385093,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-133",
+    "name": "MUNAIKADU SARATHA VIDYALAYAM",
+    "address": "MUNAIKADU NORTH",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai South West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.710129370986766,
+    "lng": 81.69313350409634,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-134",
+    "name": "MUNAIKKADU VIVEKANANDA VIDYALAYAM",
+    "address": "MUNAIKKADU KOKKADDICHCHOLAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai South West",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.708657597346439,
+    "lng": 81.69332536222036,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-135",
+    "name": "NATPATHUVADDAI VIPULANANTHA VIDYALAYAM NATPATHUVADDAI",
+    "address": "THANTHAMALAI, KOKKADDICHOLAI.",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai South West",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.707946616506458,
+    "lng": 81.69156912052514,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-136",
+    "name": "PADAIYANDAVELY G.T.M.SCHOOL",
+    "address": "KOKKADDICHOLAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai South West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.7097770097728615,
+    "lng": 81.69016440401973,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-137",
+    "name": "PADDIPALAI GTMS KOKADDICHOLAI",
+    "address": "PADDIPALAI GTMS KOKADDICHOLAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai South West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.7095575,
+    "lng": 81.6922529,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-138",
+    "name": "PANDARIYAVELY NAMAGAL VIDYALAYAM",
+    "address": "KOKKADDICHOLAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai South West",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.709721815046975,
+    "lng": 81.6925619316575,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-139",
+    "name": "VALKKADDU G.T.M.S VALKKADDU",
+    "address": "KOKKADDICHOLAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai South West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.709062525253169,
+    "lng": 81.69274787474683,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-140",
+    "name": "VIDUTHIKKAL GTM SCHOOL VIDUTHIKKAL",
+    "address": "KOKKADDICHOLAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai South West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.708630405027498,
+    "lng": 81.69175995485908,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-141",
+    "name": "AYITHIYAMALAI GTMS AYITHIYAMALAI",
+    "address": "AYITHIYAMALAI GTMS AYITHIYAMALAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.709824632593527,
+    "lng": 81.69087862194317,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-142",
+    "name": "EACHANTHIVU RKMT VIDYALAYAM",
+    "address": "EACHANTHIVU",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.711297913316894,
+    "lng": 81.69206997518928,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-143",
+    "name": "IRUDDUCHOLAIMADU VISHNU VIDYALAYAM",
+    "address": "KANNANKUDAH",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7103780353698275,
+    "lng": 81.69418596019224,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-144",
+    "name": "IRUNOORUVIL GTMS IRUNOORUVIL UNNICHCHAI",
+    "address": "IRUNOORUVIL GTMS IRUNOORUVIL UNNICHCHAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.7095575,
+    "lng": 81.6922529,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-145",
+    "name": "KANCHIRANKUDAH KAMADCHI VIDYALAYAM",
+    "address": "KANCHIRANKUDAH",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.709263965301219,
+    "lng": 81.69206227633775,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-146",
+    "name": "KANNANKUDAH KANNAKI VIDYALAYAM",
+    "address": "KANNANKUDAH",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.709750446149072,
+    "lng": 81.69158001681285,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-147",
+    "name": "KARAVEDDIYARU VIJITHA VIDYALAYAM",
+    "address": "KARAVEDDIYARU UNNICHCHAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.710607340079914,
+    "lng": 81.69223457497324,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-148",
+    "name": "KARAVEDDY SOUTH GTMS KARAVEDDY",
+    "address": "NAVATKADU",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.7099901237921245,
+    "lng": 81.69358437912281,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-149",
+    "name": "KARAYAKKANTHIVU GANESHAR VIDYALAYAM",
+    "address": "KARAYAKKANTHIVU",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.708123983922494,
+    "lng": 81.69325665876362,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-150",
+    "name": "KAYANMADU G.T.M.S KAYANMADU",
+    "address": "KANNANKUDAH",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.707902677417426,
+    "lng": 81.69096001090182,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-151",
+    "name": "KOTHTHIYAPULAI KALAIVANI VIDYALAYAM KOTHTHIYAPULAI",
+    "address": "KANNANKUDAH",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7095575,
+    "lng": 81.6922529,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-152",
+    "name": "KURINCHAMUNAI GTMS KANNANKUDAH",
+    "address": "KURINCHAMUNAI GTMS KANNANKUDAH",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.709906647417591,
+    "lng": 81.6922773147658,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-153",
+    "name": "MAHILAVADDAWAN KANTHAPODY VIDYALAYAM",
+    "address": "MAHILAVADDAWAN",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.709714965738041,
+    "lng": 81.69293495904535,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-154",
+    "name": "MANDAPATHADY GTMS MANDAPATHADY",
+    "address": "KANNANKUDAH",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.708648173326027,
+    "lng": 81.6927779,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-155",
+    "name": "MANIPURAM VIGNESWARA VIDYALAYAM",
+    "address": "MANIPURAM",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.708533604817733,
+    "lng": 81.69129810229592,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-156",
+    "name": "MANKIKADDU G.T.M.SCHOOL MANKIKADDU",
+    "address": "NAVTKADU-30018",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.710324649506881,
+    "lng": 81.69068001041897,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-157",
+    "name": "MULLAMUNAI MURUGAN VIDYALAYAM",
+    "address": "MULLAMUNAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.71163164551525,
+    "lng": 81.69258141237658,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-158",
+    "name": "NAVATKADU NAMAGAL KANISTA VIDYALAYA",
+    "address": "NAVATKADU",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7095575,
+    "lng": 81.6922529,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-159",
+    "name": "NELLOOR KALAIMAHAL VIDYALAYAM NELLOOR",
+    "address": "AYITHIYAMALAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.709240292274537,
+    "lng": 81.69240081639161,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-160",
+    "name": "PANCHENAI PARI VIDYALAYAM",
+    "address": "PANCHENAI UNNICHCHAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.709089108575549,
+    "lng": 81.69173269862216,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-161",
+    "name": "UNNICHCHAI 6TH MILE POST GTMS NEDIYAMDU UNNICHAI",
+    "address": "UNNICHCHAI 6TH MILE POST GTMS NEDIYAMDU UNNICHAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.710098289978656,
+    "lng": 81.69135287433426,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-162",
+    "name": "UNNICHCHAI 8TH MILE POST GTMS UNNICHCHAI",
+    "address": "UNNICHCHAI 8TH MILE POST GTMS UNNICHCHAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.710915914016787,
+    "lng": 81.69259159065383,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-163",
+    "name": "VILAVADDAVAN VINAYAGAR VIDYALAYA VILAVADDAVAN",
+    "address": "NAVATKADU",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.709649087923425,
+    "lng": 81.69400050168582,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-164",
+    "name": "CHENKALADY VIVEGANANDAH VIDYALAYAM",
+    "address": "CHENKALADY",
+    "zone": "Kalkudah",
+    "educationDivision": "Eravur Pattu - II",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.91369154549635,
+    "lng": 81.56107474230099,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-165",
+    "name": "ERALAKULAM G.T.M.S SITTANDY",
+    "address": "ERALAKULAM G.T.M.S SITTANDY",
+    "zone": "Kalkudah",
+    "educationDivision": "Eravur Pattu - II",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.9156649,
+    "lng": 81.5603565,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-166",
+    "name": "ILLOKUPOTHTHANAI MALAIMAGAL VIDYALAYAM",
+    "address": "SITTANDY",
+    "zone": "Kalkudah",
+    "educationDivision": "Eravur Pattu - II",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.915870624838303,
+    "lng": 81.56007334405197,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-167",
+    "name": "KOMATHURAI VINAYAGAR VIDYALAYAM",
+    "address": "KOMATHURAI CHENKALADY",
+    "zone": "Kalkudah",
+    "educationDivision": "Eravur Pattu - II",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.91632676300292,
+    "lng": 81.56058439770811,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-168",
+    "name": "KUMARAVELIYAR GRAMAM SITHY VINAYAGAR VIDYALAYAM",
+    "address": "CHENKALADY",
+    "zone": "Kalkudah",
+    "educationDivision": "Eravur Pattu - II",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.915628255528462,
+    "lng": 81.56140586036837,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-169",
+    "name": "MAVADIVEMBU VIGNESWARA VIDYALAYAM",
+    "address": "VANTHARUMOOLAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Eravur Pattu - II",
+    "yearSpan": "Grade 1-8",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.914312603843196,
+    "lng": 81.56071884666314,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-170",
+    "name": "PERIYAVADDAVAN KANNAIKI VIDYALAYAM",
+    "address": "SITTANDY",
+    "zone": "Kalkudah",
+    "educationDivision": "Eravur Pattu - II",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.914737541287592,
+    "lng": 81.55887241583173,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-171",
+    "name": "SINGARATHOPPU SARASWATHY VIDYALAYAM",
+    "address": "KALUWANKENRY - 02",
+    "zone": "Kalkudah",
+    "educationDivision": "Eravur Pattu - II",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.917042623960881,
+    "lng": 81.55877160988153,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-172",
+    "name": "SITTANDY SRI RAMAKRISHNA VIDYALAYAM",
+    "address": "SITTANDY -03",
+    "zone": "Kalkudah",
+    "educationDivision": "Eravur Pattu - II",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.9156649,
+    "lng": 81.5603565,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-173",
+    "name": "VANTHARUMOOLAI KANNAKI VIDYALAYAM",
+    "address": "VANTHARUMOOLAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Eravur Pattu - II",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.915622245729809,
+    "lng": 81.56070389115307,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-174",
+    "name": "VEERAKADDU MYLAVADDUVAN G.T.M.S VANTHARUMOOLAI",
+    "address": "VEERAKADDU MYLAVADDUVAN G.T.M.S VANTHARUMOOLAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Eravur Pattu - II",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.914975534572892,
+    "lng": 81.56047805372437,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-175",
+    "name": "AKKURANAI BHARATHY VIDYALAYAM AKKURANAI",
+    "address": "KIRAN",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.861486609975274,
+    "lng": 81.50581314314961,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-176",
+    "name": "KALKUDAH NAMAGAL COLLEGE KALKUDAH",
+    "address": "VALAICHENAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.862970375720474,
+    "lng": 81.50577617828137,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-177",
+    "name": "KALMADU VIVEKANANDA VIDYALAYAM KALMADU",
+    "address": "KALKUDAH",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.863493884487494,
+    "lng": 81.50759711683543,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-178",
+    "name": "KARUNKALICHOLAI SRI KRISHNA VIDYALAYAM KARUNKALICHOLAI",
+    "address": "VALAICHENAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.861526685449283,
+    "lng": 81.50880280996154,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-179",
+    "name": "KINNAIYADY SARASWATHY VIDYALAYAM KINNAIYADY",
+    "address": "VALAICHENAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.8619633,
+    "lng": 81.5067487,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-180",
+    "name": "KIRAN NEW COLONY SIVA VIDALAYAM KIRAN",
+    "address": "KIRAN NEW COLONY SIVA VIDALAYAM KIRAN",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.861832187692305,
+    "lng": 81.5064241856509,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-181",
+    "name": "MURAKOTTANCHENAI RAMA KRISHNA MISSION VIDYAL MAIN ROAD",
+    "address": "MURAKOTTANCHENAI.",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.86250730217302,
+    "lng": 81.50630817572626,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-182",
+    "name": "MURUKANTHEEVU SIVASAKTHI VIDYALAYAM",
+    "address": "KINNAIYADY VALAICHENAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.862833789451183,
+    "lng": 81.50733585254865,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-183",
+    "name": "MURUTHANAI SRI MURUGAN VIDYALAYAM MURUTHANAI",
+    "address": "KIRAN",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.861553979613388,
+    "lng": 81.50808752665836,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-184",
+    "name": "MYLANKARACHCHI MALAIMAGAL VIDYALAYAM MYLANKARACHCHI",
+    "address": "VAGANERI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.8602133,
+    "lng": 81.5067487,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-185",
+    "name": "PARANGIYAMADU BHARATHY VIDYALAYAM PARANGIYAMADU",
+    "address": "KIRAN",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.861349319420082,
+    "lng": 81.50474046001248,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-186",
+    "name": "PONDUGALCHENAI GANAPATHY VIDYALAYAM PONDUGALCHENAI",
+    "address": "KIRAN",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.8619633,
+    "lng": 81.5067487,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-187",
+    "name": "PULIPAINTHAKAL G.T.M.S PULIPAINTHAKAL",
+    "address": "KIRAN",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.8622353010865105,
+    "lng": 81.50696896213687,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-188",
+    "name": "PUTHUKUDIYIRUPPU VANI VIDYALAYAM PUTHUKUDIYIRUPPU",
+    "address": "VALAICHENAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.861701075384609,
+    "lng": 81.5073977286982,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-189",
+    "name": "SANTHIVELY SITHY VINAYAGAR JUNIOR SCHOOL SANTHYVELY",
+    "address": "MURAKODDANCHENAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type3",
+    "lat": 7.8609172955670035,
+    "lng": 81.50665718647012,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-190",
+    "name": "SUNGANKERNY GTMS SUNGANKERNY",
+    "address": "VALAICHENAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.861672223632856,
+    "lng": 81.50537929335897,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-191",
+    "name": "VAHANERY KOKULAM VIDYALAYAM",
+    "address": "VAHANERY",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.863493884487494,
+    "lng": 81.50590028316458,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-192",
+    "name": "VEERANAGAR GTMS UTHTHUCHENAI",
+    "address": "VEERANAGAR GTMS UTHTHUCHENAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.8634739135807115,
+    "lng": 81.50820748257797,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-193",
+    "name": "VEMBU GTMS KUMPURUMOOLAI",
+    "address": "VEMBU, KIRAN",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.8619633,
+    "lng": 81.5067487,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-194",
+    "name": "VINAYAGAPURAM VINAYAGAR VIDYALAYAM VINAYAGARPURAM",
+    "address": "VALAICHENAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-8",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.861618617286446,
+    "lng": 81.50668792313782,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-195",
+    "name": "KAYANKERNY SARASWATHY VIDYALAYM KAYANKERNY",
+    "address": "MANKERNY.",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu North",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.9155795914596165,
+    "lng": 81.55966171769384,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-196",
+    "name": "KOKUWIL TAMIL VIDYALAYAM. KOKUWIL",
+    "address": "MANKERNY",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu North",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.916624122730525,
+    "lng": 81.55992942652477,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-197",
+    "name": "MATHURANKERNYKULAM G.T.M.S MATHURANKERNYKULAM",
+    "address": "MANKERNY",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu North",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.916583382640587,
+    "lng": 81.56141309341231,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-198",
+    "name": "OMADIYAMADU VELAMUGAN VIDYALAYM. PUNANAI",
+    "address": "OMADIYAMADU VELAMUGAN VIDYALAYM. PUNANAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu North",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.914737541287592,
+    "lng": 81.56184058416827,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-199",
+    "name": "RALODAI VALLUVAR VIDYALAYAM",
+    "address": "MANKERNY",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu North",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.913636455764793,
+    "lng": 81.55981298000528,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-200",
+    "name": "THADDUMUNAI MANIKKA VINAYAGAR VIDYALAYAM",
+    "address": "VAKARAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu North",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.9156649,
+    "lng": 81.5603565,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-201",
+    "name": "URIYANKADDU G.T.M.S URIYANKADDU",
+    "address": "VAHARAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu North",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.91599583150146,
+    "lng": 81.56024255114593,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-202",
+    "name": "VADDAVAN KALAIMAHAL VIDYALAYAM",
+    "address": "VALAICHENAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu North",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.916076349676605,
+    "lng": 81.56092281189606,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-203",
+    "name": "VAMMIVADDAVAN VIDYALAYAM MAIN STREET",
+    "address": "VAMMIVADDAVAN, KATHIRAVELY.",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu North",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.91503299422569,
+    "lng": 81.56119506728555,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-204",
+    "name": "JOSEPH VAZ VIDYALAYAM THANDAVANVELY",
+    "address": "BATTICALOA.",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724590467561809,
+    "lng": 81.69800922824584,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-205",
+    "name": "MANCHANTHODUWAI BARATHI VIDYALAYAM",
+    "address": "MANCHANTHODUWAI BATTICALOA",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724692797658462,
+    "lng": 81.69834393491043,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-206",
+    "name": "ARAIPATTAI SUBRAMANIYAM VIDYALAYAM",
+    "address": "ARAYAMPATHY-01",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.723875760204597,
+    "lng": 81.69921094302312,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-207",
+    "name": "ARAIYAMPATHY R.K.M.M.V ARAIYAMPATHY",
+    "address": "ARAIYAMPATHY R.K.M.M.V ARAIYAMPATHY",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai Pattu",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Girls",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.723640083245855,
+    "lng": 81.69815872158009,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-208",
+    "name": "SELVANAGAR SIVAA VIDYALAYAM",
+    "address": "ARAYAMPATHY",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724980535736167,
+    "lng": 81.6975214505943,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-209",
+    "name": "RUGAM AL-AMAN VIDYALAYA MUHAJIRIN VILLAGE",
+    "address": "MEERAKERNI, ERAVUR",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Eravur Town",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.726277647423677,
+    "lng": 81.69885882629434,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-210",
+    "name": "KATTANKUDY MILLATH MAHALIR M.V.",
+    "address": "KATTANKUDY-03",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Girls",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.724866180257418,
+    "lng": 81.70074046469114,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-211",
+    "name": "SIR RAZIK FAREED VIDYALAYAM SIHARAM JUMMAH MOSQUE ROAD",
+    "address": "SIHARAM, ARAYAMPATHY.",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Kaththankudy",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724429565706701,
+    "lng": 81.6986863547296,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-212",
+    "name": "ODDAMAVADI DHARUL ULOOM VIDYALAYA JUMMAH MOSQUE ROAD",
+    "address": "ODDAMAVADI-02",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Koralai Pattu West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.72426991598581,
+    "lng": 81.69846842670981,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-213",
+    "name": "SEMMANODAI AL-HAMRA VIDYALAYAM SEMMANODAI",
+    "address": "MEERAVODAI",
+    "zone": "Batticaloa",
+    "educationDivision": "Central Koralai Pattu West",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.724839478265746,
+    "lng": 81.69808785257254,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-214",
+    "name": "KALASOORI VINAYAKAMOORTHY VIDYALAYAM PALARSENAI",
+    "address": "PANKUDAWELY",
+    "zone": "Batticaloa",
+    "educationDivision": "West Eravur Pattu - III",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.725482177013243,
+    "lng": 81.69888209308104,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-215",
+    "name": "AMPILANTHURAI JUNIOR SCHOOL",
+    "address": "AMPILANTHURAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai South West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type3",
+    "lat": 7.709667865251043,
+    "lng": 81.69366142588188,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-216",
+    "name": "MUTHALAIKUDAH JUNIOR SCHOOL MUTHALAIKUDAH",
+    "address": "KOKKADDICHOLAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai South West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type3",
+    "lat": 7.7078985436194,
+    "lng": 81.69298365039496,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-217",
+    "name": "NARIPULTHODDAM NADESWARA TAMIL VIDYALAYAM",
+    "address": "NARIPULTHODDAM",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.708261112931139,
+    "lng": 81.69067632846475,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-218",
+    "name": "PAVATKODICHENAI VINAYAGAR VIDYALAYAM",
+    "address": "PAVATKODICHENAI UNNICHAI",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.70963883689202,
+    "lng": 81.69226121858321,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-219",
+    "name": "THANDIYADI GTMS KANNANKUDAH",
+    "address": "THANDIYADI GTMS KANNANKUDAH",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.709976910931221,
+    "lng": 81.692351805249,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-220",
+    "name": "VAVUNATHIVU PARAMESWARA VIDYALAYAM",
+    "address": "VAVUNATHIVU",
+    "zone": "Batticaloa",
+    "educationDivision": "West Manmunai West",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.709663266539711,
+    "lng": 81.69296079216213,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-221",
+    "name": "CHENKALADY CENTRAL COLLEGE",
+    "address": "CHENKALADY",
+    "zone": "Kalkudah",
+    "educationDivision": "Eravur Pattu - II",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.9145459072347295,
+    "lng": 81.56067446754777,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-222",
+    "name": "KALUWANKERNY VIVEGANANDAH VIDYALAYAM",
+    "address": "KALUWANKERNY - 01",
+    "zone": "Kalkudah",
+    "educationDivision": "Eravur Pattu - II",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.9147158023859,
+    "lng": 81.55919999719346,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-223",
+    "name": "NEDIYAMADU G.T.M.S KALUWANKERNY - 01",
+    "address": "NEDIYAMADU G.T.M.S KALUWANKERNY - 01",
+    "zone": "Kalkudah",
+    "educationDivision": "Eravur Pattu - II",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.916591878029625,
+    "lng": 81.55893500884301,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-224",
+    "name": "ORUMOOLAICHOLAI SRI SITHY VINAYAGAR VIDYALAYAM",
+    "address": "KOMMATHURAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Eravur Pattu - II",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.917512056242759,
+    "lng": 81.56105086328658,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-225",
+    "name": "PALACHOLAI VIPULANANDAH VIDYALAYAM",
+    "address": "VANTHARUMOOLAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Eravur Pattu - II",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.915538701739109,
+    "lng": 81.56033262098559,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-226",
+    "name": "PERUMALVELY SRI VANI VIDYALAYAM",
+    "address": "SITTANDY",
+    "zone": "Kalkudah",
+    "educationDivision": "Eravur Pattu - II",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.915199098234913,
+    "lng": 81.56041729364905,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-227",
+    "name": "SITTANDY SITHY VINAYAGAR VIDYALAYAM",
+    "address": "SITTANDY - 01",
+    "zone": "Kalkudah",
+    "educationDivision": "Eravur Pattu - II",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.915178175086672,
+    "lng": 81.5597326038751,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-228",
+    "name": "UTHAYANMOOLAI VIVEGANANDAH VIDYALAYAM",
+    "address": "SITTHANDY -04",
+    "zone": "Kalkudah",
+    "educationDivision": "Eravur Pattu - II",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.916241288875786,
+    "lng": 81.55955231891883,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-229",
+    "name": "VANTHARUMOOLAI GANESHA VIDYALAYAM",
+    "address": "VANTHARUMOOLAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Eravur Pattu - II",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.91680753264096,
+    "lng": 81.56092428655202,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-230",
+    "name": "VINAYAGAKIRAMAM ALAIMAGAL VIDYALAYAM",
+    "address": "SITTANDY -01",
+    "zone": "Kalkudah",
+    "educationDivision": "Eravur Pattu - II",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.9152951488124295,
+    "lng": 81.56206559010589,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-231",
+    "name": "DEVAPURAM GAJAMUGAN VIDYALAYAM DEVAPURAM",
+    "address": "MURAKADANCHENAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.859926745609954,
+    "lng": 81.50707984008584,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-232",
+    "name": "KARUWAKERNY VIGNESWARA JUNIOR SCHOOL KARUWAKERNY",
+    "address": "VALAICHENAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type3",
+    "lat": 7.862000891125204,
+    "lng": 81.50675132770925,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-233",
+    "name": "KIRAN VIVEKANANDAH VIDYALAYAM MAIN STREET",
+    "address": "KIRAN",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.862256864920771,
+    "lng": 81.50651262828323,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-234",
+    "name": "KORAKALLIMADU SRI RAMANAMAHARISHI VIDYALAYAM",
+    "address": "KORAKALLIMADU KIRAN",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.862607108907853,
+    "lng": 81.50710132770925,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-235",
+    "name": "KORALANKERNY THIRUMAKAL VIDYALAYAM",
+    "address": "KORALANKERNY MURAKKADDANCHENAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.861764692518143,
+    "lng": 81.50777441627727,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-236",
+    "name": "KUDUMBIMALAI KUMARAN VIDYALAYAM",
+    "address": "KUDUMBIMALAI KIRAN",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.86060430145484,
+    "lng": 81.5068489867725,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-237",
+    "name": "MURAVODAI SHAKTHI VIDYALAYAM MURAVODAI TAMIL",
+    "address": "VALAICHENAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.8613737472134995,
+    "lng": 81.50511756196288,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-238",
+    "name": "NASIVANTHIVU SIVA VIDYALAYAM NASIVANTHIVU",
+    "address": "VALAICHENAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.863655713707778,
+    "lng": 81.50545843861107,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-239",
+    "name": "PALAIYADYTHONA SRI MURUGAN VIDYALAYAM SANTHIVELY",
+    "address": "MURAKODANCHENAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.862000891125204,
+    "lng": 81.50675132770925,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-240",
+    "name": "PETHALAI CHANDRAKANTHAN VIDYALAYAM PETHALAI",
+    "address": "VALAICHENAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.861892735177173,
+    "lng": 81.50708419748996,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-241",
+    "name": "POOLAKKADU GTMS POOLAKKADU KIRAN",
+    "address": "POOLAKKADU GTMS POOLAKKADU KIRAN",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.861300997738595,
+    "lng": 81.50673911102474,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-242",
+    "name": "SIRUTHENKAL SITHTHY VINAYAGAR VIDYALAYAM SIRUTHENKAL",
+    "address": "KIRAN",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.861711471901596,
+    "lng": 81.50574200292851,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-243",
+    "name": "THARAVAI SRI KALAIVANI VIDYALAYAM THARAVAI",
+    "address": "KIRAN",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.863175029920328,
+    "lng": 81.50598883306023,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-244",
+    "name": "THIKILIVEDDAI GTMS SANTHIVELY MURAKKOTTANCHENAI",
+    "address": "THIKILIVEDDAI GTMS SANTHIVELY MURAKKOTTANCHENAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.863341468900662,
+    "lng": 81.50787620602621,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-245",
+    "name": "VADAMUNAI GTMS VADAMUNAI KIRAN",
+    "address": "VADAMUNAI GTMS VADAMUNAI KIRAN",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.861180355755376,
+    "lng": 81.5086843879015,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-246",
+    "name": "ALANKULAM G.T.M.S ALANKULAM",
+    "address": "VALAICHENAI.",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu North",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.915606403849271,
+    "lng": 81.56047684622955,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-247",
+    "name": "KADDUMURIVUKULAM G.T.M.S KADDUMURIVU",
+    "address": "KATHIRAVELY.",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu North",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.915539620700889,
+    "lng": 81.56013327671535,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-248",
+    "name": "KANDALADY ARUNTHATHY VIDYALAYAM",
+    "address": "VAKARAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu North",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.916224467164272,
+    "lng": 81.5601482161356,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-249",
+    "name": "KATHIRAVELY VIGNESWARA JUNIOR SCHOOL TRINCO ROAD",
+    "address": "KATHIRAVELY",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu North",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type3",
+    "lat": 7.916348865969517,
+    "lng": 81.56121930834979,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-250",
+    "name": "KIRIMICHODAI G.T.M.S KIRIMICHODAI",
+    "address": "MANKERNY",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu North",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.914949143661371,
+    "lng": 81.56171297285955,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-251",
+    "name": "MANKERNY ROMAN CATHOLIC TAMIL MIXED SCHOOL TRINCO ROAD",
+    "address": "MANKERNY.",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu North",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.913888556278238,
+    "lng": 81.56014293048764,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-252",
+    "name": "PALCHENAI TAMIL MAHA VIDYALAYAM PALCHENAI",
+    "address": "KATHIRAVELY.",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu North",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.915386894076409,
+    "lng": 81.55838835024927,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-253",
+    "name": "PANICHANKERNY THIRUMAHAL VIDAYALAYAM TRINCO ROAD",
+    "address": "PANICHANKERNY.",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu North",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.915606403849271,
+    "lng": 81.56047684622955,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-254",
+    "name": "PUNANAI G.T.M.S PUNANAI",
+    "address": "PUNANAI G.T.M.S PUNANAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu North",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.915831379512661,
+    "lng": 81.56074496178464,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-255",
+    "name": "VAKARAI MAHA VIDYALAYAM",
+    "address": "VAKARAI",
+    "zone": "Kalkudah",
+    "educationDivision": "Koralai Pattu North",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.915225156524761,
+    "lng": 81.56106391562712,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-256",
+    "name": "CHEDDIPALAYAM MAHA VIDYALAYAM",
+    "address": "CHEDDIPALAYAM",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.715990675219264,
+    "lng": 81.6997105807764,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-257",
+    "name": "ERUVIL KANNAKI MAHA VIDYALAYAM ERUVIL",
+    "address": "KALUWANCHIKUDY",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.716975566630987,
+    "lng": 81.69860021322678,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-258",
+    "name": "KALMUNTHAL THIRUVALLUVAR VIDYALAYAM",
+    "address": "KODDAIKALLAR-01",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.718664348903516,
+    "lng": 81.69945922025984,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-259",
+    "name": "KALUTHAVALAI KANESHA VIDYALAYAM",
+    "address": "KALUTHAVALAI -4",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.718204510516337,
+    "lng": 81.70172021929301,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-260",
+    "name": "KALUTHAVALAI RAMAKRISHNA VIDYALAYAM",
+    "address": "KALUTHAVALAI-3",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.717,
+    "lng": 81.7,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-261",
+    "name": "KALUTHAVALAI VIPULANANTHA VIDYALAYAM SRI MURUKAN KOVIL ROAD",
+    "address": "KALUTHAVALAI-05",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.716673246850726,
+    "lng": 81.69987457121766,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-262",
+    "name": "KALUTHAVALAI VIVEKANANDA VIDYALAYAM BEACH ROAD",
+    "address": "KALUTHAVALAI 04",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.71704882953162,
+    "lng": 81.69930170516483,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-263",
+    "name": "KALUTHAWALAI VIGNESHWARA VIDYALAYAM",
+    "address": "KALUTHAWALAI - 01",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7180230885680245,
+    "lng": 81.69976380139295,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-264",
+    "name": "KALUWANCHIKUDY MARIYAMMAN VIDYALAYAM MARIYAMMAN KOVIL ROAD",
+    "address": "KALUWANCHIKUDY",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7177,
+    "lng": 81.7012124355653,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-265",
+    "name": "KALUWANCHIKUDY SARASWATHY VIDYALAYAM",
+    "address": "KALUWANCHIKUDY",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.71580650286989,
+    "lng": 81.70127986897784,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-266",
+    "name": "KALUWANCHIKUDY VINAYAGAR VIDYALAYAM PILLAIYAR KOVIL ROAD",
+    "address": "KALUWANCHIKUDY",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.715112532502771,
+    "lng": 81.69907942059174,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-267",
+    "name": "KANNAKIPURAM VINAYAGAR VIDYALAYAM MAHILOOR",
+    "address": "KALUWANCHIKUDY",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.717,
+    "lng": 81.7,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-268",
+    "name": "KODAIMEDU NAVASHAKTHI VIDYALAYAM ERUVIL",
+    "address": "KALUWANCHIKUDY",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.717346593824059,
+    "lng": 81.69995128941467,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-269",
+    "name": "KODDAIKALLAR KANNAKI VIDYALAYAM",
+    "address": "KODDAIKALLAR",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.717295832783218,
+    "lng": 81.70063441545093,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-270",
+    "name": "KODDAIKALLAR MAHA VIDYALAYAM MAIN ROAD",
+    "address": "KODDAIKALLAR",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.716219697933249,
+    "lng": 81.70070258713667,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-271",
+    "name": "KURUKKALMADAM KALAIVANI MAHA VIDYALAYAM",
+    "address": "KURUKKALMADAM - 30192",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.715799965779016,
+    "lng": 81.69927894669513,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-272",
+    "name": "KURUMANVELY KANISTA VIDYALAYAM KURUMANVELY - 11",
+    "address": "KALUWANCHIKUDY",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.717423363317299,
+    "lng": 81.69830198247902,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-273",
+    "name": "MAHILOOR SARASWATHY MAHA VIDYALAYAM MAHILOOR",
+    "address": "KALUWANCHIKUDY",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.719097122022984,
+    "lng": 81.69989009449189,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-274",
+    "name": "MAHILOORMUNAI SAKTHI VIDYALAYAM MAHILOORMUNAI",
+    "address": "KALUWANCHIKUDY",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.717,
+    "lng": 81.7,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-275",
+    "name": "MANKADU SARASWATHY MAHA VIDYALAYAM MANKADU",
+    "address": "CHEDDIPALAYAM",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.716720477571483,
+    "lng": 81.7002106352581,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-276",
+    "name": "ONTHACHIMADAM SRIVINAYAGAR MAHA VIDYALAYAM",
+    "address": "KALUWANCHIKUDY",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.716433688103937,
+    "lng": 81.6995885503234,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-277",
+    "name": "PERIYAKALLAR M.M.T.G.S KALLAR",
+    "address": "PERIYAKALLAR M.M.T.G.S KALLAR",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.71734184656218,
+    "lng": 81.69900720549562,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-278",
+    "name": "PERIYAKALLAR M.M.T.M.S PERIYAKALLAR-01",
+    "address": "KALLAR.",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.718399147157826,
+    "lng": 81.70004885929539,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-279",
+    "name": "PERIYAKALLAR PUNITHA ARULANANDAR VIDYALAYAM PERIYAKALLAR - 01",
+    "address": "KALLAR",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7174529333289295,
+    "lng": 81.701690370196,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-280",
+    "name": "PERIYAKALLAR VINAYAGAR VIDYALAYAM PERIYAKALLAR-01",
+    "address": "KALLAR",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.715219098998071,
+    "lng": 81.70111283045489,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-281",
+    "name": "PULAVARMANI PERIYATHAMBIPPILLAI VIDYALAYAM CURCH ROAD",
+    "address": "KALUTHAVALAI-03",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.717,
+    "lng": 81.7,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-282",
+    "name": "THETTATHIVU SIVAKALAI VIDYALAYAM BEACH ROAD",
+    "address": "THETTATHIVU - 2",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.717142357825076,
+    "lng": 81.69968025908983,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-283",
+    "name": "THETTATIVU MAHA VIDYALAYAM",
+    "address": "THETTATIVU",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.717694782306149,
+    "lng": 81.70008530854038,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-284",
+    "name": "THURAINEELAVANAI M.M.T.M.S WARD NO-07",
+    "address": "THURAINEELAVANAI",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.71718233058655,
+    "lng": 81.70103404814067,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-285",
+    "name": "THURAINEELAVANAI SITHI VINAYAGAR VIDYALAYAM",
+    "address": "THURAINEELAVANAI 05",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.715752590866136,
+    "lng": 81.70063558669963,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-286",
+    "name": "THURAINEELAVANAI VIPULANANDA VIDYALAYAM",
+    "address": "THURAINEELAVANAI-08",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.715784347851696,
+    "lng": 81.69874115534941,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-287",
+    "name": "UTHAYAPURAM TAMIL VIDYALAYAM",
+    "address": "PERIYAKALLAR-3",
+    "zone": "Paddrippu",
+    "educationDivision": "Manmunai South & Eru",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.718018100202517,
+    "lng": 81.69816329861501,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-288",
+    "name": "ANAIKADDIYAVELY NAMAHAL VIDYALAYAM",
+    "address": "MANDUR",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.717,
+    "lng": 81.7,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-289",
+    "name": "GANTHIPURAM KALAIMAGAL VIDYALAYAM",
+    "address": "PALUGAMAM",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.717030504509961,
+    "lng": 81.70034866814433,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-290",
+    "name": "KAKKACHIVADDAI VISHNU VIDYALAYAM KAKKACHIVADDAI",
+    "address": "MANDUR",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.716350971301803,
+    "lng": 81.7002622246154,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-291",
+    "name": "KALUMUNTHANVELLY KAJAMUGAN VIDYALAYAM KALUMUNTHANVELLY",
+    "address": "AMPILANTHURAI",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.716339213589397,
+    "lng": 81.69918399674047,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-292",
+    "name": "KOVILPORATHIVU VIVEKANANDA MAHA VIDYALAYAM KOVILPORATHIVU",
+    "address": "PERIYAPORATHIVU",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.717782870064859,
+    "lng": 81.69883934739842,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-293",
+    "name": "MALAYARKADDU G.T.M.S MALAYARKADDU",
+    "address": "BAKIYALA",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.718673533322935,
+    "lng": 81.70051165048326,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-294",
+    "name": "MANDUR - 14 SHAKTHY MAHA VIDYALAYAM",
+    "address": "KANESAPURAM MANDUR",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.717,
+    "lng": 81.7021,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-295",
+    "name": "MANDUR - 16 G.T.M.S RANAMADU",
+    "address": "MANDUR",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.717,
+    "lng": 81.7,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-296",
+    "name": "MANDUR - 35 KANNAN VIDYALAYAM KANNAPURAM EAST",
+    "address": "BAKKIELLA",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.716804282483785,
+    "lng": 81.6997098368496,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-297",
+    "name": "MANDUR - 37 NAVAKIRI VIDYALAYAM",
+    "address": "BAKKIELLA",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7174405242737345,
+    "lng": 81.69945599782699,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-298",
+    "name": "MANDUR - 38 AGATHIYAR VIDYALAYAM",
+    "address": "NAVAKIRINAGAR-PERIYAPORATHEEVU",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.717973543047295,
+    "lng": 81.70039333692309,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-299",
+    "name": "MANDUR - 39 G.T.M.S SELVAPURAM",
+    "address": "NAVAGIRINAKAR, PERIYAPORATIVU",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.7168779819601525,
+    "lng": 81.70139467257734,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-300",
+    "name": "MANDUR MAHA VIDYALAYAM",
+    "address": "MANDUR",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.715288241698715,
+    "lng": 81.70036384545894,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-301",
+    "name": "MANDUR RAMAKRISHNA VIDYALAYAM",
+    "address": "MANDUR",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.715981899797482,
+    "lng": 81.69816329861501,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-302",
+    "name": "MANDUR-13 VIGNESWARA MAHA VIDYALAYAM SANGARPURAM",
+    "address": "MANDUR",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.717,
+    "lng": 81.7,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-303",
+    "name": "MAVETKUDA VIGNESWARA VIDYALAYAM",
+    "address": "THIRUPALUGAMAM",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.717311852283466,
+    "lng": 81.7001588966749,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-304",
+    "name": "MUNAITHIVU SHAKTHI MAHA VIDYALAYAM MUNAITHIVU",
+    "address": "PERIYAPORATHIVU",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.716878446275633,
+    "lng": 81.70068936542711,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-305",
+    "name": "PALAMUNAI BALAMURUGAN VIDYALAYAM PALAMUNAI",
+    "address": "MANDUR",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.715957826540777,
+    "lng": 81.70012796281058,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-306",
+    "name": "PERIYAPORATIVU BHARATHY VIDYALAYAM",
+    "address": "PERIYAPORATIVU",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.7164305686996935,
+    "lng": 81.6987210363593,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-307",
+    "name": "PILALIVEMPU VANI TAMIL VIDYALAYAM",
+    "address": "VELLAVELY",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.71832074176539,
+    "lng": 81.69885189669927,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-308",
+    "name": "PUTHUMUNMARICHOLAI GTMS BAKKIELLA",
+    "address": "PUTHUMUNMARICHOLAI GTMS BAKKIELLA",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.718780901001928,
+    "lng": 81.70111283045489,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-309",
+    "name": "SINNAWATTAI G T M S SINNAWATTAI",
+    "address": "BAKKIYELLA, BATTICALOA",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.717,
+    "lng": 81.7,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-310",
+    "name": "SRI VELLIMALAIPPILLAYAR GTMS YOUTH FARM",
+    "address": "107/H,THUMBANKENY, THIKKODAI",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.716650213210543,
+    "lng": 81.70001221482384,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-311",
+    "name": "THAMBALAWATTAI GANESHA VIDYALAYAM. THAMBALAWATTAI",
+    "address": "MANDUR.",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.71677210229188,
+    "lng": 81.69933813699708,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-312",
+    "name": "THIKKODAI GANESHA MAHA VIDYALAYAM",
+    "address": "THIKKODAI",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.717849467844093,
+    "lng": 81.6993828254851,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-313",
+    "name": "THIRUKKONRAIMUNMARI GTMS VIVEKANANTHAPURAM",
+    "address": "VELLAVELY",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.718118089714066,
+    "lng": 81.70084254103242,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-314",
+    "name": "THIRUPALUGAMAM VIPULANANDA VIDYALAYAM PALUGAMAM-1",
+    "address": "PERIYAPORATHIVU",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.71640146474918,
+    "lng": 81.70164446208638,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-315",
+    "name": "THUMBANKENY KANNAKI VIDYALAYAM THIKKODAI",
+    "address": "PERIYAPORATHEEVU",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.714902877977015,
+    "lng": 81.69989009449189,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-316",
+    "name": "VAMMIYADIYUTTU VANI VIDYALAYAM VAMMIYADIYOOTTU",
+    "address": "THIKKODAI",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-11",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1C",
+    "lat": 7.717,
+    "lng": 81.7,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-317",
+    "name": "VELLAVELY KALAIMAHAL MAHA VIDYALAYAM VELLAVELY",
+    "address": "MAIN STREET",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-13",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "1AB",
+    "lat": 7.717300008555245,
+    "lng": 81.69981973667379,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-318",
+    "name": "VILANTHODDAM G.T.M.S VAKKIYELLA",
+    "address": "VILANTHODDAM G.T.M.S VAKKIYELLA",
+    "zone": "Paddrippu",
+    "educationDivision": "Porativu Pattu",
+    "yearSpan": "Grade 1-5",
+    "hasGrade1": true,
+    "gender": "Mixed",
+    "source": "MoE Provincial Schools Census (Batticaloa, 2020)",
+    "type": "Type2",
+    "lat": 7.717520201377834,
+    "lng": 81.70046839142445,
+    "medium": [
+      "Tamil"
+    ],
+    "isApproximate": true
+  },
+  {
+    "id": "school-319",
+    "name": "VINCENT GIRLS' HIGH SCHOOL",
+    "address": "Chapel Street, Puliyanthivu, Batticaloa",
+    "zone": "Batticaloa",
+    "educationDivision": "Manmunai North (Bat)",
+    "yearSpan": "Grade 1-13 (approx, unverified against official census)",
+    "hasGrade1": true,
+    "gender": "Girls",
+    "source": "manually added - National School, outside MoE Provincial census scope; needs independent verification",
+    "type": "Type2",
+    "lat": 7.724146718386981,
+    "lng": 81.69896085142223,
+    "medium": [
+      "Tamil",
+      "English"
+    ],
+    "isApproximate": true
   }
 ]

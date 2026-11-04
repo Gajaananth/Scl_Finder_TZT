@@ -36,7 +36,11 @@ export async function checkSession(): Promise<AuthUser | null> {
       credentials: 'include',
     });
     if (!res.ok) return null;
-    const data = await res.json();
+
+    const data = await res.json().catch(() => null);
+    if (!data || data.authenticated === false) return null;
+    if (!data.email || typeof data.email !== 'string') return null;
+
     return { email: data.email };
   } catch {
     return null;

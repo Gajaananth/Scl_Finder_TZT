@@ -58,20 +58,20 @@ function mockApiPlugin(): Plugin {
           const cookies = cookieParse(req.headers.cookie || '');
           const token = cookies[SESSION_COOKIE_NAME];
           if (!token) {
-            res.statusCode = 401;
-            res.end(JSON.stringify({ error: 'Unauthorized' }));
+            res.statusCode = 200;
+            res.end(JSON.stringify({ authenticated: false }));
             return;
           }
           try {
             const { payload } = await jwtVerify(token, SECRET_KEY);
             if (payload.email && typeof payload.email === 'string') {
               res.statusCode = 200;
-              res.end(JSON.stringify({ email: payload.email }));
+              res.end(JSON.stringify({ authenticated: true, email: payload.email }));
               return;
             }
           } catch {}
-          res.statusCode = 401;
-          res.end(JSON.stringify({ error: 'Unauthorized' }));
+          res.statusCode = 200;
+          res.end(JSON.stringify({ authenticated: false }));
           return;
         }
 
@@ -161,13 +161,10 @@ function mockApiPlugin(): Plugin {
           }
           const searchRadius = Math.min(Math.max(radius, 200), 25000);
           const query = `
-            [out:json][timeout:5];
+            [out:json][timeout:20];
             (
               nwr["amenity"="school"](around:${searchRadius},${lat},${lng});
-              nwr["building"="school"](around:${searchRadius},${lat},${lng});
-              nwr["building:use"="school"](around:${searchRadius},${lat},${lng});
               nwr["education"="school"](around:${searchRadius},${lat},${lng});
-              nwr["school"="yes"](around:${searchRadius},${lat},${lng});
             );
             out center tags;
           `;
@@ -179,7 +176,7 @@ function mockApiPlugin(): Plugin {
           ]) {
             try {
               const controller = new AbortController();
-              const timer = setTimeout(() => controller.abort(), 5000);
+              const timer = setTimeout(() => controller.abort(), 10000);
               const response = await fetch(`${endpoint}?data=${encodeURIComponent(query)}`, {
                 method: 'GET',
                 headers: {

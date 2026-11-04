@@ -122,6 +122,7 @@ export async function fetchDrivingDistances(
               drivingDistanceText: formatDistance(distMeters),
               drivingDuration: durSeconds,
               drivingDurationText: formatDuration(durSeconds),
+              isEstimate: false,
             };
             return;
           }
@@ -139,6 +140,7 @@ export async function fetchDrivingDistances(
         drivingDistanceText: formatDistance(estimatedRoadMeters),
         drivingDuration: estimatedSeconds,
         drivingDurationText: formatDuration(estimatedSeconds),
+        isEstimate: true,
       };
     })
   );

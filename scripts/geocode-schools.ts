@@ -106,13 +106,6 @@ async function geocode(query: string): Promise<NominatimResult | null> {
 
 const source = JSON.parse(await readFile(sourcePath, 'utf8')) as SourceSchool[];
 
-async function readExisting<T>(path: string, fallback: T): Promise<T> {
-  try {
-    return JSON.parse(await readFile(path, 'utf8')) as T;
-  } catch {
-    return fallback;
-  }
-}
 
 const schools: GeocodedSchool[] = [];
 const failures: GeocodeFailure[] = [];

@@ -143,8 +143,8 @@ export async function generateAdmissionReportPdf({
       const name = school.name || 'Unnamed School';
       const address = school.address || '';
       const straightLineStr = `Straight: ${formatDistance(school.straightLineDistance)}`;
-      const drivingStr = `Driving: ${school.drivingDistanceText || 'Pending'}`;
-      const durationStr = school.drivingDurationText ? `Time: ~${school.drivingDurationText}` : '';
+      const drivingStr = `Driving: ${school.drivingDistanceText || 'Pending'}${school.isEstimate ? ' (est.)' : ''}`;
+      const durationStr = school.drivingDurationText ? `Time: ~${school.drivingDurationText}${school.isEstimate ? ' (est.)' : ''}` : '';
 
       const nameLines = doc.splitTextToSize(name, colNameW - 4);
       const addressLines = address ? doc.splitTextToSize(address, colNameW - 4) : [];

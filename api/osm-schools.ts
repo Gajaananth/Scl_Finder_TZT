@@ -19,13 +19,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   const searchRadius = Math.min(Math.max(radius, 200), 25000);
   const query = `
-    [out:json][timeout:5];
+    [out:json][timeout:20];
     (
       nwr["amenity"="school"](around:${searchRadius},${lat},${lng});
-      nwr["building"="school"](around:${searchRadius},${lat},${lng});
-      nwr["building:use"="school"](around:${searchRadius},${lat},${lng});
       nwr["education"="school"](around:${searchRadius},${lat},${lng});
-      nwr["school"="yes"](around:${searchRadius},${lat},${lng});
     );
     out center tags;
   `;
@@ -33,7 +30,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   for (const endpoint of OVERPASS_ENDPOINTS) {
     try {
       const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), 5000);
+      const timer = setTimeout(() => controller.abort(), 10000);
       const response = await fetch(`${endpoint}?data=${encodeURIComponent(query)}`, {
         method: 'GET',
         headers: {

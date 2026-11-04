@@ -19,6 +19,14 @@ const LOCALITY_FALLBACKS: Record<string, { lat: number; lng: number; label: stri
   chenkalady: { lat: 7.783, lng: 81.574, label: 'Chenkalady, Batticaloa, Sri Lanka' },
 };
 
+function getBatticaloaFallback(query: string) {
+  const normalized = query.toLowerCase().replace(/[,\s]+/g, ' ').trim();
+  if (/^batticaloa( district)?(, sri lanka)?$/.test(normalized)) {
+    return LOCALITY_FALLBACKS.batticaloa;
+  }
+  return null;
+}
+
 interface NominatimResult {
   place_id: number;
   display_name: string;
@@ -238,12 +246,13 @@ export default function AddressSearch({ onSearch, isLoading }: AddressSearchProp
   };
 
   const handleSelectSuggestion = (item: NominatimResult) => {
+    const fallback = getBatticaloaFallback(item.display_name);
     const loc: Coordinates = {
-      lat: parseFloat(item.lat),
-      lng: parseFloat(item.lon),
+      lat: fallback?.lat ?? parseFloat(item.lat),
+      lng: fallback?.lng ?? parseFloat(item.lon),
     };
     setSelectedLocation(loc);
-    setInputValue(item.display_name);
+    setInputValue(fallback?.label ?? item.display_name);
     setShowDropdown(false);
     setError(null);
     setSimplificationNote(null);
@@ -266,7 +275,10 @@ export default function AddressSearch({ onSearch, isLoading }: AddressSearchProp
     const raw = inputValue.trim();
     if (!raw) return;
 
-    let location = selectedLocation;
+    const localityFallback = getBatticaloaFallback(raw);
+    let location = localityFallback
+      ? { lat: localityFallback.lat, lng: localityFallback.lng }
+      : selectedLocation;
     if (!location) {
       setIsSearchingSuggestions(true);
       try {

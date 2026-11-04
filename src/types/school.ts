@@ -24,6 +24,7 @@ export interface School {
   gender?: 'Girls' | 'Mixed' | string;
   source?: string;
   isLiveOsm?: boolean;
+  isApproximate?: boolean;
 }
 
 export interface SchoolWithDistance extends School {
@@ -41,4 +42,6 @@ export interface SchoolWithDistance extends School {
   distanceBand: string;
   /** Whether school is within the selected radius */
   withinRadius: boolean;
+  /** Whether driving distance/duration is an estimate (OSRM unavailable) */
+  isEstimate?: boolean;
 }

@@ -115,6 +115,9 @@ export default function SchoolCard({ school, index, isSelected, onClick }: Schoo
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <span>~{school.drivingDurationText}</span>
+              {school.isEstimate && (
+                <span className="text-[10px] text-amber-600 font-semibold ml-1">Estimate</span>
+              )}
             </div>
           )}
         </div>

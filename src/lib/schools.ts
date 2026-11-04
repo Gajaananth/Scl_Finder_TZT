@@ -99,6 +99,18 @@ const BOYS_ONLY_PATTERNS: RegExp[] = [
   /\bmale\b/i,
 ];
 
+function isEligibleCuratedSchool(school: School): boolean {
+  if (school.id === 'sch-001') return true;
+  if (school.gender !== 'Girls' && school.gender !== 'Mixed') return false;
+  if (school.hasGrade1 !== true) return false;
+  if (!school.source?.toLowerCase().includes('moe provincial schools census')) return false;
+  // In Sri Lanka, "College" is used by many government schools (e.g. Hindu College,
+  // St. Joseph's College). Only exclude schools that are explicitly private or
+  // international — those are already filtered by the source check above.
+  if (/\b(private|international)\b/i.test(school.name)) return false;
+  return true;
+}
+
 export function isEligibleGovernmentSchool(
   tags: Record<string, string>,
   rawName: string
@@ -172,19 +184,6 @@ function inferMediums(tags: Record<string, string>): Medium[] {
   return mediums;
 }
 
-function isExplicitlyGovernmentOsmSchool(tags: Record<string, string>, rawName: string): boolean {
-  const governmentValues = new Set(['government', 'public', 'state', 'municipal']);
-  const ownership = (tags.ownership || '').toLowerCase();
-  const operatorType = (tags['operator:type'] || '').toLowerCase();
-  const operator = (tags.operator || '').toLowerCase();
-  const name = rawName.toLowerCase();
-
-  return governmentValues.has(ownership)
-    || governmentValues.has(operatorType)
-    || /\b(government|public|national)\b/i.test(operator)
-    || /\b(government|national)\b/i.test(name);
-}
-
 function normalizeSchoolName(name: string): string {
   return name
     .toLowerCase()
@@ -205,8 +204,14 @@ function hasSignificantNameOverlap(first: School, second: School): boolean {
   return sharedWords / Math.max(firstWords.size, secondWords.size) > 0.6;
 }
 
-function isSameSchool(first: School, second: School): boolean {
-  return computeStraightLineDistance(first, second) <= 150 && hasSignificantNameOverlap(first, second);
+function isDuplicateSchoolRecord(first: School, second: School): boolean {
+  const distance = computeStraightLineDistance(first, second);
+  if (!hasSignificantNameOverlap(first, second)) return false;
+  // Curated schools have precise coordinates; OSM schools are approximate.
+  // Use a tighter threshold when comparing curated-to-curated.
+  if (first.isLiveOsm && second.isLiveOsm) return distance <= 1000;
+  if (first.isLiveOsm || second.isLiveOsm) return distance <= 300;
+  return distance <= 150;
 }
 
 export async function fetchOsmSchoolsNear(
@@ -223,7 +228,7 @@ export async function fetchOsmSchoolsNear(
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ lat: location.lat, lng: location.lng, radius: searchRadius }),
         },
-        25000
+        12000
       );
       if (!response.ok) return { schools: [], ok: false };
 
@@ -240,7 +245,6 @@ export async function fetchOsmSchoolsNear(
         const distanceFromSearch = computeStraightLineDistance(location, { lat, lng });
         if (distanceFromSearch > searchRadius * 1.1) continue;
         if (!isEligibleGovernmentSchool(tags, rawName)) continue;
-        if (!isExplicitlyGovernmentOsmSchool(tags, rawName)) continue;
 
         const street = tags['addr:street'] || tags['addr:place'] || '';
         const city = tags['addr:city'] || tags['addr:district'] || tags['addr:suburb'] || '';
@@ -260,7 +264,7 @@ export async function fetchOsmSchoolsNear(
           isLiveOsm: true,
         };
 
-        const osmDuplicate = osmSchools.find((existing) => isSameSchool(existing, school));
+        const osmDuplicate = osmSchools.find((existing) => isDuplicateSchoolRecord(existing, school));
         if (!osmDuplicate) {
           osmSchools.push(school);
         } else {
@@ -289,7 +293,7 @@ export async function fetchSchools(
       curatedListOk = true;
       const staticSchools: School[] = await res.json();
       for (const s of staticSchools) {
-        if (!schoolsMap.has(s.id) && isEligibleGovernmentSchool({}, s.name)) {
+        if (!schoolsMap.has(s.id) && isEligibleCuratedSchool(s)) {
           if (nearLocation) {
             const dist = computeStraightLineDistance(nearLocation, { lat: s.lat, lng: s.lng });
             if (dist > 25000 && s.id !== 'sch-001') continue;
@@ -302,19 +306,37 @@ export async function fetchSchools(
     console.warn('API schools fetch error:', err);
   }
 
+  if (!schoolsMap.has('sch-001')) {
+    schoolsMap.set('sch-001', {
+      id: 'sch-001',
+      name: "St. Cecilia's Girls' College",
+      address: "St. Anthony's Street, Puliyanthivu, Batticaloa, Sri Lanka",
+      lat: 7.714102,
+      lng: 81.6962228,
+      medium: ['Tamil', 'English'],
+      type: '1AB',
+      zone: 'Batticaloa',
+      yearSpan: 'Grade 1-13',
+      hasGrade1: true,
+      gender: 'Girls',
+      source: 'official school reference',
+    });
+  }
+
   // OSM is enrichment for schools not yet present in the generated census data.
   if (nearLocation) {
     try {
       const liveResult = await fetchOsmSchoolsNear(nearLocation, radiusMeters);
       liveOsmOk = liveResult.ok;
       for (const s of liveResult.schools) {
-        const curatedSchools = Array.from(schoolsMap.values()).filter((school) => !school.isLiveOsm);
-        const nearbyCurated = curatedSchools.find((existing) => computeStraightLineDistance(existing, s) <= 150);
-        const alreadyIncluded = curatedSchools.some((existing) => isSameSchool(existing, s));
-        if (nearbyCurated && !alreadyIncluded) {
-          console.warn(`Nearby schools have different names; keeping both: ${nearbyCurated.name} and ${s.name}`);
+        // Check against ALL existing schools (curated + already-added OSM) to prevent duplicates
+        const allExisting = Array.from(schoolsMap.values());
+        const isDuplicate = allExisting.some((existing) => isDuplicateSchoolRecord(existing, s));
+        if (isDuplicate) {
+          console.log(`OSM duplicate skipped: ${s.name}`);
+          continue;
         }
-        if (!schoolsMap.has(s.id) && !alreadyIncluded) {
+        if (!schoolsMap.has(s.id)) {
           schoolsMap.set(s.id, s);
         }
       }

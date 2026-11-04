@@ -46,7 +46,7 @@ const outputPath = resolve(root, 'data/schools.json');
 const failuresPath = resolve(root, 'scripts/geocode-failures.json');
 const USER_AGENT = 'StCeciliasSchoolFinder/1.0 (school-data-maintainer; gajaananth08@gmail.com)';
 const REQUEST_DELAY_MS = 1100;
-const REQUEST_TIMEOUT_MS = 1000;
+const REQUEST_TIMEOUT_MS = 10000;
 const MAX_ENTRIES_PER_RUN = Number(process.env.GEOCODE_MAX_ENTRIES || '0');
 const DISTRICT_BOUNDS = { minLat: 7.0, maxLat: 8.1, minLng: 81.3, maxLng: 81.9 };
 

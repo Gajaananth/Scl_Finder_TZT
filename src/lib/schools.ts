@@ -1,7 +1,11 @@
+import bundledSchools from '../../data/schools.json';
 import type { School, Coordinates, SchoolType, Medium } from '../types/school';
 import { computeStraightLineDistance } from './distance';
 
 const API_URL = '/api/schools';
+const bundledSchoolList = bundledSchools as School[];
+
+export const ST_CECILIA_REFERENCE: Coordinates = { lat: 7.714102, lng: 81.6962228 };
 
 async function fetchWithTimeout(
   input: RequestInfo | URL,
@@ -101,6 +105,7 @@ const BOYS_ONLY_PATTERNS: RegExp[] = [
 
 function isEligibleCuratedSchool(school: School): boolean {
   if (school.id === 'sch-001') return true;
+  if (school.isApproximate) return false;
   if (school.gender !== 'Girls' && school.gender !== 'Mixed') return false;
   if (school.hasGrade1 !== true) return false;
   if (!school.source?.toLowerCase().includes('moe provincial schools census')) return false;
@@ -228,7 +233,7 @@ export async function fetchOsmSchoolsNear(
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ lat: location.lat, lng: location.lng, radius: searchRadius }),
         },
-        12000
+        4500
       );
       if (!response.ok) return { schools: [], ok: false };
 
@@ -286,17 +291,15 @@ export async function fetchSchools(
   let curatedListOk = false;
   let liveOsmOk = !nearLocation;
 
-  // Prefer the API, but keep searches working if the endpoint is unavailable.
+  // Prefer the API, but always have the bundled school list available offline.
   try {
-    let staticSchools: School[];
+    let staticSchools = bundledSchoolList;
     try {
-      const res = await fetchWithTimeout(API_URL, undefined, 10000);
+      const res = await fetchWithTimeout(API_URL, undefined, 4000);
       if (!res.ok) throw new Error(`School API returned ${res.status}`);
       staticSchools = await res.json();
     } catch (err) {
       console.warn('API schools fetch failed; using bundled school data:', err);
-      const fallback = await import('../../data/schools.json');
-      staticSchools = fallback.default as School[];
     }
 
     curatedListOk = true;
@@ -304,7 +307,7 @@ export async function fetchSchools(
       if (!schoolsMap.has(s.id) && isEligibleCuratedSchool(s)) {
         if (nearLocation) {
           const dist = computeStraightLineDistance(nearLocation, { lat: s.lat, lng: s.lng });
-          if (dist > 25000 && s.id !== 'sch-001') continue;
+          if (dist > radiusMeters && s.id !== 'sch-001') continue;
         }
         schoolsMap.set(s.id, s);
       }
@@ -318,8 +321,7 @@ export async function fetchSchools(
       id: 'sch-001',
       name: "St. Cecilia's Girls' College",
       address: "St. Anthony's Street, Puliyanthivu, Batticaloa, Sri Lanka",
-      lat: 7.714102,
-      lng: 81.6962228,
+      ...ST_CECILIA_REFERENCE,
       medium: ['Tamil', 'English'],
       type: '1AB',
       zone: 'Batticaloa',

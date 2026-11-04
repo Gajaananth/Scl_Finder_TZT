@@ -6,6 +6,7 @@ const OVERPASS_ENDPOINTS = [
   'https://overpass.private.coffee/api/interpreter',
   'https://maps.mail.ru/osm/tools/overpass/api/interpreter',
 ];
+const ENDPOINT_TIMEOUT_MS = 3000;
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
@@ -19,7 +20,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   const searchRadius = Math.min(Math.max(radius, 200), 25000);
   const query = `
-    [out:json][timeout:20];
+    [out:json][timeout:5];
     (
       nwr["amenity"="school"](around:${searchRadius},${lat},${lng});
       nwr["education"="school"](around:${searchRadius},${lat},${lng});
@@ -27,27 +28,37 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     out center tags;
   `;
 
-  for (const endpoint of OVERPASS_ENDPOINTS) {
-    try {
+  const controllers: AbortController[] = [];
+  try {
+    const elements = await Promise.any(OVERPASS_ENDPOINTS.map(async (endpoint) => {
       const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), 10000);
-      const response = await fetch(`${endpoint}?data=${encodeURIComponent(query)}`, {
-        method: 'GET',
-        headers: {
-          Accept: 'application/json',
-          'User-Agent': 'StCeciliaSchoolFinder/1.0',
-        },
-        signal: controller.signal,
-      }).finally(() => clearTimeout(timer));
+      controllers.push(controller);
+      const timer = setTimeout(() => controller.abort(), ENDPOINT_TIMEOUT_MS);
+      try {
+        const response = await fetch(`${endpoint}?data=${encodeURIComponent(query)}`, {
+          method: 'GET',
+          headers: {
+            Accept: 'application/json',
+            'User-Agent': 'StCeciliaSchoolFinder/1.0',
+          },
+          signal: controller.signal,
+        });
 
-      if (response.ok) {
+        if (!response.ok) {
+          throw new Error(`Overpass endpoint returned ${response.status}`);
+        }
+
         const data = await response.json();
-        return res.status(200).json({ elements: data.elements || [] });
+        return Array.isArray(data.elements) ? data.elements : [];
+      } finally {
+        clearTimeout(timer);
       }
-    } catch {
-      // Try the next Overpass endpoint.
-    }
+    }));
+    return res.status(200).json({ elements });
+  } catch (error) {
+    console.error('All Overpass endpoints failed:', error);
+    return res.status(502).json({ error: 'Live map data unavailable' });
+  } finally {
+    controllers.forEach((controller) => controller.abort());
   }
-
-  return res.status(502).json({ error: 'Live map data unavailable' });
 }

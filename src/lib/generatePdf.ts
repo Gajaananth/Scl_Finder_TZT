@@ -5,18 +5,17 @@ import logoUrl from '../assets/logo.png';
 
 interface GeneratePdfOptions {
   applicantAddress: string;
-  radiusMeters: number;
+  circleRadiusMeters: number;
   schools: SchoolWithDistance[];
   generatedDate?: string;
 }
 
 /**
- * Generates a clean, official, locally viewable PDF report
- * containing ONLY the applicant address and the verified nearest schools.
+ * Generates a local PDF report of schools with precise coordinates inside the reference circle.
  */
 export async function generateAdmissionReportPdf({
   applicantAddress,
-  radiusMeters,
+  circleRadiusMeters,
   schools,
   generatedDate,
 }: GeneratePdfOptions): Promise<void> {
@@ -61,7 +60,7 @@ export async function generateAdmissionReportPdf({
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(9.5);
   doc.setTextColor(220, 230, 250);
-  doc.text('Grade 1 Admission: Nearest Schools Verification Report', margin + 26, y + 16);
+  doc.text("School Locations Inside St. Cecilia's Reference Circle", margin + 26, y + 16);
 
   // Date on the right of banner
   doc.setFontSize(8.5);
@@ -88,16 +87,16 @@ export async function generateAdmissionReportPdf({
   const addressLines = doc.splitTextToSize(cleanAddress, contentWidth - 8).slice(0, 2);
   doc.text(addressLines, margin + 4, y + 11);
 
-  // Radius & Total info
+  // Reference-circle radius & total info
   doc.setFont('helvetica', 'bold');
-  doc.text('Verification Radius:', margin + 4, y + 25);
+  doc.text('Circle radius (home to St. Cecilia):', margin + 4, y + 25);
   doc.setFont('helvetica', 'normal');
-  doc.text(formatDistance(radiusMeters), margin + 38, y + 25);
+  doc.text(formatDistance(circleRadiusMeters), margin + 59, y + 25);
 
   doc.setFont('helvetica', 'bold');
-  doc.text('Total Schools Identified:', margin + 70, y + 25);
+  doc.text('Schools in circle:', margin + 96, y + 25);
   doc.setFont('helvetica', 'normal');
-  doc.text(String(schools.length), margin + 114, y + 25);
+  doc.text(String(schools.length), margin + 130, y + 25);
 
   y += 36;
 
@@ -105,7 +104,7 @@ export async function generateAdmissionReportPdf({
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(11);
   doc.setTextColor(15, 23, 42); // slate-900
-  doc.text('Verified Nearest Schools', margin, y);
+  doc.text('School Locations Inside Reference Circle', margin, y);
 
   y += 4;
 
@@ -134,7 +133,7 @@ export async function generateAdmissionReportPdf({
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(9);
     doc.setTextColor(100, 116, 139);
-    doc.text('No schools found within the specified radius.', margin + 4, y + 10);
+    doc.text('No precisely located school records are inside this reference circle.', margin + 4, y + 10);
     y += 16;
   } else {
     // Render school rows

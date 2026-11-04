@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect, useMemo } from 'react';
 import { useI18n } from './lib/I18nContext';
-import { fetchSchools, type SchoolFetchStatus } from './lib/schools';
+import { fetchSchools, ST_CECILIA_REFERENCE, type SchoolFetchStatus } from './lib/schools';
 import {
   computeStraightLineDistance,
   fetchDrivingDistances,
@@ -23,7 +23,6 @@ export default function App() {
 
   const [homeLocation, setHomeLocation] = useState<Coordinates | null>(null);
   const [homeAddress, setHomeAddress] = useState<string>('');
-  const [radiusMeters, setRadiusMeters] = useState<number>(2000);
   const [schools, setSchools] = useState<SchoolWithDistance[]>([]);
   const [selectedSchoolId, setSelectedSchoolId] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -36,18 +35,16 @@ export default function App() {
   const [typeFilter, setTypeFilter] = useState<SchoolType | 'all'>('all');
 
   const executeSearch = useCallback(
-    async (location: Coordinates, radius: number, addressText?: string) => {
-      // Enforce strict 25km maximum radius limit
-      const effectiveRadius = Math.min(Math.max(radius, 200), 25000);
+    async (location: Coordinates, addressText?: string) => {
+      const circleRadiusMeters = computeStraightLineDistance(ST_CECILIA_REFERENCE, location);
       setIsLoading(true);
       setError(null);
       setLiveNoticeDismissed(false);
       setHomeLocation(location);
       setHomeAddress(addressText || `${location.lat.toFixed(4)}°N, ${location.lng.toFixed(4)}°E`);
-      setRadiusMeters(effectiveRadius);
 
       try {
-        const fetchResult = await fetchSchools(location, effectiveRadius);
+        const fetchResult = await fetchSchools(ST_CECILIA_REFERENCE, circleRadiusMeters);
         setSourceStatus(fetchResult);
         if (!fetchResult.curatedListOk) {
           setSchools([]);
@@ -61,23 +58,24 @@ export default function App() {
         // 1. Calculate primary straight-line geodesic distance for all schools
         const processed: SchoolWithDistance[] = rawSchools
           .map((s) => {
-            const dist = computeStraightLineDistance(location, {
+            const distanceFromApplicant = computeStraightLineDistance(location, {
               lat: s.lat,
               lng: s.lng,
             });
-            const inside = dist <= effectiveRadius;
+            const distanceFromCecilia = computeStraightLineDistance(ST_CECILIA_REFERENCE, {
+              lat: s.lat,
+              lng: s.lng,
+            });
             return {
               ...s,
-              straightLineDistance: dist,
-              withinRadius: inside,
-              distanceBand: getDistanceBand(dist, language),
+              straightLineDistance: distanceFromApplicant,
+              withinRadius: distanceFromCecilia <= circleRadiusMeters,
+              distanceBand: getDistanceBand(distanceFromApplicant, language),
             };
           })
-          // Keep the official St. Cecilia's reference visible even when it is
-          // beyond the 25km search cap applied to other schools.
-          .filter((s) => s.straightLineDistance <= 25000 || s.id === 'sch-001');
+          .filter((s) => s.withinRadius);
 
-        // 2. Keep St. Cecilia's first, then show the remaining schools by proximity.
+        // 2. Keep St. Cecilia's first, then sort by distance from the applicant.
         processed.sort((a, b) => {
           const aIsStCecilias = a.id === 'sch-001' || /st\.\s*cecilia/i.test(a.name);
           const bIsStCecilias = b.id === 'sch-001' || /st\.\s*cecilia/i.test(b.name);
@@ -89,9 +87,7 @@ export default function App() {
         });
 
         setSchools(processed);
-        // Start the map at the applicant and nearest in-radius school.
-        // St. Cecilia's remains first in the output, but must not pull the map
-        // away from the searched location when it is outside the radius.
+        // Start the map and school list at the nearest school inside the reference circle.
         const nearestInRadius = processed.find((school) => school.withinRadius);
         if (nearestInRadius) {
           setSelectedSchoolId(nearestInRadius.id);
@@ -102,7 +98,7 @@ export default function App() {
         }
         setIsLoading(false);
 
-        // 3. Asynchronously fetch driving distances for ALL schools inside radius
+        // 3. Asynchronously fetch driving distances for schools inside the circle.
         const ceciliaSchool = processed.find(
           (school) => school.id === 'sch-001' || /st\.\s*cecilia/i.test(school.name)
         );
@@ -142,12 +138,6 @@ export default function App() {
     }
   }, [language]);
 
-  // Quick radius adjustment on active search
-  const handleRadiusChange = (newRadius: number) => {
-    if (!homeLocation) return;
-    executeSearch(homeLocation, Math.min(newRadius, 25000), homeAddress);
-  };
-
   // Filtered schools for display & print
   const filteredSchools = useMemo(() => {
     return schools.filter((s) => {
@@ -157,6 +147,10 @@ export default function App() {
       return matchMedium && matchType;
     });
   }, [schools, mediumFilter, typeFilter]);
+
+  const referenceCircleRadiusMeters = homeLocation
+    ? computeStraightLineDistance(ST_CECILIA_REFERENCE, homeLocation)
+    : 0;
 
   const resetSearch = () => {
     setHomeLocation(null);
@@ -172,7 +166,7 @@ export default function App() {
   const handleDownloadPDF = () => {
     generateAdmissionReportPdf({
       applicantAddress: homeAddress,
-      radiusMeters,
+      circleRadiusMeters: referenceCircleRadiusMeters,
       schools: filteredSchools,
     });
   };
@@ -218,7 +212,7 @@ export default function App() {
     link.setAttribute('href', url);
     link.setAttribute(
       'download',
-      `St_Cecilias_Grade1_Admission_${radiusMeters}m_${new Date().toISOString().slice(0, 10)}.csv`
+      `St_Cecilias_Grade1_Admission_${Math.round(referenceCircleRadiusMeters)}m_${new Date().toISOString().slice(0, 10)}.csv`
     );
     document.body.appendChild(link);
     link.click();
@@ -348,10 +342,10 @@ export default function App() {
              ======================================================== */
           <div className="flex-1 flex flex-col items-center justify-center px-4 py-8 md:py-16">
             <div className="max-w-3xl w-full text-center space-y-4 mb-8">
-              {/* MoE Policy Pill */}
+              {/* Reference circle pill */}
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-light border border-brand/20 text-brand-dark text-xs font-semibold shadow-xs">
                 <span>🏛️</span>
-                <span>Official Grade 1 Admission Circular Proximity Guidelines</span>
+                <span>St. Cecilia&rsquo;s Reference Circle</span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
@@ -374,11 +368,9 @@ export default function App() {
                 <div className="w-9 h-9 rounded-xl bg-brand-light text-brand flex items-center justify-center font-bold text-lg">
                   1
                 </div>
-                <h3 className="font-bold text-slate-900 text-sm">
-                  Straight-Line Distance
-                </h3>
+                <h3 className="font-bold text-slate-900 text-sm">Reference Circle</h3>
                 <p className="text-xs text-slate-500 leading-relaxed">
-                  Admission circulars specify straight-line (&ldquo;as the crow flies&rdquo;) distance between the applicant&rsquo;s residence and the school as the legally binding criteria.
+                  Centered on St. Cecilia&rsquo;s, with a radius equal to the straight-line distance from the applicant&rsquo;s address.
                 </p>
               </div>
 
@@ -386,11 +378,9 @@ export default function App() {
                 <div className="w-9 h-9 rounded-xl bg-brand-light text-brand flex items-center justify-center font-bold text-lg">
                   2
                 </div>
-                <h3 className="font-bold text-slate-900 text-sm">
-                  Proximity Mark Bands
-                </h3>
+                <h3 className="font-bold text-slate-900 text-sm">Applicant-to-School Distance</h3>
                 <p className="text-xs text-slate-500 leading-relaxed">
-                  Schools are categorized into Ministry bands (Within 500m, 1km, 2km, 3km, 5km) directly mapping to marks awarded during admission review.
+                  Each listed school&rsquo;s straight-line distance and driving route are measured from the applicant&rsquo;s address.
                 </p>
               </div>
 
@@ -412,48 +402,17 @@ export default function App() {
              RESULTS VIEW (SPLIT LAYOUT)
              ======================================================== */
           <div className="flex-1 flex flex-col">
-            {/* Quick Adjustment, Filters, Print & CSV Header */}
+            {/* Reference circle, filters, print & CSV header */}
             <div className="bg-white border-b border-slate-200 px-4 py-2.5 no-print shadow-2xs">
               <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
-                {/* Current Radius & Quick Bands */}
-                <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap min-w-0">
-                  <span className="text-xs font-bold text-slate-500 uppercase tracking-wider shrink-0 mr-0.5">
-                    {t('radiusLabel')}:
+                <div className="flex items-center gap-2 text-xs">
+                  <span className="font-bold text-slate-500 uppercase tracking-wider">
+                    Circle radius:
                   </span>
-                  {[500, 1000, 2000, 3000, 5000].map((val) => (
-                    <button
-                      key={val}
-                      type="button"
-                      onClick={() => handleRadiusChange(val)}
-                      className={`px-2.5 py-1 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors cursor-pointer ${
-                        radiusMeters === val
-                          ? 'bg-brand text-white shadow-xs'
-                          : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                      }`}
-                    >
-                      {formatDistance(val)}
-                    </button>
-                  ))}
-                  {/* Manual km input box in results toolbar */}
-                  <div className="flex items-center gap-1 bg-white border border-slate-300 rounded-lg px-2 py-0.5 shadow-2xs shrink-0 focus-within:ring-1 focus-within:ring-brand focus-within:border-brand">
-                    <span className="text-[10px] font-bold text-slate-400">Custom:</span>
-                    <input
-                      type="number"
-                      min="0.2"
-                      max="25"
-                      step="0.5"
-                      value={Number((radiusMeters / 1000).toFixed(1))}
-                      onChange={(e) => {
-                        const val = parseFloat(e.target.value);
-                        if (!isNaN(val)) {
-                          handleRadiusChange(Math.round(Math.min(25, Math.max(0.2, val)) * 1000));
-                        }
-                      }}
-                      className="w-12 text-right font-black text-brand text-xs focus:outline-none"
-                      title="Enter custom radius in km (max 25 km)"
-                    />
-                    <span className="text-[10px] font-bold text-slate-600">km</span>
-                  </div>
+                  <span className="font-bold text-brand">
+                    {formatDistance(referenceCircleRadiusMeters)}
+                  </span>
+                  <span className="text-slate-500">from St. Cecilia&rsquo;s to the applicant address</span>
                 </div>
 
                 {/* Filters, Print and CSV Actions */}
@@ -500,7 +459,7 @@ export default function App() {
                     type="button"
                     onClick={handleDownloadPDF}
                     className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-bold rounded-lg bg-brand text-white hover:bg-brand-dark shadow-xs cursor-pointer transition-all shrink-0"
-                    title="Download verified nearest schools report as PDF"
+                    title="Download schools inside reference circle report as PDF"
                   >
                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -533,7 +492,7 @@ export default function App() {
 
             {sourceStatus && !sourceStatus.liveOsmOk && !liveNoticeDismissed && (
               <div className="flex items-center justify-between gap-3 bg-amber-50 border-b border-amber-200 px-4 py-2 text-xs text-amber-900">
-                <span>Verified government schools are shown. Live map schools are temporarily unavailable, so newer or unlisted schools may not appear.</span>
+                <span>Precisely located census schools are shown. Live OpenStreetMap results are temporarily unavailable, so additional school locations may not appear.</span>
                 <button
                   type="button"
                   onClick={() => setLiveNoticeDismissed(true)}
@@ -552,13 +511,12 @@ export default function App() {
                 <MapView
                   homeLocation={homeLocation}
                   schools={schools}
-                  radiusMeters={radiusMeters}
+                  circleRadiusMeters={referenceCircleRadiusMeters}
                   selectedSchoolId={selectedSchoolId}
                   onSelectSchool={setSelectedSchoolId}
                   onHomeLocationChange={(newLoc) => {
                     executeSearch(
                       newLoc,
-                      radiusMeters,
                       `Manual Pin (${newLoc.lat.toFixed(4)}°N, ${newLoc.lng.toFixed(4)}°E)`
                     );
                   }}
@@ -569,7 +527,7 @@ export default function App() {
               <div className="school-list-panel w-full h-[520px] border-t border-slate-200 bg-white flex flex-col min-h-0">
                 <SchoolList
                   schools={filteredSchools}
-                  radiusMeters={radiusMeters}
+                  circleRadiusMeters={referenceCircleRadiusMeters}
                   selectedSchoolId={selectedSchoolId}
                   onSchoolSelect={setSelectedSchoolId}
                   isLoading={isLoading}
@@ -607,8 +565,8 @@ export default function App() {
                   <span className="text-slate-800">{homeAddress || 'Selected on map'}</span>
                 </div>
                 <div className="mt-1.5">
-                  <span className="font-bold text-slate-900">Search Radius:</span>{' '}
-                  <span className="text-slate-800">{formatDistance(radiusMeters)}</span>
+                  <span className="font-bold text-slate-900">Reference Circle Radius (from St. Cecilia&rsquo;s to applicant):</span>{' '}
+                  <span className="text-slate-800">{formatDistance(referenceCircleRadiusMeters)}</span>
                 </div>
               </div>
 
@@ -650,7 +608,7 @@ export default function App() {
                   {filteredSchools.length === 0 && (
                     <tr>
                       <td colSpan={3} style={{ textAlign: 'center', padding: '16px' }}>
-                        No schools found within the selected radius.
+                        No precisely located school records are inside this reference circle.
                       </td>
                     </tr>
                   )}

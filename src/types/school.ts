@@ -40,7 +40,7 @@ export interface SchoolWithDistance extends School {
   drivingDurationText?: string;
   /** Admission distance band label */
   distanceBand: string;
-  /** Whether school is within the selected radius */
+  /** Whether school lies inside the St. Cecilia reference circle */
   withinRadius: boolean;
   /** Whether driving distance/duration is an estimate (OSRM unavailable) */
   isEstimate?: boolean;

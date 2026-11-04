@@ -5,7 +5,7 @@ import SchoolCard from './SchoolCard';
 
 interface SchoolListProps {
   schools: SchoolWithDistance[];
-  radiusMeters: number;
+  circleRadiusMeters: number;
   selectedSchoolId: string | null;
   onSchoolSelect: (id: string) => void;
   isLoading: boolean;
@@ -15,7 +15,7 @@ interface SchoolListProps {
 
 export default function SchoolList({
   schools,
-  radiusMeters,
+  circleRadiusMeters,
   selectedSchoolId,
   onSchoolSelect,
   isLoading,
@@ -25,11 +25,9 @@ export default function SchoolList({
   const { t } = useI18n();
 
   const withinRadius = schools.filter((s) => s.withinRadius);
-  const nearbyOutside = schools.filter((s) => !s.withinRadius).slice(0, 10);
-
-  const radiusLabel = radiusMeters >= 1000
-    ? `${(radiusMeters / 1000).toFixed(1)} km`
-    : `${radiusMeters}m`;
+  const radiusLabel = circleRadiusMeters >= 1000
+    ? `${(circleRadiusMeters / 1000).toFixed(1)} km`
+    : `${Math.round(circleRadiusMeters)}m`;
 
   if (isLoading) {
     return (
@@ -112,7 +110,7 @@ export default function SchoolList({
       {/* Schools list */}
       <div className="flex-1 overflow-y-auto p-4 space-y-3">
         {/* Empty state */}
-        {withinRadius.length === 0 && nearbyOutside.length === 0 && (
+        {withinRadius.length === 0 && (
           <div className="flex flex-col items-center justify-center py-12 text-center">
             <svg className="w-16 h-16 text-slate-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -134,35 +132,12 @@ export default function SchoolList({
           />
         ))}
 
-        {/* Nearby outside radius */}
-        {nearbyOutside.length > 0 && (
-          <>
-            <div className="flex items-center gap-2 pt-4 pb-1">
-              <div className="h-px flex-1 bg-slate-200" />
-              <span className="text-xs font-medium text-slate-400 uppercase tracking-wider whitespace-nowrap">
-                {t('nearbySchools')}
-              </span>
-              <div className="h-px flex-1 bg-slate-200" />
-            </div>
-            {nearbyOutside.map((school, i) => (
-              <div key={school.id} className="opacity-50">
-                <SchoolCard
-                  school={school}
-                  index={withinRadius.length + i}
-                  isSelected={selectedSchoolId === school.id}
-                  onClick={() => onSchoolSelect(school.id)}
-                />
-              </div>
-            ))}
-          </>
-        )}
-
         {/* Footer attribution */}
-        {(withinRadius.length > 0 || nearbyOutside.length > 0) && (
+        {withinRadius.length > 0 && (
           <p className="text-[11px] text-slate-400 text-center pt-4 pb-2 px-4">
             {t('poweredBy')}
             <br />
-            {t('straightLine')}: {formatDistance(radiusMeters)} {t('radiusLabel').toLowerCase()}
+            {t('circleRadiusSummary', { radius: formatDistance(circleRadiusMeters) })}
           </p>
         )}
       </div>

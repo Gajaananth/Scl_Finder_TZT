@@ -3,14 +3,6 @@ import { useI18n } from '../lib/I18nContext';
 import type { Coordinates } from '../types/school';
 import ManualPinMap from './ManualPinMap';
 
-const RADIUS_PRESETS = [
-  { label: '500m', value: 500 },
-  { label: '1 km', value: 1000 },
-  { label: '2 km', value: 2000 },
-  { label: '3 km', value: 3000 },
-  { label: '5 km', value: 5000 },
-];
-
 const LOCALITY_FALLBACKS: Record<string, { lat: number; lng: number; label: string }> = {
   batticaloa: { lat: 7.717, lng: 81.700, label: 'Batticaloa, Sri Lanka' },
   kallady: { lat: 7.719, lng: 81.707, label: 'Kallady, Batticaloa, Sri Lanka' },
@@ -103,7 +95,7 @@ function simplifyAttempt3(raw: string): string {
 }
 
 interface AddressSearchProps {
-  onSearch: (location: Coordinates, radiusMeters: number, addressText?: string) => void;
+  onSearch: (location: Coordinates, addressText?: string) => void;
   isLoading: boolean;
 }
 
@@ -112,8 +104,6 @@ export default function AddressSearch({ onSearch, isLoading }: AddressSearchProp
 
   const [inputValue, setInputValue] = useState('');
   const [selectedLocation, setSelectedLocation] = useState<Coordinates | null>(null);
-  const [radiusMeters, setRadiusMeters] = useState(2000);
-  const [customMode, setCustomMode] = useState(false);
   const [suggestions, setSuggestions] = useState<NominatimResult[]>([]);
   const [isSearchingSuggestions, setIsSearchingSuggestions] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -311,12 +301,7 @@ export default function AddressSearch({ onSearch, isLoading }: AddressSearchProp
       return;
     }
 
-    onSearch(location, Math.min(radiusMeters, 25000), inputValue.trim() || undefined);
-  };
-
-  const handlePresetClick = (value: number) => {
-    setRadiusMeters(value);
-    setCustomMode(false);
+    onSearch(location, inputValue.trim() || undefined);
   };
 
   const handleManualPinConfirm = (coords: Coordinates, label: string) => {
@@ -325,7 +310,7 @@ export default function AddressSearch({ onSearch, isLoading }: AddressSearchProp
     setShowPinMap(false);
     setError(null);
     setSimplificationNote(null);
-    onSearch(coords, Math.min(radiusMeters, 25000), label);
+    onSearch(coords, label);
   };
 
   const isDisabled = isLoading || isSearchingSuggestions || (!selectedLocation && !inputValue.trim());
@@ -471,107 +456,6 @@ export default function AddressSearch({ onSearch, isLoading }: AddressSearchProp
               onCancel={() => setShowPinMap(false)}
               queryNominatim={queryNominatim}
             />
-          </div>
-        )}
-      </div>
-
-      {/* Radius selector */}
-      <div>
-        <label className="block text-sm font-medium text-slate-700 mb-3">
-          {t('radiusLabel')}
-        </label>
-        <div className="flex flex-wrap gap-2">
-          {RADIUS_PRESETS.map(({ label, value }) => (
-            <button
-              key={value}
-              type="button"
-              onClick={() => handlePresetClick(value)}
-              className={`
-                px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200
-                ${
-                  !customMode && radiusMeters === value
-                    ? 'bg-brand text-white shadow-md shadow-brand/25'
-                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                }
-              `}
-              aria-pressed={!customMode && radiusMeters === value}
-            >
-              {label}
-            </button>
-          ))}
-          <button
-            type="button"
-            onClick={() => setCustomMode(true)}
-            className={`
-              px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200
-              ${
-                customMode
-                  ? 'bg-brand text-white shadow-md shadow-brand/25'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-              }
-            `}
-            aria-pressed={customMode}
-          >
-            {t('customRadius')}
-          </button>
-        </div>
-
-        {/* Custom radius manual input & slider */}
-        {customMode && (
-          <div className="mt-4 p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 animate-fade-in">
-            <div className="flex items-center justify-between gap-3">
-              <div>
-                <label htmlFor="custom-km-input" className="block text-xs font-bold text-slate-700">
-                  Custom Distance (km)
-                </label>
-                <span className="text-[11px] text-slate-500">
-                  Enter any distance manually (Max 25 km)
-                </span>
-              </div>
-              <div className="flex items-center gap-1.5 bg-white border-2 border-brand/30 rounded-xl px-3 py-1.5 shadow-xs focus-within:ring-2 focus-within:ring-brand focus-within:border-brand transition-all">
-                <input
-                  id="custom-km-input"
-                  type="number"
-                  min="0.2"
-                  max="25"
-                  step="0.1"
-                  value={Number((radiusMeters / 1000).toFixed(1))}
-                  onChange={(e) => {
-                    const km = parseFloat(e.target.value);
-                    if (!isNaN(km)) {
-                      const clampedKm = Math.min(25, Math.max(0.1, km));
-                      setRadiusMeters(Math.round(clampedKm * 1000));
-                    }
-                  }}
-                  className="w-16 text-right font-black text-brand text-base focus:outline-none"
-                  placeholder="2.0"
-                />
-                <span className="text-xs font-bold text-slate-600 select-none">km</span>
-              </div>
-            </div>
-
-            {/* Range slider synchronized with manual input */}
-            <div>
-              <input
-                type="range"
-                min={200}
-                max={25000}
-                step={100}
-                value={Math.min(radiusMeters, 25000)}
-                onChange={(e) => setRadiusMeters(Math.min(25000, Math.max(200, Number(e.target.value))))}
-                className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[var(--brand-primary)]"
-                aria-label="Adjust radius slider"
-              />
-              <div className="flex justify-between text-[11px] text-slate-500 mt-1 font-medium">
-                <span>0.2 km (200m)</span>
-                <span className="font-bold text-brand">
-                  {radiusMeters >= 1000
-                    ? `${(radiusMeters / 1000).toFixed(1)} km`
-                    : `${radiusMeters} m`}
-                </span>
-                <span>25 km (Maximum)</span>
-              </div>
-            </div>
           </div>
         )}
       </div>

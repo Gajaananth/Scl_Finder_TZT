@@ -6,11 +6,12 @@ import type { SchoolWithDistance, Coordinates } from '../types/school';
 import { formatDistance, fetchMultipleRouteGeometries } from '../lib/distance';
 import { THEME } from '../lib/theme';
 import { useI18n } from '../lib/I18nContext';
+import { ST_CECILIA_REFERENCE } from '../lib/schools';
 
 interface MapViewProps {
   homeLocation: Coordinates;
   schools: SchoolWithDistance[];
-  radiusMeters: number;
+  circleRadiusMeters: number;
   selectedSchoolId: string | null;
   onSelectSchool: (id: string | null) => void;
   onHomeLocationChange?: (coords: Coordinates) => void;
@@ -41,8 +42,34 @@ const homeIcon = L.divIcon({
   popupAnchor: [0, -20],
 });
 
-function createSchoolIcon(isInside: boolean, isSelected: boolean) {
-  const bg = isSelected ? THEME.primaryDark : isInside ? THEME.primary : '#64748b';
+const ceciliaCenterIcon = L.divIcon({
+  className: 'cecilia-center-icon',
+  html: `
+    <div style="
+      background-color: #7f1d1d;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 3px solid #f4c542;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 17px;
+    ">
+      🏫
+    </div>
+  `,
+  iconSize: [36, 36],
+  iconAnchor: [18, 18],
+  popupAnchor: [0, -20],
+});
+
+function createSchoolIcon(isInside: boolean, isSelected: boolean, isLiveOsm: boolean) {
+  const bg = isLiveOsm
+    ? (isSelected ? '#9a3412' : '#c2410c')
+    : (isSelected ? THEME.primaryDark : isInside ? THEME.primary : '#64748b');
   const scale = isSelected ? 'scale(1.2)' : isInside ? 'scale(1.05)' : 'scale(0.85)';
   const opacity = isInside ? '1.0' : '0.6';
   const shadow = isInside ? '0 4px 10px rgba(30,58,138,0.35)' : 'none';
@@ -138,7 +165,7 @@ function MapBoundsUpdater({
 export default function MapView({
   homeLocation,
   schools,
-  radiusMeters,
+  circleRadiusMeters,
   selectedSchoolId,
   onSelectSchool,
   onHomeLocationChange,
@@ -157,12 +184,10 @@ export default function MapView({
   );
 
   const displayedSchools = useMemo(() => {
-    const inside = schools.filter((s) => s.withinRadius);
-    const outside = schools.filter((s) => !s.withinRadius).slice(0, 15);
-    return [...inside, ...outside];
+    return schools.filter((school) => school.withinRadius && school.id !== 'sch-001');
   }, [schools]);
 
-  // Fetch driving route geometry for ALL schools within the admission radius
+  // Fetch driving route geometry for schools inside the reference circle.
   useEffect(() => {
     const insideSchools = schools.filter((s) => s.withinRadius);
     if (!insideSchools.length) {
@@ -190,7 +215,7 @@ export default function MapView({
     return () => {
       isMounted = false;
     };
-  }, [homeLocation, schools, radiusMeters]);
+  }, [homeLocation, schools, circleRadiusMeters]);
 
   return (
     <div className="w-full grid grid-cols-1 gap-2 lg:grid-cols-[minmax(0,1fr)_250px] lg:items-start">
@@ -202,12 +227,12 @@ export default function MapView({
           <div className="flex flex-wrap items-center justify-between gap-x-5 gap-y-2">
             <div className="min-w-0">
               <p className="text-[11px] font-bold uppercase tracking-wider text-amber-200">St. Cecilia's Girls' College</p>
-              <p className="text-xs text-white/80">Official distance from the applicant residence</p>
+              <p className="text-xs text-white/80">Applicant address distance and reference-circle radius</p>
             </div>
             <div className="flex items-baseline gap-4 sm:gap-6">
               <div>
-                <span className="block text-[10px] font-semibold uppercase tracking-wide text-amber-200">Straight-line</span>
-                <strong className="block text-2xl font-black leading-none sm:text-3xl">{formatDistance(ceciliaSchool.straightLineDistance)}</strong>
+                <span className="block text-[10px] font-semibold uppercase tracking-wide text-amber-200">Address distance</span>
+                <strong className="block text-2xl font-black leading-none sm:text-3xl">{formatDistance(circleRadiusMeters)}</strong>
               </div>
               <div>
                 <span className="block text-[10px] font-semibold uppercase tracking-wide text-amber-200">Driving route</span>
@@ -237,14 +262,14 @@ export default function MapView({
 
         {/* Viewport manager */}
         <MapBoundsUpdater
-          center={homeLocation}
-          radius={radiusMeters}
+          center={ST_CECILIA_REFERENCE}
+          radius={circleRadiusMeters}
         />
 
-        {/* Proximity Circle Overlay (Visual Admission Boundary) */}
+        {/* Circle centered on St. Cecilia's and scaled to the applicant distance. */}
         <Circle
-          center={[homeLocation.lat, homeLocation.lng]}
-          radius={radiusMeters}
+          center={[ST_CECILIA_REFERENCE.lat, ST_CECILIA_REFERENCE.lng]}
+          radius={circleRadiusMeters}
           pathOptions={{
             color: THEME.primaryDark,
             fillColor: THEME.primary,
@@ -253,7 +278,20 @@ export default function MapView({
           }}
         />
 
-        {/* Driving Route Lines for ALL schools within the admission radius */}
+        <Marker
+          position={[ST_CECILIA_REFERENCE.lat, ST_CECILIA_REFERENCE.lng]}
+          icon={ceciliaCenterIcon}
+          zIndexOffset={1100}
+        >
+          <Popup>
+            <div className="text-center">
+              <strong className="text-sm text-red-900">St. Cecilia&rsquo;s Girls&rsquo; College</strong>
+              <p className="text-xs text-slate-600 mt-1">{t('referenceCircleCenter')}</p>
+            </div>
+          </Popup>
+        </Marker>
+
+        {/* Driving route lines for schools inside the reference circle. */}
         {schools
           .filter((s) => s.withinRadius)
           .map((school) => {
@@ -342,7 +380,7 @@ export default function MapView({
         {displayedSchools.map((school) => {
           const isInside = school.withinRadius;
           const isSelected = school.id === selectedSchoolId;
-          const icon = createSchoolIcon(isInside, isSelected);
+          const icon = createSchoolIcon(isInside, isSelected, Boolean(school.isLiveOsm));
 
           return (
             <Marker
@@ -364,16 +402,8 @@ export default function MapView({
                 <div className="max-w-[270px] p-0.5 font-sans text-slate-800">
                   {/* Status header */}
                   <div className="border-b border-slate-100 pb-1.5 mb-1.5">
-                    <span
-                      className={`inline-block px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider mb-1 ${
-                        school.withinRadius
-                          ? 'bg-brand-light text-brand-dark'
-                          : 'bg-slate-100 text-slate-600'
-                      }`}
-                    >
-                      {school.withinRadius
-                        ? school.distanceBand
-                        : t('nearbySchools')}
+                    <span className="inline-block px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider mb-1 bg-brand-light text-brand-dark">
+                      {t('insideReferenceCircle')}
                     </span>
                     <h4 className="font-bold text-sm leading-snug text-slate-900">
                       {school.name}
@@ -472,15 +502,23 @@ export default function MapView({
           <span className="w-3.5 h-3.5 rounded-full bg-red-600 flex items-center justify-center text-[8px] text-white font-bold shrink-0">
             🏠
           </span>
-          <span>{t('home')}</span>
+          <span>{t('applicantAddressRadiusPoint')}</span>
+        </div>
+        <div className="flex items-center gap-2 text-slate-700 font-medium">
+          <span className="w-3.5 h-3.5 flex items-center justify-center rounded-full bg-red-900 border border-amber-400 text-[8px] text-white shrink-0">🏫</span>
+          <span>{t('referenceCircleCenter')}</span>
         </div>
         <div className="flex items-center gap-2 text-slate-700 font-medium">
           <span className="w-3.5 h-3.5 rounded-full shrink-0" style={{ backgroundColor: THEME.primary }}></span>
-          <span>{formatDistance(radiusMeters)} {t('radiusLabel')}</span>
+          <span>{t('referenceCircleRadius')} · {formatDistance(circleRadiusMeters)}</span>
         </div>
-        <div className="flex items-center gap-2 text-slate-400">
-          <span className="w-3.5 h-3.5 rounded-full bg-slate-400 shrink-0"></span>
-          <span>{t('nearbySchools')}</span>
+        <div className="flex items-center gap-2 text-slate-700 font-medium">
+          <span className="w-3.5 h-3.5 flex items-center justify-center rounded-full bg-blue-800 text-[8px] text-white shrink-0">🏫</span>
+          <span>{t('censusSchoolLocations')}</span>
+        </div>
+        <div className="flex items-center gap-2 text-slate-700 font-medium">
+          <span className="w-3.5 h-3.5 flex items-center justify-center rounded-full bg-orange-700 text-[8px] text-white shrink-0">🏫</span>
+          <span>{t('communitySchoolLocations')}</span>
         </div>
 
         {/* Route Display Legend */}

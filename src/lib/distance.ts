@@ -94,7 +94,7 @@ async function fetchWithTimeout(
 
 /**
  * Fetch driving distances using the free Open Source Routing Machine (OSRM) API.
- * Calculates driving distance and duration for ALL schools within the admission radius.
+ * Calculates driving distance and duration for schools inside the reference circle.
  * Includes intelligent urban road network fallback if OSRM is throttled.
  */
 export async function fetchDrivingDistances(
@@ -174,7 +174,7 @@ export async function fetchRouteGeometry(
 }
 
 /**
- * Fetch route geometries for all schools within the admission radius.
+ * Fetch route geometries for schools inside the reference circle.
  * Returns a map of schoolId -> [lat, lng][] polyline coordinates.
  */
 export async function fetchMultipleRouteGeometries(
@@ -211,4 +211,3 @@ export async function fetchMultipleRouteGeometries(
 
   return routes;
 }
-

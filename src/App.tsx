@@ -52,7 +52,6 @@ export default function App() {
         if (!fetchResult.curatedListOk) {
           setSchools([]);
           setSelectedSchoolId(null);
-          setHomeLocation(null);
           setError("We couldn't load the verified school list right now. Please try again in a moment.");
           setIsLoading(false);
           return;

@@ -286,24 +286,31 @@ export async function fetchSchools(
   let curatedListOk = false;
   let liveOsmOk = !nearLocation;
 
-  // The generated JSON served by /api/schools is the single source of truth.
+  // Prefer the API, but keep searches working if the endpoint is unavailable.
   try {
-    const res = await fetchWithTimeout(API_URL, undefined, 1500);
-    if (res.ok) {
-      curatedListOk = true;
-      const staticSchools: School[] = await res.json();
-      for (const s of staticSchools) {
-        if (!schoolsMap.has(s.id) && isEligibleCuratedSchool(s)) {
-          if (nearLocation) {
-            const dist = computeStraightLineDistance(nearLocation, { lat: s.lat, lng: s.lng });
-            if (dist > 25000 && s.id !== 'sch-001') continue;
-          }
-          schoolsMap.set(s.id, s);
+    let staticSchools: School[];
+    try {
+      const res = await fetchWithTimeout(API_URL, undefined, 10000);
+      if (!res.ok) throw new Error(`School API returned ${res.status}`);
+      staticSchools = await res.json();
+    } catch (err) {
+      console.warn('API schools fetch failed; using bundled school data:', err);
+      const fallback = await import('../../data/schools.json');
+      staticSchools = fallback.default as School[];
+    }
+
+    curatedListOk = true;
+    for (const s of staticSchools) {
+      if (!schoolsMap.has(s.id) && isEligibleCuratedSchool(s)) {
+        if (nearLocation) {
+          const dist = computeStraightLineDistance(nearLocation, { lat: s.lat, lng: s.lng });
+          if (dist > 25000 && s.id !== 'sch-001') continue;
         }
+        schoolsMap.set(s.id, s);
       }
     }
   } catch (err) {
-    console.warn('API schools fetch error:', err);
+    console.error('Unable to load curated schools from API or bundled data:', err);
   }
 
   if (!schoolsMap.has('sch-001')) {

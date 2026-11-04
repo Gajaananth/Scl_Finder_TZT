@@ -106,13 +106,86 @@ const BOYS_ONLY_PATTERNS: RegExp[] = [
   /\bmethodist\s+central\s+college\b/i,
 ];
 
+const KNOWN_OSM_SCHOOL_ALIASES = [
+  {
+    pattern: /\bst\.?\s*cecilia'?s?\s+(convent|college\s*\(national school\))/i,
+    censusName: "St. Cecilia's Girls' College",
+    gender: 'Girls',
+    id: 'sch-001',
+  },
+  {
+    pattern: /\banaipanthi\b.*\b(rkm|girls?)\b/i,
+    censusName: 'ANAIPANTHY HINDU LADIES COLLEGE',
+    gender: 'Girls',
+  },
+  {
+    pattern: /\bvivekananda\s+girls?\s+school\b/i,
+    censusName: "BATTICALOA VIVEKANADA LADIES' COLLEGE KALLADY UPPODAI",
+    gender: 'Girls',
+  },
+  {
+    pattern: /\bsakthi\s+vidyalaya\b/i,
+    censusName: 'KALLADY VELOOR SRI SHAKTHI VIDYALAYAM KALLADY VELOOR',
+    gender: 'Mixed',
+  },
+  {
+    pattern: /\bkallady mugaththuwaram vipulanantha viddiyalam\b/i,
+    censusName: 'KALLADY MUGATHUWARAM VIPULANANDA VIDYALAYAM',
+    gender: 'Mixed',
+  },
+  {
+    pattern: /\bputhumugathuwaram st\.?\s*ignatius vidyalayam\b/i,
+    censusName: 'PUTHUMUHATHUWARAM ST. IGNATIOUS VIDYALAYAM DUTCHBAR',
+    gender: 'Mixed',
+  },
+  {
+    pattern: /\bsevastiyan\s+school\b/i,
+    censusName: 'ST. SEBESTIAN TAMIL VIDYALAYAM SEBESTIAN STREET',
+    gender: 'Mixed',
+  },
+  {
+    pattern: /\bkottamunai\s+k\.?v\b/i,
+    censusName: 'KODDAIMUNAI KANISHTA VIDYALAYAM RAILWAY STATION ROAD',
+    gender: 'Mixed',
+  },
+  {
+    pattern: /\burani saraswathi vidyalaya\b/i,
+    censusName: 'URANI SARASWATHY VIDYALAYAM PERIYA URANY',
+    gender: 'Mixed',
+  },
+  {
+    pattern: /\bmamangeswarar school\b/i,
+    censusName: 'SRI MAMANGESWARAR VIDYALAYAM MAMANGAM',
+    gender: 'Mixed',
+  },
+] as const;
+
+function getOsmSchoolGender(
+  tags: Record<string, string>,
+  name: string
+): 'Girls' | 'Mixed' | undefined {
+  const knownSchool = KNOWN_OSM_SCHOOL_ALIASES.find(({ pattern }) => pattern.test(name));
+  if (knownSchool) return knownSchool.gender;
+
+  const gender = (tags.gender || '').toLowerCase();
+  if (['female', 'girls', 'girl', 'women', 'ladies'].includes(gender)) return 'Girls';
+  if (['mixed', 'co-ed', 'coeducational', 'co-educational'].includes(gender)) return 'Mixed';
+  if (/\b(girls?|ladies|women|female)\b/i.test(name)) return 'Girls';
+  if (/\b(mixed|co[\s-]?ed(?:ucational)?)\b/i.test(name)) return 'Mixed';
+  return undefined;
+}
+
 function isEligibleCuratedSchool(school: School): boolean {
   if (school.id === 'sch-001') return true;
   if (school.isApproximate) return false;
   if (BOYS_ONLY_PATTERNS.some((pattern) => pattern.test(school.name))) return false;
   if (school.gender !== 'Girls' && school.gender !== 'Mixed') return false;
   if (school.hasGrade1 !== true) return false;
-  if (!school.source?.toLowerCase().includes('moe provincial schools census')) return false;
+  const source = school.source?.toLowerCase() || '';
+  if (
+    !source.includes('moe provincial schools census') &&
+    !source.includes('openstreetmap mapped school location')
+  ) return false;
   // In Sri Lanka, "College" is used by many government schools (e.g. Hindu College,
   // St. Joseph's College). Only exclude schools that are explicitly private or
   // international — those are already filtered by the source check above.
@@ -138,6 +211,7 @@ export function isEligibleGovernmentSchool(
   }
 
   if (BOYS_ONLY_PATTERNS.some((pattern) => pattern.test(combined))) return false;
+  if (!getOsmSchoolGender(tags, rawName)) return false;
 
   const hasSchoolTag = tags.amenity === 'school' || tags.education === 'school' || tags.school === 'yes';
   const hasSchoolName = /\b(school|college|vidyalaya|vidyalayam|vidyalaya|maha\s+vidyalaya)\b/i.test(rawName);
@@ -237,7 +311,7 @@ export async function fetchOsmSchoolsNear(
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ lat: location.lat, lng: location.lng, radius: searchRadius }),
         },
-        4500
+        15000
       );
       if (!response.ok) return { schools: [], ok: false };
 
@@ -255,20 +329,33 @@ export async function fetchOsmSchoolsNear(
         if (distanceFromSearch > searchRadius * 1.1) continue;
         if (!isEligibleGovernmentSchool(tags, rawName)) continue;
 
+        const knownAlias = KNOWN_OSM_SCHOOL_ALIASES.find(({ pattern }) => pattern.test(rawName));
+        const schoolMetadata = knownAlias
+          ? bundledSchoolList.find((school) => school.name === knownAlias.censusName)
+          : undefined;
         const street = tags['addr:street'] || tags['addr:place'] || '';
         const city = tags['addr:city'] || tags['addr:district'] || tags['addr:suburb'] || '';
-        const address = [street, city].filter(Boolean).join(', ') || `${rawName}, Sri Lanka`;
+        const address =
+          schoolMetadata?.address ||
+          [street, city].filter(Boolean).join(', ') ||
+          `${rawName}, Sri Lanka`;
 
         const school: School = {
-          id: `osm-${el.type}-${el.id}`,
-          name: rawName,
+          id: knownAlias && 'id' in knownAlias
+            ? knownAlias.id
+            : `osm-${el.type}-${el.id}`,
+          name: schoolMetadata?.name || rawName,
           nameLocal: tags['name:ta'] || (tags.name !== rawName ? tags.name : undefined),
           address,
           lat,
           lng,
-          medium: inferMediums(tags),
-          type: inferSchoolType(rawName),
-          zone: tags['addr:district'] || 'Regional Education Zone',
+          medium: schoolMetadata?.medium || inferMediums(tags),
+          type: schoolMetadata?.type || inferSchoolType(rawName),
+          zone: schoolMetadata?.zone || tags['addr:district'] || 'Regional Education Zone',
+          gender: getOsmSchoolGender(tags, rawName),
+          yearSpan: schoolMetadata?.yearSpan,
+          hasGrade1: schoolMetadata?.hasGrade1,
+          source: schoolMetadata?.source || 'OpenStreetMap mapped school location',
           contactPhone: tags.phone || tags['contact:phone'],
           isLiveOsm: true,
         };

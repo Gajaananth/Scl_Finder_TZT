@@ -2,8 +2,10 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { fetchSchools, isEligibleGovernmentSchool, ST_CECILIA_REFERENCE } from '../src/lib/schools.ts';
 import { computeStraightLineDistance, fetchDrivingDistances } from '../src/lib/distance.ts';
+import { fetchNearbyOsmElements } from '../api/osm-schools-data.ts';
 
 async function main() {
+  const nativeFetch = globalThis.fetch;
   // 1. Load data
   const data = JSON.parse(readFileSync('./data/schools.json', 'utf8'));
   console.log('1. Total schools in data:', data.length);
@@ -31,6 +33,10 @@ async function main() {
     result.schools.every((school: any) => !/hindu college|st\.?\s*michael'?s? college|methodist central college/i.test(school.name)),
     'Known boys schools should not appear in results'
   );
+  assert.ok(
+    result.schools.some((school: any) => school.name === "VINCENT GIRLS' HIGH SCHOOL"),
+    'Precisely mapped Vincent Girls High School should appear inside the 1200m circle'
+  );
   assert.ok(result.schools.every((school: any) => !school.isApproximate), 'Approximate locations should not be shown');
   assert.ok(
     result.schools.every((school: any) =>
@@ -48,6 +54,10 @@ async function main() {
     offlineResult.schools.every((school: any) => !/hindu college|st\.?\s*michael'?s? college|methodist central college/i.test(school.name)),
     'Bundled results must also exclude known boys schools during an API outage'
   );
+  assert.ok(
+    offlineResult.schools.some((school: any) => school.name === "VINCENT GIRLS' HIGH SCHOOL"),
+    'Bundled results should include the mapped girls school during an API outage'
+  );
   console.log('6a. Bundled school data remains available and excludes boys schools when the API is offline');
 
   const batticaloaRadius = computeStraightLineDistance(
@@ -57,11 +67,11 @@ async function main() {
   const batticaloaResult = await fetchSchools(ST_CECILIA_REFERENCE, batticaloaRadius);
   assert.deepEqual(
     batticaloaResult.schools.map((school: any) => school.id),
-    ['sch-001'],
-    'At the Batticaloa fallback radius, only schools actually inside the circle should be shown'
+    ['sch-001', 'school-319'],
+    'At the Batticaloa fallback radius, include only precisely mapped schools actually inside the circle'
   );
   console.log(
-    `7. Batticaloa fallback radius ${Math.round(batticaloaRadius)}m shows St. Cecilia's only; Hindu College is 749m from the center`
+    `7. Batticaloa fallback radius ${Math.round(batticaloaRadius)}m shows St. Cecilia's and nearby Vincent Girls' High School`
   );
 
   // 5. Verify no duplicates between curated and OSM
@@ -103,9 +113,20 @@ async function main() {
   console.log('11. Estimate flag:', routed[0].isEstimate, '| Distance:', routed[0].drivingDistanceText);
 
   // 8. Test OSM eligibility
-  const eligible = isEligibleGovernmentSchool({ amenity: 'school' }, 'Test School');
+  const eligible = isEligibleGovernmentSchool({ amenity: 'school' }, 'Test Girls School');
   assert.equal(eligible, true);
-  console.log('12. OSM eligibility works:', eligible);
+  assert.equal(
+    isEligibleGovernmentSchool({ amenity: 'school' }, 'Unspecified School'),
+    false,
+    'Live schools without girls or mixed evidence should not be shown'
+  );
+  assert.equal(
+    isEligibleGovernmentSchool({ amenity: 'school' }, 'Bt/ Anaipanthi RKM Girls Maha Vidyalayam'),
+    true
+  );
+  assert.equal(isEligibleGovernmentSchool({ amenity: 'school' }, 'sevastiyan school'), true);
+  assert.equal(isEligibleGovernmentSchool({ amenity: 'school' }, 'Bt/Kottamunai K.V'), true);
+  console.log('12. Live schools require girls/mixed evidence; known local school aliases are recognized');
   for (const name of ['Hindu College', "St. Michael's College", 'Methodist Central College']) {
     assert.equal(
       isEligibleGovernmentSchool({ amenity: 'school' }, name),
@@ -114,6 +135,86 @@ async function main() {
     );
   }
   console.log('13. Named boys schools are excluded from live OSM results');
+
+  const originalFetch = globalThis.fetch;
+  const osmMapFixture = `
+    <osm>
+      <node id="1" lat="7.71" lon="81.69"/>
+      <node id="2" lat="7.72" lon="81.69"/>
+      <node id="3" lat="7.72" lon="81.70"/>
+      <way id="42">
+        <nd ref="1"/><nd ref="2"/><nd ref="3"/>
+        <tag k="amenity" v="school"/>
+        <tag k="name" v="Girls &amp; Mixed School"/>
+      </way>
+    </osm>
+  `;
+  globalThis.fetch = async (input) => {
+    const url = new URL(input instanceof Request ? input.url : String(input));
+    if (url.hostname.includes('overpass')) {
+      return new Response('Overpass unavailable', { status: 503 });
+    }
+    if (url.hostname === 'api.openstreetmap.org') {
+      return new Response(osmMapFixture, { status: 200 });
+    }
+    throw new Error(`Unexpected request to ${url.hostname}`);
+  };
+  try {
+    const fallbackElements = await fetchNearbyOsmElements(ST_CECILIA_REFERENCE, 1200);
+    const mappedSchool = fallbackElements.find((element) => element.id === 42);
+    assert.equal(mappedSchool?.tags.name, 'Girls & Mixed School');
+    assert.ok(mappedSchool?.center, 'OSM map fallback should compute a center for mapped school ways');
+    console.log('14. OpenStreetMap map fallback works when all Overpass endpoints fail');
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+
+  const liveSchoolFixtures = [
+    { type: 'way', id: 1, center: { lat: 7.7117, lon: 81.695 }, tags: { amenity: 'school', name: "St.Cecilia's Convent" } },
+    { type: 'way', id: 2, center: { lat: 7.7093, lon: 81.6942 }, tags: { amenity: 'school', name: 'Bt/ Anaipanthi RKM Girls Maha Vidyalayam' } },
+    { type: 'way', id: 3, center: { lat: 7.7059, lon: 81.713 }, tags: { amenity: 'school', name: 'Vivekananda Girls School' } },
+    { type: 'way', id: 4, center: { lat: 7.7094, lon: 81.7152 }, tags: { amenity: 'school', name: 'Sakthi Vidyalaya' } },
+    { type: 'way', id: 5, center: { lat: 7.7255, lon: 81.712 }, tags: { amenity: 'school', name: 'Puthumugathuwaram St. Ignatius Vidyalayam' } },
+    { type: 'way', id: 6, center: { lat: 7.7204, lon: 81.7042 }, tags: { amenity: 'school', name: 'sevastiyan school' } },
+    { type: 'way', id: 7, center: { lat: 7.724, lon: 81.698 }, tags: { amenity: 'school', name: 'Bt\\Kottamunai K.V' } },
+    { type: 'way', id: 8, center: { lat: 7.7321, lon: 81.6786 }, tags: { amenity: 'school', name: 'Urani Saraswathi Vidyalaya' } },
+    { type: 'way', id: 9, center: { lat: 7.7354, lon: 81.6937 }, tags: { amenity: 'school', name: 'Mamangeswarar School' } },
+    { type: 'way', id: 10, center: { lat: 7.7206, lon: 81.698 }, tags: { amenity: 'school', name: 'Hindu College' } },
+    { type: 'way', id: 11, center: { lat: 7.7185, lon: 81.7128 }, tags: { amenity: 'school', name: 'Kallady Mugaththuwaram Vipulanantha Viddiyalam' } },
+  ];
+  globalThis.fetch = async (input) => {
+    const url = input instanceof Request ? input.url : String(input);
+    if (url === '/api/schools') return new Response(JSON.stringify(data), { status: 200 });
+    if (url === '/api/osm-schools') {
+      return new Response(JSON.stringify({ elements: liveSchoolFixtures }), { status: 200 });
+    }
+    throw new Error(`Unexpected request to ${url}`);
+  };
+  try {
+    const liveResult = await fetchSchools(ST_CECILIA_REFERENCE, 3000);
+    const liveNames = new Set(liveResult.schools.map((school) => school.name));
+    for (const name of [
+      "ANAIPANTHY HINDU LADIES COLLEGE",
+      "BATTICALOA VIVEKANADA LADIES' COLLEGE KALLADY UPPODAI",
+      'KALLADY VELOOR SRI SHAKTHI VIDYALAYAM KALLADY VELOOR',
+      'KALLADY MUGATHUWARAM VIPULANANDA VIDYALAYAM',
+      'PUTHUMUHATHUWARAM ST. IGNATIOUS VIDYALAYAM DUTCHBAR',
+      'ST. SEBESTIAN TAMIL VIDYALAYAM SEBESTIAN STREET',
+      'KODDAIMUNAI KANISHTA VIDYALAYAM RAILWAY STATION ROAD',
+      'URANI SARASWATHY VIDYALAYAM PERIYA URANY',
+      'SRI MAMANGESWARAR VIDYALAYAM MAMANGAM',
+    ]) {
+      assert.ok(liveNames.has(name), `Live OSM locations should match girls/mixed census school ${name}`);
+    }
+    assert.ok(
+      !liveResult.schools.some((school) => /hindu college|st\.?\s*michael'?s? college/i.test(school.name)),
+      'Girls/mixed reconciliation must still exclude named boys schools'
+    );
+    assert.equal(liveResult.liveOsmOk, true);
+    console.log('15. Live map locations reconcile to the named girls/mixed census schools');
+  } finally {
+    globalThis.fetch = nativeFetch;
+  }
 
   console.log('');
   console.log('ALL CHECKS PASSED!');

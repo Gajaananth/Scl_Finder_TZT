@@ -5748,14 +5748,14 @@
     "yearSpan": "Grade 1-13 (approx, unverified against official census)",
     "hasGrade1": true,
     "gender": "Girls",
-    "source": "manually added - National School, outside MoE Provincial census scope; needs independent verification",
+    "source": "OpenStreetMap mapped school location; National School outside MoE Provincial census scope",
     "type": "Type2",
-    "lat": 7.724146718386981,
-    "lng": 81.69896085142223,
+    "lat": 7.7123029,
+    "lng": 81.6986244,
     "medium": [
       "Tamil",
       "English"
     ],
-    "isApproximate": true
+    "isApproximate": false
   }
 ]

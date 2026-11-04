@@ -82,7 +82,9 @@ export default function SchoolCard({ school, index, isSelected, onClick }: Schoo
             )}
             {school.isLiveOsm && (
               <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-orange-100 text-orange-800">
-                Community-sourced, unverified gender and grade
+                {school.source?.toLowerCase().includes('moe provincial schools census')
+                  ? 'Live location · MoE census matched'
+                  : 'Community-sourced · details unverified'}
               </span>
             )}
           </div>

@@ -492,7 +492,7 @@ export default function App() {
 
             {sourceStatus && !sourceStatus.liveOsmOk && !liveNoticeDismissed && (
               <div className="flex items-center justify-between gap-3 bg-amber-50 border-b border-amber-200 px-4 py-2 text-xs text-amber-900">
-                <span>Precisely located census schools are shown. Live OpenStreetMap results are temporarily unavailable, so additional school locations may not appear.</span>
+                <span>Precisely mapped school locations are shown. Live OpenStreetMap results are temporarily unavailable, so additional locations may be missing.</span>
                 <button
                   type="button"
                   onClick={() => setLiveNoticeDismissed(true)}

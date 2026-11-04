@@ -101,11 +101,15 @@ const BOYS_ONLY_PATTERNS: RegExp[] = [
   /\bboys?\b/i,
   /\bmen'?s?\b/i,
   /\bmale\b/i,
+  /\bhindu\s+college\b/i,
+  /\bst\.?\s*michael'?s?\s+college\b/i,
+  /\bmethodist\s+central\s+college\b/i,
 ];
 
 function isEligibleCuratedSchool(school: School): boolean {
   if (school.id === 'sch-001') return true;
   if (school.isApproximate) return false;
+  if (BOYS_ONLY_PATTERNS.some((pattern) => pattern.test(school.name))) return false;
   if (school.gender !== 'Girls' && school.gender !== 'Mixed') return false;
   if (school.hasGrade1 !== true) return false;
   if (!school.source?.toLowerCase().includes('moe provincial schools census')) return false;

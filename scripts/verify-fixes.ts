@@ -28,8 +28,8 @@ async function main() {
   const result = await fetchSchools(ST_CECILIA_REFERENCE, 1200);
   console.log('5. fetchSchools returned', result.schools.length, 'schools');
   assert.ok(
-    result.schools.some((school: any) => school.name === 'HINDU COLLEGE'),
-    'HINDU COLLEGE should appear inside a 1200m St. Cecilia-centered circle'
+    result.schools.every((school: any) => !/hindu college|st\.?\s*michael'?s? college|methodist central college/i.test(school.name)),
+    'Known boys schools should not appear in results'
   );
   assert.ok(result.schools.every((school: any) => !school.isApproximate), 'Approximate locations should not be shown');
   assert.ok(
@@ -45,10 +45,10 @@ async function main() {
   const offlineResult = await fetchSchools(ST_CECILIA_REFERENCE, 1200);
   assert.equal(offlineResult.curatedListOk, true, 'Bundled school data should load when the API fails');
   assert.ok(
-    offlineResult.schools.some((school: any) => school.name === 'HINDU COLLEGE'),
-    'Bundled school results should still include HINDU COLLEGE during an API outage'
+    offlineResult.schools.every((school: any) => !/hindu college|st\.?\s*michael'?s? college|methodist central college/i.test(school.name)),
+    'Bundled results must also exclude known boys schools during an API outage'
   );
-  console.log('6a. Bundled precise school data remains available when the API is offline');
+  console.log('6a. Bundled school data remains available and excludes boys schools when the API is offline');
 
   const batticaloaRadius = computeStraightLineDistance(
     ST_CECILIA_REFERENCE,
@@ -106,6 +106,14 @@ async function main() {
   const eligible = isEligibleGovernmentSchool({ amenity: 'school' }, 'Test School');
   assert.equal(eligible, true);
   console.log('12. OSM eligibility works:', eligible);
+  for (const name of ['Hindu College', "St. Michael's College", 'Methodist Central College']) {
+    assert.equal(
+      isEligibleGovernmentSchool({ amenity: 'school' }, name),
+      false,
+      `${name} should be excluded as a boys school`
+    );
+  }
+  console.log('13. Named boys schools are excluded from live OSM results');
 
   console.log('');
   console.log('ALL CHECKS PASSED!');

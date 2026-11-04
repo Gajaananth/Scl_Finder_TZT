@@ -311,7 +311,7 @@ export async function fetchOsmSchoolsNear(
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ lat: location.lat, lng: location.lng, radius: searchRadius }),
         },
-        15000
+        25000
       );
       if (!response.ok) return { schools: [], ok: false };
 

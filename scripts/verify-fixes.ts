@@ -149,6 +149,7 @@ async function main() {
       </way>
     </osm>
   `;
+  let failedTileFixtureCount = 0;
   globalThis.fetch = async (input) => {
     const url = new URL(input instanceof Request ? input.url : String(input));
     if (url.hostname.includes('overpass')) {
@@ -165,6 +166,31 @@ async function main() {
     assert.equal(mappedSchool?.tags.name, 'Girls & Mixed School');
     assert.ok(mappedSchool?.center, 'OSM map fallback should compute a center for mapped school ways');
     console.log('14. OpenStreetMap map fallback works when all Overpass endpoints fail');
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+
+  globalThis.fetch = async (input) => {
+    const url = new URL(input instanceof Request ? input.url : String(input));
+    if (url.hostname.includes('overpass')) {
+      return new Response('Overpass unavailable', { status: 503 });
+    }
+    if (url.hostname === 'api.openstreetmap.org') {
+      failedTileFixtureCount += 1;
+      if (failedTileFixtureCount === 1) {
+        return new Response('One OSM tile unavailable', { status: 503 });
+      }
+      return new Response(osmMapFixture, { status: 200 });
+    }
+    throw new Error(`Unexpected request to ${url.hostname}`);
+  };
+  try {
+    const partialFallback = await fetchNearbyOsmElements(ST_CECILIA_REFERENCE, 2300);
+    assert.ok(
+      partialFallback.some((element) => element.id === 42),
+      'Successful map tiles should still provide schools when another tile fails'
+    );
+    console.log('14a. Successful OSM map tiles remain available when another tile fails');
   } finally {
     globalThis.fetch = originalFetch;
   }

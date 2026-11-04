@@ -16,9 +16,9 @@ const OVERPASS_ENDPOINTS = [
   'https://maps.mail.ru/osm/tools/overpass/api/interpreter',
 ];
 const OVERPASS_TIMEOUT_MS = 2500;
-const OSM_MAP_TIMEOUT_MS = 8000;
+const OSM_MAP_TIMEOUT_MS = 5000;
 const OSM_MAP_FALLBACK_MAX_RADIUS_METERS = 3000;
-const OSM_MAP_TILE_DEGREES = 0.02;
+const OSM_MAP_TILE_DEGREES = 0.03;
 const USER_AGENT = 'StCeciliasSchoolFinder/1.0 (+mailto:gajaananth08@gmail.com)';
 
 function decodeXml(value: string): string {
@@ -193,7 +193,7 @@ async function fetchOsmMap(center: Coordinates, radius: number): Promise<OsmElem
     }
   }
 
-  const tileElements = await Promise.all(tiles.map(async ([west, south, east, north]) => {
+  const tileResults = await Promise.allSettled(tiles.map(async ([west, south, east, north]) => {
     const url = new URL('https://api.openstreetmap.org/api/0.6/map');
     url.searchParams.set('bbox', [west, south, east, north].join(','));
     const controller = new AbortController();
@@ -211,6 +211,15 @@ async function fetchOsmMap(center: Coordinates, radius: number): Promise<OsmElem
       clearTimeout(timer);
     }
   }));
+  const tileElements = tileResults.flatMap((result) =>
+    result.status === 'fulfilled' ? [result.value] : []
+  );
+  const tileErrors = tileResults.flatMap((result) =>
+    result.status === 'rejected' ? [result.reason] : []
+  );
+  if (tileElements.length === 0) {
+    throw new AggregateError(tileErrors, 'All OpenStreetMap map tiles failed');
+  }
 
   const uniqueElements = new Map<string, OsmElement>();
   for (const element of tileElements.flat()) {

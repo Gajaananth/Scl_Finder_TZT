@@ -22,7 +22,7 @@ const homeIcon = L.divIcon({
   className: 'custom-home-icon',
   html: `
     <div style="
-      background-color: #dc2626;
+      background-color: #16a34a;
       width: 32px;
       height: 32px;
       border-radius: 50%;
@@ -46,11 +46,11 @@ const ceciliaCenterIcon = L.divIcon({
   className: 'cecilia-center-icon',
   html: `
     <div style="
-      background-color: #7f1d1d;
+      background-color: #dc2626;
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      border: 3px solid #f4c542;
+      border: 3px solid #ffffff;
       box-shadow: 0 4px 10px rgba(0,0,0,0.35);
       display: flex;
       align-items: center;
@@ -66,13 +66,11 @@ const ceciliaCenterIcon = L.divIcon({
   popupAnchor: [0, -20],
 });
 
-function createSchoolIcon(isInside: boolean, isSelected: boolean, isLiveOsm: boolean) {
-  const bg = isLiveOsm
-    ? (isSelected ? '#9a3412' : '#c2410c')
-    : (isSelected ? THEME.primaryDark : isInside ? THEME.primary : '#64748b');
+function createSchoolIcon(isInside: boolean, isSelected: boolean) {
+  const bg = isSelected ? '#1d4ed8' : '#2563eb';
   const scale = isSelected ? 'scale(1.2)' : isInside ? 'scale(1.05)' : 'scale(0.85)';
   const opacity = isInside ? '1.0' : '0.6';
-  const shadow = isInside ? '0 4px 10px rgba(30,58,138,0.35)' : 'none';
+  const shadow = isInside ? '0 4px 10px rgba(37,99,235,0.35)' : 'none';
 
   return L.divIcon({
     className: 'custom-school-icon',
@@ -380,7 +378,7 @@ export default function MapView({
         {displayedSchools.map((school) => {
           const isInside = school.withinRadius;
           const isSelected = school.id === selectedSchoolId;
-          const icon = createSchoolIcon(isInside, isSelected, Boolean(school.isLiveOsm));
+          const icon = createSchoolIcon(isInside, isSelected);
 
           return (
             <Marker
@@ -499,13 +497,13 @@ export default function MapView({
       {/* Map legend lives outside the Leaflet container so it never covers the map. */}
       <div className="bg-white px-3 py-2.5 rounded-xl shadow-sm border border-slate-200 text-xs flex flex-col gap-1.5 min-w-0">
         <div className="flex items-center gap-2 font-medium text-slate-700">
-          <span className="w-3.5 h-3.5 rounded-full bg-red-600 flex items-center justify-center text-[8px] text-white font-bold shrink-0">
+          <span className="w-3.5 h-3.5 rounded-full bg-green-600 flex items-center justify-center text-[8px] text-white font-bold shrink-0">
             🏠
           </span>
           <span>{t('applicantAddressRadiusPoint')}</span>
         </div>
         <div className="flex items-center gap-2 text-slate-700 font-medium">
-          <span className="w-3.5 h-3.5 flex items-center justify-center rounded-full bg-red-900 border border-amber-400 text-[8px] text-white shrink-0">🏫</span>
+          <span className="w-3.5 h-3.5 flex items-center justify-center rounded-full bg-red-600 border border-white text-[8px] text-white shrink-0">🏫</span>
           <span>{t('referenceCircleCenter')}</span>
         </div>
         <div className="flex items-center gap-2 text-slate-700 font-medium">
@@ -513,12 +511,8 @@ export default function MapView({
           <span>{t('referenceCircleRadius')} · {formatDistance(circleRadiusMeters)}</span>
         </div>
         <div className="flex items-center gap-2 text-slate-700 font-medium">
-          <span className="w-3.5 h-3.5 flex items-center justify-center rounded-full bg-blue-800 text-[8px] text-white shrink-0">🏫</span>
-          <span>{t('censusSchoolLocations')}</span>
-        </div>
-        <div className="flex items-center gap-2 text-slate-700 font-medium">
-          <span className="w-3.5 h-3.5 flex items-center justify-center rounded-full bg-orange-700 text-[8px] text-white shrink-0">🏫</span>
-          <span>{t('communitySchoolLocations')}</span>
+          <span className="w-3.5 h-3.5 flex items-center justify-center rounded-full bg-blue-600 text-[8px] text-white shrink-0">🏫</span>
+          <span>{t('resultsTitle')}</span>
         </div>
 
         {/* Route Display Legend */}

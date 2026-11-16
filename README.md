@@ -6,4 +6,6 @@ The Batticaloa school list is maintained in `scripts/schools-source.json` and ge
 
 ## Live school search
 
+Live results are limited to Government schools matched to the Ministry of Education census or explicitly tagged as public/government in OpenStreetMap. Confirmed boys-only schools, schools without Grade 1, private schools, tuition centers, academies, clubs, and non-school facilities are excluded. Schools with unknown gender or Grade 1 metadata are retained only when government status is confirmed.
+
 For reliable live OpenStreetMap school searches, create a managed API key at [Overpass.ch](https://overpass.ch/pricing) and set `OVERPASS_CH_API_KEY` in Vercel Project Settings under Environment Variables. Keep the key server-side; do not add a `VITE_` prefix. The free plan allows 10,000 requests per month, one concurrent query, and up to 60 seconds per query; it is for non-commercial use. Without this key, the API uses public Overpass mirrors, which may be unavailable or rate-limited.

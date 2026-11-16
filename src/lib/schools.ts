@@ -61,6 +61,19 @@ const BOYS_ONLY_PATTERNS: RegExp[] = [
   /\bmethodist\s+central\s+college\b/i,
 ];
 
+const NON_GOVERNMENT_OR_NON_SCHOOL_PATTERNS: RegExp[] = [
+  /\bprivate\b/i,
+  /\bacadem(?:y|ic)\b/i,
+  /\binternational\b/i,
+  /\btuition\b/i,
+  /\btutoring\b/i,
+  /\bcoaching\b/i,
+  /\btraining\b/i,
+  /\bclub\b/i,
+  /\binstitute\b/i,
+  /\b(education|zonal education)\s+office\b/i,
+];
+
 const KNOWN_OSM_SCHOOL_ALIASES = [
   {
     pattern: /\bst\.?\s*cecilia'?s?\s+(convent|college\s*\(national school\))/i,
@@ -211,6 +224,56 @@ function hasNoGradeOneEvidence(
   return grades.length > 0 && !grades.includes(1);
 }
 
+function hasGovernmentSchoolEvidence(
+  tags: Record<string, string>,
+  school?: School
+): boolean {
+  const governmentValue = tags.government?.toLowerCase().trim() || '';
+  if (['no', 'false', 'private', 'independent'].includes(governmentValue)) return false;
+
+  const source = school?.source?.toLowerCase() || '';
+  if (
+    school?.id === 'sch-001' ||
+    source.includes('moe provincial schools census') ||
+    source.includes('national school outside moe provincial census scope')
+  ) return true;
+
+  const ownership = [
+    tags.government,
+    tags['operator:type'],
+    tags['school:ownership'],
+    tags.ownership,
+    tags.operator,
+    tags.owner,
+  ].filter(Boolean).join(' ').toLowerCase().replace(/[-_]+/g, ' ');
+
+  if (/\b(private|independent|non government)\b/.test(ownership)) return false;
+  return (
+    governmentValue === 'yes' ||
+    /\b(government|public|state|provincial|municipal|local authority|ministry of education|department of education)\b/.test(ownership)
+  );
+}
+
+function isNonGovernmentOrNonSchoolFacility(
+  tags: Record<string, string>,
+  name: string
+): boolean {
+  const facilityDetails = [
+    name,
+    tags.name || '',
+    tags['name:en'] || '',
+    tags.description || '',
+    tags.operator || '',
+    tags.ownership || '',
+    tags['school:ownership'] || '',
+    tags['operator:type'] || '',
+  ].join(' ');
+
+  return NON_GOVERNMENT_OR_NON_SCHOOL_PATTERNS.some((pattern) =>
+    pattern.test(facilityDetails)
+  );
+}
+
 function inferSchoolGender(
   tags: Record<string, string>,
   name: string,
@@ -243,12 +306,11 @@ function isEligibleCuratedSchool(school: School): boolean {
   if (isConfirmedBoysOnly({}, school.name, school)) return false;
   if (hasNoGradeOneEvidence({}, school.name, school)) return false;
   const source = school.source?.toLowerCase() || '';
-  if (
-    school.id !== 'sch-001' &&
-    !source.includes('moe provincial schools census') &&
-    !source.includes('openstreetmap mapped school location')
-  ) return false;
-  return true;
+  return (
+    school.id === 'sch-001' ||
+    source.includes('moe provincial schools census') ||
+    source.includes('national school outside moe provincial census scope')
+  );
 }
 
 export function isEligibleGovernmentSchool(
@@ -265,12 +327,14 @@ export function isEligibleGovernmentSchool(
   ].join(' ');
 
   const schoolMetadata = findCensusSchoolMatch(rawName);
+  if (isNonGovernmentOrNonSchoolFacility(tags, combined)) return false;
+  if (!hasGovernmentSchoolEvidence(tags, schoolMetadata)) return false;
   if (isConfirmedBoysOnly(tags, combined, schoolMetadata)) return false;
   if (hasNoGradeOneEvidence(tags, combined, schoolMetadata)) return false;
 
   const hasSchoolTag = tags.amenity === 'school' || tags.education === 'school' || tags.school === 'yes';
   const hasSchoolName = /\b(school|college|vidyalaya|vidyalayam|vidyalaya|maha\s+vidyalaya)\b/i.test(rawName);
-  if (Object.keys(tags).length > 0 && !hasSchoolTag && !hasSchoolName) return false;
+  if ((!hasSchoolTag && !hasSchoolName) || (!hasSchoolName && !schoolMetadata)) return false;
 
   return true;
 }

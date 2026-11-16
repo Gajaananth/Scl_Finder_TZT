@@ -113,7 +113,10 @@ async function main() {
   console.log('11. Estimate flag:', routed[0].isEstimate, '| Distance:', routed[0].drivingDistanceText);
 
   // 8. Test OSM eligibility
-  const eligible = isEligibleGovernmentSchool({ amenity: 'school' }, 'Test Girls School');
+  const eligible = isEligibleGovernmentSchool(
+    { amenity: 'school', 'operator:type': 'public' },
+    'Test Girls School'
+  );
   assert.equal(eligible, true, 'Mapped schools should not require gender or grade metadata');
   assert.equal(
     isEligibleGovernmentSchool({ amenity: 'school' }, 'Kallady Mugaththuwaram Vipulanantha Viddiyalam'),
@@ -132,28 +135,74 @@ async function main() {
   );
   assert.equal(
     isEligibleGovernmentSchool({ amenity: 'school' }, 'Unspecified School'),
-    true,
-    'Schools with unknown gender and grade should be included'
+    false,
+    'Unclassified schools without evidence of government ownership must be excluded'
   );
   assert.equal(
-    isEligibleGovernmentSchool({ amenity: 'school', grades: '2-13' }, 'Grade Two School'),
+    isEligibleGovernmentSchool(
+      { amenity: 'school', 'operator:type': 'government' },
+      'Unspecified Girls School'
+    ),
+    true,
+    'Government schools with unknown grade metadata should remain included'
+  );
+  assert.equal(
+    isEligibleGovernmentSchool(
+      { amenity: 'school', 'operator:type': 'government', grades: '2-13' },
+      'Grade Two School'
+    ),
     false,
     'Schools explicitly starting after Grade 1 should be excluded'
   );
   assert.equal(
-    isEligibleGovernmentSchool({ amenity: 'school' }, 'Nursery School'),
+    isEligibleGovernmentSchool(
+      { amenity: 'school', 'operator:type': 'government' },
+      'Nursery School'
+    ),
     false,
     'Schools explicitly identified as nursery-only should be excluded'
   );
   assert.equal(
-    isEligibleGovernmentSchool({ amenity: 'school' }, 'Pre School'),
+    isEligibleGovernmentSchool(
+      { amenity: 'school', 'operator:type': 'government' },
+      'Pre School'
+    ),
     false,
     'Schools explicitly identified as pre-schools should be excluded'
   );
   assert.equal(
-    isEligibleGovernmentSchool({ amenity: 'school' }, 'Unknown International School'),
-    true,
-    'Unknown gender/grade schools should not be rejected based on private/international labels'
+    isEligibleGovernmentSchool(
+      { amenity: 'school', 'operator:type': 'private' },
+      'Unknown International School'
+    ),
+    false,
+    'Private and international schools must not be included'
+  );
+  assert.equal(
+    isEligibleGovernmentSchool(
+      { amenity: 'school', 'operator:type': 'private' },
+      'Batticaloa Private Academy'
+    ),
+    false,
+    'Private academies must not be included'
+  );
+  assert.equal(
+    isEligibleGovernmentSchool({ amenity: 'school', government: 'no' }, 'Unknown School'),
+    false,
+    'Schools explicitly tagged as non-government must not be included'
+  );
+  assert.equal(
+    isEligibleGovernmentSchool({ amenity: 'school' }, 'Batticaloa Tuition Center'),
+    false,
+    'Tuition centers must not be included'
+  );
+  assert.equal(
+    isEligibleGovernmentSchool(
+      { amenity: 'school', operator: 'Ministry of Education' },
+      'Batticaloa Zonal Education Office'
+    ),
+    false,
+    'Education offices and other facilities are not schools'
   );
   assert.equal(
     isEligibleGovernmentSchool({ amenity: 'school' }, 'Bt/ Anaipanthi RKM Girls Maha Vidyalayam'),
@@ -161,7 +210,7 @@ async function main() {
   );
   assert.equal(isEligibleGovernmentSchool({ amenity: 'school' }, 'sevastiyan school'), true);
   assert.equal(isEligibleGovernmentSchool({ amenity: 'school' }, 'Bt/Kottamunai K.V'), true);
-  console.log('12. Live schools default to included unless boys-only or no Grade 1 is confirmed');
+  console.log('12. Live results require government evidence and exclude confirmed boys/no-Grade-1 schools');
   for (const name of ['Hindu College', "St. Michael's College", 'Methodist Central College']) {
     assert.equal(
       isEligibleGovernmentSchool({ amenity: 'school' }, name),
@@ -319,15 +368,17 @@ async function main() {
     { type: 'way', id: 9, center: { lat: 7.7354, lon: 81.6937 }, tags: { amenity: 'school', name: 'Mamangeswarar School' } },
     { type: 'way', id: 10, center: { lat: 7.7206, lon: 81.698 }, tags: { amenity: 'school', name: 'Hindu College' } },
     { type: 'way', id: 11, center: { lat: 7.7185, lon: 81.7128 }, tags: { amenity: 'school', name: 'Kallady Mugaththuwaram Vipulanantha Viddiyalam' } },
-    { type: 'way', id: 13, center: { lat: 7.7062, lon: 81.7151 }, tags: { amenity: 'school', name: 'Shivananda Vidyalaya' } },
-    { type: 'way', id: 14, center: { lat: 7.7263, lon: 81.693 }, tags: { amenity: 'school', name: 'Zahira Vidyalaya' } },
-    { type: 'way', id: 15, center: { lat: 7.7146, lon: 81.6967 }, tags: { amenity: 'school', name: 'Unclassified Community School' } },
-    { type: 'way', id: 16, center: { lat: 7.7147, lon: 81.6968 }, tags: { amenity: 'school', name: 'Unknown International School' } },
-    { type: 'way', id: 17, center: { lat: 7.7148, lon: 81.6969 }, tags: { amenity: 'school', name: 'Nursery School' } },
-    { type: 'way', id: 18, center: { lat: 7.7149, lon: 81.697 }, tags: { amenity: 'school', name: 'Grade Two School', grades: '2-13' } },
-    { type: 'way', id: 19, center: { lat: 7.7212, lon: 81.6962 }, tags: { amenity: 'school', name: 'School Outside Circle' } },
-    { type: 'way', id: 20, center: { lat: 8.15, lon: 81.6962 }, tags: { amenity: 'school', name: 'Distant Community School' } },
-    { type: 'way', id: 21, center: { lat: 8.62, lon: 81.6962 }, tags: { amenity: 'school', name: 'School Outside 100 km Circle' } },
+    { type: 'way', id: 13, center: { lat: 7.7062, lon: 81.7151 }, tags: { amenity: 'school', name: 'Shivananda Vidyalaya', 'operator:type': 'public' } },
+    { type: 'way', id: 14, center: { lat: 7.7263, lon: 81.693 }, tags: { amenity: 'school', name: 'Zahira Vidyalaya', 'operator:type': 'public' } },
+    { type: 'way', id: 15, center: { lat: 7.7146, lon: 81.6967 }, tags: { amenity: 'school', name: 'Unclassified Community School', 'operator:type': 'public' } },
+    { type: 'way', id: 16, center: { lat: 7.7147, lon: 81.6968 }, tags: { amenity: 'school', name: 'Unknown International School', 'operator:type': 'private' } },
+    { type: 'way', id: 17, center: { lat: 7.7148, lon: 81.6969 }, tags: { amenity: 'school', name: 'Nursery School', 'operator:type': 'public' } },
+    { type: 'way', id: 18, center: { lat: 7.7149, lon: 81.697 }, tags: { amenity: 'school', name: 'Grade Two School', grades: '2-13', 'operator:type': 'public' } },
+    { type: 'way', id: 19, center: { lat: 7.7212, lon: 81.6962 }, tags: { amenity: 'school', name: 'School Outside Circle', 'operator:type': 'public' } },
+    { type: 'way', id: 20, center: { lat: 8.15, lon: 81.6962 }, tags: { amenity: 'school', name: 'Distant Community School', 'operator:type': 'public' } },
+    { type: 'way', id: 21, center: { lat: 8.62, lon: 81.6962 }, tags: { amenity: 'school', name: 'School Outside 100 km Circle', 'operator:type': 'public' } },
+    { type: 'way', id: 22, center: { lat: 7.715, lon: 81.697 }, tags: { amenity: 'school', name: 'Batticaloa Tuition Center' } },
+    { type: 'way', id: 23, center: { lat: 7.7151, lon: 81.6971 }, tags: { amenity: 'school', name: 'Youth Club' } },
   ];
   let requestedLiveRadius: number | undefined;
   globalThis.fetch = async (input, init) => {
@@ -368,8 +419,14 @@ async function main() {
       'Live schools with no gender metadata should remain in the results'
     );
     assert.ok(
-      liveResult.schools.some((school) => school.name === 'Unknown International School'),
-      'Unclassified international schools should remain unless they are confirmed ineligible'
+      !liveResult.schools.some((school) =>
+        /unknown international school|tuition center|youth club/i.test(school.name)
+      ),
+      'Private schools, tuition centers, and clubs must not appear in live results'
+    );
+    assert.ok(
+      !liveResult.schools.some((school) => school.name === 'Zonal Education office'),
+      'Education offices must not appear as schools'
     );
     assert.ok(
       !liveResult.schools.some((school) => /nursery school|grade two school/i.test(school.name)),
@@ -390,8 +447,8 @@ async function main() {
     const shortRadiusResult = await fetchSchools(ST_CECILIA_REFERENCE, 750);
     assert.deepEqual(
       shortRadiusResult.schools.map((school) => school.id).sort(),
-      ['osm-way-15', 'osm-way-16', 'sch-001', 'school-014', 'school-319'],
-      'At a 750m St. Cecilia circle, include mapped unknown schools but exclude schools outside its exact boundary'
+      ['osm-way-15', 'sch-001', 'school-014', 'school-319'],
+      'At a 750m St. Cecilia circle, include verified government schools and exclude private schools and schools outside its exact boundary'
     );
     console.log('16. Mapped schools inside the unchanged 750m circle are included, including unknowns');
 

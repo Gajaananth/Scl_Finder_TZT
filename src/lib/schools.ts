@@ -354,7 +354,7 @@ export async function fetchOsmSchoolsNear(
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ lat: location.lat, lng: location.lng, radius: searchRadius }),
         },
-        25000
+        70000
       );
       if (!response.ok) {
         console.error(`Live OSM API returned ${response.status}`);

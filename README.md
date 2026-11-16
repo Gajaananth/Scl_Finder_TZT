@@ -6,4 +6,4 @@ The Batticaloa school list is maintained in `scripts/schools-source.json` and ge
 
 ## Live school search
 
-For reliable live OpenStreetMap school searches, create a managed API key at [Overpass.ch](https://overpass.ch/pricing) and set `OVERPASS_CH_API_KEY` in Vercel Project Settings under Environment Variables. Keep the key server-side; do not add a `VITE_` prefix. Without this key, the API uses public Overpass mirrors, which may be unavailable or rate-limited.
+For reliable live OpenStreetMap school searches, create a managed API key at [Overpass.ch](https://overpass.ch/pricing) and set `OVERPASS_CH_API_KEY` in Vercel Project Settings under Environment Variables. Keep the key server-side; do not add a `VITE_` prefix. The free plan allows 10,000 requests per month, one concurrent query, and up to 60 seconds per query; it is for non-commercial use. Without this key, the API uses public Overpass mirrors, which may be unavailable or rate-limited.

@@ -276,8 +276,8 @@ async function main() {
   try {
     await fetchNearbyOsmElements(ST_CECILIA_REFERENCE, 100000);
     const uniqueQueries = [...new Set(largeRadiusOverpassQueries)];
-    assert.equal(uniqueQueries.length, 3, 'Large live searches should be split across three query regions');
-    assert.equal(managedOverpassPaths.length, 3, 'Each region should use the configured managed endpoint');
+    assert.equal(uniqueQueries.length, 1, 'Managed large-radius searches should use one query');
+    assert.equal(managedOverpassPaths.length, 1, 'A managed search should use one request to respect its free-tier concurrency limit');
     assert.ok(
       managedOverpassPaths.every((path) => path === '/v1/test-api-key/interpreter'),
       'The managed API key should be used only in server-side Overpass requests'

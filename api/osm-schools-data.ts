@@ -14,7 +14,7 @@ const OVERPASS_ENDPOINTS = [
   'https://overpass.private.coffee/api/interpreter',
   'https://maps.mail.ru/osm/tools/overpass/api/interpreter',
 ];
-const OVERPASS_TIMEOUT_MS = 15000;
+const OVERPASS_TIMEOUT_MS = 60000;
 const OSM_MAP_TIMEOUT_MS = 5000;
 const OSM_MAP_FALLBACK_MAX_RADIUS_METERS = 5000;
 const OVERPASS_SPLIT_RADIUS_METERS = 25000;
@@ -170,7 +170,7 @@ function buildOverpassQuery(bounds: BoundingBox): string {
   const area = bounds.join(',');
 
   return `
-    [out:json][timeout:12];
+    [out:json][timeout:55];
     (
       nwr["amenity"="school"](${area});
       nwr["education"="school"](${area});
@@ -271,16 +271,18 @@ export async function fetchNearbyOsmElements(
 ): Promise<OsmElement[]> {
   const radius = Math.max(radiusMeters, 200);
   const boundingBox = getBoundingBox(center, radius);
-  const searchBoxes = radius > OVERPASS_SPLIT_RADIUS_METERS
+  const configuredEndpoints = getConfiguredOverpassEndpoints();
+  const searchBoxes = configuredEndpoints.length === 1
+    ? [boundingBox]
+    : radius > OVERPASS_SPLIT_RADIUS_METERS
     ? splitBoundingBox(boundingBox)
     : [boundingBox];
-  const configuredEndpoints = getConfiguredOverpassEndpoints();
 
   try {
     const results = await Promise.all(searchBoxes.map((bounds, index) =>
       fetchOverpass(
         buildOverpassQuery(bounds),
-        searchBoxes.length === 1
+        configuredEndpoints.length === 1 || searchBoxes.length === 1
           ? configuredEndpoints
           : [configuredEndpoints[index % configuredEndpoints.length]]
       )

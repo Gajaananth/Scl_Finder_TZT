@@ -2,7 +2,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { fetchNearbyOsmElements } from './osm-schools-data.js';
 
 export const config = {
-  maxDuration: 20,
+  maxDuration: 65,
 };
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {

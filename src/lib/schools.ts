@@ -37,16 +37,9 @@ export interface SchoolFetchStatus {
   liveOsmOk: boolean;
 }
 
-const EXCLUSION_PATTERNS: RegExp[] = [
-  /\baraneri\b/i,
-  /\baranari\b/i,
-  /\baraneriya\b/i,
-  /\bdaham\s*pasala\b/i,
-  /sunday\s*school/i,
+const NO_GRADE_ONE_PATTERNS: RegExp[] = [
   /\bpreschool\b/i,
   /\bpre-school\b/i,
-  /\bpre\s*school\b/i,
-  /\bmontessori\b/i,
   /\bnursery\b/i,
   /\bkindergarten\b/i,
   /\bcreche\b/i,
@@ -56,45 +49,6 @@ const EXCLUSION_PATTERNS: RegExp[] = [
   /\bplay\s*school\b/i,
   /\btoddler\b/i,
   /early\s*childhood/i,
-  /child\s*care/i,
-  /\blyceum\b/i,
-  /\bgateway\b/i,
-  /\bwycherley\b/i,
-  /\bstafford\b/i,
-  /elizabeth\s*moir/i,
-  /british\s*school/i,
-  /royal\s*institute/i,
-  /horizon\s*college/i,
-  /asian\s*grammar/i,
-  /\btuition\s*(center|centre|class|hub)\b/i,
-  /\bcoaching\s*(center|centre|class)\b/i,
-  /\btutorial\s*(center|centre)\b/i,
-  /study\s*cent(re|er)/i,
-  /learning\s*cent(re|er)/i,
-  /education(al)?\s*cent(re|er)/i,
-  /education(al)?\s*hub/i,
-  /\bacademy\b/i,
-  /\binstitute\b/i,
-  /\bprivate\b/i,
-  /\binternational\b/i,
-  /\btraining\s*(centre|center|school|institute)\b/i,
-  /\btechnical\s*(college|institute|school)\b/i,
-  /\buniversity\b/i,
-  /\bcampus\b/i,
-  /teacher\s*training\s*college/i,
-  /\bvidyapith/i,
-  /\bclub\b/i,
-  /\bsports?\b/i,
-  /\bplayground\b/i,
-  /\bgym(nasium)?\b/i,
-  /\bfitness\b/i,
-  /\btuition\b/i,
-  /\bcoaching\b/i,
-  /\btutorial\b/i,
-  /\blearning\s*cent(er|re)\b/i,
-  /st\.?\s*michael'?s\s*college/i,
-  /methodist\s*central\s*college/i,
-  /mahajana\s*college/i,
 ];
 
 const BOYS_ONLY_PATTERNS: RegExp[] = [
@@ -223,34 +177,76 @@ function findCensusSchoolMatch(name: string): School | undefined {
   return candidates[0].school;
 }
 
-function hasVerifiedGradeOneEligibility(school: School): boolean {
-  const source = school.source?.toLowerCase() || '';
+function isConfirmedBoysOnly(
+  tags: Record<string, string>,
+  name: string,
+  school?: School
+): boolean {
+  const gender = (tags.gender || tags['school:gender'] || school?.gender || '').toLowerCase();
   return (
-    school.hasGrade1 === true &&
-    (school.gender === 'Girls' || school.gender === 'Mixed') &&
-    (
-      school.id === 'sch-001' ||
-      source.includes('moe provincial schools census') ||
-      source.includes('openstreetmap mapped school location')
-    )
+    BOYS_ONLY_PATTERNS.some((pattern) => pattern.test(name)) ||
+    ['male', 'boys', 'boy', 'male-only', 'boys-only'].includes(gender)
   );
 }
 
+function hasNoGradeOneEvidence(
+  tags: Record<string, string>,
+  name: string,
+  school?: School
+): boolean {
+  if (school?.hasGrade1 === false) return true;
+  if (
+    tags.preschool === 'yes' ||
+    tags.nursery === 'yes' ||
+    tags.amenity === 'kindergarten' ||
+    ['preschool', 'nursery', 'kindergarten'].includes((tags.school || '').toLowerCase()) ||
+    tags['isced:level'] === '0' ||
+    NO_GRADE_ONE_PATTERNS.some((pattern) => pattern.test(name))
+  ) return true;
+
+  const gradeText = tags.grades || tags['school:grades'] || tags.grade;
+  if (!gradeText) return false;
+  const grades = [...gradeText.matchAll(/\d+/g)].map(([, grade]) => Number(grade));
+  return grades.length > 0 && !grades.includes(1);
+}
+
+function inferSchoolGender(
+  tags: Record<string, string>,
+  name: string,
+  school?: School
+): School['gender'] {
+  if (school?.gender) return school.gender;
+  const gender = (tags.gender || tags['school:gender'] || '').toLowerCase();
+  if (['male', 'boys', 'boy', 'male-only', 'boys-only'].includes(gender)) return 'Boys';
+  if (['female', 'girls', 'girl', 'women', 'ladies'].includes(gender)) return 'Girls';
+  if (['mixed', 'co-ed', 'coeducational', 'co-educational'].includes(gender)) return 'Mixed';
+  if (/\b(girls?|ladies|women|female)\b/i.test(name)) return 'Girls';
+  if (/\b(mixed|co[\s-]?ed(?:ucational)?)\b/i.test(name)) return 'Mixed';
+  return undefined;
+}
+
+function inferHasGradeOne(
+  tags: Record<string, string>,
+  name: string,
+  school?: School
+): boolean | undefined {
+  if (school?.hasGrade1 !== undefined) return school.hasGrade1;
+  if (hasNoGradeOneEvidence(tags, name)) return false;
+  const gradeText = tags.grades || tags['school:grades'] || tags.grade;
+  if (!gradeText) return undefined;
+  return [...gradeText.matchAll(/\d+/g)].some(([, grade]) => Number(grade) === 1);
+}
+
 function isEligibleCuratedSchool(school: School): boolean {
-  if (school.id === 'sch-001') return true;
   if (school.isApproximate) return false;
-  if (BOYS_ONLY_PATTERNS.some((pattern) => pattern.test(school.name))) return false;
-  if (school.gender !== 'Girls' && school.gender !== 'Mixed') return false;
-  if (school.hasGrade1 !== true) return false;
+  if (isConfirmedBoysOnly({}, school.name, school)) return false;
+  if (hasNoGradeOneEvidence({}, school.name, school)) return false;
   const source = school.source?.toLowerCase() || '';
   if (
+    school.id !== 'sch-001' &&
     !source.includes('moe provincial schools census') &&
     !source.includes('openstreetmap mapped school location')
   ) return false;
-  // In Sri Lanka, "College" is used by many government schools (e.g. Hindu College,
-  // St. Joseph's College). Only exclude schools that are explicitly private or
-  // international — those are already filtered by the source check above.
-  if (/\b(private|international)\b/i.test(school.name)) return false;
   return true;
 }
 
@@ -267,34 +263,13 @@ export function isEligibleGovernmentSchool(
     tags.description || '',
   ].join(' ');
 
-  for (const pattern of EXCLUSION_PATTERNS) {
-    if (pattern.test(combined)) return false;
-  }
-
-  if (BOYS_ONLY_PATTERNS.some((pattern) => pattern.test(combined))) return false;
   const schoolMetadata = findCensusSchoolMatch(rawName);
-  if (!schoolMetadata || !hasVerifiedGradeOneEligibility(schoolMetadata)) return false;
+  if (isConfirmedBoysOnly(tags, combined, schoolMetadata)) return false;
+  if (hasNoGradeOneEvidence(tags, combined, schoolMetadata)) return false;
 
   const hasSchoolTag = tags.amenity === 'school' || tags.education === 'school' || tags.school === 'yes';
   const hasSchoolName = /\b(school|college|vidyalaya|vidyalayam|vidyalaya|maha\s+vidyalaya)\b/i.test(rawName);
   if (Object.keys(tags).length > 0 && !hasSchoolTag && !hasSchoolName) return false;
-
-  if (['private', 'commercial'].includes((tags['operator:type'] || '').toLowerCase())) return false;
-  if (['private', 'commercial'].includes((tags.operator || '').toLowerCase())) return false;
-  if (['private', 'commercial'].includes((tags.ownership || '').toLowerCase())) return false;
-  if (['male', 'boys'].includes((tags.gender || '').toLowerCase())) return false;
-  if (
-    tags.gender &&
-    !['female', 'girls', 'girl', 'women', 'ladies', 'mixed', 'co-ed', 'coeducational', 'co-educational']
-      .includes(tags.gender.toLowerCase())
-  ) return false;
-  if (tags['school:type'] === 'international') return false;
-  if (tags['school:type'] === 'private') return false;
-  if (tags['isced:level'] === '0') return false;
-  if (tags.preschool === 'yes') return false;
-  if (tags.nursery === 'yes') return false;
-  if (tags.fee === 'yes') return false;
-  if (tags.amenity === 'kindergarten') return false;
 
   return true;
 }
@@ -393,13 +368,9 @@ export async function fetchOsmSchoolsNear(
         const rawName = tags['name:en'] || tags.name || tags['name:ta'] || tags['name:si'];
         if (!lat || !lng || !rawName) continue;
         const distanceFromSearch = computeStraightLineDistance(location, { lat, lng });
-        if (distanceFromSearch > searchRadius * 1.1) continue;
+        if (distanceFromSearch > searchRadius) continue;
         const schoolMetadata = findCensusSchoolMatch(rawName);
-        if (
-          !schoolMetadata ||
-          !hasVerifiedGradeOneEligibility(schoolMetadata) ||
-          !isEligibleGovernmentSchool(tags, rawName)
-        ) continue;
+        if (!isEligibleGovernmentSchool(tags, rawName)) continue;
 
         const street = tags['addr:street'] || tags['addr:place'] || '';
         const city = tags['addr:city'] || tags['addr:district'] || tags['addr:suburb'] || '';
@@ -409,7 +380,7 @@ export async function fetchOsmSchoolsNear(
           `${rawName}, Sri Lanka`;
 
         const school: School = {
-          id: schoolMetadata.id,
+          id: schoolMetadata?.id || `osm-${el.type}-${el.id}`,
           name: schoolMetadata?.name || rawName,
           nameLocal: tags['name:ta'] || (tags.name !== rawName ? tags.name : undefined),
           address,
@@ -418,9 +389,9 @@ export async function fetchOsmSchoolsNear(
           medium: schoolMetadata?.medium || inferMediums(tags),
           type: schoolMetadata?.type || inferSchoolType(rawName),
           zone: schoolMetadata?.zone || tags['addr:district'] || 'Regional Education Zone',
-          gender: schoolMetadata.gender,
+          gender: inferSchoolGender(tags, rawName, schoolMetadata),
           yearSpan: schoolMetadata?.yearSpan,
-          hasGrade1: schoolMetadata?.hasGrade1,
+          hasGrade1: inferHasGradeOne(tags, rawName, schoolMetadata),
           source: schoolMetadata?.source || 'OpenStreetMap mapped school location',
           contactPhone: tags.phone || tags['contact:phone'],
           isLiveOsm: true,

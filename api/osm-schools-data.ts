@@ -141,6 +141,7 @@ function buildOverpassQuery(center: Coordinates, radius: number): string {
     (
       nwr["amenity"="school"](around:${radius},${center.lat},${center.lng});
       nwr["education"="school"](around:${radius},${center.lat},${center.lng});
+      nwr["school"="yes"](around:${radius},${center.lat},${center.lng});
     );
     out center tags;
   `;

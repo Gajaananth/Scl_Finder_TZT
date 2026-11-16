@@ -257,11 +257,11 @@ async function main() {
     globalThis.fetch = originalFetch;
   }
 
-  let largeRadiusOverpassQuery = '';
+  const largeRadiusOverpassQueries: string[] = [];
   globalThis.fetch = async (input) => {
     const url = new URL(input instanceof Request ? input.url : String(input));
-    if (url.hostname.includes('overpass')) {
-      largeRadiusOverpassQuery = url.searchParams.get('data') || '';
+    if (url.hostname.includes('overpass') || url.hostname === 'maps.mail.ru') {
+      largeRadiusOverpassQueries.push(url.searchParams.get('data') || '');
       return new Response(JSON.stringify({ elements: [] }), {
         status: 200,
         headers: { 'Content-Type': 'application/json' },
@@ -271,19 +271,22 @@ async function main() {
   };
   try {
     await fetchNearbyOsmElements(ST_CECILIA_REFERENCE, 100000);
+    const uniqueQueries = [...new Set(largeRadiusOverpassQueries)];
+    assert.equal(uniqueQueries.length, 4, 'Large live searches should be split across four query regions');
     assert.match(
-      largeRadiusOverpassQuery,
+      uniqueQueries[0],
       /nwr\["amenity"="school"\]\(-?[\d.]+,-?[\d.]+,-?[\d.]+,-?[\d.]+\)/,
       'A 100 km search must use a full-radius Overpass bounding box'
     );
-    const bounds = largeRadiusOverpassQuery.match(
-      /nwr\["amenity"="school"\]\(([^)]+)\)/
-    )?.[1].split(',').map(Number);
-    assert.ok(bounds, 'The Overpass query should include numeric bounding coordinates');
+    const bounds = uniqueQueries.map((query) =>
+      query.match(/nwr\["amenity"="school"\]\(([^)]+)\)/)?.[1].split(',').map(Number)
+    );
+    assert.ok(bounds.every((box) => box?.length === 4), 'Each query should include numeric bounding coordinates');
+    const allBounds = bounds as number[][];
     assert.ok(
-      bounds[0] < ST_CECILIA_REFERENCE.lat - 0.8 &&
-      bounds[2] > ST_CECILIA_REFERENCE.lat + 0.8,
-      'The live Overpass query must extend beyond the old 25 km cap to cover 100 km'
+      Math.min(...allBounds.map((box) => box[0])) < ST_CECILIA_REFERENCE.lat - 0.8 &&
+      Math.max(...allBounds.map((box) => box[2])) > ST_CECILIA_REFERENCE.lat + 0.8,
+      'The combined live queries must extend beyond the old 25 km cap to cover 100 km'
     );
     console.log('14c. Live Overpass queries preserve a 100 km search radius');
   } finally {

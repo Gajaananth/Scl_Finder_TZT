@@ -15,9 +15,16 @@ const OVERPASS_ENDPOINTS = [
   'https://overpass.private.coffee/api/interpreter',
   'https://maps.mail.ru/osm/tools/overpass/api/interpreter',
 ];
+const LARGE_SEARCH_ENDPOINTS = [
+  [OVERPASS_ENDPOINTS[0], OVERPASS_ENDPOINTS[1]],
+  [OVERPASS_ENDPOINTS[1], OVERPASS_ENDPOINTS[2]],
+  [OVERPASS_ENDPOINTS[2], OVERPASS_ENDPOINTS[3]],
+  [OVERPASS_ENDPOINTS[3], OVERPASS_ENDPOINTS[0]],
+];
 const OVERPASS_TIMEOUT_MS = 15000;
 const OSM_MAP_TIMEOUT_MS = 5000;
 const OSM_MAP_FALLBACK_MAX_RADIUS_METERS = 5000;
+const OVERPASS_SPLIT_RADIUS_METERS = 25000;
 const OSM_MAP_TILE_DEGREES = 0.03;
 const USER_AGENT = 'StCeciliasSchoolFinder/1.0 (+mailto:gajaananth08@gmail.com)';
 
@@ -135,32 +142,52 @@ export function parseOsmMapXml(xml: string): OsmElement[] {
   return parsed;
 }
 
-function buildOverpassQuery(center: Coordinates, radius: number): string {
+type BoundingBox = [south: number, west: number, north: number, east: number];
+
+function getBoundingBox(center: Coordinates, radius: number): BoundingBox {
   const latitudeOffset = (radius * 1.05) / 111320;
   const longitudeOffset =
     (radius * 1.05) / (111320 * Math.cos((center.lat * Math.PI) / 180));
-  const bounds = [
+  return [
     Math.max(-90, center.lat - latitudeOffset),
     Math.max(-180, center.lng - longitudeOffset),
     Math.min(90, center.lat + latitudeOffset),
     Math.min(180, center.lng + longitudeOffset),
-  ].join(',');
+  ];
+}
+
+function splitBoundingBox([south, west, north, east]: BoundingBox): BoundingBox[] {
+  const middleLatitude = (south + north) / 2;
+  const middleLongitude = (west + east) / 2;
+  return [
+    [south, west, middleLatitude, middleLongitude],
+    [south, middleLongitude, middleLatitude, east],
+    [middleLatitude, west, north, middleLongitude],
+    [middleLatitude, middleLongitude, north, east],
+  ];
+}
+
+function buildOverpassQuery(bounds: BoundingBox): string {
+  const area = bounds.join(',');
 
   return `
     [out:json][timeout:12];
     (
-      nwr["amenity"="school"](${bounds});
-      nwr["education"="school"](${bounds});
-      nwr["school"="yes"](${bounds});
+      nwr["amenity"="school"](${area});
+      nwr["education"="school"](${area});
+      nwr["school"="yes"](${area});
     );
     out center tags;
   `;
 }
 
-async function fetchOverpass(query: string): Promise<OsmElement[]> {
+async function fetchOverpass(
+  query: string,
+  endpoints: string[] = OVERPASS_ENDPOINTS
+): Promise<OsmElement[]> {
   const controllers: AbortController[] = [];
   try {
-    return await Promise.any(OVERPASS_ENDPOINTS.map(async (endpoint) => {
+    return await Promise.any(endpoints.map(async (endpoint) => {
       const controller = new AbortController();
       controllers.push(controller);
       const timer = setTimeout(() => controller.abort(), OVERPASS_TIMEOUT_MS);
@@ -244,9 +271,23 @@ export async function fetchNearbyOsmElements(
   radiusMeters: number
 ): Promise<OsmElement[]> {
   const radius = Math.max(radiusMeters, 200);
+  const boundingBox = getBoundingBox(center, radius);
+  const searchBoxes = radius > OVERPASS_SPLIT_RADIUS_METERS
+    ? splitBoundingBox(boundingBox)
+    : [boundingBox];
 
   try {
-    return await fetchOverpass(buildOverpassQuery(center, radius));
+    const results = await Promise.all(searchBoxes.map((bounds, index) =>
+      fetchOverpass(
+        buildOverpassQuery(bounds),
+        searchBoxes.length === 1 ? OVERPASS_ENDPOINTS : LARGE_SEARCH_ENDPOINTS[index]
+      )
+    ));
+    const uniqueElements = new Map<string, OsmElement>();
+    for (const element of results.flat()) {
+      uniqueElements.set(`${element.type}-${element.id}`, element);
+    }
+    return Array.from(uniqueElements.values());
   } catch (overpassError) {
     if (radius > OSM_MAP_FALLBACK_MAX_RADIUS_METERS) throw overpassError;
 

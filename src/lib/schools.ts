@@ -40,6 +40,7 @@ export interface SchoolFetchStatus {
 const NO_GRADE_ONE_PATTERNS: RegExp[] = [
   /\bpreschool\b/i,
   /\bpre-school\b/i,
+  /\bpre\s*school\b/i,
   /\bnursery\b/i,
   /\bkindergarten\b/i,
   /\bcreche\b/i,

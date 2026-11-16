@@ -146,6 +146,11 @@ async function main() {
     'Schools explicitly identified as nursery-only should be excluded'
   );
   assert.equal(
+    isEligibleGovernmentSchool({ amenity: 'school' }, 'Pre School'),
+    false,
+    'Schools explicitly identified as pre-schools should be excluded'
+  );
+  assert.equal(
     isEligibleGovernmentSchool({ amenity: 'school' }, 'Unknown International School'),
     true,
     'Unknown gender/grade schools should not be rejected based on private/international labels'

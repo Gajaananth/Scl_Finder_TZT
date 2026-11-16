@@ -355,7 +355,10 @@ export async function fetchOsmSchoolsNear(
         },
         25000
       );
-      if (!response.ok) return { schools: [], ok: false };
+      if (!response.ok) {
+        console.error(`Live OSM API returned ${response.status}`);
+        return { schools: [], ok: false };
+      }
 
       const data = await response.json();
       const elements: OverpassElement[] = data.elements || [];
@@ -406,7 +409,8 @@ export async function fetchOsmSchoolsNear(
       }
 
       return { schools: osmSchools, ok: true };
-  } catch {
+  } catch (error) {
+    console.error('Live OSM request failed:', error);
     return { schools: [], ok: false };
   }
 }

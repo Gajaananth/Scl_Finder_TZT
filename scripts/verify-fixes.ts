@@ -225,6 +225,33 @@ async function main() {
     globalThis.fetch = originalFetch;
   }
 
+  let extendedFallbackTileCount = 0;
+  globalThis.fetch = async (input) => {
+    const url = new URL(input instanceof Request ? input.url : String(input));
+    if (url.hostname.includes('overpass')) {
+      return new Response('Overpass unavailable', { status: 503 });
+    }
+    if (url.hostname === 'api.openstreetmap.org') {
+      extendedFallbackTileCount += 1;
+      return new Response(osmMapFixture, { status: 200 });
+    }
+    throw new Error(`Unexpected request to ${url.hostname}`);
+  };
+  try {
+    const extendedFallback = await fetchNearbyOsmElements(ST_CECILIA_REFERENCE, 4000);
+    assert.ok(
+      extendedFallback.some((element) => element.id === 42),
+      'OSM map fallback must remain available when Overpass fails beyond 3 km'
+    );
+    assert.ok(
+      extendedFallbackTileCount > 1,
+      'A larger radius must query enough map tiles to cover the full search area'
+    );
+    console.log('14b. OpenStreetMap map fallback covers radii above 3 km');
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+
   const liveSchoolFixtures = [
     { type: 'way', id: 1, center: { lat: 7.7117, lon: 81.695 }, tags: { amenity: 'school', name: "St.Cecilia's Convent" } },
     { type: 'way', id: 2, center: { lat: 7.7093, lon: 81.6942 }, tags: { amenity: 'school', name: 'Bt/ Anaipanthi RKM Girls Maha Vidyalayam' } },

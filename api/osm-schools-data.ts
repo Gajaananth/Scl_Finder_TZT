@@ -17,7 +17,7 @@ const OVERPASS_ENDPOINTS = [
 ];
 const OVERPASS_TIMEOUT_MS = 2500;
 const OSM_MAP_TIMEOUT_MS = 5000;
-const OSM_MAP_FALLBACK_MAX_RADIUS_METERS = 3000;
+const OSM_MAP_FALLBACK_MAX_RADIUS_METERS = 5000;
 const OSM_MAP_TILE_DEGREES = 0.03;
 const USER_AGENT = 'StCeciliasSchoolFinder/1.0 (+mailto:gajaananth08@gmail.com)';
 

@@ -114,7 +114,26 @@ async function main() {
 
   // 8. Test OSM eligibility
   const eligible = isEligibleGovernmentSchool({ amenity: 'school' }, 'Test Girls School');
-  assert.equal(eligible, true);
+  assert.equal(
+    eligible,
+    false,
+    'A girls-only name is not enough without verified Grade 1 school metadata'
+  );
+  assert.equal(
+    isEligibleGovernmentSchool({ amenity: 'school' }, 'Kallady Mugaththuwaram Vipulanantha Viddiyalam'),
+    true,
+    'Transliterated live school names should match their MoE census record'
+  );
+  assert.equal(
+    isEligibleGovernmentSchool({ amenity: 'school' }, 'Vivekananda Girls School'),
+    true,
+    'Known local girls school aliases should resolve to Grade 1 census metadata'
+  );
+  assert.equal(
+    isEligibleGovernmentSchool({ amenity: 'school', gender: 'male' }, 'Kallady Mugaththuwaram Vipulanantha Viddiyalam'),
+    false,
+    'Live gender tags identifying a boys school should be excluded'
+  );
   assert.equal(
     isEligibleGovernmentSchool({ amenity: 'school' }, 'Unspecified School'),
     false,
@@ -126,7 +145,7 @@ async function main() {
   );
   assert.equal(isEligibleGovernmentSchool({ amenity: 'school' }, 'sevastiyan school'), true);
   assert.equal(isEligibleGovernmentSchool({ amenity: 'school' }, 'Bt/Kottamunai K.V'), true);
-  console.log('12. Live schools require girls/mixed evidence; known local school aliases are recognized');
+  console.log('12. Live schools require a verified girls/mixed census record with Grade 1');
   for (const name of ['Hindu College', "St. Michael's College", 'Methodist Central College']) {
     assert.equal(
       isEligibleGovernmentSchool({ amenity: 'school' }, name),
@@ -207,6 +226,8 @@ async function main() {
     { type: 'way', id: 9, center: { lat: 7.7354, lon: 81.6937 }, tags: { amenity: 'school', name: 'Mamangeswarar School' } },
     { type: 'way', id: 10, center: { lat: 7.7206, lon: 81.698 }, tags: { amenity: 'school', name: 'Hindu College' } },
     { type: 'way', id: 11, center: { lat: 7.7185, lon: 81.7128 }, tags: { amenity: 'school', name: 'Kallady Mugaththuwaram Vipulanantha Viddiyalam' } },
+    { type: 'way', id: 13, center: { lat: 7.7062, lon: 81.7151 }, tags: { amenity: 'school', name: 'Shivananda Vidyalaya' } },
+    { type: 'way', id: 14, center: { lat: 7.7263, lon: 81.693 }, tags: { amenity: 'school', name: 'Zahira Vidyalaya' } },
   ];
   globalThis.fetch = async (input) => {
     const url = input instanceof Request ? input.url : String(input);
@@ -236,8 +257,29 @@ async function main() {
       !liveResult.schools.some((school) => /hindu college|st\.?\s*michael'?s? college/i.test(school.name)),
       'Girls/mixed reconciliation must still exclude named boys schools'
     );
+    assert.ok(
+      !liveResult.schools.some((school) => /shivananda|zahira/i.test(school.name)),
+      'Live schools without verified girls/mixed Grade 1 census records must not be shown'
+    );
+    assert.ok(
+      liveResult.schools.some((school) =>
+        school.name === 'KALLADY VELOOR SRI SHAKTHI VIDYALAYAM KALLADY VELOOR' &&
+        school.id === 'school-019' &&
+        school.gender === 'Mixed' &&
+        school.hasGrade1 === true
+      ),
+      'Sakthi Vidyalaya must resolve to its correct Grade 1 mixed Kallady census school'
+    );
     assert.equal(liveResult.liveOsmOk, true);
     console.log('15. Live map locations reconcile to the named girls/mixed census schools');
+
+    const shortRadiusResult = await fetchSchools(ST_CECILIA_REFERENCE, 750);
+    assert.deepEqual(
+      shortRadiusResult.schools.map((school) => school.id).sort(),
+      ['sch-001', 'school-014', 'school-319'],
+      'At a 750m St. Cecilia circle, include all and only the eligible mapped Grade 1 schools'
+    );
+    console.log('16. All eligible mapped Grade 1 schools appear inside the unchanged 750m circle');
   } finally {
     globalThis.fetch = nativeFetch;
   }

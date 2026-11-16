@@ -110,69 +110,130 @@ const KNOWN_OSM_SCHOOL_ALIASES = [
   {
     pattern: /\bst\.?\s*cecilia'?s?\s+(convent|college\s*\(national school\))/i,
     censusName: "St. Cecilia's Girls' College",
-    gender: 'Girls',
-    id: 'sch-001',
   },
   {
     pattern: /\banaipanthi\b.*\b(rkm|girls?)\b/i,
     censusName: 'ANAIPANTHY HINDU LADIES COLLEGE',
-    gender: 'Girls',
   },
   {
     pattern: /\bvivekananda\s+girls?\s+school\b/i,
     censusName: "BATTICALOA VIVEKANADA LADIES' COLLEGE KALLADY UPPODAI",
-    gender: 'Girls',
   },
   {
     pattern: /\bsakthi\s+vidyalaya\b/i,
     censusName: 'KALLADY VELOOR SRI SHAKTHI VIDYALAYAM KALLADY VELOOR',
-    gender: 'Mixed',
   },
   {
     pattern: /\bkallady mugaththuwaram vipulanantha viddiyalam\b/i,
     censusName: 'KALLADY MUGATHUWARAM VIPULANANDA VIDYALAYAM',
-    gender: 'Mixed',
   },
   {
     pattern: /\bputhumugathuwaram st\.?\s*ignatius vidyalayam\b/i,
     censusName: 'PUTHUMUHATHUWARAM ST. IGNATIOUS VIDYALAYAM DUTCHBAR',
-    gender: 'Mixed',
   },
   {
     pattern: /\bsevastiyan\s+school\b/i,
     censusName: 'ST. SEBESTIAN TAMIL VIDYALAYAM SEBESTIAN STREET',
-    gender: 'Mixed',
   },
   {
     pattern: /\bkottamunai\s+k\.?v\b/i,
     censusName: 'KODDAIMUNAI KANISHTA VIDYALAYAM RAILWAY STATION ROAD',
-    gender: 'Mixed',
   },
   {
     pattern: /\burani saraswathi vidyalaya\b/i,
     censusName: 'URANI SARASWATHY VIDYALAYAM PERIYA URANY',
-    gender: 'Mixed',
   },
   {
     pattern: /\bmamangeswarar school\b/i,
     censusName: 'SRI MAMANGESWARAR VIDYALAYAM MAMANGAM',
-    gender: 'Mixed',
   },
 ] as const;
 
-function getOsmSchoolGender(
-  tags: Record<string, string>,
-  name: string
-): 'Girls' | 'Mixed' | undefined {
-  const knownSchool = KNOWN_OSM_SCHOOL_ALIASES.find(({ pattern }) => pattern.test(name));
-  if (knownSchool) return knownSchool.gender;
+function schoolNameTokens(name: string): string[] {
+  const genericWords = new Set([
+    'academy', 'college', 'government', 'high', 'maha', 'school', 'sri', 'st',
+    'tamil', 'vidyalaya', 'vidyalayam',
+  ]);
+  return normalizeSchoolName(name)
+    .split(' ')
+    .filter((word) => word.length >= 4 && !genericWords.has(word));
+}
 
-  const gender = (tags.gender || '').toLowerCase();
-  if (['female', 'girls', 'girl', 'women', 'ladies'].includes(gender)) return 'Girls';
-  if (['mixed', 'co-ed', 'coeducational', 'co-educational'].includes(gender)) return 'Mixed';
-  if (/\b(girls?|ladies|women|female)\b/i.test(name)) return 'Girls';
-  if (/\b(mixed|co[\s-]?ed(?:ucational)?)\b/i.test(name)) return 'Mixed';
-  return undefined;
+function tokenSimilarity(first: string, second: string): number {
+  const previous = Array.from({ length: second.length + 1 }, (_, index) => index);
+  for (let row = 1; row <= first.length; row++) {
+    let diagonal = previous[0];
+    previous[0] = row;
+    for (let column = 1; column <= second.length; column++) {
+      const above = previous[column];
+      previous[column] = Math.min(
+        previous[column] + 1,
+        previous[column - 1] + 1,
+        diagonal + (first[row - 1] === second[column - 1] ? 0 : 1)
+      );
+      diagonal = above;
+    }
+  }
+  return 1 - previous[second.length] / Math.max(first.length, second.length);
+}
+
+function findCensusSchoolMatch(name: string): School | undefined {
+  const alias = KNOWN_OSM_SCHOOL_ALIASES.find(({ pattern }) => pattern.test(name));
+  if (alias) {
+    return bundledSchoolList.find((school) => school.name === alias.censusName);
+  }
+
+  const normalizedName = normalizeSchoolName(name);
+  const exactMatches = bundledSchoolList.filter(
+    (school) => normalizeSchoolName(school.name) === normalizedName
+  );
+  if (exactMatches.length === 1) return exactMatches[0];
+
+  const queryTokens = schoolNameTokens(name);
+  if (queryTokens.length < 2) return undefined;
+
+  const candidates = bundledSchoolList.map((school) => {
+    const remainingTokens = schoolNameTokens(school.name);
+    let matches = 0;
+    for (const queryToken of queryTokens) {
+      let bestIndex = -1;
+      let bestSimilarity = 0;
+      remainingTokens.forEach((candidateToken, index) => {
+        const similarity = tokenSimilarity(queryToken, candidateToken);
+        if (similarity > bestSimilarity) {
+          bestSimilarity = similarity;
+          bestIndex = index;
+        }
+      });
+      if (bestSimilarity >= 0.8 && bestIndex !== -1) {
+        matches++;
+        remainingTokens.splice(bestIndex, 1);
+      }
+    }
+    return { school, score: matches / queryTokens.length, matches };
+  })
+    .filter(({ score, matches }) => score >= 0.75 && matches >= 2)
+    .sort((first, second) => second.score - first.score);
+
+  if (
+    candidates.length === 0 ||
+    (candidates.length > 1 && candidates[0].score - candidates[1].score < 0.15)
+  ) return undefined;
+
+  return candidates[0].school;
+}
+
+function hasVerifiedGradeOneEligibility(school: School): boolean {
+  const source = school.source?.toLowerCase() || '';
+  return (
+    school.hasGrade1 === true &&
+    (school.gender === 'Girls' || school.gender === 'Mixed') &&
+    (
+      school.id === 'sch-001' ||
+      source.includes('moe provincial schools census') ||
+      source.includes('openstreetmap mapped school location')
+    )
+  );
 }
 
 function isEligibleCuratedSchool(school: School): boolean {
@@ -211,7 +272,8 @@ export function isEligibleGovernmentSchool(
   }
 
   if (BOYS_ONLY_PATTERNS.some((pattern) => pattern.test(combined))) return false;
-  if (!getOsmSchoolGender(tags, rawName)) return false;
+  const schoolMetadata = findCensusSchoolMatch(rawName);
+  if (!schoolMetadata || !hasVerifiedGradeOneEligibility(schoolMetadata)) return false;
 
   const hasSchoolTag = tags.amenity === 'school' || tags.education === 'school' || tags.school === 'yes';
   const hasSchoolName = /\b(school|college|vidyalaya|vidyalayam|vidyalaya|maha\s+vidyalaya)\b/i.test(rawName);
@@ -221,6 +283,11 @@ export function isEligibleGovernmentSchool(
   if (['private', 'commercial'].includes((tags.operator || '').toLowerCase())) return false;
   if (['private', 'commercial'].includes((tags.ownership || '').toLowerCase())) return false;
   if (['male', 'boys'].includes((tags.gender || '').toLowerCase())) return false;
+  if (
+    tags.gender &&
+    !['female', 'girls', 'girl', 'women', 'ladies', 'mixed', 'co-ed', 'coeducational', 'co-educational']
+      .includes(tags.gender.toLowerCase())
+  ) return false;
   if (tags['school:type'] === 'international') return false;
   if (tags['school:type'] === 'private') return false;
   if (tags['isced:level'] === '0') return false;
@@ -327,12 +394,13 @@ export async function fetchOsmSchoolsNear(
         if (!lat || !lng || !rawName) continue;
         const distanceFromSearch = computeStraightLineDistance(location, { lat, lng });
         if (distanceFromSearch > searchRadius * 1.1) continue;
-        if (!isEligibleGovernmentSchool(tags, rawName)) continue;
+        const schoolMetadata = findCensusSchoolMatch(rawName);
+        if (
+          !schoolMetadata ||
+          !hasVerifiedGradeOneEligibility(schoolMetadata) ||
+          !isEligibleGovernmentSchool(tags, rawName)
+        ) continue;
 
-        const knownAlias = KNOWN_OSM_SCHOOL_ALIASES.find(({ pattern }) => pattern.test(rawName));
-        const schoolMetadata = knownAlias
-          ? bundledSchoolList.find((school) => school.name === knownAlias.censusName)
-          : undefined;
         const street = tags['addr:street'] || tags['addr:place'] || '';
         const city = tags['addr:city'] || tags['addr:district'] || tags['addr:suburb'] || '';
         const address =
@@ -341,9 +409,7 @@ export async function fetchOsmSchoolsNear(
           `${rawName}, Sri Lanka`;
 
         const school: School = {
-          id: knownAlias && 'id' in knownAlias
-            ? knownAlias.id
-            : `osm-${el.type}-${el.id}`,
+          id: schoolMetadata.id,
           name: schoolMetadata?.name || rawName,
           nameLocal: tags['name:ta'] || (tags.name !== rawName ? tags.name : undefined),
           address,
@@ -352,7 +418,7 @@ export async function fetchOsmSchoolsNear(
           medium: schoolMetadata?.medium || inferMediums(tags),
           type: schoolMetadata?.type || inferSchoolType(rawName),
           zone: schoolMetadata?.zone || tags['addr:district'] || 'Regional Education Zone',
-          gender: getOsmSchoolGender(tags, rawName),
+          gender: schoolMetadata.gender,
           yearSpan: schoolMetadata?.yearSpan,
           hasGrade1: schoolMetadata?.hasGrade1,
           source: schoolMetadata?.source || 'OpenStreetMap mapped school location',

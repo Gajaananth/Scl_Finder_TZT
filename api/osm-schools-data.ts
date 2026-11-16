@@ -10,16 +10,9 @@ interface OsmElement {
 }
 
 const OVERPASS_ENDPOINTS = [
-  'https://overpass.kumi.systems/api/interpreter',
   'https://overpass-api.de/api/interpreter',
   'https://overpass.private.coffee/api/interpreter',
   'https://maps.mail.ru/osm/tools/overpass/api/interpreter',
-];
-const LARGE_SEARCH_ENDPOINTS = [
-  [OVERPASS_ENDPOINTS[0], OVERPASS_ENDPOINTS[1]],
-  [OVERPASS_ENDPOINTS[1], OVERPASS_ENDPOINTS[2]],
-  [OVERPASS_ENDPOINTS[2], OVERPASS_ENDPOINTS[3]],
-  [OVERPASS_ENDPOINTS[3], OVERPASS_ENDPOINTS[0]],
 ];
 const OVERPASS_TIMEOUT_MS = 15000;
 const OSM_MAP_TIMEOUT_MS = 5000;
@@ -27,6 +20,13 @@ const OSM_MAP_FALLBACK_MAX_RADIUS_METERS = 5000;
 const OVERPASS_SPLIT_RADIUS_METERS = 25000;
 const OSM_MAP_TILE_DEGREES = 0.03;
 const USER_AGENT = 'StCeciliasSchoolFinder/1.0 (+mailto:gajaananth08@gmail.com)';
+
+function getConfiguredOverpassEndpoints(): string[] {
+  const apiKey = process.env.OVERPASS_CH_API_KEY?.trim();
+  return apiKey
+    ? [`https://api.overpass.ch/v1/${encodeURIComponent(apiKey)}/interpreter`]
+    : OVERPASS_ENDPOINTS;
+}
 
 function decodeXml(value: string): string {
   return value.replace(/&(#x[\da-f]+|#\d+|amp|lt|gt|quot|apos);/gi, (entity, code: string) => {
@@ -157,13 +157,12 @@ function getBoundingBox(center: Coordinates, radius: number): BoundingBox {
 }
 
 function splitBoundingBox([south, west, north, east]: BoundingBox): BoundingBox[] {
-  const middleLatitude = (south + north) / 2;
-  const middleLongitude = (west + east) / 2;
+  const firstThird = south + (north - south) / 3;
+  const secondThird = south + (2 * (north - south)) / 3;
   return [
-    [south, west, middleLatitude, middleLongitude],
-    [south, middleLongitude, middleLatitude, east],
-    [middleLatitude, west, north, middleLongitude],
-    [middleLatitude, middleLongitude, north, east],
+    [south, west, firstThird, east],
+    [firstThird, west, secondThird, east],
+    [secondThird, west, north, east],
   ];
 }
 
@@ -183,7 +182,7 @@ function buildOverpassQuery(bounds: BoundingBox): string {
 
 async function fetchOverpass(
   query: string,
-  endpoints: string[] = OVERPASS_ENDPOINTS
+  endpoints: string[] = getConfiguredOverpassEndpoints()
 ): Promise<OsmElement[]> {
   const controllers: AbortController[] = [];
   try {
@@ -275,12 +274,15 @@ export async function fetchNearbyOsmElements(
   const searchBoxes = radius > OVERPASS_SPLIT_RADIUS_METERS
     ? splitBoundingBox(boundingBox)
     : [boundingBox];
+  const configuredEndpoints = getConfiguredOverpassEndpoints();
 
   try {
     const results = await Promise.all(searchBoxes.map((bounds, index) =>
       fetchOverpass(
         buildOverpassQuery(bounds),
-        searchBoxes.length === 1 ? OVERPASS_ENDPOINTS : LARGE_SEARCH_ENDPOINTS[index]
+        searchBoxes.length === 1
+          ? configuredEndpoints
+          : [configuredEndpoints[index % configuredEndpoints.length]]
       )
     ));
     const uniqueElements = new Map<string, OsmElement>();

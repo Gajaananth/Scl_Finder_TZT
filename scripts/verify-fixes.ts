@@ -258,9 +258,13 @@ async function main() {
   }
 
   const largeRadiusOverpassQueries: string[] = [];
+  const managedOverpassPaths: string[] = [];
+  const originalOverpassApiKey = process.env.OVERPASS_CH_API_KEY;
+  process.env.OVERPASS_CH_API_KEY = 'test-api-key';
   globalThis.fetch = async (input) => {
     const url = new URL(input instanceof Request ? input.url : String(input));
-    if (url.hostname.includes('overpass') || url.hostname === 'maps.mail.ru') {
+    if (url.hostname === 'api.overpass.ch') {
+      managedOverpassPaths.push(url.pathname);
       largeRadiusOverpassQueries.push(url.searchParams.get('data') || '');
       return new Response(JSON.stringify({ elements: [] }), {
         status: 200,
@@ -272,7 +276,12 @@ async function main() {
   try {
     await fetchNearbyOsmElements(ST_CECILIA_REFERENCE, 100000);
     const uniqueQueries = [...new Set(largeRadiusOverpassQueries)];
-    assert.equal(uniqueQueries.length, 4, 'Large live searches should be split across four query regions');
+    assert.equal(uniqueQueries.length, 3, 'Large live searches should be split across three query regions');
+    assert.equal(managedOverpassPaths.length, 3, 'Each region should use the configured managed endpoint');
+    assert.ok(
+      managedOverpassPaths.every((path) => path === '/v1/test-api-key/interpreter'),
+      'The managed API key should be used only in server-side Overpass requests'
+    );
     assert.match(
       uniqueQueries[0],
       /nwr\["amenity"="school"\]\(-?[\d.]+,-?[\d.]+,-?[\d.]+,-?[\d.]+\)/,
@@ -291,6 +300,11 @@ async function main() {
     console.log('14c. Live Overpass queries preserve a 100 km search radius');
   } finally {
     globalThis.fetch = originalFetch;
+    if (originalOverpassApiKey === undefined) {
+      delete process.env.OVERPASS_CH_API_KEY;
+    } else {
+      process.env.OVERPASS_CH_API_KEY = originalOverpassApiKey;
+    }
   }
 
   const liveSchoolFixtures = [

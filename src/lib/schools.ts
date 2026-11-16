@@ -344,7 +344,7 @@ export async function fetchOsmSchoolsNear(
   location: Coordinates,
   radiusMeters: number
 ): Promise<{ schools: School[]; ok: boolean }> {
-  const searchRadius = Math.min(Math.max(radiusMeters, 200), 25000);
+  const searchRadius = Math.max(radiusMeters, 200);
 
   try {
       const response = await fetchWithTimeout(

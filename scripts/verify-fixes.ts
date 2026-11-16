@@ -257,6 +257,39 @@ async function main() {
     globalThis.fetch = originalFetch;
   }
 
+  let largeRadiusOverpassQuery = '';
+  globalThis.fetch = async (input) => {
+    const url = new URL(input instanceof Request ? input.url : String(input));
+    if (url.hostname.includes('overpass')) {
+      largeRadiusOverpassQuery = url.searchParams.get('data') || '';
+      return new Response(JSON.stringify({ elements: [] }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+    throw new Error(`Unexpected request to ${url.hostname}`);
+  };
+  try {
+    await fetchNearbyOsmElements(ST_CECILIA_REFERENCE, 100000);
+    assert.match(
+      largeRadiusOverpassQuery,
+      /nwr\["amenity"="school"\]\(-?[\d.]+,-?[\d.]+,-?[\d.]+,-?[\d.]+\)/,
+      'A 100 km search must use a full-radius Overpass bounding box'
+    );
+    const bounds = largeRadiusOverpassQuery.match(
+      /nwr\["amenity"="school"\]\(([^)]+)\)/
+    )?.[1].split(',').map(Number);
+    assert.ok(bounds, 'The Overpass query should include numeric bounding coordinates');
+    assert.ok(
+      bounds[0] < ST_CECILIA_REFERENCE.lat - 0.8 &&
+      bounds[2] > ST_CECILIA_REFERENCE.lat + 0.8,
+      'The live Overpass query must extend beyond the old 25 km cap to cover 100 km'
+    );
+    console.log('14c. Live Overpass queries preserve a 100 km search radius');
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+
   const liveSchoolFixtures = [
     { type: 'way', id: 1, center: { lat: 7.7117, lon: 81.695 }, tags: { amenity: 'school', name: "St.Cecilia's Convent" } },
     { type: 'way', id: 2, center: { lat: 7.7093, lon: 81.6942 }, tags: { amenity: 'school', name: 'Bt/ Anaipanthi RKM Girls Maha Vidyalayam' } },
@@ -276,11 +309,15 @@ async function main() {
     { type: 'way', id: 17, center: { lat: 7.7148, lon: 81.6969 }, tags: { amenity: 'school', name: 'Nursery School' } },
     { type: 'way', id: 18, center: { lat: 7.7149, lon: 81.697 }, tags: { amenity: 'school', name: 'Grade Two School', grades: '2-13' } },
     { type: 'way', id: 19, center: { lat: 7.7212, lon: 81.6962 }, tags: { amenity: 'school', name: 'School Outside Circle' } },
+    { type: 'way', id: 20, center: { lat: 8.15, lon: 81.6962 }, tags: { amenity: 'school', name: 'Distant Community School' } },
+    { type: 'way', id: 21, center: { lat: 8.62, lon: 81.6962 }, tags: { amenity: 'school', name: 'School Outside 100 km Circle' } },
   ];
-  globalThis.fetch = async (input) => {
+  let requestedLiveRadius: number | undefined;
+  globalThis.fetch = async (input, init) => {
     const url = input instanceof Request ? input.url : String(input);
     if (url === '/api/schools') return new Response(JSON.stringify(data), { status: 200 });
     if (url === '/api/osm-schools') {
+      requestedLiveRadius = JSON.parse(String(init?.body || '{}')).radius;
       return new Response(JSON.stringify({ elements: liveSchoolFixtures }), { status: 200 });
     }
     throw new Error(`Unexpected request to ${url}`);
@@ -340,6 +377,18 @@ async function main() {
       'At a 750m St. Cecilia circle, include mapped unknown schools but exclude schools outside its exact boundary'
     );
     console.log('16. Mapped schools inside the unchanged 750m circle are included, including unknowns');
+
+    const hundredKmResult = await fetchSchools(ST_CECILIA_REFERENCE, 100000);
+    assert.equal(requestedLiveRadius, 100000, 'The live API must receive the full home-derived 100 km radius');
+    assert.ok(
+      hundredKmResult.schools.some((school) => school.name === 'Distant Community School'),
+      'Mapped eligible schools within 100 km must remain in the search results'
+    );
+    assert.ok(
+      !hundredKmResult.schools.some((school) => school.name === 'School Outside 100 km Circle'),
+      'Mapped schools beyond the 100 km circle must still be excluded'
+    );
+    console.log('17. A 100 km live search preserves the full radius and exact boundary');
   } finally {
     globalThis.fetch = nativeFetch;
   }

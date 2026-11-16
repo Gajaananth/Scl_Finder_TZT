@@ -15,7 +15,7 @@ const OVERPASS_ENDPOINTS = [
   'https://overpass.private.coffee/api/interpreter',
   'https://maps.mail.ru/osm/tools/overpass/api/interpreter',
 ];
-const OVERPASS_TIMEOUT_MS = 2500;
+const OVERPASS_TIMEOUT_MS = 15000;
 const OSM_MAP_TIMEOUT_MS = 5000;
 const OSM_MAP_FALLBACK_MAX_RADIUS_METERS = 5000;
 const OSM_MAP_TILE_DEGREES = 0.03;
@@ -136,12 +136,22 @@ export function parseOsmMapXml(xml: string): OsmElement[] {
 }
 
 function buildOverpassQuery(center: Coordinates, radius: number): string {
+  const latitudeOffset = (radius * 1.05) / 111320;
+  const longitudeOffset =
+    (radius * 1.05) / (111320 * Math.cos((center.lat * Math.PI) / 180));
+  const bounds = [
+    Math.max(-90, center.lat - latitudeOffset),
+    Math.max(-180, center.lng - longitudeOffset),
+    Math.min(90, center.lat + latitudeOffset),
+    Math.min(180, center.lng + longitudeOffset),
+  ].join(',');
+
   return `
-    [out:json][timeout:5];
+    [out:json][timeout:12];
     (
-      nwr["amenity"="school"](around:${radius},${center.lat},${center.lng});
-      nwr["education"="school"](around:${radius},${center.lat},${center.lng});
-      nwr["school"="yes"](around:${radius},${center.lat},${center.lng});
+      nwr["amenity"="school"](${bounds});
+      nwr["education"="school"](${bounds});
+      nwr["school"="yes"](${bounds});
     );
     out center tags;
   `;
@@ -233,7 +243,7 @@ export async function fetchNearbyOsmElements(
   center: Coordinates,
   radiusMeters: number
 ): Promise<OsmElement[]> {
-  const radius = Math.min(Math.max(radiusMeters, 200), 25000);
+  const radius = Math.max(radiusMeters, 200);
 
   try {
     return await fetchOverpass(buildOverpassQuery(center, radius));
